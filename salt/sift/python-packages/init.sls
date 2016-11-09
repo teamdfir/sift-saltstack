@@ -1,0 +1,27 @@
+include:
+  - .analyzemft
+  - .argparse
+  - .bitstring
+  - .colorama
+  - .construct
+  - .distorm3
+  - .docopt
+  - .ioc_writer
+  - .lxml
+  - .pefile
+  - .pip
+  - .pysocks
+  - .python-dateutil
+  - .python-evtx
+  - .python-magic
+  - .python-registry
+  - .rekall
+  - .setuptools
+  - .six
+  - .stix-validator
+  - .stix
+  - .timesketch
+  - .unicodecsv
+  - .usnparser
+  - .wheel
+  - .windowsprefetch

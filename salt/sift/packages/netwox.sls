@@ -1,0 +1,2 @@
+netwox:
+  pkg.installed

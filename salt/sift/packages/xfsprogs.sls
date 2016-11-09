@@ -1,0 +1,2 @@
+xfsprogs:
+  pkg.installed

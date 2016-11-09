@@ -1,0 +1,2 @@
+ettercap-graphical:
+  pkg.installed

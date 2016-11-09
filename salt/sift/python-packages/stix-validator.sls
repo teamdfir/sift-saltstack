@@ -1,0 +1,2 @@
+stix-validator:
+  pip.installed

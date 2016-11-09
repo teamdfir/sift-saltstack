@@ -1,0 +1,2 @@
+python-volatility:
+  pkg.installed

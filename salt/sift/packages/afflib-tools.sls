@@ -1,0 +1,2 @@
+afflib-tools:
+  pkg.installed

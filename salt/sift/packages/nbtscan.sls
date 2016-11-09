@@ -1,0 +1,2 @@
+nbtscan:
+  pkg.installed

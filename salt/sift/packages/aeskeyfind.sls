@@ -1,0 +1,2 @@
+aeskeyfind:
+  pkg.installed

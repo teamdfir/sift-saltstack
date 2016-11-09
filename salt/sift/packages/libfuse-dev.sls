@@ -1,0 +1,2 @@
+libfuse-dev:
+  pkg.installed

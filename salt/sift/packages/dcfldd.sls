@@ -1,0 +1,2 @@
+dcfldd:
+  pkg.installed

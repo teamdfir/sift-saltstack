@@ -1,0 +1,2 @@
+nfdump:
+  pkg.installed

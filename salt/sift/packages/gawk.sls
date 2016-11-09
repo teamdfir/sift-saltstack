@@ -1,0 +1,2 @@
+gawk:
+  pkg.installed

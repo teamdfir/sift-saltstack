@@ -1,0 +1,2 @@
+feh:
+  pkg.installed

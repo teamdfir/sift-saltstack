@@ -1,0 +1,2 @@
+python-evtx:
+  pip.installed

@@ -1,0 +1,2 @@
+exif:
+  pkg.installed

@@ -1,0 +1,2 @@
+exfat-utils:
+  pkg.installed

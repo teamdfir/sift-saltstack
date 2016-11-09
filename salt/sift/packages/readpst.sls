@@ -1,0 +1,2 @@
+readpst:
+  pkg.installed

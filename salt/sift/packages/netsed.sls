@@ -1,0 +1,2 @@
+netsed:
+  pkg.installed

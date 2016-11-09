@@ -1,0 +1,2 @@
+libvshadow-python:
+  pkg.installed

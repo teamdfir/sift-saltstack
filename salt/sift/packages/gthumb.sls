@@ -1,0 +1,2 @@
+gthumb:
+  pkg.installed

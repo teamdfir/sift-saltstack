@@ -1,0 +1,2 @@
+scalpel:
+  pkg.installed

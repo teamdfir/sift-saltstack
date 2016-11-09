@@ -1,0 +1,2 @@
+vmfs-tools:
+  pkg.installed

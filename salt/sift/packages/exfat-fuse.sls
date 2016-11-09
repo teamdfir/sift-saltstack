@@ -1,0 +1,2 @@
+exfat-fuse:
+  pkg.installed

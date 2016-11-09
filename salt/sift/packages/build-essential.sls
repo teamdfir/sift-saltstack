@@ -1,0 +1,2 @@
+build-essential:
+  pkg.installed

@@ -1,0 +1,2 @@
+libewf-python:
+  pkg.installed

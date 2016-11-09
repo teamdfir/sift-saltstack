@@ -1,0 +1,2 @@
+pyew:
+  pkg.installed

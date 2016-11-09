@@ -1,0 +1,2 @@
+zenity:
+  pkg.installed

@@ -1,0 +1,2 @@
+libssl-dev:
+  pkg.installed

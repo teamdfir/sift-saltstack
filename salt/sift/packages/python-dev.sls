@@ -1,0 +1,2 @@
+python-dev:
+  pkg.installed

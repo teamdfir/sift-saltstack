@@ -1,0 +1,2 @@
+python-nids:
+  pkg.installed

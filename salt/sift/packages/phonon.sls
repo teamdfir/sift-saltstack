@@ -1,0 +1,2 @@
+phonon:
+  pkg.installed

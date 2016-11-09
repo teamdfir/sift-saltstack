@@ -1,0 +1,2 @@
+libevtx-tools:
+  pkg.installed

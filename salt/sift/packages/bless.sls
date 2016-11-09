@@ -1,0 +1,2 @@
+bless:
+  pkg.installed

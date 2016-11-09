@@ -1,0 +1,2 @@
+nbd-client:
+  pkg.installed

@@ -1,0 +1,2 @@
+python-pefile:
+  pkg.installed

@@ -1,0 +1,2 @@
+clamav:
+  pkg.installed

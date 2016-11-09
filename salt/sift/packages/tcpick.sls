@@ -1,0 +1,2 @@
+tcpick:
+  pkg.installed

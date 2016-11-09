@@ -1,0 +1,2 @@
+hexedit:
+  pkg.installed

@@ -1,0 +1,93 @@
+#
+# config file for Sleuth Kit sorter
+#
+# Windows Platform
+#
+# To make custom modifications, you can also use a file named
+# windows.lcl.sort
+##########################################################################
+category 	exec 		MS Windows HtmlHelp Data
+ext 		chm,hlp		MS Windows HtmlHelp Data
+category 	exec 		MS Windows 3.x help file
+ext 		chm,hlp		MS Windows 3.x help file
+category 	exec 		DOS batch file
+ext 		cmd,bat,NT	DOS batch file
+category 	exec 		DOS batch file
+ext 		exe,dll,com 	BIOS
+ext 		ocx,sys,tlb 	BIOS 
+ext 		drv,cpl,scr 	BIOS 
+ext 		rom		BIOS 
+ext 		386,acm,flt 	BIOS 
+ext 		fon,lrc,vxd 	BIOS 
+ext		 x32 		BIOS 
+category 	exec 		DOS executable 
+ext 		exe,dll,com 	DOS executable
+ext 		ocx,sys,tlb 	DOS executable 
+ext 		drv,cpl,scr 	DOS executable 
+ext 		ax 		DOS executable
+ext 		386,acm,flt 	DOS executable
+ext 		fon,lrc,vxd 	DOS executable 
+ext		 x32 		DOS executable 
+category 	exec 		COM executable 
+ext 		exe,dll,com 	COM executable 
+ext 		ocx,sys,tlb 	COM executable 
+ext 		drv,cpl,scr 	COM executable 
+ext 		ax 		COM executable 
+ext 		386,acm,flt 	COM executable
+ext 		fon,lrc,vxd 	COM executable 
+ext		 x32 		COM executable 
+category 	exec 		PE32+ executable
+ext 		exe,dll,com 	PE32+ executable
+ext 		ocx,sys,tlb 	PE32+ executable
+ext 		drv,cpl,scr 	PE32+ executable
+ext 		ax 		PE32+ executable
+ext 		386,acm,flt 	PE32+ executable
+ext 		fon,lrc,vxd 	PE32+ executable
+ext		 x32 		PE32+ executable
+category 	exec 		PE32 executable
+ext 		exe,dll,com 	PE32 executable
+ext 		ocx,sys,tlb 	PE32 executable
+ext 		drv,cpl,scr 	PE32 executable
+ext 		ax 		PE32 executable
+ext 		386,acm,flt 	PE32 executable
+ext 		fon,lrc,vxd 	PE32 executable
+ext		 x32 		PE32 executable
+category 	exec 		MS\-DOS executable
+ext 		exe,dll,com 	MS\-DOS executable
+ext 		ocx,sys,tlb 	MS\-DOS executable
+ext 		drv,cpl,scr 	MS\-DOS executable
+ext 		ax 		MS\-DOS executable
+ext 		386,acm,flt 	MS\-DOS executable
+ext 		fon,lrc,vxd 	MS\-DOS executable
+ext		 x32 		MS\-DOS executable
+category 	exec 		executable MS\-DOS
+ext 		exe,dll		MZ executable MS\-DOS
+ext 		com 		MZ executable MS\-DOS
+category 	exec	 	PE executable MS Windows
+ext 		exe,dll,com 	PE executable MS Windows
+ext 		ocx,sys,acm 	PE executable MS Windows
+ext 		tlb,drv,scr 	PE executable MS Windows
+ext 		cpl,ax,vdx 	PE executable MS Windows
+ext 		fon,rll,tsp 	PE executable MS Windows
+category 	exec 		NE executable MS Windows
+ext 		exe,dll,com 	NE executable MS Windows
+ext 		ocx,sys,acm 	NE executable MS Windows
+ext 		tlb,drv,scr 	NE executable MS Windows
+ext 		cpl,ax,vxd 	NE executable MS Windows
+ext 		fon,tsp 	NE executable MS Windows
+category 	exec 		relocatable
+ext 		dll 		relocatable
+category 	exec 		batch file
+ext 		bat 		batch file
+ext		bat		ASCII text
+ext		bat		ASCII English text
+ext 		nt 		DOS batch file
+ext 		cmd 		DOS batch file
+# source code
+category 	exec 		MSVC program database
+ext 		pdb 		MSVC program database
+category 	exec 		\sscript
+# Adobe
+category 	AdobePDF 	PDF document
+ext 		pdf 		PDF document
+# Crypto

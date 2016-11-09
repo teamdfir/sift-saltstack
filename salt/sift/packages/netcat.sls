@@ -1,0 +1,2 @@
+netcat:
+  pkg.installed

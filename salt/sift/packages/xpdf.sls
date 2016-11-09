@@ -1,0 +1,2 @@
+xpdf:
+  pkg.installed

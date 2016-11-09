@@ -1,0 +1,2 @@
+tcl:
+  pkg.installed

@@ -1,0 +1,2 @@
+bcrypt:
+  pkg.installed

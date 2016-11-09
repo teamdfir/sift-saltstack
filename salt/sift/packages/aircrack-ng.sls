@@ -1,0 +1,2 @@
+aircrack-ng:
+  pkg.installed

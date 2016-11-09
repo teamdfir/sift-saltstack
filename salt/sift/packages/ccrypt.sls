@@ -1,0 +1,2 @@
+ccrypt:
+  pkg.installed

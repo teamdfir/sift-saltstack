@@ -1,0 +1,2 @@
+hydra-gtk:
+  pkg.installed

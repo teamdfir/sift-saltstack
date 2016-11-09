@@ -1,0 +1,2 @@
+tcpstat:
+  pkg.installed

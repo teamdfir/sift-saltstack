@@ -1,0 +1,2 @@
+samba:
+  pkg.installed

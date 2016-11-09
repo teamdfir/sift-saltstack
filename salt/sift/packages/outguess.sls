@@ -1,0 +1,2 @@
+outguess:
+  pkg.installed

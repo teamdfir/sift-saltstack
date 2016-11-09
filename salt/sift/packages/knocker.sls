@@ -1,0 +1,2 @@
+knocker:
+  pkg.installed

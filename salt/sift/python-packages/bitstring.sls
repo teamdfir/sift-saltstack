@@ -1,0 +1,2 @@
+bitstring:
+  pip.installed

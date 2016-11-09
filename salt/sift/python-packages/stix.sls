@@ -1,0 +1,2 @@
+stix:
+  pip.installed

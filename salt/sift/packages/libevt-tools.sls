@@ -1,0 +1,2 @@
+libevt-tools:
+  pkg.installed

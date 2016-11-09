@@ -1,0 +1,2 @@
+liblightgrep:
+  pkg.installed

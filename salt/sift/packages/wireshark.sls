@@ -1,0 +1,2 @@
+wireshark:
+  pkg.installed

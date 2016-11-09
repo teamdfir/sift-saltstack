@@ -1,0 +1,2 @@
+ophcrack:
+  pkg.installed

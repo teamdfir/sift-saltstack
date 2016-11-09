@@ -1,0 +1,2 @@
+Etc/UTC:
+  timezone.system

@@ -1,0 +1,2 @@
+ophcrack-cli:
+  pkg.installed

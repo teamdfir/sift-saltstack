@@ -1,0 +1,2 @@
+winbind:
+  pkg.installed

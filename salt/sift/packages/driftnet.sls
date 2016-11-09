@@ -1,0 +1,2 @@
+driftnet:
+  pkg.installed

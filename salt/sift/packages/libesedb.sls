@@ -1,0 +1,2 @@
+libesedb:
+  pkg.installed

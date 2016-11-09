@@ -1,0 +1,2 @@
+xdot:
+  pkg.installed

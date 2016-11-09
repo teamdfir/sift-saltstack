@@ -1,0 +1,2 @@
+sslsniff:
+  pkg.installed

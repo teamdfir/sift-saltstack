@@ -1,0 +1,2 @@
+netpbm:
+  pkg.installed

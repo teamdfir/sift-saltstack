@@ -1,0 +1,5 @@
+#!/bin/bash
+
+wget https://raw.githubusercontent.com/sans-dfir/sift-bootstrap/master/bootstrap.sh
+sudo bash bootstrap.sh -u
+rm bootstrap.sh

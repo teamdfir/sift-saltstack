@@ -1,0 +1,2 @@
+libafflib-dev:
+  pkg.installed

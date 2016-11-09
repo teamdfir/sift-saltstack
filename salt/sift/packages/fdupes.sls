@@ -1,0 +1,2 @@
+fdupes:
+  pkg.installed

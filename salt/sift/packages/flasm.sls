@@ -1,0 +1,2 @@
+flasm:
+  pkg.installed

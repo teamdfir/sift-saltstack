@@ -1,0 +1,2 @@
+lft:
+  pkg.installed

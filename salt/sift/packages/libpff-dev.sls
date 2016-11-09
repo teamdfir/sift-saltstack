@@ -1,0 +1,2 @@
+libpff-dev:
+  pkg.installed

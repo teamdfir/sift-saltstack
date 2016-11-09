@@ -1,0 +1,2 @@
+extundelete:
+  pkg.installed

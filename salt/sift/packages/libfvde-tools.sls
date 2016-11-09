@@ -1,0 +1,2 @@
+libfvde-tools:
+  pkg.installed

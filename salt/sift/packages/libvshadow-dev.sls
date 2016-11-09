@@ -1,0 +1,2 @@
+libvshadow-dev:
+  pkg.installed

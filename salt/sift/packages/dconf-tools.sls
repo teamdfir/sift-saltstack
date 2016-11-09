@@ -1,0 +1,2 @@
+dconf-tools:
+  pkg.installed

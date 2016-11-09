@@ -1,0 +1,2 @@
+pev:
+  pkg.installed

@@ -1,0 +1,2 @@
+libewf-tools:
+  pkg.installed

@@ -1,0 +1,2 @@
+libbde:
+  pkg.installed

@@ -1,0 +1,2 @@
+gddrescue:
+  pkg.installed

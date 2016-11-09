@@ -1,0 +1,2 @@
+libewf:
+  pkg.installed

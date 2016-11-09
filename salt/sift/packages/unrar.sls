@@ -1,0 +1,2 @@
+unrar:
+  pkg.installed

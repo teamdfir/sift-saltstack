@@ -1,0 +1,2 @@
+kpartx:
+  pkg.installed

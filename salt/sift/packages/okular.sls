@@ -1,0 +1,2 @@
+okular:
+  pkg.installed

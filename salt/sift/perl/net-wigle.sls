@@ -1,0 +1,2 @@
+net-wigle:
+  cpan.install

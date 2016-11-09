@@ -1,0 +1,2 @@
+libpff-tools:
+  pkg.installed

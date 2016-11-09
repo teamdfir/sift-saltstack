@@ -1,0 +1,2 @@
+safecopy:
+  pkg.installed

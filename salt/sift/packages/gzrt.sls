@@ -1,0 +1,2 @@
+gzrt:
+  pkg.installed

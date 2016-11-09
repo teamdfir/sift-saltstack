@@ -1,0 +1,2 @@
+etherape:
+  pkg.installed

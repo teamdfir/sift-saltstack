@@ -1,0 +1,2 @@
+libregf-dev:
+  pkg.installed

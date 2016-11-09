@@ -1,0 +1,2 @@
+pdftk:
+  pkg.installed

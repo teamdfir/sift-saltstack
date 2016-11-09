@@ -1,0 +1,2 @@
+python-dfvfs:
+  pkg.installed

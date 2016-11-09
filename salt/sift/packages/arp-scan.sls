@@ -1,0 +1,2 @@
+arp-scan:
+  pkg.installed

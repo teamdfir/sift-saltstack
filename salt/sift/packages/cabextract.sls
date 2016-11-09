@@ -1,0 +1,2 @@
+cabextract:
+  pkg.installed

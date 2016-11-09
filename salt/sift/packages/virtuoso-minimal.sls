@@ -1,0 +1,2 @@
+virtuoso-minimal:
+  pkg.installed

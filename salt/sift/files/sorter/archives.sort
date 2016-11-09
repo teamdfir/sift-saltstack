@@ -1,0 +1,37 @@
+#category 	archives
+category 	archives 	Zip archive data
+ext 		zip,jar 	Zip archive data
+ext 		wmz 		Zip archive data
+category 	archives 	tar archive
+ext 		tar 		tar archive
+category 	archives 	Microsoft Cabinet
+ext 		cab 		Microsoft Cabinet File
+category 	archives 	compress data
+ext 		gz,tgz gzip 	compressed data
+ext 		Z 		compress'd data
+ext 		bz2 		bzip2 compressed data
+ext 		bz 		bzip compressed data
+category 	archives 	RPM
+ext 		rpm 		RPM
+category 	archives 	cpio archive
+category 	archives 	ARC archive data
+ext 		arc 		ARC archive data
+category 	archives 	LHa archive data
+ext 		lha 		LHa archive data
+ext 		lzh 		LHa archive data
+category 	archives 	shell archive text
+ext 		shar 		shell archive text
+category 	archives 	uuencoded or xxencoded text
+ext 		uue 		uuencoded or xxencoded text
+ext 		uu 		uuencoded or xxencoded text
+ext 		bhx 		uuencoded or xxencoded text
+ext 		xxe 		uuencoded or xxencoded text
+ext 		xx 		uuencoded or xxencoded kext
+category 	archives 	BinHex binary text
+ext 		hqx 		BinHex binary text
+category 	archives 	StuffIT Archive
+ext 		sit 		StuffIT Archive
+category 	archives 	RAR Archive data
+ext 		rar 		RAR Archive data
+category 	archives 	ARJ Archive data
+ext 		arj 		ARJ Archive data

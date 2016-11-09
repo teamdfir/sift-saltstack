@@ -1,0 +1,2 @@
+blt:
+  pkg.installed

@@ -1,0 +1,2 @@
+afterglow:
+  pkg.installed

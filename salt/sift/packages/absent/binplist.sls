@@ -1,0 +1,2 @@
+binplist:
+  pkg.removed

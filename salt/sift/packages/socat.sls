@@ -1,0 +1,2 @@
+socat:
+  pkg.installed

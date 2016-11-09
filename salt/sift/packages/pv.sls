@@ -1,0 +1,2 @@
+pv:
+  pkg.installed

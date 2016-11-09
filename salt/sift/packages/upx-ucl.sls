@@ -1,0 +1,2 @@
+upx-ucl:
+  pkg.installed

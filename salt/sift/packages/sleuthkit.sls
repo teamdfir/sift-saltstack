@@ -1,0 +1,2 @@
+sleuthkit:
+  pkg.installed

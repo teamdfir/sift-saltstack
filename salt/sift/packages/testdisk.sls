@@ -1,0 +1,2 @@
+testdisk:
+  pkg.installed

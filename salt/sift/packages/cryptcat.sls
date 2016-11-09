@@ -1,0 +1,2 @@
+cryptcat:
+  pkg.installed

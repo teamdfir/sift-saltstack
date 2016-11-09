@@ -1,0 +1,2 @@
+libffi-dev:
+  pkg.installed

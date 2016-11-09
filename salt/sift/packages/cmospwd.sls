@@ -1,0 +1,2 @@
+cmospwd:
+  pkg.installed

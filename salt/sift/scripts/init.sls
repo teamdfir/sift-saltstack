@@ -1,0 +1,14 @@
+include:
+  - .4n6
+  - .densityscout
+  - .editbox
+  - .java-idx-parser
+  - .misc
+  - .page-brute
+  - .pdf-tools
+  - .pe-carver
+  - .regripper
+  - .samba
+  - .sift
+  - .volatility
+  - .wbtools

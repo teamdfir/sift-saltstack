@@ -1,0 +1,2 @@
+transmission:
+  pkg.installed

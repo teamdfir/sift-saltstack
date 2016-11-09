@@ -1,0 +1,278 @@
+#
+# config file for Sleuth Kit sorter
+#
+# Windows Platform
+#
+# To make custom modifications, you can also use a file named
+# windows.lcl.sort
+
+##########################################################################
+# Multimedia
+##########################################################################
+# Audio
+category 	audio 	Playlist
+# Audio
+category 	audio 		Winamp
+ext 		avs 		Winamp plug in
+category 	audio 		WAVE audio
+ext 		wav 		WAVE audio
+category 	audio	 	Microsoft ASF
+ext 		wmv 		Microsoft ASF
+ext 		wma 		Microsoft ASF
+category 	audio 		MPEG ADTS
+ext 		WAV 		MPEG ADTS, layer I, v1
+ext 		wav 		MPEG ADTS, layer I, v1
+category 	audio 		AVI
+ext 		avi 		AVI
+category 	audio 		Playlist
+ext 		wpl 		Windows Media Player Playlist
+category 	midi 		MIDI
+ext 		mid,rmi 	MIDI
+category 	MP3 		MP3
+ext 		mp3 		MP3
+category 	SQLite	 	SQLite
+# Images
+category 	JPEG 		JPEG image 
+ext 		jpg,jpeg,jpe 	JPEG image
+category 	GIF 		GIF image 
+ext 		gif 		GIF image
+category	TIF 		TIFF image 
+ext 		tif 		TIFF image
+category 	PNG 		PNG image 
+ext 		png 		PNG image
+category 	BMP 		PC bitmap
+ext 		bmp 		PC bitmap
+category 	Fonts 		font
+ext 		ttf 		true type font
+# Video
+category 	video 		RealMedia
+ext 		rm 		RealMedia
+category 	video 		Macromedia Flash data
+ext 		swf 		Macromedia Flash data
+category 	ICM 		Microsoft ICM Color Profile
+ext 		icm 		Microsoft ICM Color Profile
+##########################################################################
+# archive & compression
+##########################################################################
+category 	ZIP 		Zip
+ext 		zip,jar 	Zip archive data
+ext 		wmz 		Zip archive data
+category 	TAR 		tar
+ext 		tar 		tar archive
+category 	MSCab 		Cabinet
+ext 		cab 		Microsoft Cabinet File
+category 	archive 	archive
+category 	database 	DB
+ext 		db 		Berkeley DB
+##########################################################################
+# compression
+##########################################################################
+category 	compress 	compress
+ext 		gz,tgz gzip 	compressed data
+ext 		Z 		compress'd data
+##########################################################################
+# Executables
+##########################################################################
+category 	exec 		MS\-DOS executable
+ext 		exe,dll,com 	MS\-DOS executable
+ext 		ocx,sys,tlb 	MS\-DOS executable
+ext 		drv,cpl,scr 	MS\-DOS executable
+ext 		ax 		MS\-DOS executable
+ext 		386,acm,flt 	MS\-DOS executable
+ext 		fon,lrc,vxd 	MS\-DOS executable
+ext		 x32 		MS\-DOS executable
+category 	exec 		executable MS\-DOS
+ext 		exe 		MZ executable MS\-DOS
+ext 		com 		MZ executable MS\-DOS
+category 	exec	 	PE executable MS Windows
+ext 		exe,dll,com 	PE executable MS Windows
+ext 		ocx,sys,acm 	PE executable MS Windows
+ext 		tlb,drv,scr 	PE executable MS Windows
+ext 		cpl,ax,vdx 	PE executable MS Windows
+ext 		fon,rll,tsp 	PE executable MS Windows
+category 	exec 		NE executable MS Windows
+ext 		exe,dll,com 	NE executable MS Windows
+ext 		ocx,sys,acm 	NE executable MS Windows
+ext 		tlb,drv,scr 	NE executable MS Windows
+ext 		cpl,ax,vxd 	NE executable MS Windows
+ext 		fon,tsp 	NE executable MS Windows
+category 	exec 		relocatable
+ext 		dll 		relocatable
+category 	exec 		batch file
+ext 		bat 		batch file
+ext		bat		ASCII text
+ext		bat		ASCII English text
+ext 		nt 		DOS batch file
+ext 		cmd 		DOS batch file
+# source code
+category 	exec 		MSVC program database
+ext 		pdb 		MSVC program database
+category 	exec 		\sscript
+##########################################################################
+# Java
+category 	exec 		class data
+ext 		class 		Java class data
+##########################################################################
+category 	exec 		object
+ext 		o 		object
+category 	exec 		python compiled
+category 	lnk 		MS Windows shortcut
+ext 		lnk 		shortcut
+#########################################################################y
+# Images
+category 	icon 		icon resource
+ext		ico 		ms\-windows icon resource
+category 	cursor 		cursor
+ext 		cur 		ms\-cursor
+ext 		ani 		animated cursor
+##########################################################################
+category 	MSmbox 		Outlook binary email folder
+ext 		pst 		Outlook binary email folder
+category 	MSdocs 		Microsoft Office Document
+ext 		doc,dot,docx 	Microsoft Office Document
+ext 		msc,pcb 	Microsoft Office Document
+ext 		ppt,pot,pptx 	Microsoft Office Document
+ext 		xls,xlsx	Microsoft Office Document
+ext 		msi 		Microsoft Office Document
+category 	MSdocs 		Microsoft Word Document
+ext 		doc 		Microsoft Word Document
+category 	MSdocs 		conversion doc
+ext 		wpc 		conversion doc
+category 	MSdocs 		conversion doc
+category	MSdocs		Microsoft Excel Worksheet
+ext 		xls,xlt,xlsx 	Microsoft Excel Worksheet
+ext 		cvs 		Microsoft Excel Worksheet
+# MS Access DB
+category 	MSdb 		Microsoft Access Database
+ext 		mdb 		Microsoft Access Database
+category 	PNF 		PNF
+ext 		pnf 		PNF
+ext 		PNF 		PNF
+ext 		pnf 		PNF Windows
+category 	documents 	Rich Text Format
+ext		rtf 		Rich Text Format
+category 	documents 	document
+ext 		ps,eps 		PostScript document
+category 	InternetExplorer Internet Explorer cache file
+ext 		dat 		Internet Explorer cache file
+# Corel & Word Perfect
+category 	Coreldocs 	Corel\/WP
+ext 		wpg,wpd,shw 	Corel\/WP
+# Lotus
+category 	Lotus 		Lotus 1\-2\-3
+ext 		wb2 		Lotus 1\-2\-3
+ext 		wk4 		Lotus 1\-2\-3
+# Adobe
+category 	AdobePDF 	PDF document
+ext 		pdf 		PDF document
+#########################################################################
+#Unicode
+#########################################################################
+category 	unicode 	UniCode
+ext 		mof 		MOF,MLF UniCode File
+ext 		mfl 		MOF,MLF UniCode File
+##########################################################################
+# HTML
+##########################################################################
+category 	html 		HTML document text
+ext 		hhk 		HTML document text
+ext 		htm,hta 	HTML document text
+ext 		html,css 	HTML document text
+##########################################################################
+# Text
+##########################################################################
+category 	text 		ASCII(.*?)text
+ext 		txt 		ASCII(.*?)text
+ext 		log 		ASCII(.*?)text
+ext 		h 		ASCII(.*?)text
+ext 		sh,csh 		ASCII(.*?)text
+ext 		conf 		ASCII(.*?)text
+ext 		inc 		ASCII(.*?)text
+ext 		wpl 		ASCII(.*?)text
+ext 		xdr 		ASCII(.*?)text
+ext 		js 		ASCII(.*?)text
+ext 		sam 		ASCII(.*?)text
+ext 		scf 		ASCII(.*?)text
+ext 		scp 		ASCII(.*?)text
+ext 		gpd 		ASCII(.*?)text
+ext 		dun 		ASCII(.*?)text
+ext 		isp 		ASCII(.*?)text
+ext 		XML 		ASCII(.*?)text
+ext 		DTD 		ASCII(.*?)text
+ext 		reg 		ASCII(.*?)text
+ext 		asp 		ASCII(.*?)text
+ext 		vbs 		ASCII(.*?)text
+ext 		xdr 		ASCII(.*?)text
+ext 		xsl 		ASCII(.*?)text
+ext 		c,cpp,h,js 	ASCII(.*?)text
+ext 		mof 		ASCII(.*?)text
+ext 		sql 		ASCII(.*?)text
+ext 		htt 		ASCII(.*?)text
+ext 		hxx 		ASCII(.*?)text
+ext 		cpx 		ASCII(.*?)text
+ext 		obe 		ASCII(.*?)text
+ext 		ini,inf 	ASCII(.*?)text
+ext 		srg,dep 	ASCII(.*?)text
+ext 		htm 		ASCII(.*?)text
+ext 		htm,css 	ASCII(.*?)text
+ext 		css 		ASCII(.*?)text
+category 	text 		character data
+ext 		txt 		character data
+category 	text 		ISO\-8859(.*?)text
+ext 		txt 		ISO\-8859(.*?)text
+ext 		ini 		ISO\-8859(.*?)text
+ext 		inf 		ISO\-8859(.*?)text
+category 	text 		exported SGML document text
+ext 		htm 		exported SGML document text
+category 	text 		\ssource
+##########################################################################
+# INF
+##########################################################################
+category 	inf 		Lisp
+ext 		inf 		Lisp/Scheme program text
+##########################################################################
+# XML
+##########################################################################
+category 	XML 		XML
+ext 		xml 		XML Template
+ext 		xml 		XML Mapping
+ext 		xml 		XML Document
+ext 		xdr 		XML document text
+ext 		xsl		XML document text
+ext 		msc 		XML document text
+ext 		manifest	XML document text
+ext 		dtd		XML document text
+ext 		Policy 		XML document text
+##########################################################################
+# Other
+##########################################################################
+# Disk
+category 	disk 		boot sector
+category 	disk 		filesystem data
+# Crypto
+category 	crypto 		PGP
+ext 		asc 		PGP armored
+# Postscript Printer Description
+category 	system 		PPD file
+ext 		ppd 		PPD file
+# 'file' reports 'data' for all unknown binary files
+# do not bother with extensions with this
+category 	data 		^data$
+# category ignore raw G3 data, byte\-padded
+##########################################################################
+# System
+category 	helpfiles 	Help Data
+ext 		hlp 		Windows Help Data
+ext 		chm 		Windows Help File
+category	helpfiles	MS Windows 3.x help file
+ext		hlp		MS Windows 3.x help file
+category 	registry	Registry file
+ext 		dat	 	Registry file
+category 	lnk		MS\-Windows shortcut
+ext 		lnk 		MS\-Windows shortcut
+category 	browser 	Internet shortcut
+ext 		url 		Internet shortcut
+category 	system 		hyperterm
+ext 		ht 		hyperterm
+category 	MOF		Little-endian UTF-16 Unicode C++ program text
+ext 		mof		Little-endian UTF-16 Unicode C++ program text

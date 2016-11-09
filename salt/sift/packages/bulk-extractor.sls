@@ -1,0 +1,2 @@
+bulk-extractor:
+  pkg.installed

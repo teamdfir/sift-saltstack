@@ -1,0 +1,2 @@
+rar:
+  pkg.installed

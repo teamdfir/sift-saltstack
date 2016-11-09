@@ -1,0 +1,2 @@
+vbindiff:
+  pkg.installed

@@ -1,0 +1,2 @@
+qemu-utils:
+  pkg.installed

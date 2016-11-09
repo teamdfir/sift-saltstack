@@ -1,0 +1,2 @@
+gdb:
+  pkg.installed

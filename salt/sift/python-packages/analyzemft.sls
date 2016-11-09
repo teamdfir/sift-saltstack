@@ -1,0 +1,2 @@
+analyzemft:
+  pip.installed

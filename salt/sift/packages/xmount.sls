@@ -1,0 +1,2 @@
+xmount:
+  pkg.installed

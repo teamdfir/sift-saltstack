@@ -1,0 +1,2 @@
+python-registry:
+  pip.installed

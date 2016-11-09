@@ -1,0 +1,2 @@
+g++:
+  pkg.installed

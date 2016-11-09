@@ -1,0 +1,2 @@
+rsakeyfind:
+  pkg.installed

@@ -9,6 +9,9 @@ rekall-virtualenv:
   virtualenv.managed:
     - name: /opt/rekall
     - pip_pkgs:
+      - pip
+      - setuptools
+      - wheel
       - rekall
     - require:
       - pkg: python-virtualenv

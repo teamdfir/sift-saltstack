@@ -17,6 +17,7 @@ include:
   - .bulk-extractor
   - .cabextract
   - .ccrypt
+  - .cifs-utils
   - .clamav
   - .cmospwd
   - .cryptcat
@@ -104,6 +105,7 @@ include:
   - .libvshadow-python
   - .libvshadow-tools
   - .libxml2-dev
+  - .libxslt-dev
   - .maltegoce
   #- .mantaray
   - .md5deep
@@ -131,6 +133,7 @@ include:
   - .pdftk
   - .pev
   - .phonon
+  - .powershell
   - .pv
   - .pyew
   - .pyew

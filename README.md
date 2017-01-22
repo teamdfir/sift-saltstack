@@ -1,5 +1,7 @@
 # sift-saltstack
 
+Bootstraping SIFT using Saltstack
+
 **WIP**: everything subject to change
 
 1. create a fresh ubuntu 16.04, if using vmware, use easy install and create a user `sansforensics`

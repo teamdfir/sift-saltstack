@@ -1,0 +1,2 @@
+libvmdk:
+  pkg.installed

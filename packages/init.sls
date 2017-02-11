@@ -100,6 +100,7 @@ include:
   - .libregf-tools
   - .libssl-dev
   - .libtext-csv-perl
+  - .libvmdk
   - .libvshadow
   - .libvshadow-dev
   - .libvshadow-python

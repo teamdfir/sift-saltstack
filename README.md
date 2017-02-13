@@ -1,6 +1,6 @@
 # Managing SIFT with Saltstack
 
-**WIP**: everything subject to change
+This is a **Work In Progress**. Organization and setup method might change. 
 
 ## Installation
 

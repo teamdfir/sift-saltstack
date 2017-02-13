@@ -6,6 +6,7 @@ include:
   - .construct
   - .distorm3
   - .docopt
+  - .indxparse
   - .ioc_writer
   - .lxml
   - .pefile

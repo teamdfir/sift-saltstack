@@ -1,2 +1,0 @@
-mantaray:
-  pkg.installed

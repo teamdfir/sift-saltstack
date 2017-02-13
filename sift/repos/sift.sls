@@ -1,3 +1,6 @@
+include:
+  - sift.packages.python-software-properties
+
 {%- set version = salt['grains.get']('sift_version', 'stable') -%}
 {%- if version == "stable" %}
 sift-dev:
@@ -13,3 +16,5 @@ sift:
   pkgrepo.managed:
     - ppa: sift/{{ version }}
     - refresh_db: true
+    - require:
+      - pkg: python-software-properties

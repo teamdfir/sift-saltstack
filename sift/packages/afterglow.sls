@@ -1,2 +1,7 @@
+include:
+  - sift.repos.sift
+
 afterglow:
-  pkg.installed
+  pkg.installed:
+    - required:
+      - pkgrepo: sift

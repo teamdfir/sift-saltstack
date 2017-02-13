@@ -1,3 +1,6 @@
+include:
+  - sift.packages.python-software-properties
+
 {%- set version = salt['grains.get']('sift_version', 'stable') -%}
 {%- if version == "stable" %}
 gift-dev:
@@ -14,3 +17,5 @@ gift:
     - name: gift
     - ppa: gift/{{ version }}
     - refresh_db: true
+    - require:
+      - pkg: python-software-properties

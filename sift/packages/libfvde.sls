@@ -1,2 +1,7 @@
+include:
+  - sift.repos.gift
+
 libfvde:
-  pkg.installed
+  pkg.installed:
+    - require:
+      - pkgrepo: gift

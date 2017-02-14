@@ -1,9 +1,11 @@
+{%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
+
 /cases:
   file.directory:
-    - user: root
+    - user: {{ user }}
     - group: root
     - makedirs: true
-    - dir_mode: 2755
+    - dir_mode: 775
 
 {% for folder in ['usb','vss','shadow','windows_mount','e01','aff','ewf','bde','iscsi'] %}
 /mnt/{{ folder }}:

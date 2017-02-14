@@ -7,4 +7,4 @@ before_install:
   - docker build -t sift-salt-tester .
 
 script:
-  - tests/packages.sh
+  - tests/changed-files.sh

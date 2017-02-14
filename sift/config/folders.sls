@@ -1,5 +1,4 @@
 {%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
-
 /cases:
   file.directory:
     - user: {{ user }}

@@ -1,2 +1,0 @@
-maltegoce:
-  pkg.installed

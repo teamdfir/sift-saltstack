@@ -1,9 +1,11 @@
 include:
+  - sift.packages.build-essential
+  - sift.packages.python-dev
+  - sift.packages.python-pip
   - sift.packages.libncurses
   - sift.packages.python-virtualenv
-  - .pip
-  - .setuptools
-  - .wheel
+  - sift.python-packages.setuptools
+  - sift.python-packages.wheel
 
 rekall-virtualenv:
   virtualenv.managed:
@@ -21,8 +23,10 @@ rekall:
     - name: rekall
     - bin_env: /opt/rekall
     - require:
-      - pip: wheel
-      - pip: pip
-      - pip: setuptools
+      - pkg: python-dev
+      - pkg: python-pip
       - pkg: libncurses
+      - pkg: build-essential
+      - pip: setuptools
+      - pip: wheel
       - virtualenv: rekall-virtualenv

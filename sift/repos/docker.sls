@@ -1,3 +1,6 @@
+include:
+  - sift.packages.python-software-properties
+
 docker:
   pkgrepo.managed:
     - humanname: Docker
@@ -7,3 +10,5 @@ docker:
     - keyid: 58118E89F3A912897C070ADBF76221572C52609D
     - keyserver: p80.pool.sks-keyservers.net
     - refresh_db: true
+    - require:
+      - pkg: python-software-properties

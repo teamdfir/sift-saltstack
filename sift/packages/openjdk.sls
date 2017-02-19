@@ -6,11 +6,11 @@ openjdk:
   pkg.installed:
     - name: openjdk-6-jdk
     - require:
-      - pkgrepo: openjdk
+      - pkgrepo: openjdk-repo
 {% elif grains['oscodename'] == "xenial" -%}
 openjdk: 
   pkg.installed:
     - name: openjdk-7-jdk
     - require:
-      - pkgrepo: openjdk
+      - pkgrepo: openjdk-repo
 {%- endif -%}

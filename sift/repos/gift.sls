@@ -1,7 +1,8 @@
-include:
-  - sift.packages.python-software-properties
-
 {%- set version = salt['grains.get']('sift_version', 'stable') -%}
+
+include:
+  - ..packages.python-software-properties
+
 {%- if version == "stable" %}
 gift-dev:
   pkgrepo.absent:

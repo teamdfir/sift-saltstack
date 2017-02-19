@@ -1,5 +1,6 @@
 include:
   - ..packages.python-software-properties
+  - ..packages.apt-transport-https
 
 docker:
   pkgrepo.managed:
@@ -12,3 +13,4 @@ docker:
     - refresh_db: true
     - require:
       - pkg: python-software-properties
+      - pkg: apt-transport-https

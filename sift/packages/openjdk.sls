@@ -1,9 +1,16 @@
-{%- if grains['oscodename'] == "trusty" -%}
+include:
+  - ..repos.openjdk
+
+{% if grains['oscodename'] == "trusty" -%}
 openjdk:
   pkg.installed:
     - name: openjdk-6-jdk
-{%- elif grains['oscodename'] == "xenial" -%}
+    - require:
+      - pkgrepo: openjdk-repo
+{% elif grains['oscodename'] == "xenial" -%}
 openjdk: 
   pkg.installed:
     - name: openjdk-7-jdk
+    - require:
+      - pkgrepo: openjdk-repo
 {%- endif -%}

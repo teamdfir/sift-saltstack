@@ -1,2 +1,9 @@
+include:
+  - ..repos.sift
+  - ..repos.openjdk
+
 bulk-extractor:
-  pkg.installed
+  pkg.installed:
+    - require:
+      - pkgrepo: sift 
+      - pkgrepo: openjdk-repo

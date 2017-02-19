@@ -8,4 +8,3 @@ RUN \
   apt-get update && \
   apt-get install -y salt-minion
 
-COPY sift /srv/salt/sift/

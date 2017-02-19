@@ -1,5 +1,5 @@
 include:
-  - sift.packages.python-software-properties
+  - ..packages.python-software-properties
 
 openjdk-repo:
   pkgrepo.managed:

@@ -1,6 +1,5 @@
 include:
   - .4n6
-  - .densityscout
   - .editbox
   - .java-idx-parser
   - .misc

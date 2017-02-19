@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "States To Test:"
-`git diff-tree --no-commit-id --name-only -r ${TRAVIS_COMMIT} | grep "sift/"`
+echo "`git diff-tree --no-commit-id --name-only -r ${TRAVIS_COMMIT} | grep "sift/"`"
 
 for FILE in `git diff-tree --no-commit-id --name-only -r ${TRAVIS_COMMIT} | grep "sift/"`; do
   STATE=$(echo $FILE | sed "s/.sls//g" | sed "s/\//./g")

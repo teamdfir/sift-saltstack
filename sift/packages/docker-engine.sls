@@ -1,2 +1,7 @@
+include:
+  - ..repos.docker
+
 docker-engine:
-  pkg.installed
+  pkg.installed:
+    - require:
+      - pkgrepo: docker

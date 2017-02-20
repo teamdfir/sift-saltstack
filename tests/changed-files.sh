@@ -2,6 +2,11 @@
 
 CHANGED_FILES=$(git diff-tree --no-commit-id --name-status -r ${TRAVIS_COMMIT} | grep -v "^D" | awk '{ print $2 }' | grep ".sls$" | grep -v "init.sls" | grep "sift/")
 
+if [ "x${CHANGED_FILES}" == "x" ]; then
+  echo "No Changes to States Files Found."
+  exit 0
+fi
+
 echo "States To Test:"
 echo "${CHANGED_FILES}"
 echo ""

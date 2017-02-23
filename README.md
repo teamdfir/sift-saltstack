@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/sans-dfir/sift-saltstack.svg?branch=master)](https://travis-ci.org/sans-dfir/sift-saltstack)
+
 # Managing SIFT with Saltstack
 
 This is a **Work In Progress**. Organization and setup method might change. 

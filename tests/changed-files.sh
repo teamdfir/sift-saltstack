@@ -14,7 +14,7 @@ echo ""
 for FILE in "${CHANGED_FILES}"; do
   STATE=$(echo $FILE | sed "s/.sls//g" | sed "s/\//./g")
   echo "Testing ${STATE}"
-  docker run -t --rm -v `pwd`/sift:/srv/salt/sift sift-salt-tester \
+  docker run -t --rm -v `pwd`/sift:/srv/salt/sift sansdfir/sift-salt-tester \
     salt-call --local --retcode-passthrough --state-output=mixed state.sls ${STATE} || exit 1
 done
 

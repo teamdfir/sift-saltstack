@@ -4,7 +4,8 @@ services:
   - docker
 
 before_install:
-  - docker build -t sift-salt-tester .
+  - docker pull sansdfir/sift-salt-tester .
 
 script:
-  - tests/changed-files.sh
+  - 'if [ "$TRAVIS_EVENT_TYPE" != "cron" ]; then bash ./tests/changed-files.sh; fi'
+  - 'if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then bash ./tests/test-all; fi'

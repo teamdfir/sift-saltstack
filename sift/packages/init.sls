@@ -107,11 +107,7 @@ include:
   - .libvshadow-tools
   - .libxml2-dev
   - .libxslt-dev
-  #- .maltegoce
-  #- .mantaray
   - .md5deep
-  #- .mongodb-clients
-  #- .mongodb-server
   - .nautilus-open-terminal
   - .nbd-client
   - .nbtscan
@@ -122,7 +118,6 @@ include:
   - .nfdump
   - .ngrep
   - .nikto
-  #- .ntopng
   - .okular
   - .open-iscsi
   - .openjdk

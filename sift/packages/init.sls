@@ -107,7 +107,7 @@ include:
   - .libvshadow-tools
   - .libxml2-dev
   - .libxslt-dev
-  - .maltegoce
+  #- .maltegoce
   #- .mantaray
   - .md5deep
   #- .mongodb-clients

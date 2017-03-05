@@ -9,3 +9,4 @@ before_install:
 script:
   - 'if [ "$TRAVIS_EVENT_TYPE" != "cron" ]; then bash ./tests/changed-files.sh; fi'
   - 'if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then bash ./tests/test-all; fi'
+

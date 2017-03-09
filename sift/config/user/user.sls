@@ -4,6 +4,6 @@
   user.present:
     - fullname: SANS Forensics
     - shell: /bin/bash
-    - home: /home/sansforensics
+    - home: /home/{{ user }}
     - password: $1$SZx86ctM$lcEicO1qXvwPG.lhXEvgd.
     - gid_from_name: True

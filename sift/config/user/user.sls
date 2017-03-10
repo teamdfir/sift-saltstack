@@ -1,6 +1,6 @@
 {%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
 {%- set all_users = salt['user.list_users']() -%}
-{%- if '{{ user }}' in all_users -%}
+{%- if user in all_users -%}
 {{ user }}:
   user.present:
     - home: /home/{{ user }}

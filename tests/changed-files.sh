@@ -11,7 +11,7 @@ echo "States To Test:"
 echo "${CHANGED_FILES}"
 echo ""
 
-for FILE in "${CHANGED_FILES}"; do
+for FILE in $CHANGED_FILES; do
   STATE=$(echo $FILE | sed "s/.sls//g" | sed "s/\//./g")
   echo "Testing ${STATE}"
   docker run -t --rm -v `pwd`/sift:/srv/salt/sift sansdfir/sift-salt-tester \

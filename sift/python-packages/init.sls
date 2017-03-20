@@ -11,6 +11,7 @@ include:
   - .lxml
   - .pefile
   - .pip
+  - .pyhindsight
   - .pysocks
   - .python-dateutil
   - .python-evtx

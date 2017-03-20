@@ -4,6 +4,10 @@
 
 This is a **Work In Progress**. Organization and setup method might change. 
 
+## Supported Distributions
+
+* Ubuntu 16.04 (Xenial)
+
 ## Installation
 
 1. create a fresh ubuntu 16.04, if using vmware, use easy install and create a user `sansforensics`

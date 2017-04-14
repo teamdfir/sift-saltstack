@@ -1,4 +1,4 @@
-{%- set version = salt['grains.get']('sift_version', 'stable') -%}
+{%- set version = salt['pillar.get']('sift_version', 'stable') -%}
 
 include:
   - ..packages.python-software-properties

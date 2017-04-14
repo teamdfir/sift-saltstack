@@ -9,7 +9,7 @@ docker:
     - dist: ubuntu-{{ grains['lsb_distrib_codename'] }}
     - file: /etc/apt/sources.list.d/docker.list
     - keyid: 58118E89F3A912897C070ADBF76221572C52609D
-    - keyserver: p80.pool.sks-keyservers.net
+    - keyserver: hkp://p80.pool.sks-keyservers.net:80
     - refresh_db: true
     - require:
       - pkg: python-software-properties

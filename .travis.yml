@@ -7,6 +7,9 @@ before_install:
   - docker pull sansdfir/sift-salt-tester
 
 script:
-  - 'if [ "$TRAVIS_EVENT_TYPE" != "cron" ]; then bash ./tests/changed-files.sh; fi'
-  - 'if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then bash ./tests/test-all; fi'
+  - 'if [ "$TRAVIS_EVENT_TYPE" != "cron" ]; then bash ./tests/changed-files.sh $TEST_SIFT_VERSION; fi'
+  - 'if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then bash ./tests/test-all $TEST_SIFT_VERSION; fi'
 
+env:
+  - TEST_SIFT_VERSION=stable
+  - TEST_SIFT_VERSION=dev

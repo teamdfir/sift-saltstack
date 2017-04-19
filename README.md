@@ -23,7 +23,7 @@ You have full control over what you want to install from the SIFT distro. To rea
 This is intended to replace Step 4 from above. This will install just the deb packages and python packages that makes up the SIFT distro, it will not create any users, change backgrounds, or any other customization of the linux install you are on.
 
 ```bash
-sudo salt-call --local --file-root=/tmp/salt state.sls sift.repos,sift.packages,sift.python-packages
+sudo salt-call --local --file-root=/tmp/salt state.sls sift.packages
 ```
 
 ## Installing Saltstack

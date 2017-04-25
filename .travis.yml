@@ -1,5 +1,3 @@
-#Travis CI unit test
-
 sudo: required
 
 services:

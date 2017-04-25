@@ -36,6 +36,7 @@ Reference: http://repo.saltstack.com/#ubuntu
 
 1. `wget -O - https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -`
 2. `echo "deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main" | sudo tee /etc/apt/sources.list.d/saltstack.list`
+3. `sudo add-apt-repository ppa:gift/dev`
 3. `sudo apt-get update`
 4. `sudo apt-get install salt-minion`
 5. `sudo service salt-minion stop` (Note: the SIFT install process will disable the minion altogether as we do not need it running as a service)

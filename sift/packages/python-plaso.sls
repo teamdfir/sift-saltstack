@@ -5,7 +5,7 @@ include:
 python-plaso:
   pkg.installed:
     - name: python-plaso
-    - version: 1.4.0-1ppa3~xenial
+    - version: 1.5.1-1ppa1~xenial
     - require:
-      - pkgrepo: sift
+      - pkgrepo: gift
       - pkg: python-dfvfs

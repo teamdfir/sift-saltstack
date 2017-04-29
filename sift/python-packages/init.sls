@@ -6,7 +6,7 @@ include:
   - .construct
   - .distorm3
   - .docopt
-  - .indxparse
+  # - .indxparse (Disabled due to problem with python-fuse dependency)
   - .ioc_writer
   - .lxml
   - .pefile

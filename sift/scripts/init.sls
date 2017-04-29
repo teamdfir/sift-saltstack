@@ -7,7 +7,6 @@ include:
   - .pdf-tools
   - .pe-carver
   - .regripper
-  - .samba
   - .sift
   - .volatility
   - .wbtools

@@ -1,2 +1,7 @@
+include:
+  - ..packages.python-pip
+
 windowsprefetch:
-  pip.installed
+  pip.installed:
+    - require:
+      - pkg: python-pip

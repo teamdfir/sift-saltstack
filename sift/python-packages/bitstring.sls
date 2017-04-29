@@ -1,2 +1,7 @@
+include:
+  - ..packages.python-pip
+
 bitstring:
-  pip.installed
+  pip.installed:
+    - require:
+      - pkg: python-pip

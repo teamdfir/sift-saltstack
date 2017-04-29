@@ -4,4 +4,5 @@ include:
   - .timezone
   - .folders
   - .salt-minion
+  - .samba
   - .symlinks

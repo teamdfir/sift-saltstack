@@ -1,16 +1,24 @@
-/etc/samba/smb.conf:
+include:
+  - ..packages.samba
+
+samba-config:
   file.managed:
+    - name: /etc/samba/smb.conf
     - source: salt://sift/files/samba/smb.conf
     - replace: False
+    - require:
+      - pkg: samba
 
-smbd:
+samba-service-smbd:
   service.running:
+    - name: smbd
     - reload: True
     - watch:
       - file: /etc/samba/smb.conf
 
-nmbd:
+samba-service-nmbd:
   service.running:
+    - name: nmbd
     - reload: True
     - watch:
       - file: /etc/samba/smb.conf

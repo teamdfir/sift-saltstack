@@ -42,7 +42,6 @@ include:
   - .f-spot
   - .fdupes
   - .feh
-  - .flare
   - .flasm
   - .flex
   - .foremost
@@ -129,6 +128,7 @@ include:
   - .pdftk
   - .pev
   - .phonon
+  - .pkg-config
   - .powershell
   - .pv
   - .pyew

@@ -1,6 +1,6 @@
 include:
-  - sift.repos.sift
-  - sift.repos.gift
+  - ..repos.sift
+  - ..repos.gift
   - .python-dfvfs
 
 python-plaso:

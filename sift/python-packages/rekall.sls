@@ -1,11 +1,11 @@
 include:
-  - sift.packages.build-essential
-  - sift.packages.python-dev
-  - sift.packages.python-pip
-  - sift.packages.libncurses
-  - sift.packages.python-virtualenv
-  - sift.python-packages.setuptools
-  - sift.python-packages.wheel
+  - ..packages.build-essential
+  - ..packages.python-dev
+  - ..packages.python-pip
+  - ..packages.libncurses
+  - ..packages.python-virtualenv
+  - .setuptools
+  - .wheel
 
 rekall-virtualenv:
   virtualenv.managed:

@@ -1,6 +1,11 @@
 include:
-  - sift.packages.libxml2-dev
-  - sift.packages.libxslt-dev
+  - ..packages.python-pip
+  - ..packages.libxml2-dev
+  - ..packages.libxslt-dev
 
 lxml:
-  pip.installed
+  pip.installed:
+    - require:
+      - pkg: python-pip
+      - pkg: libxml2-dev
+      - pkg: libxslt-dev

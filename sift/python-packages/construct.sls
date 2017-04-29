@@ -1,2 +1,7 @@
+include:
+  - ..packages.python-pip
+
 construct:
-  pip.installed
+  pip.installed:
+    - require:
+      - pkg: python-pip

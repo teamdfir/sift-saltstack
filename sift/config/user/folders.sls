@@ -1,7 +1,13 @@
 {%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
 
-/home/{{ user }}/.config/autostart:
+include:
+  - .user
+
+folders-config-autostart:
   file.directory:
+    - name: /home/{{ user }}/.config/autostart
     - user: {{ user }}
     - group: {{ user }}
     - makedirs: True
+    - require:
+      - user: {{ user }}

@@ -1,13 +1,22 @@
 {%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
 
-/home/{{ user }}/Desktop/mount_points:
+include:
+  - .user
+
+symlinks-mount-points:
   file.symlink:
+    - name: /home/{{ user }}/Desktop/mount_points
     - target: /mnt
     - user: {{ user }}
     - group: {{ user }}
+    - require:
+      - user: {{ user }}
 
-/home/{{ user }}/Desktop/cases:
+symlinks-cases:
   file.symlink:
+    - name: /home/{{ user }}/Desktop/cases
     - target: /cases
     - user: {{ user }}
     - group: {{ user }}
+    - require:
+      - user: {{ user }}

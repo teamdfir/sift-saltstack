@@ -1,7 +1,12 @@
-# TODO: needed in trusty maybe?? not needed in xenial, might be new build of libyal stuff
-#/usr/bin/vol.py:
-#  file.symlink:
-#    - target: /usr/bin/vol
+include:
+  - ..packages.python-volatility
+  - ..scripts.regripper
+
+/usr/bin/vol.py:
+  file.symlink:
+    - target: /usr/bin/vol
+    - require:
+      - pkg: python-volatility
 
 #/usr/bin/gedit:
 #  file.symlink:
@@ -25,6 +30,8 @@
 /usr/bin/log2timeline_legacy:
   file.symlink:
     - target: /usr/bin/log2timeline
+    - require:
+      - pkg: python-plaso
 
 # Fix for https://github.com/sans-dfir/sift/issues/23
 /usr/bin/l2t_process_old.pl:
@@ -44,3 +51,5 @@
 /usr/local/bin/rip.pl:
   file.symlink:
     - target: /usr/share/regripper/rip.pl
+    - require:
+      - file: regripper-files

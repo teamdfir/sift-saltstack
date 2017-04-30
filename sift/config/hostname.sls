@@ -1,10 +1,11 @@
 {%- set hostname = salt['pillar.get']('sift_hostname', 'siftworkstation') -%}
-/etc/hostname:
+hostname-managed:
   file.managed:
+    - name: /etc/hostname
     - contents: {{ hostname }}
     - backup: false
 
-set-hostname:
+hostname-set-hostname:
   cmd.run:
     {% if grains["init"] == "systemd" %}
     - name: hostnamectl set-hostname {{ hostname }}
@@ -13,7 +14,7 @@ set-hostname:
     {% endif %}
     - unless: test "{{ hostname }}" = "$(hostname)"
 
-set-hosts:
+hostname-set-hosts:
   host.present:
     - name: {{ hostname }}
     - ip: 127.0.0.1

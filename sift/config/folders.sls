@@ -1,10 +1,11 @@
 {%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
 
 include:
-  - .user.user
+  - .user
 
-/cases:
+config-folder-cases:
   file.directory:
+    - name: /cases
     - user: {{ user }}
     - group: root
     - makedirs: true

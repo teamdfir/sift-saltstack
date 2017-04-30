@@ -1,5 +1,4 @@
 {%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
-
 {{ user }}:
   user.present:
     - fullname: SANS Forensics

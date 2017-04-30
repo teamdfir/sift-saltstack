@@ -1,4 +1,4 @@
-{%- if grains['oscodename'] == "trusty" -%}
+{% if grains['oscodename'] == "trusty" -%}
 nautilus-open-terminal:
   pkg.installed
-{%- endif -%}
+{% endif -%}

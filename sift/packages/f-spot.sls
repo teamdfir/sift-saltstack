@@ -1,4 +1,8 @@
-{%- if grains['oscodename'] == "trusty" -%}
+{% if grains['oscodename'] == "trusty" -%}
 f-spot:
   pkg.installed
-{%- endif -%}
+{% else -%}
+f-spot:
+  test.nop:
+    - name: f-spot
+{% endif -%}

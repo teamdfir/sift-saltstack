@@ -1,4 +1,4 @@
-pdf-tools-scripts:
+scripts-pdf-tools:
   file.recurse:
     - name: /usr/local/bin
     - source: salt://sift/files/pdf-tools

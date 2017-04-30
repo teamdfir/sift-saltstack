@@ -1,10 +1,13 @@
-{% for folder in ['resources','images','audio','other','scripts'] %}
-/usr/share/sift/{{folder}}:
+{% for folder in ['resources','images','audio','other','scripts'] -%}
+scripts-sift-resources-{{ folder }}:
   file.directory:
+    - name: /usr/share/sift/{{ folder }}
     - user: root
     - group: root
     - makedirs: true
-{% endfor %}
+    - require_in:
+      - file: sift-resources
+{% endfor -%}
 
 sift-resources:
   file.recurse:

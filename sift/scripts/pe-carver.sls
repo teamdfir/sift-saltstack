@@ -1,4 +1,4 @@
-pe-carver-scripts:
+scripts-pe-carver:
   file.recurse:
     - name: /usr/local/bin
     - source: salt://sift/files/pe-carver

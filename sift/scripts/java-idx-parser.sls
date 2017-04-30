@@ -1,6 +1,6 @@
 # Source: https://github.com/Rurik/Java_IDX_Parser
 # License: https://github.com/Rurik/Java_IDX_Parser#copyright-and-license
-java-idx-parser:
+scripts-java-idx-parser:
   file.managed:
     - name: /usr/local/bin/idx_parser.py
     - source: https://raw.githubusercontent.com/Rurik/Java_IDX_Parser/master/idx_parser.py

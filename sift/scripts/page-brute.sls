@@ -1,4 +1,4 @@
-page-brute:
+scripts-page-brute:
   file.recurse:
     - name: /usr/local/bin
     - source: salt://sift/files/page-brute

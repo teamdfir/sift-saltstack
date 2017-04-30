@@ -10,3 +10,6 @@ script:
   - 'if [ "$TRAVIS_EVENT_TYPE" != "cron" ]; then bash ./tests/changed-files.sh; fi'
   - 'if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then bash ./tests/test-all.sh; fi'
 
+env:
+  - TEST_SIFT_VERSION=stable
+  - TEST_SIFT_VERSION=dev

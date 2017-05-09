@@ -15,6 +15,14 @@ scripts-regripper-files:
     - require:
       - file: scripts-regripper-directory
 
+scripts-regripper-binary:
+  file.managed:
+    - name: /usr/local/bin/rip.pl
+    - source: salt://sift/files/regripper/rip.pl
+    - file_mode: 755
+    - require:
+      - file: scripts-regripper-files
+
 scripts-regripper-dos2unix:
   cmd.run:
     - name: dos2unix -ascii /usr/share/regripper/*

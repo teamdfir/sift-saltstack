@@ -7,6 +7,8 @@ include:
   - sift.scripts.pdf-tools
   - sift.scripts.pe-carver
   - sift.scripts.regripper
+  - sift.scripts.rfc
+  - sift.scripts.shim-cache-parser
   - sift.scripts.sift
   - sift.scripts.volatility
   - sift.scripts.wbtools
@@ -23,6 +25,8 @@ sift-scripts:
       - sls: sift.scripts.pdf-tools
       - sls: sift.scripts.pe-carver
       - sls: sift.scripts.regripper
+      - sls: sift.scripts.rfc
+      - sls: sift.scripts.shim-cache-parser
       - sls: sift.scripts.sift
       - sls: sift.scripts.volatility
       - sls: sift.scripts.wbtools

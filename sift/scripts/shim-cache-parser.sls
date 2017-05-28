@@ -4,7 +4,7 @@ include:
   - sift.python-packages.python-registry
 
 # Source: https://github.com/kevthehermit/Scripts
-scripts-image-mounter:
+sift-scripts-shim-cache-parser:
   file.managed:
     - name: /usr/local/bin/ShimCacheParser.py
     - source: https://raw.githubusercontent.com/mandiant/ShimCacheParser/{{ commit }}/ShimCacheParser.py

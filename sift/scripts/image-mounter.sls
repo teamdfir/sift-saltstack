@@ -1,5 +1,5 @@
 # Source: https://github.com/kevthehermit/Scripts
-scripts-image-mounter:
+sift-scripts-image-mounter:
   file.managed:
     - name: /usr/local/bin/imageMounter.py
     - source: https://raw.githubusercontent.com/kevthehermit/Scripts/master/imageMounter.py

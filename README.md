@@ -16,7 +16,7 @@ This is a **Work In Progress**. Organization and setup method might change.
   - Saltstack expects a certain folder structure, you'll need to have a root directory (eg- /tmp/salt)
   - You'll need to clone or extract the tarball to /tmp/salt/sift (yes it must be named sift)
   - Example: `git clone https://github.com/sans-dfir/sift-saltstack /tmp/salt`
-4. `sudo salt-call --local --file-root=/tmp/salt state.sls sift`
+4. `sudo salt-call --local --file-root=/tmp/salt state.sls sift.vm`
 
 ### Customizing the Install
 
@@ -27,7 +27,7 @@ You have full control over what you want to install from the SIFT distro. To rea
 This is intended to replace Step 4 from above. This will install just the deb packages and python packages that makes up the SIFT distro, it will not create any users, change backgrounds, or any other customization of the linux install you are on.
 
 ```bash
-sudo salt-call --local --file-root=/tmp/salt state.sls sift.packages
+sudo salt-call --local --file-root=/tmp/salt state.sls sift.pkgs
 ```
 
 ## Installing Saltstack

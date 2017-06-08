@@ -48,10 +48,3 @@ theme-set-trusty-favorites:
 {%- if grains['oscodename'] == "xenial" %}
 
 {%- endif %}
-
-theme-remove-broken-links:
-  cmd.run:
-    - name: find -L /home/{{ user }}/Desktop -type l -delete
-    - runas: {{ user }}
-    - require:
-      - user: {{ user }}

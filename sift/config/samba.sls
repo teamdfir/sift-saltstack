@@ -20,13 +20,13 @@ samba-config:
 samba-service-smbd:
   service.running:
     - name: smbd
-    - reload: True
     - watch:
       - file: /etc/samba/smb.conf
 
 samba-service-nmbd:
   service.running:
     - name: nmbd
-    - reload: True
+    - require:
+      - service: samba-service-smbd
     - watch:
       - file: /etc/samba/smb.conf

@@ -12,7 +12,7 @@ include:
   - sift.python-packages.pycoin
   - sift.python-packages.pysocks
   - sift.python-packages.simplejson
-  - sift.python-packages.yara
+  - sift.python-packages.yara-python
 
 python-volatility:
   pkg.installed:
@@ -40,7 +40,7 @@ python-volatility-community-plugins:
       - sls: sift.python-packages.pycoin
       - sls: sift.python-packages.pysocks
       - sls: sift.python-packages.simplejson
-      - sls: sift.python-packages.yara
+      - sls: sift.python-packages.yara-python
 
 # Unable to install pykd
 python-volatility-remove-AlexanderTarasenko:

@@ -26,6 +26,7 @@ python-volatility-community-plugins:
     - target: /usr/lib/python2.7/dist-packages/volatility/plugins/community
     - user: root
     - rev: master
+    - force_clone: True
     - require:
       - pkg: git
       - pkg: python-volatility

@@ -25,7 +25,7 @@ if [ $? -eq 0 ]; then
   PRERELEASE="true"
 fi
 
-git stash -u 
+STASH_RESULTS=`git stash -u`
 
 if [ "`cat VERSION`" != "${TAG_NAME}" ]; then
   echo "==> Updating Release Version"
@@ -74,4 +74,6 @@ rm /tmp/sift-saltstack-$TAG_NAME.tar.gz.sha256
 rm /tmp/sift-saltstack-$TAG_NAME.tar.gz.sha256.asc
 rm /tmp/sift-saltstack-$TAG_NAME.tar.gz.asc
 
-git stash pop
+if [ "${STASH_RESULTS}" != "No local changes to save" ]; then
+  git stash pop
+fi

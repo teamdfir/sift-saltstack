@@ -44,3 +44,45 @@ sift-scripts-regripper-binary-symlink:
     - mode: 755
     - require:
       - file: sift-scripts-regripper-binary
+
+sift-scripts-regripper-plugins-all:
+  cmd.wait:
+    - name: "grep -R \"my %config = (hive\" /usr/local/share/regripper/plugins | grep \"All\" | cut -f1 -d: | xargs -n1 -I{} basename {} | sed 's/.pl$//' > /usr/local/share/regripper/plugins/all"
+    - watch:
+      - git: sift-scripts-regripper-git
+
+sift-scripts-regripper-plugins-ntuser:
+  cmd.wait:
+    - name: "grep -R \"my %config = (hive\" /usr/local/share/regripper/plugins | grep \"NTUSER\" | cut -f1 -d: | xargs -n1 -I{} basename {} | sed 's/.pl$//' > /usr/local/share/regripper/plugins/ntuser"
+    - watch:
+      - git: sift-scripts-regripper-git
+
+sift-scripts-regripper-plugins-usrclass:
+  cmd.wait:
+    - name: "grep -R \"my %config = (hive\" /usr/local/share/regripper/plugins | grep \"USRCLASS\" | cut -f1 -d: | xargs -n1 -I{} basename {} | sed 's/.pl$//' > /usr/local/share/regripper/plugins/usrclass"
+    - watch:
+      - git: sift-scripts-regripper-git
+
+sift-scripts-regripper-plugins-sam:
+  cmd.wait:
+    - name: "grep -R \"my %config = (hive\" /usr/local/share/regripper/plugins | grep \"SAM\" | cut -f1 -d: | xargs -n1 -I{} basename {} | sed 's/.pl$//' > /usr/local/share/regripper/plugins/sam"
+    - watch:
+      - git: sift-scripts-regripper-git
+
+sift-scripts-regripper-plugins-security:
+  cmd.wait:
+    - name: "grep -R \"my %config = (hive\" /usr/local/share/regripper/plugins | grep \"Security\" | cut -f1 -d: | xargs -n1 -I{} basename {} | sed 's/.pl$//' > /usr/local/share/regripper/plugins/security"
+    - watch:
+      - git: sift-scripts-regripper-git
+
+sift-scripts-regripper-plugins-software:
+  cmd.wait:
+    - name: "grep -R \"my %config = (hive\" /usr/local/share/regripper/plugins | grep \"Software\" | cut -f1 -d: | xargs -n1 -I{} basename {} | sed 's/.pl$//' > /usr/local/share/regripper/plugins/software"
+    - watch:
+      - git: sift-scripts-regripper-git
+
+sift-scripts-regripper-plugins-system:
+  cmd.wait:
+    - name: "grep -R \"my %config = (hive\" /usr/local/share/regripper/plugins | grep \"System\" | cut -f1 -d: | xargs -n1 -I{} basename {} | sed 's/.pl$//' > /usr/local/share/regripper/plugins/system"
+    - watch:
+      - git: sift-scripts-regripper-git

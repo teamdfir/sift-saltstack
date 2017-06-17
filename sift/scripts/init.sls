@@ -18,6 +18,7 @@ include:
   - sift.scripts.usbdeviceforensics
   - sift.scripts.virustotal-tools
   - sift.scripts.wbtools
+  - sift.scripts.vshot
 
 sift-scripts:
   test.nop:
@@ -42,3 +43,4 @@ sift-scripts:
       - sls: sift.scripts.usbdeviceforensics
       - sls: sift.scripts.virustotal-tools
       - sls: sift.scripts.wbtools
+      - sls: sift.scripts.vshot

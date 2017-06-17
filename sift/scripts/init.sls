@@ -9,6 +9,7 @@ include:
   - sift.scripts.misc
   - sift.scripts.packerid
   - sift.scripts.page-brute
+  - sift.scripts.parseusn
   - sift.scripts.pdf-tools
   - sift.scripts.pe-carver
   - sift.scripts.pescanner
@@ -35,6 +36,7 @@ sift-scripts:
       - sls: sift.scripts.misc
       - sls: sift.scripts.packerid
       - sls: sift.scripts.page-brute
+      - sls: sift.scripts.parseusn
       - sls: sift.scripts.pdf-tools
       - sls: sift.scripts.pe-carver
       - sls: sift.scripts.pescanner

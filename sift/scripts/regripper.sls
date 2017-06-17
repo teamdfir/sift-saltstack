@@ -1,55 +1,46 @@
 include:
-  - ..packages.dos2unix
+  - sift.packages.git
+  - sift.packages.libparse-win32registry-perl
 
-scripts-regripper-directory:
+sift-scripts-regripper-git:
+  git.latest:
+    - name: https://github.com/keydet89/RegRipper2.8.git
+    - target: /usr/local/src/regripper
+    - user: root
+    - rev: master
+    - force_clone: True
+    - require:
+      - pkg: git
+
+sift-scripts-regripper-directory:
   file.directory:
-    - name: /usr/share/regripper
+    - name: /usr/local/share/regripper
     - makedirs: True
     - file_mode: 644
-
-scripts-regripper-files:
-  file.recurse:
-    - name: /usr/share/regripper
-    - source: salt://sift/files/regripper
-    - file_mode: 755
     - require:
-      - file: scripts-regripper-directory
+      - git: sift-scripts-regripper-git
 
-scripts-regripper-binary:
+sift-scripts-regripper-binary:
   file.managed:
-    - name: /usr/share/regripper/rip.pl
+    - name: /usr/local/share/regripper/rip.pl
     - source: salt://sift/files/regripper/rip.pl
     - mode: 755
     - require:
-      - file: scripts-regripper-files
+      - git: sift-scripts-regripper-git
+      - pkg: libparse-win32registry-perl
 
-scripts-regripper-symlink:
+sift-scripts-regripper-plugins-symlink:
+  file.symlink:
+    - name: /usr/local/share/regripper/plugins
+    - target: /usr/local/src/regripper/plugins
+    - require: 
+      - git: sift-scripts-regripper-git
+      - file: sift-scripts-regripper-directory
+
+sift-scripts-regripper-binary-symlink:
   file.symlink:
     - name: /usr/local/bin/rip.pl
-    - target: /usr/share/regripper/rip.pl
+    - target: /usr/local/share/regripper/rip.pl
     - mode: 755
     - require:
-      - file: scripts-regripper-binary
-
-scripts-regripper-dos2unix:
-  cmd.run:
-    - name: dos2unix -ascii /usr/share/regripper/*
-    - require:
-      - file: scripts-regripper-files
-      - pkg: dos2unix
-
-scripts-regripper-usrclass-rename:
-  file.rename:
-    - name: /usr/share/regripper/plugins/usrclass
-    - source: /usr/share/regripper/plugins/usrclass-all
-    - force: True
-    - require:
-      - cmd: scripts-regripper-dos2unix
-
-scripts-regripper-ntuser-rename:
-  file.rename:
-    - name: /usr/share/regripper/plugins/ntuser
-    - source: /usr/share/regripper/plugins/ntuser-all
-    - force: True
-    - require:
-      - cmd: scripts-regripper-dos2unix 
+      - file: sift-scripts-regripper-binary

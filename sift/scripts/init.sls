@@ -13,6 +13,8 @@ include:
   - sift.scripts.rfc
   - sift.scripts.shim-cache-parser
   - sift.scripts.sift
+  - sift.scripts.sorter
+  - sift.scripts.sqlparser
   - sift.scripts.usbdeviceforensics
   - sift.scripts.virustotal-tools
   - sift.scripts.wbtools
@@ -35,6 +37,8 @@ sift-scripts:
       - sls: sift.scripts.rfc
       - sls: sift.scripts.shim-cache-parser
       - sls: sift.scripts.sift
+      - sls: sift.scripts.sorter
+      - sls: sift.scripts.sqlparser
       - sls: sift.scripts.usbdeviceforensics
       - sls: sift.scripts.virustotal-tools
       - sls: sift.scripts.wbtools

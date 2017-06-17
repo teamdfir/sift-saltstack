@@ -1,5 +1,6 @@
 include:
   - sift.scripts.4n6
+  - sift.scripts.amcache
   - sift.scripts.image-mounter
   - sift.scripts.java-idx-parser
   - sift.scripts.misc
@@ -17,6 +18,7 @@ sift-scripts:
     - name: sift-scripts
     - require:
       - sls: sift.scripts.4n6
+      - sls: sift.scripts.amcache
       - sls: sift.scripts.image-mounter
       - sls: sift.scripts.java-idx-parser
       - sls: sift.scripts.misc

@@ -16,6 +16,7 @@ include:
   - sift.scripts.sorter
   - sift.scripts.sqlparser
   - sift.scripts.usbdeviceforensics
+  - sift.scripts.usnj
   - sift.scripts.virustotal-tools
   - sift.scripts.wbtools
 
@@ -40,5 +41,6 @@ sift-scripts:
       - sls: sift.scripts.sorter
       - sls: sift.scripts.sqlparser
       - sls: sift.scripts.usbdeviceforensics
+      - sls: sift.scripts.usnj
       - sls: sift.scripts.virustotal-tools
       - sls: sift.scripts.wbtools

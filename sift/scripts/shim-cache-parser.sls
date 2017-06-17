@@ -3,7 +3,8 @@
 include:
   - sift.python-packages.python-registry
 
-# Source: https://github.com/kevthehermit/Scripts
+# Source: https://github.com/mandiant/ShimCacheParser
+# License: Apache 2 (https://github.com/mandiant/ShimCacheParser/blob/master/LICENSE)
 sift-scripts-shim-cache-parser:
   file.managed:
     - name: /usr/local/bin/ShimCacheParser.py
@@ -12,3 +13,10 @@ sift-scripts-shim-cache-parser:
     - mode: 755
     - require:
       - sls: sift.python-packages.python-registry
+
+sift-scripts-shim-cache-parser-shebang:
+  file.prepend:
+    - name: /usr/local/bin/ShimCacheParser.py
+    - text: '#!/usr/bin/env python'
+    - watch:
+      - file: sift-scripts-shim-cache-parser

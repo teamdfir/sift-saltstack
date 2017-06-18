@@ -6,7 +6,6 @@ include:
   - sift.scripts.java-idx-parser
   - sift.scripts.jobparser
   - sift.scripts.keydet-tools
-  - sift.scripts.misc
   - sift.scripts.packerid
   - sift.scripts.page-brute
   - sift.scripts.parseusn
@@ -33,7 +32,6 @@ sift-scripts:
       - sls: sift.scripts.java-idx-parser
       - sls: sift.scripts.jobparser
       - sls: sift.scripts.keydet-tools
-      - sls: sift.scripts.misc
       - sls: sift.scripts.packerid
       - sls: sift.scripts.page-brute
       - sls: sift.scripts.parseusn

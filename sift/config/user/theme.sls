@@ -31,12 +31,18 @@ theme-set-unity-logo:
       - file: theme-set-unity-logo-directory
       - user: sift-user-{{ user }}
 
+theme-manage-autostart:
+  file.directory:
+    - name: /home/{{ user }}/.config/autostart/
+    - makedirs: True
+
 theme-manage-gnome-terminal:
   file.managed:
     - name: /home/{{ user }}/.config/autostart/gnome-terminal.desktop
     - source: salt://sift/files/sift/other/gnome-terminal.desktop
     - replace: True
     - require:
+      - file: theme-manage-autostart
       - user: sift-user-{{ user }}
 
 {%- if grains['oscodename'] == "precise" %}

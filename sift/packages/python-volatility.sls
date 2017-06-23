@@ -18,7 +18,7 @@ python-volatility:
   pkg.installed:
     - name: python-volatility
     - require:
-      - pkgrepo: sift
+      - pkgrepo: sift-repo
 
 python-volatility-community-plugins:
   git.latest:

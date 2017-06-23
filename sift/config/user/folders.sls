@@ -10,4 +10,4 @@ folders-config-autostart:
     - group: {{ user }}
     - makedirs: True
     - require:
-      - user: {{ user }}
+      - user: sift-user-{{ user }}

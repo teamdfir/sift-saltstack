@@ -8,7 +8,7 @@ bash-aliases-user-{{ user }}:
     - name: /home/{{ user }}/.bash_aliases
     - text: "alias mountwin='mount -o ro,loop,show_sys_files,streams_interface=windows'"
     - require:
-      - user: {{ user }}
+      - user: sift-user-{{ user }}
 
 bash-aliases-user-root:
   file.append:

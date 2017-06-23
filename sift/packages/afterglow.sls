@@ -4,4 +4,4 @@ include:
 afterglow:
   pkg.installed:
     - required:
-      - pkgrepo: sift
+      - pkgrepo: sift-repo

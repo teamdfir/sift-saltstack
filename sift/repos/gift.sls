@@ -4,16 +4,20 @@ include:
   - ..packages.python-software-properties
 
 {%- if version == "stable" %}
-gift-dev:
+sift-gift-dev:
   pkgrepo.absent:
     - ppa: gift/dev
+    - require_in:
+      - pkgrepo: sift-gift-repo
 {%- else %}
-gift-stable:
+sift-gift-stable:
   pkgrepo.absent:
     - ppa: gift/stable
+    - require_in:
+      - pkgrepo: sift-gift-repo
 {%- endif %}
 
-gift:
+sift-gift-repo:
   pkgrepo.managed:
     - name: gift
     - ppa: gift/{{ version }}

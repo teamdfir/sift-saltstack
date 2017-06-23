@@ -2,7 +2,7 @@ include:
   - ..packages.python-software-properties
   - ..packages.apt-transport-https
 
-docker:
+sift-docker-repo:
   pkgrepo.managed:
     - humanname: Docker
     - name: deb https://apt.dockerproject.org/repo ubuntu-{{ grains['lsb_distrib_codename'] }} main

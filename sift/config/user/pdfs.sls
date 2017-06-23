@@ -9,4 +9,4 @@ pdfs-resource-copy:
     - source: salt://sift/files/sift/resources
     - include_pat: '*.pdf'
     - require:
-      - user: {{ user }}
+      - user: sift-user-{{ user }}

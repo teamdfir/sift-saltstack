@@ -11,7 +11,7 @@ config-folder-cases:
     - makedirs: true
     - dir_mode: 775
     - require:
-      - user: {{ user }}
+      - user: sift-user-{{ user }}
 
 {% for folder in ['usb','vss','shadow','windows_mount','e01','aff','ewf','bde','iscsi'] %}
 /mnt/{{ folder }}:

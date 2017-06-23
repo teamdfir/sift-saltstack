@@ -3,6 +3,12 @@
 include:
   - .user
 
+symlinks-user-desktop-directory:
+  file.directory:
+    - name: /home/{{ user }}/Desktop
+    - require:
+      - user: sift-user-{{ user }}
+
 symlinks-mount-points:
   file.symlink:
     - name: /home/{{ user }}/Desktop/mount_points
@@ -10,7 +16,8 @@ symlinks-mount-points:
     - user: {{ user }}
     - group: {{ user }}
     - require:
-      - user: {{ user }}
+      - file: symlinks-user-desktop-directory
+      - user: sift-user-{{ user }}
 
 symlinks-cases:
   file.symlink:
@@ -19,4 +26,5 @@ symlinks-cases:
     - user: {{ user }}
     - group: {{ user }}
     - require:
-      - user: {{ user }}
+      - file: symlinks-user-desktop-directory
+      - user: sift-user-{{ user }}

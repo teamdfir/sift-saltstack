@@ -8,7 +8,7 @@ include:
 indxparse:
   pip.installed:
     - name: git+https://github.com/williballenthin/INDXParse.git@14839a6
-    - user: {{ user }}
+    - user: sift-user-{{ user }}
     - require:
       - pkg: git
       - pkg: pkg-config

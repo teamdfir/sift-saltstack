@@ -1,12 +1,14 @@
 {%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
 {%- set all_users = salt['user.list_users']() -%}
 {%- if user in all_users -%}
-{{ user }}:
+sift-user-{{ user }}:
   user.present:
+    - name: {{ user }}
     - home: /home/{{ user }}
 {%- else %}
-{{ user }}:
+sift-user-{{ user }}:
   user.present:
+    - name: {{ user }}
     - fullname: SANS Forensics
     - shell: /bin/bash
     - home: /home/{{ user }}

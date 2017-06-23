@@ -8,14 +8,14 @@ rc-noclobber:
     - name: /home/{{ user }}/.bashrc
     - text: 'set -o noclobber'
     - require:
-      - user: {{ user }}
+      - user: sift-user-{{ user }}
 
 rekall-path:
   file.append:
     - name: /home/{{ user }}/.bashrc
     - text: 'export PATH=$PATH:/opt/rekall/bin'
     - require:
-      - user: {{ user }}
+      - user: sift-user-{{ user }}
 
 rc-root-noclobber:
   file.append:

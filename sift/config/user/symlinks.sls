@@ -7,16 +7,16 @@ symlinks-mount-points:
   file.symlink:
     - name: /home/{{ user }}/Desktop/mount_points
     - target: /mnt
-    - user: {{ user }}
+    - user: sift-user-{{ user }}
     - group: {{ user }}
     - require:
-      - user: {{ user }}
+      - user: sift-user-{{ user }}
 
 symlinks-cases:
   file.symlink:
     - name: /home/{{ user }}/Desktop/cases
     - target: /cases
-    - user: {{ user }}
+    - user: sift-user-{{ user }}
     - group: {{ user }}
     - require:
-      - user: {{ user }}
+      - user: sift-user-{{ user }}

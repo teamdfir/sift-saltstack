@@ -4,4 +4,4 @@ include:
 docker-engine:
   pkg.installed:
     - require:
-      - pkgrepo: docker
+      - pkgrepo: sift-docker-repo

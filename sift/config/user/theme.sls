@@ -3,13 +3,24 @@
 include:
   - .user
 
+theme-set-background-directory:
+  file.directory:
+    - name: /usr/share/backgrounds
+    - makedirs: True
+
 theme-set-background:
   file.managed:
     - name: /usr/share/backgrounds/warty-final-ubuntu.png
     - source: salt://sift/files/sift/images/forensics_blue.jpg
     - replace: True
     - require:
+      - file: theme-set-background-directory
       - user: sift-user-{{ user }}
+
+theme-set-unity-logo-directory:
+  file.directory:
+    - name: /usr/share/unity-greeter
+    - makedirs: True
 
 theme-set-unity-logo:
   file.managed:
@@ -17,6 +28,7 @@ theme-set-unity-logo:
     - source: salt://sift/files/sift/images/login_logo.png
     - replace: True
     - require:
+      - file: theme-set-unity-logo-directory
       - user: sift-user-{{ user }}
 
 theme-manage-gnome-terminal:

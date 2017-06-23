@@ -6,7 +6,7 @@ include:
 config-folder-cases:
   file.directory:
     - name: /cases
-    - user: sift-user-{{ user }}
+    - user: {{ user }}
     - group: root
     - makedirs: true
     - dir_mode: 775

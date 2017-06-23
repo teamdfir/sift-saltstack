@@ -6,7 +6,7 @@ include:
 folders-config-autostart:
   file.directory:
     - name: /home/{{ user }}/.config/autostart
-    - user: sift-user-{{ user }}
+    - user: {{ user }}
     - group: {{ user }}
     - makedirs: True
     - require:

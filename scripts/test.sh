@@ -6,7 +6,7 @@ if [ "x$TRAVIS_TAG" != "x" ]; then
   echo "Detected Event: Tag"
   echo " > TAG: ${TRAVIS_TAG}"
   echo ""
-  ./scripts/test-all-publish.sh || exit 1
+  ./scripts/test-all.sh || exit 1
   exit 0
 fi
 
@@ -20,7 +20,7 @@ fi
 if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then
   echo "Detected Event: CRON"
   echo ""
-  ./scripts/tests/test-all.sh || exit 1
+  ./scripts/test-all.sh || exit 1
   exit 0
 fi
 

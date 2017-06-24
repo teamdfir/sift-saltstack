@@ -1,4 +1,4 @@
-{% if grains['oscodename'] != "xenial" -%}
+{% if grains['oscodename'] == "trusty" -%}
 include:
   - ..packages.python-software-properties
 

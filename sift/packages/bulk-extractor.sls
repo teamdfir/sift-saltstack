@@ -5,5 +5,5 @@ include:
 bulk-extractor:
   pkg.installed:
     - require:
-      - pkgrepo: sift 
+      - pkgrepo: sift-repo
       - pkgrepo: openjdk-repo

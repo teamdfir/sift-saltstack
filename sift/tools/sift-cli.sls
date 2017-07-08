@@ -1,5 +1,5 @@
-{%- set source = "https://github.com/sans-dfir/sift-cli/releases/download/v1.5.0-beta.0/sift-cli-linux" -%}
-{%- set hash = "c50d7e39462e1f94791932aed5c7aec30d8059d24fdc87c7c6b3e830c7a7ccdf" -%}
+{%- set source = "https://github.com/sans-dfir/sift-cli/releases/download/v1.5.1/sift-cli-linux" -%}
+{%- set hash = "3847e734a98a842868ecc5488916e1273c8baf6d7a822c46d3f4079ec316566d" -%}
 
 sift-tool-sift-cli:
   file.managed:

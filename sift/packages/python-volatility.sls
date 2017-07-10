@@ -60,9 +60,9 @@ python-volatility-remove-MarcinUlikowski:
       - git: python-volatility-community-plugins
 
 python-volatility-remove-LoicJaquement-Haystack:
-  cmd.wait:
+  cmd.run:
     - name: find /usr/lib/python2.7/dist-packages/volatility/plugins/community/ -name "Lo*cJaquemet" -exec rm -rf {} \;
-    - watch:
+    - require:
       - git: python-volatility-community-plugins
 
 python-volatility-sift-plugins:

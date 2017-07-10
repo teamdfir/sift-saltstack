@@ -59,6 +59,12 @@ python-volatility-remove-MarcinUlikowski:
     - watch:
       - git: python-volatility-community-plugins
 
+python-volatility-remove-TyperHalfpop:
+  file.absent:
+    - name: /usr/lib/python2.7/dist-packages/volatility/plugins/community/TyperHalfpop
+    - watch:
+      - git: python-volatility-community-plugins
+
 python-volatility-remove-LoicJaquement-Haystack:
   cmd.run:
     - name: find /usr/lib/python2.7/dist-packages/volatility/plugins/community/ -name "Lo*cJaquemet" -exec rm -rf {} \;

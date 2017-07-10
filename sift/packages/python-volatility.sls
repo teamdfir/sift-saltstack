@@ -1,3 +1,5 @@
+{%- set remove_plugins = ["malprocfind.py","idxparser.py","chromehistory.py","mimikatz.py","openioc_scan.py","pstotal.py","firefoxhistory.py","autoruns.py","malfinddeep.py","prefetch.py","baseline.py","ssdeepscan.py","uninstallinfo.py","trustrecords.py","usnparser.py","apihooksdeep.py","editbox.py","javarat.py"] -%}
+
 include:
   - ..repos.sift
   - .git
@@ -57,6 +59,11 @@ python-volatility-remove-MarcinUlikowski:
     - watch:
       - git: python-volatility-community-plugins
 
+python-volatility-remove-VolHaystack:
+  cmd.wait:
+    - name: find /usr/lib/python2.7/dist-packages/volatility/plugins/community/ -name "vol_haystack.py" -exec rm {} \;
+    - watch:
+      - git: python-volatility-community-plugins
 
 python-volatility-sift-plugins:
   file.recurse:
@@ -68,14 +75,10 @@ python-volatility-sift-plugins:
     - watch:
       - pkg: python-volatility
 
-python-volatility-plugins-javarat-absent:
+{% for plugin in remove_plugins -%}
+python-volatility-plugins-{{ plugin }}-absent:
   file.absent:
-    - name: /usr/lib/python2.7/dist-packages/volatility/plugins/javarat.py
+    - name: /usr/lib/python2.7/dist-packages/volatility/plugins/{{ plugin }}
     - watch:
       - pkg: python-volatility
-
-python-volatility-plugins-editbox-absent:
-  file.absent:
-    - name: /usr/lib/python2.7/dist-packages/volatility/plugins/editbox.py
-    - watch:
-      - pkg: python-volatility
+{% endfor -%}

@@ -59,9 +59,9 @@ python-volatility-remove-MarcinUlikowski:
     - watch:
       - git: python-volatility-community-plugins
 
-python-volatility-remove-VolHaystack:
+python-volatility-remove-LoicJaquement-Haystack:
   cmd.wait:
-    - name: find /usr/lib/python2.7/dist-packages/volatility/plugins/community/ -name "vol_haystack.py" -exec rm {} \;
+    - name: find /usr/lib/python2.7/dist-packages/volatility/plugins/community/ -name "Lo*cJaquemet" -exec rm -rf {} \;
     - watch:
       - git: python-volatility-community-plugins
 

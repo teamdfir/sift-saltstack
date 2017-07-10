@@ -50,7 +50,7 @@ class pstotal(common.AbstractWindowsCommand):
     def __init__(self, config,*args, **kwargs):
         common.AbstractWindowsCommand.__init__(self, config, *args, **kwargs)
         config.add_option('SHORT', short_option = 'S', default = False, help = 'Interesting processes only', action = 'store_true')
-        config.add_option('CMD', short_option = 'C', default = False, help = 'Display process command line. All {} removed', action = 'store_true')
+        config.add_option('CMD', short_option = 'c', default = False, help = 'Display process command line. All {} removed', action = 'store_true')
         config.add_option('PATH', short_option = 'P', default = False, help = 'Display process image path', action = 'store_true')
     
     def render_text(self, outfd, data):

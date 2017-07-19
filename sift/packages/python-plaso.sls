@@ -1,7 +1,8 @@
 include:
   - ..repos.sift
   - ..repos.gift
-  - .python-dfvfs
+  - sift.packages.python-xlsxwriter
+  - sift.packages.python-dfvfs
 
 python-plaso:
   pkg.installed:
@@ -11,4 +12,5 @@ python-plaso:
     - require:
       - pkgrepo: sift-repo
       - pkgrepo: sift-gift-repo
-      - pkg: python-dfvfs
+      - sls: sift.packages.python-xlsxwriter
+      - sls: sift.packages.python-dfvfs

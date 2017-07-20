@@ -24,7 +24,7 @@ python-volatility:
 
 python-volatility-community-plugins:
   git.latest:
-    - name: https://github.com/volatilityfoundation/community.git
+    - name: https://github.com/sans-dfir/volatility-plugins-community.git
     - target: /usr/lib/python2.7/dist-packages/volatility/plugins/community
     - user: root
     - rev: master
@@ -44,32 +44,6 @@ python-volatility-community-plugins:
       - sls: sift.python-packages.pysocks
       - sls: sift.python-packages.simplejson
       - sls: sift.python-packages.yara-python
-
-# Unable to install pykd
-python-volatility-remove-AlexanderTarasenko:
-  file.absent:
-    - name: /usr/lib/python2.7/dist-packages/volatility/plugins/community/AlexanderTarasenko
-    - watch:
-      - git: python-volatility-community-plugins
-
-# Conflicts with ThomasWhite Bitlocker 
-python-volatility-remove-MarcinUlikowski:
-  file.absent:
-    - name: /usr/lib/python2.7/dist-packages/volatility/plugins/community/MarcinUlikowski
-    - watch:
-      - git: python-volatility-community-plugins
-
-python-volatility-remove-TyperHalfpop:
-  file.absent:
-    - name: /usr/lib/python2.7/dist-packages/volatility/plugins/community/TyperHalfpop
-    - watch:
-      - git: python-volatility-community-plugins
-
-python-volatility-remove-LoicJaquement-Haystack:
-  cmd.run:
-    - name: find /usr/lib/python2.7/dist-packages/volatility/plugins/community/ -name "Lo*cJaquemet" -exec rm -rf {} \;
-    - require:
-      - git: python-volatility-community-plugins
 
 python-volatility-sift-plugins:
   file.recurse:

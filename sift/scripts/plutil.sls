@@ -1,7 +1,7 @@
 {%- set commit = "b830f58fe53958c54def0ec66d0617f9cf5c60d9" -%}
 {%- set hash = "a1db4dccfa54a41361d11273dfdd88c59b4caca60f4d58e672cc867393a72166" -%}
 include:
-  - sift.perl.encode
+  - sift.packages.libencode-perl
 
 # Source: https://github.com/HearthSim/extract-scripts
 # License: Unknown
@@ -12,7 +12,7 @@ sift-scripts-plutil:
     - source_hash: sha256={{ hash }}
     - makedirs: True
     - require:
-      - sls: sift.perl.encode
+      - sls: sift.packages.libencode-perl
 
 sift-scripts-plutil-binary:
   file.copy:

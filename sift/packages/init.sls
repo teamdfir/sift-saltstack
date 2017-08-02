@@ -326,6 +326,7 @@ sift-packages:
       - sls: sift.packages.p0f
       - sls: sift.packages.p7zip-full
       - sls: sift.packages.pdftk
+      - sls: sift.packages.perl
       - sls: sift.packages.pev
       - sls: sift.packages.phonon
       - sls: sift.packages.pkg-config

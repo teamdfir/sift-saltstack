@@ -9,6 +9,7 @@ sift-scripts-regripper-git:
     - user: root
     - rev: master
     - force_clone: True
+    - force_reset: True
     - require:
       - pkg: git
 

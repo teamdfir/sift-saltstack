@@ -294,6 +294,7 @@ sift-packages:
       - sls: sift.packages.libpff-dev
       - sls: sift.packages.libpff-python
       - sls: sift.packages.libpff-tools
+      - sls: sift.packages.libplist-utils
       - sls: sift.packages.libregf
       - sls: sift.packages.libregf-dev
       - sls: sift.packages.libregf-python

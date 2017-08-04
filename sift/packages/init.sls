@@ -152,7 +152,6 @@ include:
   - sift.packages.radare2
   - sift.packages.rar
   - sift.packages.readpst
-  - sift.packages.regripper
   - sift.packages.rsakeyfind
   - sift.packages.safecopy
   - sift.packages.samba

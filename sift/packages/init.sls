@@ -356,7 +356,6 @@ sift-packages:
       - sls: sift.packages.radare2
       - sls: sift.packages.rar
       - sls: sift.packages.readpst
-      - sls: sift.packages.regripper
       - sls: sift.packages.rsakeyfind
       - sls: sift.packages.safecopy
       - sls: sift.packages.samba

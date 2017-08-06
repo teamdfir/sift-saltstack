@@ -92,6 +92,7 @@ include:
   - sift.packages.libpff-dev
   - sift.packages.libpff-python
   - sift.packages.libpff-tools
+  - sift.packages.libplist-utils
   - sift.packages.libregf
   - sift.packages.libregf-dev
   - sift.packages.libregf-python
@@ -124,6 +125,7 @@ include:
   - sift.packages.p0f
   - sift.packages.p7zip-full
   - sift.packages.pdftk
+  - sift.packages.perl
   - sift.packages.pev
   - sift.packages.phonon
   - sift.packages.pkg-config

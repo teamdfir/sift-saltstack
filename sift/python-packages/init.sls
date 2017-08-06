@@ -6,7 +6,7 @@ include:
   - sift.python-packages.construct
   - sift.python-packages.distorm3
   - sift.python-packages.docopt
-  # - sift.python-packages.indxparse (Disabled due to problem with python-fuse dependency)
+  - sift.python-packages.geoip2
   - sift.python-packages.ioc_writer
   - sift.python-packages.lxml
   - sift.python-packages.pefile
@@ -24,6 +24,7 @@ include:
   - sift.python-packages.timesketch
   - sift.python-packages.unicodecsv
   - sift.python-packages.usnparser
+  - sift.python-packages.virustotal-api
   - sift.python-packages.wheel
   - sift.python-packages.windowsprefetch
 
@@ -38,7 +39,7 @@ sift-python-packages:
       - sls: sift.python-packages.construct
       - sls: sift.python-packages.distorm3
       - sls: sift.python-packages.docopt
-      # - sls: sift.python-packages.indxparse (Disabled due to problem with python-fuse dependency)
+      - sls: sift.python-packages.geoip2
       - sls: sift.python-packages.ioc_writer
       - sls: sift.python-packages.lxml
       - sls: sift.python-packages.pefile
@@ -56,5 +57,6 @@ sift-python-packages:
       - sls: sift.python-packages.timesketch
       - sls: sift.python-packages.unicodecsv
       - sls: sift.python-packages.usnparser
+      - sls: sift.python-packages.virustotal-api
       - sls: sift.python-packages.wheel
       - sls: sift.python-packages.windowsprefetch

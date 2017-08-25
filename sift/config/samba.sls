@@ -1,32 +1,25 @@
+{%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
 include:
   - ..packages.samba
 
-sift-samba-initial:
-  file.managed:
-    - name: /etc/samba/.sift-samba
-    - contents: |
-        This file indicates to SIFT that it has made the changes to the smb.conf file
-        and prevents it from overwritting it should a user make custom changes.
-
-samba-config:
+sift-samba-global-config:
   file.managed:
     - name: /etc/samba/smb.conf
     - source: salt://sift/files/samba/smb.conf
+    - template: jinja
+    - context:
+          user: {{ user }}
     - require:
       - pkg: samba
-    - watch:
-      - file: sift-samba-initial
 
 samba-service-smbd:
   service.running:
     - name: smbd
     - watch:
-      - file: /etc/samba/smb.conf
+      - file: sift-samba-global-config
 
 samba-service-nmbd:
   service.running:
     - name: nmbd
-    - require:
-      - service: samba-service-smbd
     - watch:
-      - file: /etc/samba/smb.conf
+      - file: sift-samba-global-config

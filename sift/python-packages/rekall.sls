@@ -30,3 +30,10 @@ rekall:
       - pip: setuptools
       - pip: wheel
       - virtualenv: rekall-virtualenv
+
+rekall-symlink:
+  file.symlink:
+    - name: /usr/local/bin/rekall
+    - target: /opt/rekall/bin/rekall
+    - require:
+      - pip: rekall

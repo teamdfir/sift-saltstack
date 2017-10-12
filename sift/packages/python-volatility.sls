@@ -27,7 +27,6 @@ python-volatility-community-plugins:
     - name: https://github.com/sans-dfir/volatility-plugins-community.git
     - target: /usr/lib/python2.7/dist-packages/volatility/plugins/community
     - user: root
-    - rev: acc4319
     - branch: master
     - force_fetch: True
     - force_checkout: True

@@ -13,6 +13,7 @@ include:
   - sift.scripts.pe-carver
   - sift.scripts.pescanner
   - sift.scripts.regripper
+  - sift.scripts.screen-scale
   - sift.scripts.shim-cache-parser
   - sift.scripts.sift
   - sift.scripts.sorter
@@ -39,6 +40,7 @@ sift-scripts:
       - sls: sift.scripts.pe-carver
       - sls: sift.scripts.pescanner
       - sls: sift.scripts.regripper
+      - sls: sift.scripts.screen-scale
       - sls: sift.scripts.shim-cache-parser
       - sls: sift.scripts.sift
       - sls: sift.scripts.sorter

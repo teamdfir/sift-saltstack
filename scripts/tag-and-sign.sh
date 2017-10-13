@@ -46,7 +46,7 @@ if [ "`cat VERSION`" != "${TAG_NAME}" ]; then
 fi
 
 echo "==> Creating GitHub Release"
-RELEASE_ID=`curl -XPOST -H "Authorization: token ${GITHUB_ACCESS_TOKEN}" -q https://api.github.com/repos/sans-dfir/sift-saltstack/releases -d "{\"tag_name\": \"$TAG_NAME\", \"prerelease\": $PRERELEASE, \"draft\": true}" | jq .id`
+RELEASE_ID=`curl -XPOST -H "Authorization: token ${GITHUB_ACCESS_TOKEN}" -q https://api.github.com/repos/sans-dfir/sift-saltstack/releases -d "{\"tag_name\": \"$TAG_NAME\", \"prerelease\": $PRERELEASE, \"draft\": false}" | jq .id`
 
 echo "==> Downloading tar.gz file for tag from GitHub"
 curl -qL -o /tmp/sift-saltstack-${TAG_NAME}.tar.gz https://github.com/sans-dfir/sift-saltstack/archive/$TAG_NAME.tar.gz

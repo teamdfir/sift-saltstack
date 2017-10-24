@@ -41,7 +41,7 @@ sift-scripts-regripper-plugins-symlink:
 sift-scripts-regripper-binary-symlink:
   file.symlink:
     - name: /usr/local/bin/rip.pl
-    - target: /usr/local/share/regripper/rip.pl
+    - target: /usr/share/regripper/rip.pl
     - mode: 755
     - require:
       - file: sift-scripts-regripper-binary

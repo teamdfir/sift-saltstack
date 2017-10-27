@@ -5,5 +5,5 @@ sift-scripts-foremost-config:
 
 sift-scripts-foremost-config-usr-local:
   file.managed:
-    - name: /usr/local/etc/foremonst.conf
+    - name: /usr/local/etc/foremost.conf
     - source: salt://sift/files/foremost/foremost.conf

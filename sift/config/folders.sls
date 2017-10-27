@@ -13,7 +13,7 @@ config-folder-cases:
     - require:
       - user: sift-user-{{ user }}
 
-{% for folder in ['usb','vss','shadow','windows_mount','e01','aff','ewf','bde','iscsi'] %}
+{% for folder in ['usb','vss','shadow_mount','windows_mount','ewf_mount','e01','aff','ewf','bde','iscsi'] %}
 /mnt/{{ folder }}:
   file.directory:
     - user: root
@@ -30,7 +30,7 @@ config-folder-cases:
 {% endfor %}
 
 {% for n in range(1, 31) %}
-/mnt/shadow/vss{{n}}:
+/mnt/shadow_mount/vss{{n}}:
   file.directory:
     - user: root
     - group: root

@@ -18,7 +18,7 @@ sift-scripts-keydet-tools-{{ file }}:
     - name: /usr/local/bin/{{ file }}
     - source: /usr/local/src/keydet-tools/source/{{ file }}
     - mode: 755
-    - watch:
+    - require:
       - git: sift-scripts-keydet-tools-git
 
 sift-scripts-keydet-tools-shebang-{{ file }}:

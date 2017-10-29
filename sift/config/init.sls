@@ -5,6 +5,7 @@ include:
   - sift.config.folders
   - sift.config.salt-minion
   - sift.config.samba
+  - sift.config.tools
   #- .symlinks
 
 sift-config:
@@ -17,4 +18,5 @@ sift-config:
       - sls: sift.config.folders
       - sls: sift.config.salt-minion
       - sls: sift.config.samba
+      - sls: sift.config.tools
       

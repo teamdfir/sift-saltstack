@@ -17,6 +17,7 @@ sift-tool-densityscout-binary:
     - source: /usr/local/src/densityscout/densityscout_build_{{ build }}_linux/lin64/densityscout
     - user: root
     - group: root
+    - force: True
     - mode: 755
     - require:
       - archive: sift-tool-densityscout-archive

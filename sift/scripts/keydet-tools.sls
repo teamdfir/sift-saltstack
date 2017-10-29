@@ -17,7 +17,8 @@ sift-scripts-keydet-tools-{{ file }}:
   file.copy:
     - name: /usr/local/bin/{{ file }}
     - source: /usr/local/src/keydet-tools/source/{{ file }}
-    - mode: 755
+    - force: True
+    - mode: 0755
     - require:
       - git: sift-scripts-keydet-tools-git
 

@@ -18,6 +18,7 @@ sift-scripts-plutil-binary:
   file.copy:
     - name: /usr/local/bin/plutil.pl
     - source: /usr/local/src/scripts/plutil.pl
+    - force: True
     - mode: 755
     - watch: 
       - file: sift-scripts-plutil

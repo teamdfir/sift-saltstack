@@ -20,7 +20,8 @@ sift-scripts-4n6-{{ file }}:
   file.copy:
     - name: /usr/local/bin/{{ file }}
     - source: /usr/local/src/4n6-scripts/{{ file }}
-    - file_mode: 755
+    - force: True
+    - mode: 755
     - watch:
       - git: sift-scripts-4n6-git
 {%- endfor %}

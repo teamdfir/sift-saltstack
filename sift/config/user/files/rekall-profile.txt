@@ -1,0 +1,3 @@
+cache_dir: .rekall_cache
+repository_path:
+  - https://raw.githubusercontent.com/google/rekall-profiles

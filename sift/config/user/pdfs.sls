@@ -1,12 +1,134 @@
 {%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
 
 include:
-  - .user
+  - sift.config.user.user
 
-pdfs-resource-copy:
-  file.recurse:
-    - name: /home/{{ user }}/Desktop
-    - source: salt://sift/files/sift/resources
-    - include_pat: '*.pdf'
+sift-pdf-poster-network-forensics:
+  file.managed:
+    - name: /home/{{ user }}/Desktop/Network-Forensics-Poster.pdf
+    - source: https://digital-forensics.sans.org/media/Poster_Network-Forensics_WEB.pdf
+    - source_hash: sha256=86b49c3aaa8a9244b7164fc0b94d01b9434c304b1e1d460cafe4a6ceaa103fb8
+    - user: {{ user }}
+    - group: {{ user }}
     - require:
       - user: sift-user-{{ user }}
+
+sift-pdf-poster-dfir-threat-intel:
+  file.managed:
+    - name: /home/{{ user }}/Desktop/DFIR-Threat-Intel-Poster.pdf
+    - source: https://digital-forensics.sans.org/media/Poster_DFIR_Threat-Intel_2017.pdf
+    - source_hash: sha256=c18b226d3d29f07136822bb5c555e8d71dae02ee4a0ba69c6a3588f95324481f
+    - user: {{ user }}
+    - group: {{ user }}
+    - require:
+      - user: sift-user-{{ user }}
+
+sift-pdf-poster-sift-remnux:
+  file.managed:
+    - name: /home/{{ user }}/Desktop/SIFT-REMnux-Poster.pdf
+    - source: https://digital-forensics.sans.org/media/Poster_SIFT_REMnux_2016_FINAL.pdf
+    - source_hash: sha256=7c63107152e3a1b63500c3294f3a760a89c1ea504d9100c72d28727321ef63c3
+    - user: {{ user }}
+    - group: {{ user }}
+    - require:
+      - user: sift-user-{{ user }}
+
+sift-pdf-poster-memory-foreniscs:
+  file.managed:
+    - name: /home/{{ user }}/Desktop/Memory-Forensics-Poster.pdf
+    - source: https://digital-forensics.sans.org/media/Poster_Memory_Forensics.pdf
+    - source_hash: sha256=120191d8f9d9207cf501b047236cbe3d4663d7bb954cfdc96010bb5e4e8f96ab
+    - user: {{ user }}
+    - group: {{ user }}
+    - require:
+      - user: sift-user-{{ user }}
+
+sift-pdf-poster-cheatsheet-rekall:
+  file.managed:
+    - name: /home/{{ user }}/Desktop/Rekall-Cheatsheet.pdf
+    - source: https://digital-forensics.sans.org/media/rekall-memory-forensics-cheatsheet.pdf
+    - source_hash: sha256=6b30c6f51b73b17b0e719a7a47cf5ba140cfc13afb96f1feb3b77c31345aceb2
+    - user: {{ user }}
+    - group: {{ user }}
+    - require:
+      - user: sift-user-{{ user }}
+
+sift-pdf-poster-dfir-smartphone:
+  file.managed:
+    - name: /home/{{ user }}/Desktop/DFIR-Smartphone-Forensics-Poster.pdf
+    - source: https://digital-forensics.sans.org/media/DFIR-Smartphone-Forensics-Poster.pdf
+    - source_hash: sha256=156ff07624c4a40a01b4a89174e083ff90af15353699805bc646d22e946b7e4f
+    - user: {{ user }}
+    - group: {{ user }}
+    - require:
+      - user: sift-user-{{ user }}
+
+sift-pdf-poster-windows-forensics:
+  file.managed:
+    - name: /home/{{ user }}/Desktop/Windows-Forensics-Poster.pdf
+    - source: https://digital-forensics.sans.org/media/Poster_Windows_Forensics_2017_WEB.pdf
+    - source_hash: sha256=4b625889deb5f98fd852b85d99882d794a5fa8a58a0c33e925970c93ff4e739c
+    - user: {{ user }}
+    - group: {{ user }}
+    - require:
+      - user: sift-user-{{ user }}
+
+sift-pdf-poster-find-evil:
+  file.managed:
+    - name: /home/{{ user }}/Desktop/Find-Evil.pdf
+    - source: https://digital-forensics.sans.org/media/Poster_2016_Find_Evil.pdf
+    - source_hash: sha256=d38b39637ae5ebf0d40dcd676be1c9410f91ed1c047c59a27c0c488ae570920f
+    - user: {{ user }}
+    - group: {{ user }}
+    - require:
+      - user: sift-user-{{ user }}
+
+sift-pdf-cheatsheet-sift:
+  file.managed:
+    - name: /home/{{ user }}/Desktop/SIFT-Cheatsheet.pdf
+    - source: https://digital-forensics.sans.org/media/sift_cheat_sheet.pdf
+    - source_hash: sha256=8fda96c8f7bc32844b843dd3d95e793316e23b765b440b240681d3bc9724ad5c
+    - user: {{ user }}
+    - group: {{ user }}
+    - require:
+      - user: sift-user-{{ user }}
+
+sift-pdf-guide-linux-shell-survival:
+  file.managed:
+    - name: /home/{{ user }}/Desktop/Linux-Shell-Survival-Guide.pdf
+    - source: https://digital-forensics.sans.org/media/linux-shell-survival-guide.pdf
+    - source_hash: sha256=2d06aa1673fb9f0c7a4650a3f23753de724a98d2a2b3ded90b2e6a6a1faecd46
+    - user: {{ user }}
+    - group: {{ user }}
+    - require:
+      - user: sift-user-{{ user }}
+
+sift-pdf-cheatsheet-windows-to-unix:
+  file.managed:
+    - name: /home/{{ user }}/Desktop/Windows-to-Unix-Cheatsheet.pdf
+    - source: https://digital-forensics.sans.org/media/windows_to_unix_cheatsheet.pdf
+    - source_hash: sha256=97be37ea175c0f53a808c45fcbeacd11889d77a566d2a01d421865bb4c352312
+    - user: {{ user }}
+    - group: {{ user }}
+    - require:
+      - user: sift-user-{{ user }}
+
+sift-pdf-cheatsheet-volatility:
+  file.managed:
+    - name: /home/{{ user }}/Desktop/Volatility-Cheatsheet.pdf
+    - source: https://digital-forensics.sans.org/media/volatility-memory-forensics-cheat-sheet.pdf
+    - source_hash: sha256=425aa18a8490f8eaa065a9507ba5f4e78eafe8a02c5bfdd41b6fce4cc43b52c2
+    - user: {{ user }}
+    - group: {{ user }}
+    - require:
+      - user: sift-user-{{ user }}
+  
+sift-pdf-cheatsheet-hexfile-regex:
+  file.managed:
+    - name: /home/{{ user }}/Desktop/Hex-File-Regex-Cheatsheet.pdf
+    - source: https://digital-forensics.sans.org/media/hex_file_and_regex_cheat_sheet.pdf
+    - source_hash: sha256=d1a78b37886f524bc94e3e3aac8ab9816e904a6583f0145fd26c67524e23d032
+    - user: {{ user }}
+    - group: {{ user }}
+    - require:
+      - user: sift-user-{{ user }}    

@@ -1,68 +1,71 @@
 {%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
+{%- set dbus = salt['cmd.run']("ps -u " + user + " e | grep -Eo 'dbus-daemon.*address=unix:abstract=/tmp/dbus-[A-Za-z0-9]{10}' | tail -c35", shell="/bin/bash", runas="root", cwd="/root", python_shell=True) -%}
 
 include:
-  - .user
+  - sift.config.user.user
+  - sift.packages.arc-icons
+  - sift.packages.arc-theme  
 
-theme-set-background-directory:
+sift-config-theme-gtk:
+  cmd.run:
+    - name: gsettings set org.gnome.desktop.interface gtk-theme Arc
+    - runas: {{ user }}
+    - cwd: /home/{{ user }}
+    - shell: /bin/bash
+    - env:
+      - DBUS_SESSION_BUS_ADDRESS: "{{ dbus }}"
+    - require:
+      - pkg: sift-package-arc-theme
+
+sift-config-theme-icon:
+  cmd.run:
+    - name: gsettings set org.gnome.desktop.interface icon-theme Arc-Icons
+    - runas: {{ user }}
+    - cwd: /home/{{ user }}
+    - shell: /bin/bash
+    - env:
+      - DBUS_SESSION_BUS_ADDRESS: "{{ dbus }}"
+    - require:
+      - pkg: sift-package-arc-icons
+
+sift-config-theme-set-background-directory:
   file.directory:
     - name: /usr/share/backgrounds
     - makedirs: True
 
-theme-set-background:
+sift-config-theme-set-background:
   file.managed:
     - name: /usr/share/backgrounds/warty-final-ubuntu.png
     - source: salt://sift/files/sift/images/forensics_blue.jpg
     - replace: True
     - require:
-      - file: theme-set-background-directory
+      - file: sift-config-theme-set-background-directory
       - user: sift-user-{{ user }}
 
-theme-set-unity-logo-directory:
+sift-config-theme-set-unity-logo-directory:
   file.directory:
     - name: /usr/share/unity-greeter
     - makedirs: True
 
-theme-set-unity-logo:
+sift-config-theme-set-unity-logo:
   file.managed:
     - name: /usr/share/unity-greeter/logo.png
     - source: salt://sift/files/sift/images/login_logo.png
     - replace: True
     - require:
-      - file: theme-set-unity-logo-directory
+      - file: sift-config-theme-set-unity-logo-directory
       - user: sift-user-{{ user }}
 
-theme-manage-autostart:
+sift-config-theme-manage-autostart:
   file.directory:
     - name: /home/{{ user }}/.config/autostart/
     - makedirs: True
 
-theme-manage-gnome-terminal:
+sift-config-theme-manage-gnome-terminal:
   file.managed:
     - name: /home/{{ user }}/.config/autostart/gnome-terminal.desktop
     - source: salt://sift/files/sift/other/gnome-terminal.desktop
     - replace: True
     - require:
-      - file: theme-manage-autostart
+      - file: sift-config-theme-manage-autostart
       - user: sift-user-{{ user }}
-
-{%- if grains['oscodename'] == "precise" %}
-theme-set-precise-favorites:
-  cmd.run:
-    - name: "dconf write /desktop/unity/launcher/favorites \"['nautilus.desktop', 'gnome-terminal.desktop', 'firefox.desktop', 'gnome-screenshot.desktop', 'gcalctool.desktop', 'bless.desktop', 'autopsy.desktop', 'wireshark.desktop']\""
-    - runas: {{ user }}
-    - require:
-      - user: sift-user-{{ user }}
-{%- endif %}
-
-{%- if grains['oscodename'] == "trusty" %}
-theme-set-trusty-favorites:
-  cmd.run:
-    - name: "gsettings set com.canonical.Unity.Launcher favorites \"['application://nautilus.desktop', 'application://gnome-terminal.desktop', 'application://firefox.desktop', 'application://gnome-screenshot.desktop', 'application://gcalctool.desktop', 'application://bless.desktop', 'application://autopsy.desktop', 'application://wireshark.desktop']\""
-    - runas: {{ user }}
-    - require:
-      - user: sift-user-{{ user }}
-{%- endif %}
-
-{%- if grains['oscodename'] == "xenial" %}
-
-{%- endif %}

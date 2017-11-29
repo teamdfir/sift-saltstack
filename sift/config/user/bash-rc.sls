@@ -42,7 +42,7 @@ rc-root-noclobber:
 sift-config-root-prompt-command:
   file.append:
     - name: /root/.bashrc
-    - text: siftprompt() { PS1X='$(p="${PWD#${HOME}}"; [ "${PWD}" != "${p}" ] && printf "~";IFS=/; for q in ${p:1}; do printf /${q:0:1}; done; printf "${q:1}")'; export PS1="\[\033[1;31m\]\u@\h\[\033[1;34m\] -> $PS1X \n\[\033[0;37m\]$ \[\033[0m\]"; }
+    - text: siftprompt() { PS1X='$(p="${PWD#${HOME}}"; [ "${PWD}" != "${p}" ] && printf "~";IFS=/; for q in ${p:1}; do printf /${q:0:1}; done; printf "${q:1}")'; export PS1="\[\033[1;31m\]\u@\h\[\033[1;34m\] -> $PS1X \n\[\033[0;37m\]# \[\033[0m\]"; }
 
 sift-config-root-prompt:
   file.append:

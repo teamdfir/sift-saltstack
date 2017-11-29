@@ -10,6 +10,7 @@ sift-pdf-poster-network-forensics:
     - source_hash: sha256=86b49c3aaa8a9244b7164fc0b94d01b9434c304b1e1d460cafe4a6ceaa103fb8
     - user: {{ user }}
     - group: {{ user }}
+    - makedirs: True
     - require:
       - user: sift-user-{{ user }}
 
@@ -20,6 +21,7 @@ sift-pdf-poster-dfir-threat-intel:
     - source_hash: sha256=c18b226d3d29f07136822bb5c555e8d71dae02ee4a0ba69c6a3588f95324481f
     - user: {{ user }}
     - group: {{ user }}
+    - makedirs: True
     - require:
       - user: sift-user-{{ user }}
 
@@ -30,6 +32,7 @@ sift-pdf-poster-sift-remnux:
     - source_hash: sha256=7c63107152e3a1b63500c3294f3a760a89c1ea504d9100c72d28727321ef63c3
     - user: {{ user }}
     - group: {{ user }}
+    - makedirs: True
     - require:
       - user: sift-user-{{ user }}
 
@@ -40,6 +43,7 @@ sift-pdf-poster-memory-foreniscs:
     - source_hash: sha256=120191d8f9d9207cf501b047236cbe3d4663d7bb954cfdc96010bb5e4e8f96ab
     - user: {{ user }}
     - group: {{ user }}
+    - makedirs: True
     - require:
       - user: sift-user-{{ user }}
 
@@ -50,6 +54,7 @@ sift-pdf-poster-cheatsheet-rekall:
     - source_hash: sha256=6b30c6f51b73b17b0e719a7a47cf5ba140cfc13afb96f1feb3b77c31345aceb2
     - user: {{ user }}
     - group: {{ user }}
+    - makedirs: True
     - require:
       - user: sift-user-{{ user }}
 
@@ -60,6 +65,7 @@ sift-pdf-poster-dfir-smartphone:
     - source_hash: sha256=156ff07624c4a40a01b4a89174e083ff90af15353699805bc646d22e946b7e4f
     - user: {{ user }}
     - group: {{ user }}
+    - makedirs: True
     - require:
       - user: sift-user-{{ user }}
 
@@ -70,6 +76,7 @@ sift-pdf-poster-windows-forensics:
     - source_hash: sha256=4b625889deb5f98fd852b85d99882d794a5fa8a58a0c33e925970c93ff4e739c
     - user: {{ user }}
     - group: {{ user }}
+    - makedirs: True
     - require:
       - user: sift-user-{{ user }}
 
@@ -80,6 +87,7 @@ sift-pdf-poster-find-evil:
     - source_hash: sha256=d38b39637ae5ebf0d40dcd676be1c9410f91ed1c047c59a27c0c488ae570920f
     - user: {{ user }}
     - group: {{ user }}
+    - makedirs: True
     - require:
       - user: sift-user-{{ user }}
 
@@ -90,6 +98,7 @@ sift-pdf-cheatsheet-sift:
     - source_hash: sha256=8fda96c8f7bc32844b843dd3d95e793316e23b765b440b240681d3bc9724ad5c
     - user: {{ user }}
     - group: {{ user }}
+    - makedirs: True
     - require:
       - user: sift-user-{{ user }}
 
@@ -100,6 +109,7 @@ sift-pdf-guide-linux-shell-survival:
     - source_hash: sha256=2d06aa1673fb9f0c7a4650a3f23753de724a98d2a2b3ded90b2e6a6a1faecd46
     - user: {{ user }}
     - group: {{ user }}
+    - makedirs: True
     - require:
       - user: sift-user-{{ user }}
 
@@ -110,6 +120,7 @@ sift-pdf-cheatsheet-windows-to-unix:
     - source_hash: sha256=97be37ea175c0f53a808c45fcbeacd11889d77a566d2a01d421865bb4c352312
     - user: {{ user }}
     - group: {{ user }}
+    - makedirs: True
     - require:
       - user: sift-user-{{ user }}
 
@@ -117,9 +128,10 @@ sift-pdf-cheatsheet-volatility:
   file.managed:
     - name: /home/{{ user }}/Desktop/Volatility-Cheatsheet.pdf
     - source: https://digital-forensics.sans.org/media/volatility-memory-forensics-cheat-sheet.pdf
-    - source_hash: sha256=425aa18a8490f8eaa065a9507ba5f4e78eafe8a02c5bfdd41b6fce4cc43b52c2
+    - source_hash: sha256=699ea76d1713074fe0d32eaad437f3b2c7e089ae8d00e5d43aa97cc81ed0f44f
     - user: {{ user }}
     - group: {{ user }}
+    - makedirs: True
     - require:
       - user: sift-user-{{ user }}
   
@@ -130,5 +142,6 @@ sift-pdf-cheatsheet-hexfile-regex:
     - source_hash: sha256=d1a78b37886f524bc94e3e3aac8ab9816e904a6583f0145fd26c67524e23d032
     - user: {{ user }}
     - group: {{ user }}
+    - makedirs: True
     - require:
       - user: sift-user-{{ user }}    

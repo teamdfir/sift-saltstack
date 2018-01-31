@@ -7,8 +7,10 @@ include:
 python-plaso:
   pkg.installed:
     - name: python-plaso
-    #- version: 1.4.0-1ppa3~xenial
-    #- hold: True
+    - hold: False
+    - refresh: True
+    - update_holds: True
+    - allow_updates: True
     - require:
       - pkgrepo: sift-repo
       - pkgrepo: sift-gift-repo

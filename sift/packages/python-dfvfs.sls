@@ -1,12 +1,17 @@
 include:
-  - ..repos.sift
-  - ..repos.gift
+  - sift.repos.sift
+  - sift.repos.gift
+  - sift.packages.absent.plaso
 
 python-dfvfs:
   pkg.installed:
     - name: python-dfvfs
-    - version: 20160108-1ppa1~xenial
-    - hold: True
+    - version: latest
+    - hold: False
+    - refresh: True
+    - update_holds: True
+    - allow_updates: True
     - require:
-      - pkgrepo: sift-repo
-      - pkgrepo: sift-gift-repo
+      - sls: sift.packages.absent.plaso
+      - sls: sift.repos.sift
+      - sls: sift.repos.gift

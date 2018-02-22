@@ -1,5 +1,6 @@
-#!/bin/bash -x
+#!/bin/bash
 
+set -e
 set -x
 
 if [ "x`which jq`" == "x" ]; then
@@ -52,7 +53,7 @@ echo "==> Downloading tar.gz file for tag from GitHub"
 curl -qL -o /tmp/sift-saltstack-${TAG_NAME}.tar.gz https://github.com/sans-dfir/sift-saltstack/archive/$TAG_NAME.tar.gz
 
 echo "==> Generating SHA256 of tar.gz"
-shasum -a 256 /tmp/sift-saltstack-$TAG_NAME.tar.gz > /tmp/sift-saltstack-$TAG_NAME.tar.gz.sha256
+/usr/bin/shasum -a 256 /tmp/sift-saltstack-$TAG_NAME.tar.gz > /tmp/sift-saltstack-$TAG_NAME.tar.gz.sha256
 
 echo "==> Generating GPG Signature of SHA256"
 gpg --armor --clearsign --digest-algo SHA256 -u 22598A94 /tmp/sift-saltstack-$TAG_NAME.tar.gz.sha256

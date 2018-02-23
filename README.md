@@ -24,7 +24,7 @@ It is hightly recommended that you use the [sift-cli](https://github.com/sans-df
 
 1. Ubuntu 16.04 Machine
 2. Install Saltstack (see below)
-3. Import the PGP Key - gpg --keyserver pgp.mit.edu --recv-keys 22598A94
+3. Import the PGP Key - gpg --keyserver hkp://pgp.mit.edu:80 --recv-keys 22598A94
 4. Download the latest signed [releases](https://github.com/sans-dfir/sift-saltstack/releases/latest) files
 5. Verify the latest signed release files with GPG
 6. Extract the `.tar.gz` file to `/tmp/salt` (make sure this README.md is in the root of /tmp/salt)

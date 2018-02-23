@@ -129,7 +129,6 @@ include:
   - sift.packages.pev
   - sift.packages.phonon
   - sift.packages.pkg-config
-  - sift.packages.plaso-data
   - sift.packages.plaso-tools
   - sift.packages.powershell
   - sift.packages.pv

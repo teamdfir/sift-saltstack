@@ -4,7 +4,6 @@ include:
   - sift.packages.absent.plaso
   - sift.packages.python-xlsxwriter
   - sift.packages.python-dfvfs
-  - sift.packages.plaso-data
 
 python-plaso:
   pkg.installed:
@@ -20,4 +19,3 @@ python-plaso:
       - sls: sift.repos.gift
       - sls: sift.packages.python-xlsxwriter
       - sls: sift.packages.python-dfvfs
-      - sls: sift.packages.plaso-data

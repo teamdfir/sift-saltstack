@@ -1,6 +1,5 @@
 include:
   - sift.repos.gift
-  - sift.packages.plaso-data
   - sift.packages.python-plaso
 
 plaso-tools:
@@ -8,5 +7,4 @@ plaso-tools:
     - name: plaso-tools
     - require:
       - sls: sift.repos.gift
-      - sls: sift.packages.plaso-data
       - sls: sift.packages.python-plaso

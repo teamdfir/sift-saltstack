@@ -7,10 +7,11 @@ sift-pdf-poster-network-forensics:
   file.managed:
     - name: /home/{{ user }}/Desktop/Network-Forensics-Poster.pdf
     - source: https://digital-forensics.sans.org/media/Poster_Network-Forensics_WEB.pdf
-    - source_hash: sha256=86b49c3aaa8a9244b7164fc0b94d01b9434c304b1e1d460cafe4a6ceaa103fb8
+    - source_hash: sha256=5ae5487f9555ef03d540c9f0939d0a5c29c4c080fd91d3336fc97dee47a2bd86
     - user: {{ user }}
     - group: {{ user }}
     - makedirs: True
+    - show_changes: False
     - require:
       - user: sift-user-{{ user }}
 
@@ -22,6 +23,7 @@ sift-pdf-poster-dfir-threat-intel:
     - user: {{ user }}
     - group: {{ user }}
     - makedirs: True
+    - show_changes: False
     - require:
       - user: sift-user-{{ user }}
 
@@ -33,6 +35,7 @@ sift-pdf-poster-sift-remnux:
     - user: {{ user }}
     - group: {{ user }}
     - makedirs: True
+    - show_changes: False
     - require:
       - user: sift-user-{{ user }}
 
@@ -44,6 +47,7 @@ sift-pdf-poster-memory-foreniscs:
     - user: {{ user }}
     - group: {{ user }}
     - makedirs: True
+    - show_changes: False
     - require:
       - user: sift-user-{{ user }}
 
@@ -55,6 +59,7 @@ sift-pdf-poster-cheatsheet-rekall:
     - user: {{ user }}
     - group: {{ user }}
     - makedirs: True
+    - show_changes: False
     - require:
       - user: sift-user-{{ user }}
 
@@ -66,6 +71,7 @@ sift-pdf-poster-dfir-smartphone:
     - user: {{ user }}
     - group: {{ user }}
     - makedirs: True
+    - show_changes: False
     - require:
       - user: sift-user-{{ user }}
 
@@ -77,6 +83,7 @@ sift-pdf-poster-windows-forensics:
     - user: {{ user }}
     - group: {{ user }}
     - makedirs: True
+    - show_changes: False
     - require:
       - user: sift-user-{{ user }}
 
@@ -88,6 +95,7 @@ sift-pdf-poster-find-evil:
     - user: {{ user }}
     - group: {{ user }}
     - makedirs: True
+    - show_changes: False
     - require:
       - user: sift-user-{{ user }}
 
@@ -99,6 +107,7 @@ sift-pdf-cheatsheet-sift:
     - user: {{ user }}
     - group: {{ user }}
     - makedirs: True
+    - show_changes: False
     - require:
       - user: sift-user-{{ user }}
 
@@ -110,6 +119,7 @@ sift-pdf-guide-linux-shell-survival:
     - user: {{ user }}
     - group: {{ user }}
     - makedirs: True
+    - show_changes: False
     - require:
       - user: sift-user-{{ user }}
 
@@ -121,6 +131,7 @@ sift-pdf-cheatsheet-windows-to-unix:
     - user: {{ user }}
     - group: {{ user }}
     - makedirs: True
+    - show_changes: False
     - require:
       - user: sift-user-{{ user }}
 
@@ -132,6 +143,7 @@ sift-pdf-cheatsheet-volatility:
     - user: {{ user }}
     - group: {{ user }}
     - makedirs: True
+    - show_changes: False
     - require:
       - user: sift-user-{{ user }}
   
@@ -143,5 +155,6 @@ sift-pdf-cheatsheet-hexfile-regex:
     - user: {{ user }}
     - group: {{ user }}
     - makedirs: True
+    - show_changes: False
     - require:
       - user: sift-user-{{ user }}    

@@ -1,5 +1,6 @@
 include:
   - sift.python-packages.analyzemft
+  - sift.python-packages.appcompatprocessor
   - sift.python-packages.argparse
   - sift.python-packages.bitstring
   - sift.python-packages.colorama
@@ -34,6 +35,7 @@ sift-python-packages:
     - name: sift-python-packages
     - require:
       - sls: sift.python-packages.analyzemft
+      - sls: sift.python-packages.appcompatprocessor
       - sls: sift.python-packages.argparse
       - sls: sift.python-packages.bitstring
       - sls: sift.python-packages.colorama

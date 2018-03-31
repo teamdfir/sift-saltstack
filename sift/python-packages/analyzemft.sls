@@ -1,7 +1,11 @@
+{%- set commit="64c71d7c8905a119b7abdf9813e6ef5f11d3ccf1" -%}
 include:
-  - ..packages.python-pip
+  - sift.packages.git
+  - sift.packages.python-pip
 
 analyzemft:
   pip.installed:
+    - name: git+https://github.com/dkovar/analyzeMFT.git@{{ commit }}
     - require:
-      - pkg: python-pip
+      - sls: sift.packages.git
+      - sls: sift.packages.python-pip

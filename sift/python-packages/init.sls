@@ -9,6 +9,7 @@ include:
   - sift.python-packages.geoip2
   - sift.python-packages.ioc_writer
   - sift.python-packages.lxml
+  - sift.python-packages.machinae
   - sift.python-packages.pefile
   - sift.python-packages.pip
   - sift.python-packages.pysocks
@@ -42,6 +43,7 @@ sift-python-packages:
       - sls: sift.python-packages.geoip2
       - sls: sift.python-packages.ioc_writer
       - sls: sift.python-packages.lxml
+      - sls: sift.python-packages.machinae
       - sls: sift.python-packages.pefile
       - sls: sift.python-packages.pip
       - sls: sift.python-packages.pysocks

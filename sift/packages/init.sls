@@ -150,6 +150,8 @@ include:
   - sift.packages.python-virtualenv
   - sift.packages.python-volatility
   - sift.packages.python-yara
+  - sift.packages.python3
+  - sift.packages.python3-pip
   - sift.packages.qemu
   - sift.packages.qemu-utils
   - sift.packages.radare2
@@ -353,6 +355,8 @@ sift-packages:
       - sls: sift.packages.python-virtualenv
       - sls: sift.packages.python-volatility
       - sls: sift.packages.python-yara
+      - sls: sift.packages.python3
+      - sls: sift.packages.python3-pip
       - sls: sift.packages.qemu
       - sls: sift.packages.qemu-utils
       - sls: sift.packages.radare2

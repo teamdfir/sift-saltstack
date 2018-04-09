@@ -16,16 +16,15 @@ include:
 #  file.symlink:
 #    - target: /usr/bin/mount_ewf.py
 
-#/usr/bin/mactime:
-#  file.symlink:
-#    - target: /usr/local/bin/mactime-sleuthkit
+# Just in case it is needed 4/18
+/usr/bin/mactime:
+  file.symlink:
+    - target: /usr/local/bin/mactime-sleuthkit
 
-{%- if grains['oscodename'] == "trusty" %}
 # Fix for https://github.com/sans-dfir/sift/issues/10
 /usr/bin/icat:
   file.symlink:
     - target: /usr/bin/icat-sleuthkit 
-{%- endif %}
 
 /usr/bin/log2timeline_legacy:
   file.symlink:

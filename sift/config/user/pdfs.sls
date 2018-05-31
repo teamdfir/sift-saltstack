@@ -67,7 +67,7 @@ sift-pdf-poster-dfir-smartphone:
   file.managed:
     - name: /home/{{ user }}/Desktop/DFIR-Smartphone-Forensics-Poster.pdf
     - source: https://digital-forensics.sans.org/media/DFIR-Smartphone-Forensics-Poster.pdf
-    - source_hash: sha256=156ff07624c4a40a01b4a89174e083ff90af15353699805bc646d22e946b7e4f
+    - source_hash: sha256=e39ff39c2867a44f1c8ee43ce405dd04880821473edf23e0b956ee722716cced
     - user: {{ user }}
     - group: {{ user }}
     - makedirs: True

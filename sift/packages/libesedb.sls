@@ -1,7 +1,7 @@
 include:
   - sift.repos.gift
 
-libesedb:
+sift-package-libesedb:
   pkg.installed:
     - name: libesedb
     - require:

@@ -1,5 +1,8 @@
 include:
-  - .python3
+  - sift.packages.python3
 
-python3-pip:
-  pkg.installed
+sift-pacakge-python3-pip:
+  pkg.installed:
+    - name: python3-pip
+    - require:
+      - sls: sift.packages.python3

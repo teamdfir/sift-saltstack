@@ -1,2 +1,8 @@
+include:
+  - sift.repos.gift
+
 libesedb:
-  pkg.installed
+  pkg.installed:
+    - name: libesedb
+    - require:
+      - sls: sift.repos.gift

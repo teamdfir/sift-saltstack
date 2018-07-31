@@ -1,2 +1,8 @@
+include:
+  - sift.repos.gift
+
 libmsiecf:
-  pkg.installed
+  pkg.installed:
+    - name: libmsiecf
+    - require:
+      - sls: sift.repos.gift

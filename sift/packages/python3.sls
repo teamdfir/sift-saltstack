@@ -1,2 +1,3 @@
-python3:
-  pkg.installed
+sift-package-python3:
+  pkg.installed:
+    - name: python3

@@ -1,2 +1,8 @@
+include:
+  - sift.repos.sift
+
 liblightgrep:
-  pkg.installed
+  pkg.installed:
+    - name: liblightgrep
+    - require:
+      - sls: sift.repos.sift

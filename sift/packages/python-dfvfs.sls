@@ -3,7 +3,7 @@ include:
   - sift.repos.gift
   - sift.packages.absent.plaso
 
-python-dfvfs:
+sift-package-python-dfvfs:
   pkg.installed:
     - name: python-dfvfs
     - version: latest

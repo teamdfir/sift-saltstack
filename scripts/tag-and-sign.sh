@@ -41,24 +41,12 @@ if [ "`cat VERSION`" != "${TAG_NAME}" ]; then
   echo "==> Pushing Tags to Remote"
   git push origin --tags
 
-  echo "==> Sleeping, waiting for tag.gz file"
+  echo "==> Sleeping, waiting for tag to show up"
   sleep 3
 fi
 
 echo "==> Creating GitHub Release"
 RELEASE_ID=`curl -XPOST -H "Authorization: token ${GITHUB_ACCESS_TOKEN}" -q https://api.github.com/repos/sans-dfir/sift-saltstack/releases -d "{\"tag_name\": \"$TAG_NAME\", \"prerelease\": $PRERELEASE, \"draft\": false}" | jq .id`
-
-echo "==> Downloading tar.gz file for tag from GitHub"
-curl -qL -o /tmp/sift-saltstack-${TAG_NAME}.tar.gz https://github.com/sans-dfir/sift-saltstack/archive/$TAG_NAME.tar.gz
-
-echo "==> Generating SHA256 of tar.gz"
-/usr/bin/shasum -a 256 /tmp/sift-saltstack-$TAG_NAME.tar.gz > /tmp/sift-saltstack-$TAG_NAME.tar.gz.sha256
-
-echo "==> Generating GPG Signature of SHA256"
-gpg --armor --clearsign --digest-algo SHA256 -u 22598A94 /tmp/sift-saltstack-$TAG_NAME.tar.gz.sha256
-
-echo "==> Generating GPG Signature of tar.gz file"
-gpg --armor --detach-sign -u 22598A94 /tmp/sift-saltstack-$TAG_NAME.tar.gz
 
 echo "==> Uploading sift-saltstack-$TAG_NAME.tar.gz.sha256"
 curl -XPOST -H "Authorization: token ${GITHUB_ACCESS_TOKEN}" -H "Content-Type: text/plain" -q "https://uploads.github.com/repos/sans-dfir/sift-saltstack/releases/${RELEASE_ID}/assets?name=sift-saltstack-${TAG_NAME}.tar.gz.sha256" --data-binary @/tmp/sift-saltstack-$TAG_NAME.tar.gz.sha256

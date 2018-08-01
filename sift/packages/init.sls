@@ -196,11 +196,6 @@ include:
   - sift.packages.xmount
   - sift.packages.xpdf
   - sift.packages.zenity
-  {% if grains['oscodename'] == "trusty" -%}
-  - sift.packages.f-spot
-  - sift.packages.nautilus-open-terminal
-  - sift.packages.ubuntu-tweak
-  {% endif %}
 
 sift-packages:
   test.nop:
@@ -401,8 +396,3 @@ sift-packages:
       - sls: sift.packages.xmount
       - sls: sift.packages.xpdf
       - sls: sift.packages.zenity
-      {% if grains['oscodename'] == "trusty" -%}
-      - sls: sift.packages.f-spot
-      - sls: sift.packages.nautilus-open-terminal
-      - sls: sift.packages.ubuntu-tweak
-      {% endif -%}

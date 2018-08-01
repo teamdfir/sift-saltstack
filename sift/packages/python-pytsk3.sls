@@ -1,13 +1,13 @@
 include:
-  - sift.repos.sift
+  - sift.repos.gift
 
-pytsk3-removed:
+sift-package-removed-pytsk3:
   pkg.removed:
     - name: pytsk3
 
-pytsk3:
+sift-package-python-pytsk3:
   pkg.installed:
     - name: python-pytsk3
     - required:
-      - pkg: pytsk3-removed
-      - sls: sift.repos.sift
+      - pkg: sift-package-removed-pytsk3
+      - sls: sift.repos.gift

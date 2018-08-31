@@ -19,7 +19,7 @@ sift-pdf-poster-dfir-threat-intel:
   file.managed:
     - name: /home/{{ user }}/Desktop/DFIR-Threat-Intel-Poster.pdf
     - source: https://digital-forensics.sans.org/media/Poster_DFIR_Threat-Intel_2017.pdf
-    - source_hash: sha256=c18b226d3d29f07136822bb5c555e8d71dae02ee4a0ba69c6a3588f95324481f
+    - source_hash: sha256=e221bc427061602c29a1b1250ee76e3f3adb4aace5ff4f41e1d3918ad6d9abb4
     - user: {{ user }}
     - group: {{ user }}
     - makedirs: True

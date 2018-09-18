@@ -52,6 +52,7 @@ include:
   - sift.packages.ghex
   - sift.packages.git
   - sift.packages.graphviz
+  - sift.packages.grepcidr
   - sift.packages.gthumb
   - sift.packages.gzrt
   - sift.packages.hexedit
@@ -253,6 +254,7 @@ sift-packages:
       - sls: sift.packages.ghex
       - sls: sift.packages.git
       - sls: sift.packages.graphviz
+      - sls: sift.packages.grepcidr
       - sls: sift.packages.gthumb
       - sls: sift.packages.gzrt
       - sls: sift.packages.hexedit

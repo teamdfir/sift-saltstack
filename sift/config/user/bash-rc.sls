@@ -17,20 +17,12 @@ rekall-path:
     - require:
       - user: sift-user-{{ user }}
 
-sift-config-user-prompt-command:
-  file.append:
-    - name: /home/{{ user }}/.bashrc
-    - text: siftprompt() { PS1X='$(p="${PWD#${HOME}}"; [ "${PWD}" != "${p}" ] && printf "~";IFS=/; for q in ${p:1}; do printf /${q:0:1}; done; printf "${q:1}")'; export PS1="\[\033[1;31m\]\u@\h\[\033[1;34m\] -> $PS1X \n\[\033[0;37m\]$ \[\033[0m\]"; }
-    - require:
-      - user: sift-user-{{ user }}
-
 sift-config-user-prompt:
   file.append:
     - name: /home/{{ user }}/.bashrc
-    - text: PROMPT_COMMAND="siftprompt"
+    - text: if [ $EUID -eq 0 ]; then PS1="\[\033[1;91m\]\u@\h\[\033[0m\]: \[\033[32m\]\w\[\033[0m\]\n\\$ "; else PS1="\[\033[1;36m\]\u@\h\[\033[0m\]: \[\033[32m\]\w\[\033[0m\]\n\\$ "; fi
     - require:
       - user: sift-user-{{ user }}
-      - file: sift-config-user-prompt-command
 
 rc-root-noclobber:
   file.append:
@@ -39,14 +31,7 @@ rc-root-noclobber:
     - require:
       - file: rekall-path
 
-sift-config-root-prompt-command:
-  file.append:
-    - name: /root/.bashrc
-    - text: siftprompt() { PS1X='$(p="${PWD#${HOME}}"; [ "${PWD}" != "${p}" ] && printf "~";IFS=/; for q in ${p:1}; do printf /${q:0:1}; done; printf "${q:1}")'; export PS1="\[\033[1;31m\]\u@\h\[\033[1;34m\] -> $PS1X \n\[\033[0;37m\]# \[\033[0m\]"; }
-
 sift-config-root-prompt:
   file.append:
     - name: /root/.bashrc
-    - text: PROMPT_COMMAND="siftprompt"
-    - require:
-      - file: sift-config-root-prompt-command
+    - text: if [ $EUID -eq 0 ]; then PS1="\[\033[1;91m\]\u@\h\[\033[0m\]: \[\033[32m\]\w\[\033[0m\]\n\\$ "; else PS1="\[\033[1;36m\]\u@\h\[\033[0m\]: \[\033[32m\]\w\[\033[0m\]\n\\$ "; fi

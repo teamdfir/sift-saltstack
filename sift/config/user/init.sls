@@ -6,9 +6,6 @@ include:
   - sift.config.user.pdfs
   - sift.config.user.rekall
   - sift.config.user.symlinks
-  - sift.config.user.terminal
-  - sift.config.user.theme
-  - sift.config.user.unity
 
 sift-config-user:
   test.nop:
@@ -21,7 +18,4 @@ sift-config-user:
       - sls: sift.config.user.pdfs
       - sls: sift.config.user.rekall
       - sls: sift.config.user.symlinks
-      - sls: sift.config.user.terminal
-      - sls: sift.config.user.theme
-      - sls: sift.config.user.unity
       

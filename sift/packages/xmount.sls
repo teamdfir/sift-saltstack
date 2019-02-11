@@ -1,2 +1,8 @@
+include:
+  - sift.repos.sift
+
 xmount:
-  pkg.installed
+  pkg.latest:
+    - name: xmount
+    - require:
+      - sls: sift.repos.gift

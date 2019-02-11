@@ -23,3 +23,8 @@ sift-repo:
     - refresh_db: true
     - require:
       - pkg: python-software-properties
+
+sift-repo-preferences:
+  file.managed:
+    - name: /etc/apt/preferences.d/sift
+    - source: salt://sift/files/apt/sift.preferences

@@ -1,2 +1,4 @@
 sleuthkit:
-  pkg.installed
+  pkg.latest:
+    - name: sleuthkit
+    

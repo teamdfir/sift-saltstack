@@ -24,3 +24,8 @@ sift-gift-repo:
     - refresh_db: true
     - require:
       - pkg: python-software-properties
+
+sift-gift-repo-preferences:
+  file.managed:
+    - name: /etc/apt/preferences.d/gift
+    - source: salt://sift/files/apt/gift.preferences

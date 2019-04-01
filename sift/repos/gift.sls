@@ -1,7 +1,7 @@
 {%- set version = salt['pillar.get']('sift_version', 'stable') -%}
 
 include:
-  - ..packages.python-software-properties
+  - sift.packages.software-properties-common
 
 {%- if version == "stable" %}
 sift-gift-dev:
@@ -21,9 +21,11 @@ sift-gift-repo:
   pkgrepo.managed:
     - name: gift
     - ppa: gift/{{ version }}
-    - refresh_db: true
+    - keyid: 3ED1EAECE81894B171D7DA5B5E80511B10C598B8
+    - keyserver: hkp://p80.pool.sks-keyservers.net:80
+    - refresh: true
     - require:
-      - pkg: python-software-properties
+      - sls: sift.packages.software-properties-common
 
 sift-gift-repo-preferences:
   file.managed:

@@ -29,7 +29,7 @@ include:
   - sift.packages.docker-engine
   - sift.packages.driftnet
   - sift.packages.dsniff
-  - sift.packages.dumbpig
+
   - sift.packages.e2fslibs-dev
   - sift.packages.ent
   - sift.packages.epic5
@@ -232,7 +232,6 @@ sift-packages:
       - sls: sift.packages.docker-engine
       - sls: sift.packages.driftnet
       - sls: sift.packages.dsniff
-      - sls: sift.packages.dumbpig
       - sls: sift.packages.e2fslibs-dev
       - sls: sift.packages.ent
       - sls: sift.packages.epic5

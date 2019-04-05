@@ -106,7 +106,7 @@ include:
   - sift.packages.libvshadow-python
   - sift.packages.libvshadow-tools
   - sift.packages.libxml2-dev
-  - sift.packages.libxslt-dev
+  - sift.packages.libxslt1-dev
   - sift.packages.md5deep
   - sift.packages.nbd-client
   - sift.packages.nbtscan
@@ -308,7 +308,7 @@ sift-packages:
       - sls: sift.packages.libvshadow-python
       - sls: sift.packages.libvshadow-tools
       - sls: sift.packages.libxml2-dev
-      - sls: sift.packages.libxslt-dev
+      - sls: sift.packages.libxslt1-dev
       - sls: sift.packages.md5deep
       - sls: sift.packages.nbd-client
       - sls: sift.packages.nbtscan

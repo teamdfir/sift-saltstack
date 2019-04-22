@@ -21,10 +21,10 @@ sift-python-volatility:
   pip.installed:
     - name: git+https://github.com/volatilityfoundation/volatility.git@2.6.1
     - require:
-      - pkg: git
-      - pkg: python-pip
+      - sls: sift.packages.git
+      - sls: sift.packages.python-pip
 
-python-volatility-community-plugins:
+sift-python-volatility-community-plugins:
   git.latest:
     - name: https://github.com/sans-dfir/volatility-plugins-community.git
     - target: /usr/lib/python2.7/dist-packages/volatility/plugins/community
@@ -35,8 +35,8 @@ python-volatility-community-plugins:
     - force_clone: True
     - force_reset: True
     - require:
-      - pkg: git
-      - pkg: python-volatility
+      - pip: sift-python-volatility
+      - sls: sift.packages.git
       - sls: sift.python-packages.colorama
       - sls: sift.python-packages.construct
       - sls: sift.python-packages.dpapick
@@ -50,7 +50,7 @@ python-volatility-community-plugins:
       - sls: sift.python-packages.simplejson
       - sls: sift.python-packages.yara-python
 
-python-volatility-sift-plugins:
+sift-python-volatility-sift-plugins:
   file.recurse:
     - name: /usr/lib/python2.7/dist-packages/volatility/plugins/sift/
     - source: salt://sift/files/volatility
@@ -58,12 +58,14 @@ python-volatility-sift-plugins:
     - file_mode: 644
     - include_pat: '*.py'
     - watch:
-      - pkg: python-volatility
+      - git: sift-python-volatility-community-plugins
+      - pip: sift-python-volatility
 
 {% for plugin in remove_plugins -%}
-python-volatility-plugins-{{ plugin }}-absent:
+sift-python-volatility-plugins-{{ plugin }}-absent:
   file.absent:
     - name: /usr/lib/python2.7/dist-packages/volatility/plugins/{{ plugin }}
     - watch:
-      - pkg: python-volatility
+      - git: sift-python-volatility-community-plugins
+      - pip: sift-python-volatility
 {% endfor -%}

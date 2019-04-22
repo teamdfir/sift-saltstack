@@ -1,12 +1,12 @@
 include:
-  - ..packages.python-volatility
-  - ..scripts.regripper
+  - sift.python-packages.volatility
+  - sift.scripts.regripper
 
 /usr/bin/vol.py:
   file.symlink:
     - target: /usr/bin/vol
     - require:
-      - pkg: python-volatility
+      - sls: sift.python-packages.volatility
 
 #/usr/bin/gedit:
 #  file.symlink:

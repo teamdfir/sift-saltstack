@@ -1,7 +1,9 @@
-{%- set commit = "ee681a07a0c32a5ccaea788cd7d012d19872f181" -%}
-{%- set hash = "7141258a36037653dd377d062350f703b90c99e70c9e3d38f86fcd8c70258e1b" -%}
-# Source: https://github.com/superponible/DFIR
-# License: Unknown
+# source=https://github.com/superponible/DFIR
+# license=unknown
+
+{% set commit = "ee681a07a0c32a5ccaea788cd7d012d19872f181" -%}
+{% set hash = "7141258a36037653dd377d062350f703b90c99e70c9e3d38f86fcd8c70258e1b" -%}
+
 sift-scripts-dump-mft-entry:
   file.managed:
     - name: /usr/local/bin/dump-mft-entry.pl

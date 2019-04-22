@@ -20,6 +20,3 @@ sift-scripts-afterglow-shebang:
     - count: 1
     - watch:
       - file: sift-scripts-afterglow
-
-
-

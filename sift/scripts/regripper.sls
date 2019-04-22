@@ -1,3 +1,7 @@
+# source=https://github.com/keydet89/RegRipper2.8
+# license=mit
+# license_source=https://github.com/keydet89/RegRipper2.8/blob/master/license.md
+
 include:
   - sift.packages.git
   - sift.packages.libparse-win32registry-perl

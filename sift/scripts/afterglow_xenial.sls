@@ -1,7 +1,8 @@
 include:
   - sift.repos.sift
 
-afterglow:
+sift-package-afterglow:
   pkg.installed:
     - required:
-      - pkgrepo: sift-repo
+      - sls: sift.repos.sift
+

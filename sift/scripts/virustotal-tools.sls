@@ -1,5 +1,6 @@
-# Source: https://blog.didierstevens.com/programs/virustotal-tools/
-# License: Unknown, No Copyright
+# source=https://blog.didierstevens.com/programs/virustotal-tools/
+# license=unknown
+
 sift-scripts-virustotal-search-archive:
   archive.extracted:
     - name: /usr/local/src/virustotal-search-v0.1.4

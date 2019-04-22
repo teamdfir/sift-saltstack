@@ -1,4 +1,8 @@
-{%- set files = ['bodyfile.pl','evtparse.pl','evtrpt.pl','evtxparse.pl','fb.pl','ff.pl','ff_signons.pl','ftkparse.pl','idx.pl','idxparse.pl','jl.pl','jobparse.pl','lfle.pl','lnk.pl','mft.pl','parse.pl','parsei30.pl','parseie.pl','pie.pl','pref.pl','rawie.pl','recbin.pl','regslack.pl','regtime.pl','rfc.pl','rlo.pl','tln.pl','usnj.pl'] -%}
+# source=https://github.com/keydet89/Tools.git
+# license=unknown
+
+{% set files = ['bodyfile.pl','evtparse.pl','evtrpt.pl','evtxparse.pl','fb.pl','ff.pl','ff_signons.pl','ftkparse.pl','idx.pl','idxparse.pl','jl.pl','jobparse.pl','lfle.pl','lnk.pl','mft.pl','parse.pl','parsei30.pl','parseie.pl','pie.pl','pref.pl','rawie.pl','recbin.pl','regslack.pl','regtime.pl','rfc.pl','rlo.pl','tln.pl','usnj.pl'] -%}
+
 include:
   - sift.packages.git
 

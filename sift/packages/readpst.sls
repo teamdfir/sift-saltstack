@@ -1,2 +1,2 @@
-readpst:
-  pkg.installed
+include:
+  - sift.packages.readpst_{{ grains['oscodename'] }}

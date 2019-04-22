@@ -1,3 +1,4 @@
+{% if grains['oscodename'] == "xenial" %}
 include:
   - sift.repos.sift
 
@@ -6,3 +7,4 @@ sift-pacakge-python-flowgrep:
     - name: python-flowgrep
     - require:
       - sls: sift.repos.sift
+{% endif %}

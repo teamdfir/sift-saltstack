@@ -1,8 +1,8 @@
 {%- set remove_plugins = ["malprocfind.py","idxparser.py","chromehistory.py","mimikatz.py","openioc_scan.py","pstotal.py","firefoxhistory.py","autoruns.py","malfinddeep.py","prefetch.py","baseline.py","ssdeepscan.py","uninstallinfo.py","trustrecords.py","usnparser.py","apihooksdeep.py","editbox.py","javarat.py"] -%}
 
 include:
-  - ..repos.sift
-  - .git
+  - sift.repos.sift
+  - sift.packages.git
   - sift.python-packages.colorama
   - sift.python-packages.construct
   - sift.python-packages.dpapick

@@ -283,10 +283,10 @@ sift-packages:
       - sls: sift.packages.libnet1
       - sls: sift.packages.libolecf
       - sls: sift.packages.libparse-win32registry-perl
-      - sls: sift.packages.libpff
-      - sls: sift.packages.libpff-dev
-      - sls: sift.packages.libpff-python
-      - sls: sift.packages.libpff-tools
+      # - sls: sift.packages.libpff
+      # - sls: sift.packages.libpff-dev
+      # - sls: sift.packages.libpff-python
+      # - sls: sift.packages.libpff-tools
       - sls: sift.packages.libplist-utils
       - sls: sift.packages.libregf
       - sls: sift.packages.libregf-dev

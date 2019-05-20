@@ -6,6 +6,9 @@ include:
 simplejson:
   pip.installed:
     - name: simplejson
+    {% if grains['oscodename'] == "bionic" -%}
+    - pip_bin: /usr/bin/pip
+    {% endif -%}
     - upgrade: True
     - require:
       - sls: sift.packages.python-pip

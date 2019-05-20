@@ -3,7 +3,7 @@ include:
   
 pip:
   pip.installed:
-    - name: pip==9.0.1
+    - name: pip>=9.0.1
     - upgrade: True
     - require:
       - pkg: python-pip

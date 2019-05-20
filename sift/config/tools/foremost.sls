@@ -6,7 +6,7 @@ sift-scripts-foremost-config:
     - name: /etc/foremost.conf
     - source: salt://sift/files/foremost/foremost.conf
     - required:
-      - pkg: foremost
+      - sls: sift.packages.foremost
 
 sift-scripts-foremost-config-usr-local:
   file.managed:
@@ -14,4 +14,4 @@ sift-scripts-foremost-config-usr-local:
     - source: salt://sift/files/foremost/foremost.conf
     - makedirs: True
     - required:
-      - pkg: foremost
+      - sls: sift.packages.foremost

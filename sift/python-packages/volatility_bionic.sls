@@ -20,6 +20,9 @@ include:
 sift-python-volatility:
   pip.installed:
     - name: git+https://github.com/volatilityfoundation/volatility.git@2.6.1
+    {% if grains['oscodename'] == "bionic" -%}
+    - pip_bin: /usr/bin/pip
+    {% endif -%}
     - require:
       - sls: sift.packages.git
       - sls: sift.packages.python-pip

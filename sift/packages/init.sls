@@ -86,10 +86,10 @@ include:
   - sift.packages.libnet1
   - sift.packages.libolecf
   - sift.packages.libparse-win32registry-perl
-  - sift.packages.libpff
-  - sift.packages.libpff-dev
-  - sift.packages.libpff-python
-  - sift.packages.libpff-tools
+  #- sift.packages.libpff
+  #- sift.packages.libpff-dev
+  #- sift.packages.libpff-python
+  #- sift.packages.libpff-tools
   - sift.packages.libplist-utils
   - sift.packages.libregf
   - sift.packages.libregf-dev
@@ -135,7 +135,7 @@ include:
   - sift.packages.python
   - sift.packages.python-dev
   - sift.packages.python-dfvfs
-  - sift.packages.python-flowgrep
+  #- sift.packages.python-flowgrep
   - sift.packages.python-fuse
   - sift.packages.python-nids
   - sift.packages.python-pefile
@@ -331,7 +331,7 @@ sift-packages:
       - sls: sift.packages.python
       - sls: sift.packages.python-dev
       - sls: sift.packages.python-dfvfs
-      - sls: sift.packages.python-flowgrep
+      # - sls: sift.packages.python-flowgrep
       - sls: sift.packages.python-fuse
       - sls: sift.packages.python-nids
       - sls: sift.packages.python-pefile

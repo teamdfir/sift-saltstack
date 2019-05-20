@@ -1,6 +1,6 @@
 {%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
 include:
-  - ..packages.samba
+  - sift.packages.samba
 
 sift-samba-global-config:
   file.managed:
@@ -10,7 +10,7 @@ sift-samba-global-config:
     - context:
           user: {{ user }}
     - require:
-      - pkg: samba
+      - sls: sift.packages.samba
 
 samba-service-smbd:
   service.running:

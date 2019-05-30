@@ -4,7 +4,7 @@ include:
   - sift.python-packages
   - sift.scripts
 
-sift-version-file:
+sift-server-version-file:
   file.managed:
     - name: /etc/sift-version
     - source: salt://VERSION

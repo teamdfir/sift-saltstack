@@ -44,7 +44,7 @@ sift-config-theme-manage-gnome-terminal:
 
 sift-config-theme-gnome-shell-favorites:
   cmd.run:
-    - name: gsettings set org.gnome.shell favorite-apps ['gnome-terminal.desktop', 'firefox.desktop', 'org.gnome.Nautilus.desktop']
+    - name: gsettings set org.gnome.shell favorite-apps "['gnome-terminal.desktop', 'firefox.desktop', 'org.gnome.Nautilus.desktop']"
     - runas: {{ user }}
     - cwd: /home/{{ user }}
     - shell: /bin/bash

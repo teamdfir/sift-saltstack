@@ -48,4 +48,15 @@ sift-config-theme-gnome-shell-favorites:
     - runas: {{ user }}
     - cwd: /home/{{ user }}
     - shell: /bin/bash
-    - env:
+    - require:
+      - user: sift-user-{{ user }}
+
+sift-config-theme-gnome-launcher-position:
+  cmd.run:
+    - name: gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+    - runas: {{ user }}
+    - cwd: /home/{{ user }}
+    - shell: /bin/bash
+    - require:
+      - user: sift-user-{{ user }}
+

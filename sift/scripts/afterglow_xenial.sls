@@ -3,6 +3,7 @@ include:
 
 sift-package-afterglow:
   pkg.installed:
+    - name: afterglow
     - required:
       - sls: sift.repos.sift
 

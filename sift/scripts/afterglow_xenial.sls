@@ -1,8 +1,9 @@
 include:
   - sift.repos.sift
 
-bitpim-lib:
+sift-package-afterglow:
   pkg.installed:
-    - name: bitpim-lib
-    - require:
+    - name: afterglow
+    - required:
       - sls: sift.repos.sift
+

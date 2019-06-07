@@ -1,5 +1,9 @@
-{%- set exiftool_version = '10.60' -%}
-{%- set exiftool_sha256  = 'df0988f60e1a6c086799e1f2ecd419e8abbad4dfb5dfa66c6080c78a5cb7acfa' -%}
+# source=https://owl.phy.queensu.ca/~phil/exiftool/
+# license=free
+
+{% set exiftool_version = '10.60' -%}
+{% set exiftool_sha256  = 'df0988f60e1a6c086799e1f2ecd419e8abbad4dfb5dfa66c6080c78a5cb7acfa' -%}
+
 include:
   - sift.packages.patch
   

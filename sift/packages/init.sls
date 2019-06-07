@@ -2,14 +2,11 @@ include:
   - sift.packages.absent
   - sift.packages.aeskeyfind
   - sift.packages.afflib-tools
-  - sift.packages.afterglow
   - sift.packages.aircrack-ng
   - sift.packages.apache2
   - sift.packages.arp-scan
   - sift.packages.autopsy
   - sift.packages.bcrypt
-  - sift.packages.bitpim
-  - sift.packages.bitpim-lib
   - sift.packages.bkhive
   - sift.packages.bless
   - sift.packages.blt
@@ -26,10 +23,9 @@ include:
   - sift.packages.dc3dd
   - sift.packages.dcfldd
   - sift.packages.dconf-tools
-  - sift.packages.docker-engine
+  - sift.packages.docker
   - sift.packages.driftnet
   - sift.packages.dsniff
-  - sift.packages.dumbpig
   - sift.packages.e2fslibs-dev
   - sift.packages.ent
   - sift.packages.epic5
@@ -83,6 +79,7 @@ include:
   - sift.packages.libfuse-dev
   - sift.packages.libfvde
   - sift.packages.libfvde-tools
+  - sift.packages.libguestfs-tools
   - sift.packages.liblightgrep
   - sift.packages.libmsiecf
   - sift.packages.libncurses
@@ -141,7 +138,6 @@ include:
   - sift.packages.python-flowgrep
   - sift.packages.python-fuse
   - sift.packages.python-nids
-  - sift.packages.python-ntdsxtract
   - sift.packages.python-pefile
   - sift.packages.python-pip
   - sift.packages.python-plaso
@@ -149,7 +145,6 @@ include:
   - sift.packages.python-qt4
   - sift.packages.python-tk
   - sift.packages.python-virtualenv
-  - sift.packages.python-volatility
   - sift.packages.python-yara
   - sift.packages.python3
   - sift.packages.python3-pip
@@ -204,14 +199,11 @@ sift-packages:
     - require:
       - sls: sift.packages.aeskeyfind
       - sls: sift.packages.afflib-tools
-      - sls: sift.packages.afterglow
       - sls: sift.packages.aircrack-ng
       - sls: sift.packages.apache2
       - sls: sift.packages.arp-scan
       - sls: sift.packages.autopsy
       - sls: sift.packages.bcrypt
-      - sls: sift.packages.bitpim
-      - sls: sift.packages.bitpim-lib
       - sls: sift.packages.bkhive
       - sls: sift.packages.bless
       - sls: sift.packages.blt
@@ -228,10 +220,9 @@ sift-packages:
       - sls: sift.packages.dc3dd
       - sls: sift.packages.dcfldd
       - sls: sift.packages.dconf-tools
-      - sls: sift.packages.docker-engine
+      - sls: sift.packages.docker
       - sls: sift.packages.driftnet
       - sls: sift.packages.dsniff
-      - sls: sift.packages.dumbpig
       - sls: sift.packages.e2fslibs-dev
       - sls: sift.packages.ent
       - sls: sift.packages.epic5
@@ -285,6 +276,7 @@ sift-packages:
       - sls: sift.packages.libfuse-dev
       - sls: sift.packages.libfvde
       - sls: sift.packages.libfvde-tools
+      - sls: sift.packages.libguestfs-tools
       - sls: sift.packages.liblightgrep
       - sls: sift.packages.libmsiecf
       - sls: sift.packages.libncurses
@@ -342,7 +334,6 @@ sift-packages:
       - sls: sift.packages.python-flowgrep
       - sls: sift.packages.python-fuse
       - sls: sift.packages.python-nids
-      - sls: sift.packages.python-ntdsxtract
       - sls: sift.packages.python-pefile
       - sls: sift.packages.python-pip
       - sls: sift.packages.python-plaso
@@ -350,7 +341,6 @@ sift-packages:
       - sls: sift.packages.python-qt4
       - sls: sift.packages.python-tk
       - sls: sift.packages.python-virtualenv
-      - sls: sift.packages.python-volatility
       - sls: sift.packages.python-yara
       - sls: sift.packages.python3
       - sls: sift.packages.python3-pip

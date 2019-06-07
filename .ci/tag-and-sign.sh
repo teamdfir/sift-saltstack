@@ -55,10 +55,10 @@ echo "==> Generating SHA256 of tar.gz"
 shasum -a 256 /tmp/sift-saltstack-${TAG_NAME}.tar.gz > /tmp/sift-saltstack-${TAG_NAME}.tar.gz.sha256
 
 echo "==> Generating GPG Signature of SHA256"
-gpg --armor --clearsign --digest-algo SHA256 -u D3C24F9F /tmp/sift-saltstack-${TAG_NAME}.tar.gz.sha256
+gpg --armor --clearsign --digest-algo SHA256 -u 5D29135B37983CAC6097962315B9AD7122598A94 /tmp/sift-saltstack-${TAG_NAME}.tar.gz.sha256
 
 echo "==> Generating GPG Signature of tar.gz file"
-gpg --armor --detach-sign -u D3C24F9F /tmp/sift-saltstack-${TAG_NAME}.tar.gz
+gpg --armor --detach-sign -u 5D29135B37983CAC6097962315B9AD7122598A94 /tmp/sift-saltstack-${TAG_NAME}.tar.gz
 
 echo "==> Uploading sift-saltstack-$TAG_NAME.tar.gz.sha256"
 curl -XPOST -H "Authorization: token ${GITHUB_ACCESS_TOKEN}" -H "Content-Type: text/plain" -q "https://uploads.github.com/repos/sans-dfir/sift-saltstack/releases/${RELEASE_ID}/assets?name=sift-saltstack-${TAG_NAME}.tar.gz.sha256" --data-binary @/tmp/sift-saltstack-$TAG_NAME.tar.gz.sha256

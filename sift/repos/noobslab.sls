@@ -7,7 +7,7 @@ sift-repo-noobslab-themes:
     - ppa: noobslab/themes
     - refresh_db: true
     - require:
-      - pkg: software-properties-common
+      - sls: sift.packages.software-properties-common
 
 sift-repo-noobslab-icons:
   pkgrepo.managed:
@@ -15,5 +15,5 @@ sift-repo-noobslab-icons:
     - ppa: noobslab/icons
     - refresh_db: true
     - require:
-      - pkg: software-properties-common
+      - sls: sift.packages.software-properties-common
 

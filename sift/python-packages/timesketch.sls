@@ -1,13 +1,16 @@
 {%- set reinstall = salt['pillar.get']('python_force_reinstall', False) -%}
 include:
-  - ..packages.python-pip
-  - ..packages.python-dev
-  - ..packages.libffi-dev
+  - sift.packages.python-pip
+  - sift.packages.python-dev
+  - sift.packages.libffi-dev
 
 timesketch:
   pip.installed:
+    {% if grains['oscodename'] == "bionic" -%}
+    - pip_bin: /usr/bin/pip
+    {% endif -%}
     - force_reinstall: {{ reinstall }}
     - require:
-      - pkg: python-pip
-      - pkg: python-dev
-      - pkg: libffi-dev
+      - sls: sift.packages.python-pip
+      - sls: sift.packages.python-dev
+      - sls: sift.packages.libffi-dev

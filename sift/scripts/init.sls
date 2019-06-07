@@ -1,6 +1,9 @@
 include:
   - sift.scripts.4n6
+  - sift.scripts.afterglow
   - sift.scripts.amcache
+  - sift.scripts.densityscout
+  - sift.scripts.dumbpig
   - sift.scripts.dump-mft-entry
   - sift.scripts.image-mounter
   - sift.scripts.java-idx-parser
@@ -28,7 +31,10 @@ sift-scripts:
     - name: sift-scripts
     - require:
       - sls: sift.scripts.4n6
+      - sls: sift.scripts.afterglow
       - sls: sift.scripts.amcache
+      - sls: sift.scripts.densityscout
+      - sls: sift.scripts.dumbpig
       - sls: sift.scripts.dump-mft-entry
       - sls: sift.scripts.image-mounter
       - sls: sift.scripts.java-idx-parser

@@ -6,6 +6,9 @@ include:
 analyzemft:
   pip.installed:
     - name: git+https://github.com/dkovar/analyzeMFT.git@{{ commit }}
+    {% if grains['oscodename'] == "bionic" -%}
+    - pip_bin: /usr/bin/pip
+    {% endif -%}
     - require:
       - sls: sift.packages.git
       - sls: sift.packages.python-pip

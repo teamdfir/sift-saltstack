@@ -11,6 +11,7 @@ include:
   - sift.python-packages.ioc_writer
   - sift.python-packages.lxml
   - sift.python-packages.machinae
+  - sift.python-packages.ntdsxtract
   - sift.python-packages.pefile
   - sift.python-packages.pip
   - sift.python-packages.pysocks
@@ -27,6 +28,7 @@ include:
   - sift.python-packages.unicodecsv
   - sift.python-packages.usnparser
   - sift.python-packages.virustotal-api
+  - sift.python-packages.volatility
   - sift.python-packages.wheel
   - sift.python-packages.windowsprefetch
 
@@ -46,6 +48,7 @@ sift-python-packages:
       - sls: sift.python-packages.ioc_writer
       - sls: sift.python-packages.lxml
       - sls: sift.python-packages.machinae
+      - sls: sift.python-packages.ntdsxtract
       - sls: sift.python-packages.pefile
       - sls: sift.python-packages.pip
       - sls: sift.python-packages.pysocks
@@ -62,5 +65,6 @@ sift-python-packages:
       - sls: sift.python-packages.unicodecsv
       - sls: sift.python-packages.usnparser
       - sls: sift.python-packages.virustotal-api
+      - sls: sift.python-packages.volatility
       - sls: sift.python-packages.wheel
       - sls: sift.python-packages.windowsprefetch

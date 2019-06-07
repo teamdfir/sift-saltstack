@@ -13,4 +13,8 @@ openjdk:
     - name: openjdk-7-jdk
     - require:
       - pkgrepo: openjdk-repo
+{% elif grains['oscodename'] == "bionic" %}
+openjdk: 
+  pkg.installed:
+    - name: openjdk-8-jdk
 {%- endif -%}

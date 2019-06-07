@@ -5,4 +5,4 @@ xmount:
   pkg.latest:
     - name: xmount
     - require:
-      - sls: sift.repos.gift
+      - sls: sift.repos.sift

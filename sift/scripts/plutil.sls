@@ -1,15 +1,17 @@
-{%- set commit = "b830f58fe53958c54def0ec66d0617f9cf5c60d9" -%}
-{%- set hash = "a1db4dccfa54a41361d11273dfdd88c59b4caca60f4d58e672cc867393a72166" -%}
+# source=https://github.com/HearthSim/extract-scripts
+# license=unknown
+
+{% set commit = "b830f58fe53958c54def0ec66d0617f9cf5c60d9" -%}
+{% set hash = "sha256=a1db4dccfa54a41361d11273dfdd88c59b4caca60f4d58e672cc867393a72166" -%}
+
 include:
   - sift.packages.libencode-perl
 
-# Source: https://github.com/HearthSim/extract-scripts
-# License: Unknown
 sift-scripts-plutil:
   file.managed:
     - name: /usr/local/src/scripts/plutil.pl
-    - source: https://raw.githubusercontent.com/HearthSim/extract-scripts/master/plutil.pl
-    - source_hash: sha256={{ hash }}
+    - source: https://raw.githubusercontent.com/HearthSim/extract-scripts/{{ commit }}/plutil.pl
+    - source_hash: {{ hash }}
     - makedirs: True
     - require:
       - sls: sift.packages.libencode-perl

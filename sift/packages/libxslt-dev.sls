@@ -1,2 +1,3 @@
 libxslt-dev:
-  pkg.installed
+  pkg.installed:
+    - name: libxslt1-dev

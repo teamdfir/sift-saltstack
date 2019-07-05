@@ -1,4 +1,4 @@
-{%- set remove_plugins = ["malprocfind.py","idxparser.py","chromehistory.py","mimikatz.py","openioc_scan.py","pstotal.py","firefoxhistory.py","autoruns.py","malfinddeep.py","prefetch.py","baseline.py","ssdeepscan.py","uninstallinfo.py","trustrecords.py","usnparser.py","apihooksdeep.py","editbox.py","javarat.py"] -%}
+{%- set remove_plugins = ["malprocfind.py","idxparser.py","chromehistory.py","mimikatz.py","openioc_scan.py","pstotal.py","firefoxhistory.py","autoruns.py","malfinddeep.py","prefetch.py","ssdeepscan.py","uninstallinfo.py","trustrecords.py","usnparser.py","apihooksdeep.py","editbox.py","javarat.py"] -%}
 
 include:
   - sift.repos.sift
@@ -20,9 +20,7 @@ include:
 sift-python-volatility:
   pip.installed:
     - name: git+https://github.com/volatilityfoundation/volatility.git@2.6.1
-    {% if grains['oscodename'] == "bionic" -%}
     - pip_bin: /usr/bin/pip
-    {% endif -%}
     - require:
       - sls: sift.packages.git
       - sls: sift.packages.python-pip
@@ -30,7 +28,8 @@ sift-python-volatility:
 sift-python-volatility-community-plugins:
   git.latest:
     - name: https://github.com/sans-dfir/volatility-plugins-community.git
-    - target: /usr/lib/python2.7/dist-packages/volatility/plugins/community
+    # Note: This path changed to /usr/local/lib starting in 18.04
+    - target: /usr/local/lib/python2.7/dist-packages/volatility/plugins/community
     - user: root
     - branch: master
     - force_fetch: True
@@ -55,7 +54,8 @@ sift-python-volatility-community-plugins:
 
 sift-python-volatility-sift-plugins:
   file.recurse:
-    - name: /usr/lib/python2.7/dist-packages/volatility/plugins/sift/
+    # Note: This path changed to /usr/local/lib starting in 18.04
+    - name: /usr/local/lib/python2.7/dist-packages/volatility/plugins/sift/
     - source: salt://sift/files/volatility
     - makedirs: True
     - file_mode: 644
@@ -67,7 +67,8 @@ sift-python-volatility-sift-plugins:
 {% for plugin in remove_plugins -%}
 sift-python-volatility-plugins-{{ plugin }}-absent:
   file.absent:
-    - name: /usr/lib/python2.7/dist-packages/volatility/plugins/{{ plugin }}
+    # Note: This path changed to /usr/local/lib starting in 18.04
+    - name: /usr/local/lib/python2.7/dist-packages/volatility/plugins/{{ plugin }}
     - watch:
       - git: sift-python-volatility-community-plugins
       - pip: sift-python-volatility

@@ -1,5 +1,5 @@
 {%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
-{%- set dbus = salt['cmd.run']("ps -u " + user + " e | grep -Eo 'dbus-daemon.*address=unix:abstract=/tmp/dbus-[A-Za-z0-9]{10}' | tail -c35", shell="/bin/bash", runas="root", cwd="/root", python_shell=True) -%}
+{%- set dbus_address = salt['cmd.run']("dbus-launch | grep DBUS_SESSION_BUS_ADDRESS | cut -d= -f2-", shell="/bin/bash", runas=user, cwd="/home/" + user, python_shell=True) -%}
 
 include:
   - sift.config.user.user
@@ -24,7 +24,7 @@ sift-config-theme-set-background-file-gsettings:
     - cwd: /home/{{ user }}
     - shell: /bin/bash
     - env:
-      - DBUS_SESSION_BUS_ADDRESS: "{{ dbus }}"
+      - DBUS_SESSION_BUS_ADDRESS: "{{ dbus_address }}"
     - require:
       - file: sift-config-theme-set-background-file
 

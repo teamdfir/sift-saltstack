@@ -1,4 +1,9 @@
 {%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
+{%- if user == "root" -%}
+  {%- set home = "/root" -%}
+{%- else -%}
+  {%- set home = salt['user.info'](user).home -%}
+{%- endif -%}
 
 include:
   - sift.python-packages.rekall
@@ -6,7 +11,7 @@ include:
 
 sift-config-user-rekall-rc:
   file.managed:
-    - name: /home/{{ user }}/.rekallrc
+    - name: {{ home }}/.rekallrc
     - source: salt://sift/config/user/files/rekall-profile.txt
     - user: {{ user }}
     - group: {{ user }}

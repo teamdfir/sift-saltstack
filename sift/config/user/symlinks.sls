@@ -1,17 +1,22 @@
 {%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
+{%- if user == "root" -%}
+  {%- set home = "/root" -%}
+{%- else -%}
+  {%- set home = salt['user.info'](user).home -%}
+{%- endif -%}
 
 include:
   - .user
 
 symlinks-user-desktop-directory:
   file.directory:
-    - name: /home/{{ user }}/Desktop
+    - name: {{ home }}/Desktop
     - require:
       - user: sift-user-{{ user }}
 
 symlinks-mount-points:
   file.symlink:
-    - name: /home/{{ user }}/Desktop/mount_points
+    - name: {{ home }}/Desktop/mount_points
     - target: /mnt
     - user: {{ user }}
     - group: {{ user }}
@@ -21,7 +26,7 @@ symlinks-mount-points:
 
 symlinks-cases:
   file.symlink:
-    - name: /home/{{ user }}/Desktop/cases
+    - name: {{ home }}/Desktop/cases
     - target: /cases
     - user: {{ user }}
     - group: {{ user }}

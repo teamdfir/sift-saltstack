@@ -77,6 +77,7 @@ include:
   - sift.packages.libewf-python
   - sift.packages.libewf-tools
   - sift.packages.libffi-dev
+  - sift.packages.libfsapfs-tools
   - sift.packages.libfuse-dev
   - sift.packages.libfvde
   - sift.packages.libfvde-tools
@@ -275,6 +276,7 @@ sift-packages:
       - sls: sift.packages.libewf-python
       - sls: sift.packages.libewf-tools
       - sls: sift.packages.libffi-dev
+      - sls: sift.packages.libfsapfs-tools
       - sls: sift.packages.libfuse-dev
       - sls: sift.packages.libfvde
       - sls: sift.packages.libfvde-tools

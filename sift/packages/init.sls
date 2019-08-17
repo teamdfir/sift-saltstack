@@ -65,6 +65,7 @@ include:
   - sift.packages.libafflib
   - sift.packages.libbde
   - sift.packages.libbde-tools
+  - sift.packages.libdatetime-perl
   - sift.packages.libesedb
   - sift.packages.libesedb-tools
   - sift.packages.libevt
@@ -262,6 +263,7 @@ sift-packages:
       - sls: sift.packages.libafflib
       - sls: sift.packages.libbde
       - sls: sift.packages.libbde-tools
+      - sls: sift.packages.libdatetime-perl
       - sls: sift.packages.libesedb
       - sls: sift.packages.libesedb-tools
       - sls: sift.packages.libevt

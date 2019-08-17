@@ -1,3 +1,8 @@
+include:
+  - sift.repos.malteworld
+
 sift-package-pdftk:
-  cmd.run:
-    - name: snap install pdftk
+  pkg.installed:
+    - name: pdftk
+    - require:
+      - sls: sift.repos.malteworld

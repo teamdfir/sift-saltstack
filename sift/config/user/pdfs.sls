@@ -120,7 +120,7 @@ sift-pdf-guide-linux-shell-survival:
   file.managed:
     - name: {{ home }}/Desktop/Linux-Shell-Survival-Guide.pdf
     - source: https://digital-forensics.sans.org/media/linux-shell-survival-guide.pdf
-    - source_hash: sha256=2d06aa1673fb9f0c7a4650a3f23753de724a98d2a2b3ded90b2e6a6a1faecd46
+    - source_hash: sha256=15a731e1f55643ccb909c84fe4b8d8d35b0dd5de4cb0588aeca0b38f8a917ace
     - user: {{ user }}
     - group: {{ user }}
     - makedirs: True

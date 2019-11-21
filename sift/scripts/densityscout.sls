@@ -7,7 +7,7 @@ sift-tool-densityscout-archive:
   archive.extracted:
     - name: /usr/local/src/densityscout/densityscout_build_{{ build }}_linux
     - enforce_toplevel: False
-    - source: http://cert.at/static/downloads/software/densityscout/densityscout_build_{{ build }}_linux.zip
+    - source: https://cert.at/media/files/downloads/software/densityscout/files/densityscout_build_{{ build }}_linux.zip
     - source_hash: sha256={{ hash }}
     - if_missing: /usr/local/bin/densityscout-build-{{ build }}
 

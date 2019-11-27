@@ -47,20 +47,6 @@ sift-config-theme-set-background:
       - file: sift-config-theme-set-background-directory
       - user: sift-user-{{ user }}
 
-sift-config-theme-set-unity-logo-directory:
-  file.directory:
-    - name: /usr/share/unity-greeter
-    - makedirs: True
-
-sift-config-theme-set-unity-logo:
-  file.managed:
-    - name: /usr/share/unity-greeter/logo.png
-    - source: salt://sift/files/sift/images/login_logo.png
-    - replace: True
-    - require:
-      - file: sift-config-theme-set-unity-logo-directory
-      - user: sift-user-{{ user }}
-
 sift-config-theme-manage-autostart:
   file.directory:
     - name: {{ home }}/.config/autostart/

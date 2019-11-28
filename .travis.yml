@@ -4,7 +4,7 @@ services:
 - docker
 
 before_install:
-- docker pull sansdfir/sift-salt-tester
+- docker pull teamdfir/sift-salt-tester:bionic
 
 script:
 - ./scripts/test.sh

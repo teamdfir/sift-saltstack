@@ -2,6 +2,7 @@ include:
   - sift.scripts.4n6
   - sift.scripts.afterglow
   - sift.scripts.amcache
+  - sift.scripts.cyberchef
   - sift.scripts.densityscout
   - sift.scripts.dumbpig
   - sift.scripts.dump-mft-entry
@@ -33,6 +34,7 @@ sift-scripts:
       - sls: sift.scripts.4n6
       - sls: sift.scripts.afterglow
       - sls: sift.scripts.amcache
+      - sls: sift.scripts.cyberchef
       - sls: sift.scripts.densityscout
       - sls: sift.scripts.dumbpig
       - sls: sift.scripts.dump-mft-entry

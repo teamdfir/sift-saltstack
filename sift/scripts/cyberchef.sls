@@ -18,6 +18,6 @@ sift-scripts-cyberchef:
       - sls: sift.packages.apache2
 
 sift-scripts-cyberchef-index:
-  file.renamed:
+  file.rename:
     - name: /var/www/html/cyberchef/index.html
     - source: /var/www/html/cyberchef/CyberChef_v{{ version }}.html

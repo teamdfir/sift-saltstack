@@ -65,7 +65,7 @@ sudo salt-call -l info --local --file-root=/tmp/salt state.apply sift.pkgs
 ### 18.04
 
 1. `wget -O - https://repo.saltstack.com/apt/ubuntu/18.04/amd64/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -`
-2. `echo "deb http://repo.saltstack.com/apt/ubuntu/18.04/amd64/2018.3 xenial main" | sudo tee /etc/apt/sources.list.d/saltstack.list`
+2. `echo "deb http://repo.saltstack.com/apt/ubuntu/18.04/amd64/2018.3 bionic main" | sudo tee /etc/apt/sources.list.d/saltstack.list`
 3. `sudo apt-get update`
 4. `sudo apt-get install salt-minion`
 5. `sudo service salt-minion stop`

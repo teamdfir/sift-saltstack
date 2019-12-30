@@ -14,6 +14,7 @@ sift-scripts-cyberchef:
     - enforce_toplevel: False
     - source: https://github.com/gchq/CyberChef/releases/download/v{{ version }}/CyberChef_v{{ version }}.zip
     - source_hash: sha256={{ hash }}
+    - overwrite: True
     - require:
       - sls: sift.packages.apache2
 

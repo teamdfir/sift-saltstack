@@ -32,3 +32,4 @@ sift-scripts-sqlite-miner-shebang:
     - text: '#!/usr/bin/env perl'
     - watch:
       - file: sift-scripts-sqlite-miner
+

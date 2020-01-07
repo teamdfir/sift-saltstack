@@ -22,3 +22,4 @@ sift-scripts-cyberchef-index:
   file.rename:
     - name: /var/www/html/cyberchef/index.html
     - source: /var/www/html/cyberchef/CyberChef_v{{ version }}.html
+    - force: True

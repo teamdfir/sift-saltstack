@@ -1,5 +1,8 @@
 include:
-  - .python
+  - sift.packages.python
 
 python-pip:
-  pkg.installed
+  pkg.installed:
+    - name: python-pip
+    - require:
+      - sls: sift.packages.python

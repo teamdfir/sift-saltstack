@@ -13,7 +13,6 @@ include:
   - sift.python-packages.machinae
   - sift.python-packages.ntdsxtract
   - sift.python-packages.pefile
-  - sift.python-packages.pip
   - sift.python-packages.pysocks
   - sift.python-packages.python-dateutil
   - sift.python-packages.python-evtx
@@ -50,7 +49,6 @@ sift-python-packages:
       - sls: sift.python-packages.machinae
       - sls: sift.python-packages.ntdsxtract
       - sls: sift.python-packages.pefile
-      - sls: sift.python-packages.pip
       - sls: sift.python-packages.pysocks
       - sls: sift.python-packages.python-dateutil
       - sls: sift.python-packages.python-evtx

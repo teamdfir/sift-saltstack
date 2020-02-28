@@ -16,6 +16,7 @@ rekall-virtualenv:
       - wheel
       - rekall
       - future==0.16.0
+      - pyaff4==0.26post6
     - require:
       - pkg: python-virtualenv
 

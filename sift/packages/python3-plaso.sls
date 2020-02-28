@@ -6,9 +6,9 @@ include:
   - sift.packages.python-xlsxwriter
   - sift.packages.python-dfvfs
 
-python-plaso:
+sift-package-python3-plaso:
   pkg.installed:
-    - name: python-plaso
+    - name: python3-plaso
     - version: latest
     - hold: False
     - refresh: True
@@ -18,6 +18,6 @@ python-plaso:
       - sls: sift.packages.absent.plaso
       - sls: sift.repos.sift
       - sls: sift.repos.gift
-      - sls: sift.packages.python
+      - sls: sift.packages.python3
       - sls: sift.packages.python-xlsxwriter
       - sls: sift.packages.python-dfvfs

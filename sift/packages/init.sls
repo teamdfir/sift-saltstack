@@ -142,7 +142,6 @@ include:
   - sift.packages.python-nids
   - sift.packages.python-pefile
   - sift.packages.python-pip
-  - sift.packages.python-plaso
   - sift.packages.python-pytsk3
   - sift.packages.python-qt4
   - sift.packages.python-tk
@@ -150,6 +149,7 @@ include:
   - sift.packages.python-yara
   - sift.packages.python3
   - sift.packages.python3-pip
+  - sift.packages.python3-plaso
   - sift.packages.qemu
   - sift.packages.qemu-utils
   - sift.packages.radare2
@@ -340,7 +340,7 @@ sift-packages:
       - sls: sift.packages.python-nids
       - sls: sift.packages.python-pefile
       - sls: sift.packages.python-pip
-      - sls: sift.packages.python-plaso
+      - sls: sift.packages.python3-plaso
       - sls: sift.packages.python-pytsk3
       - sls: sift.packages.python-qt4
       - sls: sift.packages.python-tk

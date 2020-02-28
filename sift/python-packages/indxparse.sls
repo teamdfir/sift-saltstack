@@ -1,18 +1,25 @@
 {%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
-{%- set commit = "1b32736cf9f15d916f7c026346be068fdbe86cf2" -%}
+{%- set commit = "ca08236b0f70798cb6f89785820c9b82ee0c66ff" -%}
 
 include:
-  - ..packages.git
-  - ..packages.pkg-config
-  - ..packages.python-pip
+  - sift.packages.git
+  - sift.packages.g++
+  - sift.packages.libfuse-dev
+  - sift.packages.pkg-config
+  - sift.packages.python
+  - sift.packages.python-pip
+  - sift.packages.python-wxgtk3
 
 sift-python-package-indxparse:
   pip.installed:
     - name: git+https://github.com/williballenthin/INDXParse.git@{{ commit }}
     - require:
-      - pkg: git
-      - pkg: pkg-config
-      - pkg: python-pip
+      - sls: sift.packages.git
+      - sls: sift.packages.g++
+      - sls: sift.packages.pkg-config
+      - sls: sift.packages.python-pip
+      - sls: sift.packages.libfuse-dev
+      - sls: sift.packages.python-wxgtk3
 
 sift-python-package-indxparse-shebang:
   file.prepend:

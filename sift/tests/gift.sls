@@ -23,7 +23,7 @@ include:
   - sift.packages.libvshadow-tools
   - sift.packages.plaso-data
   - sift.packages.plaso-tools
-  - sift.packages.python-plaso
+  - sift.packages.python3-plaso
 
 sift-tests-gift:
   test.nop:
@@ -53,4 +53,4 @@ sift-tests-gift:
         - sls: sift.packages.libvshadow-tools
         - sls: sift.packages.plaso-data
         - sls: sift.packages.plaso-tools
-        - sls: sift.packages.python-plaso
+        - sls: sift.packages.python3-plaso

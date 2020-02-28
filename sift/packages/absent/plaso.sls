@@ -43,3 +43,11 @@ python-dfvfs-20160108-removed:
     - allow_updates: True
     - require:
       - pkg: python-plaso-1.4.0-removed
+
+python-plaso-py2-removed:
+  pkg.removed:
+    - name: python-plaso
+    - version: 20191203-1ppa1~bionic
+    - hold: False
+    - update_holds: True
+    - allow_updates: True

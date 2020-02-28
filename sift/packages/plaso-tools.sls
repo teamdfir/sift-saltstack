@@ -1,10 +1,10 @@
 include:
   - sift.repos.gift
-  - sift.packages.python-plaso
+  - sift.packages.python3-plaso
 
 plaso-tools:
   pkg.latest:
     - name: plaso-tools
     - require:
       - sls: sift.repos.gift
-      - sls: sift.packages.python-plaso
+      - sls: sift.packages.python3-plaso

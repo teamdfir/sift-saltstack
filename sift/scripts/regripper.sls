@@ -91,3 +91,27 @@ sift-scripts-regripper-plugins-system:
     - name: "grep -R \"my %config = (hive\" /usr/share/regripper/plugins | grep \"System\" | cut -f1 -d: | xargs -n1 -I{} basename {} | sed 's/.pl$//' > /usr/share/regripper/plugins/system"
     - watch:
       - git: sift-scripts-regripper-git
+
+sift-scripts-regripper-basepm:
+  file.managed:
+    - name: /usr/share/perl5/Parse/Win32Registry/Base.pm
+    - source: /usr/local/src/regripper/Base.pm
+    - mode: 755
+    - require:
+      - git: sift-scripts-regripper-git
+
+sift-scripts-regripper-filepm:
+  file.managed:
+    - name: /usr/share/perl5/Parse/Win32Registry/WinNT/File.pm
+    - source: /usr/local/src/regripper/File.pm
+    - mode: 755
+    - require:
+      - git: sift-scripts-regripper-git
+
+sift-scripts-regripper-keypm:
+  file.managed:
+    - name: /usr/share/perl5/Parse/Win32Registry/WinNT/Key.pm
+    - source: /usr/local/src/regripper/Key.pm
+    - mode: 755
+    - require:
+      - git: sift-scripts-regripper-git

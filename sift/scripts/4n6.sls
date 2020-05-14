@@ -3,6 +3,13 @@
 include:
   - sift.packages.git
   - sift.packages.python
+  - sift.perl-packages.exiftool
+  - sift.perl-packages.cgi
+  - sift.perl-packages.xpath
+  - sift.perl-packages.quicktable
+  - sift.perl-packages.json
+  - sift.perl-packages.dbi
+  - sift.perl-packages.datecalc
 
 sift-scripts-4n6-git:
   git.latest:

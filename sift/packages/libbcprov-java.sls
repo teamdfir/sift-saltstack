@@ -1,0 +1,2 @@
+libbcprov-java:
+  pkg.installed

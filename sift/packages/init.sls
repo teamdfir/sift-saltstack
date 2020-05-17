@@ -23,6 +23,7 @@ include:
   - sift.packages.dc3dd
   - sift.packages.dcfldd
   - sift.packages.dconf-tools
+  - sift.packages.default-jre
   - sift.packages.docker
   - sift.packages.driftnet
   - sift.packages.dsniff
@@ -63,8 +64,10 @@ include:
   - sift.packages.lft
   - sift.packages.libafflib-dev
   - sift.packages.libafflib
+  - sift.packages.libbcprov-java
   - sift.packages.libbde
   - sift.packages.libbde-tools
+  - sift.packages.libcommons-lang3-java
   - sift.packages.libdatetime-perl
   - sift.packages.libesedb
   - sift.packages.libesedb-tools
@@ -124,7 +127,7 @@ include:
   - sift.packages.outguess
   - sift.packages.p0f
   - sift.packages.p7zip-full
-  - sift.packages.pdftk
+  - sift.packages.pdftk-java
   - sift.packages.perl
   - sift.packages.pev
   - sift.packages.phonon
@@ -222,6 +225,7 @@ sift-packages:
       - sls: sift.packages.dc3dd
       - sls: sift.packages.dcfldd
       - sls: sift.packages.dconf-tools
+      - sls: sift.packages.default-jre
       - sls: sift.packages.docker
       - sls: sift.packages.driftnet
       - sls: sift.packages.dsniff
@@ -262,8 +266,10 @@ sift-packages:
       - sls: sift.packages.lft
       - sls: sift.packages.libafflib-dev
       - sls: sift.packages.libafflib
+      - sls: sift.packages.libbcprov-java
       - sls: sift.packages.libbde
       - sls: sift.packages.libbde-tools
+      - sls: sift.packages.libcommons-lang3-java
       - sls: sift.packages.libdatetime-perl
       - sls: sift.packages.libesedb
       - sls: sift.packages.libesedb-tools
@@ -323,7 +329,7 @@ sift-packages:
       - sls: sift.packages.outguess
       - sls: sift.packages.p0f
       - sls: sift.packages.p7zip-full
-      - sls: sift.packages.pdftk
+      - sls: sift.packages.pdftk-java
       - sls: sift.packages.perl
       - sls: sift.packages.pev
       - sls: sift.packages.phonon

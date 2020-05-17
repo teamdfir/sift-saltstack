@@ -1,0 +1,2 @@
+default-jre:
+  pkg.installed

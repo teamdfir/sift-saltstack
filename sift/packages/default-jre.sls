@@ -1,2 +1,3 @@
-default-jre:
-  pkg.installed
+sift-default-jre:
+  pkg.installed:
+    - name: default-jre

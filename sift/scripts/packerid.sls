@@ -5,7 +5,7 @@
 {% set hash = "sha256=be589d4cbe70ecdc3424a6da48d8fc24630d51a6ebf92e5328b36e39423eb038" -%}
 
 include:
-  - sift.packages.python
+  - sift.packages.python3
   - sift.python-packages.pefile
 
 sift-scripts-packerid:
@@ -15,7 +15,7 @@ sift-scripts-packerid:
     - source_hash: {{ hash }}
     - mode: 755
     - require:
-      - sls: sift.packages.python
+      - sls: sift.packages.python3
       - sls: sift.python-packages.pefile
 
 sift-scripts-packerid-shebang:

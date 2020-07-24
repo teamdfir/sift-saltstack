@@ -1,7 +1,8 @@
 include:
-  - ..packages.python-pip
+  - sift.packages.python3-pip
 
-unicodecsv:
+sift-python-package-unicodecsv:
   pip.installed:
+    - name: unicodecsv
     - require:
-      - pkg: python-pip
+      - sls: sift.packages.python3-pip

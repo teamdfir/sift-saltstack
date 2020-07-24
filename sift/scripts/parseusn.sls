@@ -5,7 +5,7 @@
 {% set hash = "sha256=4540eba4cdddcb0eab1bc21ccea6a6ab7c010936909bb233807dc9bf4189ab10" -%}
 
 include:
-  - sift.packages.python
+  - sift.packages.python3
 
 sift-scripts-parseusn:
   file.managed:

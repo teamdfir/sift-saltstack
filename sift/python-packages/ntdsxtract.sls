@@ -1,8 +1,10 @@
 include:
-  - sift.python-packages.ntdsxtract_{{ grains['oscodename'] }}
+  - sift.packages.git
+  - sift.packages.python3-pip
 
-sift-python-ntdsxtract-distro:
-  test.nop:
-    - name: sift-python-ntdsxtract-distro
+sift-python-ntdsxtract:
+  pip.installed:
+    - name: git+https://github.com/csababarta/ntdsxtract.git@7fa1c8c28cbbf97a42bef40f20009dba85e4c25f
     - require:
-      - sls: sift.python-packages.ntdsxtract_{{ grains['oscodename'] }}
+      - sls: sift.packages.git
+      - sls: sift.packages.python3-pip

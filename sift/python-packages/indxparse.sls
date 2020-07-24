@@ -6,9 +6,9 @@ include:
   - sift.packages.g++
   - sift.packages.libfuse-dev
   - sift.packages.pkg-config
-  - sift.packages.python
-  - sift.packages.python-pip
-  - sift.packages.python-wxgtk3
+  - sift.packages.python3
+  - sift.packages.python3-pip
+  - sift.packages.python3-wxgtk3
 
 sift-python-package-indxparse:
   pip.installed:
@@ -17,9 +17,9 @@ sift-python-package-indxparse:
       - sls: sift.packages.git
       - sls: sift.packages.g++
       - sls: sift.packages.pkg-config
-      - sls: sift.packages.python-pip
+      - sls: sift.packages.python3-pip
       - sls: sift.packages.libfuse-dev
-      - sls: sift.packages.python-wxgtk3
+      - sls: sift.packages.python3-wxgtk3
 
 sift-python-package-indxparse-shebang:
   file.prepend:

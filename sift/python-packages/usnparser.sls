@@ -1,7 +1,8 @@
 include:
-  - ..packages.python-pip
+  - sift.packages.python3-pip
 
-usnparser:
+sift-python-package-usnparser:
   pip.installed:
+    - name: usnparser
     - require:
-      - pkg: python-pip
+      - sls: sift.packages.python3-pip

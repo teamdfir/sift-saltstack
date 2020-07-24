@@ -1,8 +1,8 @@
 include:
-  - sift.packages.python-pip
+  - sift.packages.python3-pip
 
-sift-pip-geoip2:
+sift-python-package-geoip2:
   pip.installed:
     - name: geoip2
     - require:
-      - sls: sift.packages.python-pip
+      - sls: sift.packages.python3-pip

@@ -1,3 +1,3 @@
 sift-package-wine:
-  pkg.installed:
+  pkg.latest:
     - name: wine-stable

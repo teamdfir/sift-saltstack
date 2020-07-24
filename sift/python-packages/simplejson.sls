@@ -1,14 +1,11 @@
 # Note: not included in init.sls, only required by python-volatility
 
 include:
-  - sift.packages.python-pip
+  - sift.packages.python3-pip
 
-simplejson:
+sift-python-package-simplejson:
   pip.installed:
     - name: simplejson
-    {% if grains['oscodename'] == "bionic" -%}
-    - pip_bin: /usr/bin/pip
-    {% endif -%}
     - upgrade: True
     - require:
-      - sls: sift.packages.python-pip
+      - sls: sift.packages.python3-pip

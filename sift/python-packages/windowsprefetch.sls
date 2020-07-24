@@ -1,7 +1,8 @@
 include:
-  - ..packages.python-pip
+  - sift.packages.python3-pip
 
-windowsprefetch:
+sift-python-package-windowsprefetch:
   pip.installed:
+    - name: windowsprefetch
     - require:
-      - pkg: python-pip
+      - sls: sift.packages.python3-pip

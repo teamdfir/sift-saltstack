@@ -2,11 +2,11 @@
 
 include:
   - sift.packages.git
-  - sift.packages.python-pip
+  - sift.packages.python3-pip
 
 shellbags:
   pip.installed:
     - name: git+https://github.com/williballenthin/shellbags.git@fee76eb
     - require:
-      - pkg: git
-      - pkg: python-pip
+      - sls: sift.packages.git
+      - sls: sift.packages.python3-pip

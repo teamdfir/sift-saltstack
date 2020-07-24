@@ -1,7 +1,8 @@
 include:
-  - ..packages.python-pip
+  - sift.packages.python3-pip
 
-python-registry:
+sift-python-package-python-registry:
   pip.installed:
+    - name: python-registry
     - require:
-      - pkg: python-pip
+      - sls: sift.packages.python3-pip

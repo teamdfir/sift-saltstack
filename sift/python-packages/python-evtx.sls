@@ -1,7 +1,8 @@
 include:
-  - ..packages.python-pip
+  - sift.packages.python3-pip
 
-python-evtx:
+sift-python-package-python-evtx:
   pip.installed:
+    - name: python-evtx
     - require:
-      - pkg: python-pip
+      - sls: sift.packages.python3-pip

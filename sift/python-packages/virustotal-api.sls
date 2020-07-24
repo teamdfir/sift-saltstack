@@ -1,8 +1,8 @@
 include:
-  - sift.packages.python-pip
+  - sift.packages.python3-pip
 
-sift-pip-virustotal-api:
+sift-python-package-virustotal-api:
   pip.installed:
     - name: virustotal-api
     - require:
-      - sls: sift.packages.python-pip
+      - sls: sift.packages.python3-pip

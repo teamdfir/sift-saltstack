@@ -18,7 +18,6 @@ include:
   - sift.python-packages.python-evtx
   - sift.python-packages.python-magic
   - sift.python-packages.python-registry
-  - sift.python-packages.rekall
   - sift.python-packages.setuptools
   - sift.python-packages.shellbags
   - sift.python-packages.six
@@ -55,7 +54,6 @@ sift-python-packages:
       - sls: sift.python-packages.python-evtx
       - sls: sift.python-packages.python-magic
       - sls: sift.python-packages.python-registry
-      - sls: sift.python-packages.rekall
       - sls: sift.python-packages.setuptools
       - sls: sift.python-packages.shellbags
       - sls: sift.python-packages.six

@@ -1,7 +1,7 @@
 include:
   - sift.repos.sift
 
-xmount:
+sift-package-xmount:
   pkg.latest:
     - name: xmount
     - require:

@@ -1,9 +1,10 @@
 include:
-  - ..packages.python-pip
-  - .lxml
+  - sift.packages.python3-pip
+  - sift.python-packages.lxml
 
-stix:
+sift-python-package-stix:
   pip.installed:
+    - name: stix
     - require:
-      - pkg: python-pip
-      - pip: lxml
+      - sls: sift.packages.python3-pip
+      - sls: sift.python-packages.lxml

@@ -137,22 +137,23 @@ include:
   - sift.packages.pv
   - sift.packages.pyew
   - sift.packages.pyew
-  - sift.packages.python
-  - sift.packages.python-dev
-  - sift.packages.python-dfvfs
+  - sift.packages.python3
+  - sift.packages.python3-dev
   - sift.packages.python-flowgrep
   - sift.packages.python-fuse
   - sift.packages.python-nids
   - sift.packages.python-pefile
-  - sift.packages.python-pip
+  - sift.packages.python3-pip
   - sift.packages.python-pytsk3
   - sift.packages.python-qt4
   - sift.packages.python-tk
-  - sift.packages.python-virtualenv
+  - sift.packages.python3-virtualenv
   - sift.packages.python-yara
   - sift.packages.python3
+  - sift.packages.python3-dfvfs
   - sift.packages.python3-pip
   - sift.packages.python3-plaso
+  - sift.packages.python3-xlsxwriter
   - sift.packages.qemu
   - sift.packages.qemu-utils
   - sift.packages.radare2
@@ -338,14 +339,14 @@ sift-packages:
       - sls: sift.packages.pv
       - sls: sift.packages.pyew
       - sls: sift.packages.pyew
-      - sls: sift.packages.python
-      - sls: sift.packages.python-dev
+      - sls: sift.packages.python3
+      - sls: sift.packages.python3-dev
       - sls: sift.packages.python-dfvfs
       - sls: sift.packages.python-flowgrep
       - sls: sift.packages.python-fuse
       - sls: sift.packages.python-nids
       - sls: sift.packages.python-pefile
-      - sls: sift.packages.python-pip
+      - sls: sift.packages.python3-pip
       - sls: sift.packages.python3-plaso
       - sls: sift.packages.python-pytsk3
       - sls: sift.packages.python-qt4

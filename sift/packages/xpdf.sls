@@ -1,2 +1,3 @@
-xpdf:
-  pkg.installed
+sift-package-xpdf:
+  pkg.latest:
+    - name: xpdf

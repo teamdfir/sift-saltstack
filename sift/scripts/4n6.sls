@@ -2,7 +2,7 @@
 
 include:
   - sift.packages.git
-  - sift.packages.python
+  - sift.packages.python3
   - sift.perl-packages.exiftool
   - sift.perl-packages.cgi
   - sift.perl-packages.xpath
@@ -19,8 +19,8 @@ sift-scripts-4n6-git:
     - rev: master
     - force_clone: True
     - require:
-      - pkg: git
-      - pkg: python
+      - sls: sift.packages.git
+      - sls: sift.packages.python3
 
 {%- for file in files %}
 sift-scripts-4n6-{{ file }}:

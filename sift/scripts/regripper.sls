@@ -8,7 +8,7 @@ include:
 
 sift-scripts-regripper-git:
   git.latest:
-    - name: https://github.com/keydet89/RegRipper2.8.git
+    - name: https://github.com/keydet89/RegRipper3.0.git
     - target: /usr/local/src/regripper
     - user: root
     - rev: master

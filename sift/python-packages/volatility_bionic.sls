@@ -20,7 +20,7 @@ include:
 sift-python-volatility:
   pip.installed:
     - name: git+https://github.com/volatilityfoundation/volatility.git@2.6.1
-    - pip_bin: /usr/bin/pip
+    - bin_env: /usr/bin/python
     - require:
       - sls: sift.packages.git
       - sls: sift.packages.python-pip

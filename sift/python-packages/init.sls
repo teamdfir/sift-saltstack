@@ -23,7 +23,6 @@ include:
   - sift.python-packages.six
   - sift.python-packages.stix-validator
   - sift.python-packages.stix
-  - sift.python-packages.timesketch
   - sift.python-packages.unicodecsv
   - sift.python-packages.usnparser
   - sift.python-packages.virustotal-api
@@ -59,7 +58,6 @@ sift-python-packages:
       - sls: sift.python-packages.six
       - sls: sift.python-packages.stix-validator
       - sls: sift.python-packages.stix
-      - sls: sift.python-packages.timesketch
       - sls: sift.python-packages.unicodecsv
       - sls: sift.python-packages.usnparser
       - sls: sift.python-packages.virustotal-api

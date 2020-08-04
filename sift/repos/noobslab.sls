@@ -1,3 +1,4 @@
+{%- if grains['oscodename'] == "bionic" %}
 include:
   - sift.packages.software-properties-common
   
@@ -16,4 +17,7 @@ sift-repo-noobslab-icons:
     - refresh_db: true
     - require:
       - sls: sift.packages.software-properties-common
-
+{%- else %}
+sift-repo-noobslab:
+  test.nop
+{%- endif %}

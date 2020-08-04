@@ -4,7 +4,7 @@ include:
 
 sift-perl-packages-quicktable:
   cmd.run:
-    - name: cpan install HTML::QuickTable
+    - name: cpanm --no-man-pages install HTML::QuickTable 
     - env:
       - PERL_MM_USE_DEFAULT: 1
     - require:

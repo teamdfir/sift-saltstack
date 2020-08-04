@@ -1,10 +1,8 @@
 {% set package_name = salt['grains.filter_by']({
-  'xenial': 'python-yara',
-  'bionic': 'python-yara',
-  'focal': 'python3-yara'
+  'bionic': 'python3-pyqt4',
+  'focal': 'python3-pyqt5'
 }, grain='oscodename') %}
 
-
-sift-package-python-yara:
+sift-package-python-pyqt:
   pkg.installed:
     - name: {{ package_name }}

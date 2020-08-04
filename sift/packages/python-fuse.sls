@@ -1,2 +1,0 @@
-python-fuse:
-  pkg.installed

@@ -7,7 +7,6 @@ include:
   - sift.packages.arp-scan
   - sift.packages.autopsy
   - sift.packages.bcrypt
-  - sift.packages.bkhive
   - sift.packages.bless
   - sift.packages.blt
   - sift.packages.build-essential
@@ -56,7 +55,7 @@ include:
   - sift.packages.htop
   - sift.packages.hydra
   - sift.packages.hydra-gtk
-  - sift.packages.ipython
+  - sift.packages.ipython3
   - sift.packages.jq
   - sift.packages.kdiff3
   - sift.packages.knocker
@@ -109,7 +108,7 @@ include:
   - sift.packages.libvshadow-tools
   - sift.packages.libxml2-dev
   - sift.packages.libxslt-dev
-  - sift.packages.md5deep
+  - sift.packages.hashdeep
   - sift.packages.nbd-client
   - sift.packages.nbtscan
   - sift.packages.netcat
@@ -135,20 +134,18 @@ include:
   - sift.packages.plaso-tools
   - sift.packages.powershell
   - sift.packages.pv
-  - sift.packages.pyew
-  - sift.packages.pyew
   - sift.packages.python3
   - sift.packages.python3-dev
   - sift.packages.python-flowgrep
-  - sift.packages.python-fuse
+  - sift.packages.python3-fuse
   - sift.packages.python-nids
-  - sift.packages.python-pefile
+  - sift.packages.python3-pefile
   - sift.packages.python3-pip
-  - sift.packages.python-pytsk3
-  - sift.packages.python-qt4
-  - sift.packages.python-tk
+  - sift.packages.python3-pytsk3
+  - sift.packages.python3-pyqt5
+  - sift.packages.python3-tk
   - sift.packages.python3-virtualenv
-  - sift.packages.python-yara
+  - sift.packages.python3-yara
   - sift.packages.python3
   - sift.packages.python3-dfvfs
   - sift.packages.python3-pip
@@ -158,7 +155,7 @@ include:
   - sift.packages.qemu-utils
   - sift.packages.radare2
   - sift.packages.rar
-  - sift.packages.readpst
+  - sift.packages.pst-utils
   - sift.packages.rsakeyfind
   - sift.packages.safecopy
   - sift.packages.samba
@@ -337,8 +334,6 @@ sift-packages:
       - sls: sift.packages.pkg-config
       - sls: sift.packages.powershell
       - sls: sift.packages.pv
-      - sls: sift.packages.pyew
-      - sls: sift.packages.pyew
       - sls: sift.packages.python3
       - sls: sift.packages.python3-dev
       - sls: sift.packages.python-dfvfs
@@ -348,7 +343,7 @@ sift-packages:
       - sls: sift.packages.python-pefile
       - sls: sift.packages.python3-pip
       - sls: sift.packages.python3-plaso
-      - sls: sift.packages.python-pytsk3
+      - sls: sift.packages.python3-pytsk3
       - sls: sift.packages.python-qt4
       - sls: sift.packages.python-tk
       - sls: sift.packages.python-virtualenv

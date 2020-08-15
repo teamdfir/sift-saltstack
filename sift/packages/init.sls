@@ -207,7 +207,6 @@ sift-packages:
       - sls: sift.packages.arp-scan
       - sls: sift.packages.autopsy
       - sls: sift.packages.bcrypt
-      - sls: sift.packages.bkhive
       - sls: sift.packages.bless
       - sls: sift.packages.blt
       - sls: sift.packages.build-essential
@@ -252,11 +251,12 @@ sift-packages:
       - sls: sift.packages.grepcidr
       - sls: sift.packages.gthumb
       - sls: sift.packages.gzrt
+      - sls: sift.packages.hashdeep
       - sls: sift.packages.hexedit
       - sls: sift.packages.htop
       - sls: sift.packages.hydra
       - sls: sift.packages.hydra-gtk
-      - sls: sift.packages.ipython
+      - sls: sift.packages.ipython3
       - sls: sift.packages.jq
       - sls: sift.packages.kdiff3
       - sls: sift.packages.knocker
@@ -309,7 +309,6 @@ sift-packages:
       - sls: sift.packages.libvshadow-tools
       - sls: sift.packages.libxml2-dev
       - sls: sift.packages.libxslt-dev
-      - sls: sift.packages.md5deep
       - sls: sift.packages.nbd-client
       - sls: sift.packages.nbtscan
       - sls: sift.packages.netcat
@@ -334,27 +333,26 @@ sift-packages:
       - sls: sift.packages.pkg-config
       - sls: sift.packages.powershell
       - sls: sift.packages.pv
+      - sls: sift.packages.python-flowgrep
+      - sls: sift.packages.python-nids
       - sls: sift.packages.python3
       - sls: sift.packages.python3-dev
-      - sls: sift.packages.python-dfvfs
-      - sls: sift.packages.python-flowgrep
-      - sls: sift.packages.python-fuse
-      - sls: sift.packages.python-nids
-      - sls: sift.packages.python-pefile
+      - sls: sift.packages.python3-dfvfs
+      - sls: sift.packages.python3-fuse
+      - sls: sift.packages.python3-pefile
       - sls: sift.packages.python3-pip
       - sls: sift.packages.python3-plaso
       - sls: sift.packages.python3-pytsk3
-      - sls: sift.packages.python-qt4
-      - sls: sift.packages.python-tk
-      - sls: sift.packages.python-virtualenv
-      - sls: sift.packages.python-yara
+      - sls: sift.packages.python3-pyqt5
+      - sls: sift.packages.python3-tk
+      - sls: sift.packages.python3-virtualenv
+      - sls: sift.packages.python3-yara
       - sls: sift.packages.python3
       - sls: sift.packages.python3-pip
       - sls: sift.packages.qemu
       - sls: sift.packages.qemu-utils
       - sls: sift.packages.radare2
       - sls: sift.packages.rar
-      - sls: sift.packages.readpst
       - sls: sift.packages.rsakeyfind
       - sls: sift.packages.safecopy
       - sls: sift.packages.samba

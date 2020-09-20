@@ -5,7 +5,6 @@
 # Author: Johnny Shelley, Philip Stolarczyk
 # License: Copyright (c) 2002 Johnny Shelley All rights reserved (bcrypt.sourceforge.net/index.html)
 # Notes: 
-
 {%- if grains['oscodename'] == "bionic" %}
 sift-package-bcrypt:
   pkg.installed:

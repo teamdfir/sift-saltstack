@@ -7,7 +7,7 @@ sift-package-libpff-dev:
     - name: libpff-dev
     - require:
       - sls: sift.repos.sift
-{% elif grains['oscodename'] == "bionic" -%}
+{% else -%}
 sift-package-libpff-dev:
   test.nop
 {% endif %}

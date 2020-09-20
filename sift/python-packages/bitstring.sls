@@ -1,10 +1,7 @@
 include:
-  - sift.packages.python-pip
+  - sift.packages.python3-pip
 
 bitstring:
   pip.installed:
-    {% if grains['oscodename'] == "bionic" -%}
-    - pip_bin: /usr/bin/pip
-    {% endif -%}
     - require:
-      - pkg: python-pip
+      - pkg: python3-pip

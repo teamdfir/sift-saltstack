@@ -1,5 +1,8 @@
 include:
-  - ..packages.python-pip
+  - sift.packages.python3-pip
 
-colorama:
-  pip.installed
+sift-python-package-colorama:
+  pip.installed:
+    - name: colorama
+    - require:
+      - sls: sift.packages.python3-pip

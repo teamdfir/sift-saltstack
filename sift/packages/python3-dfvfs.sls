@@ -1,3 +1,9 @@
+{% set package_name = salt['grains.filter_by']({
+  'xenial': 'python-dfvfs',
+  'bionic': 'python-dfvfs',
+  'focal': 'python3-dfvfs'
+}, grain='oscodename') %}
+
 include:
   - sift.repos.sift
   - sift.repos.gift
@@ -5,9 +11,9 @@ include:
   - sift.packages.absent.plaso
   {% endif %}
 
-sift-package-python-dfvfs:
+sift-package-python3-dfvfs:
   pkg.installed:
-    - name: python-dfvfs
+    - name: {{ package_name }}
     - version: latest
     - hold: False
     - refresh: True

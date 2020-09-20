@@ -1,5 +1,8 @@
 include:
-  - ..packages.python-pip
+  - sift.packages.python3-pip
 
-docopt:
-  pip.installed
+sift-python-package-docopt:
+  pip.installed:
+    - name: docopt
+    - require:
+      - sls: sift.packages.python3-pip

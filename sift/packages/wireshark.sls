@@ -1,2 +1,3 @@
-wireshark:
-  pkg.installed
+sift-package-wireshark:
+  pkg.installed:
+    - name: wireshark

@@ -4,7 +4,7 @@ include:
   - sift.packages.absent.plaso
   - sift.packages.autopsy
   - sift.packages.libewf
-  - sift.packages.python
+  - sift.packages.python3
   - sift.packages.python-xlsxwriter
   - sift.packages.python-dfvfs
   - sift.packages.python3-plaso
@@ -20,7 +20,7 @@ sift-tests-libewf:
       - sls: sift.repos.gift
       - sls: sift.packages.autopsy
       - sls: sift.packages.libewf
-      - sls: sift.packages.python
+      - sls: sift.packages.python3
       - sls: sift.packages.python-xlsxwriter
       - sls: sift.packages.python-dfvfs
       - sls: sift.packages.python3-plaso

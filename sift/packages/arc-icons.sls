@@ -5,7 +5,6 @@
 # Author: https://github.com/horst3180/arc-icon-theme/blob/master/CREDITS
 # License: GNU General Public License v3 (https://github.com/horst3180/arc-icon-theme/blob/master/COPYING)
 # Notes: 
-
 {%- if grains['oscodename'] == "bionic" %}
 include:
   - sift.repos.noobslab

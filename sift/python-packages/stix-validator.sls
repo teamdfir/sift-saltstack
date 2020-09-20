@@ -1,9 +1,10 @@
 include:
-  - ..packages.python-pip
-  - .stix
+  - sift.packages.python3-pip
+  - sift.python-packages.stix
 
-stix-validator:
+sift-python-package-stix-validator:
   pip.installed:
+    - name: stix-validator
     - require:
-      - pkg: python-pip
-      - pip: stix
+      - sls: sift.packages.python3-pip
+      - sls: sift.python-packages.stix

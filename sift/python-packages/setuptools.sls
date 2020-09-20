@@ -1,9 +1,9 @@
 include:
-  - ..packages.python-pip
+  - sift.packages.python3-pip
 
-setuptools:
+sift-python-package-setuptools:
   pip.installed:
     - name: setuptools
     - upgrade: True
     - require:
-      - pkg: python-pip
+      - sls: sift.packages.python3-pip

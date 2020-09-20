@@ -4,7 +4,6 @@ include:
   - sift.config.user.bash-rc
   - sift.config.user.folders
   - sift.config.user.pdfs
-  - sift.config.user.rekall
   - sift.config.user.ssh
   - sift.config.user.symlinks
   - sift.config.user.terminal
@@ -22,7 +21,6 @@ sift-config-user:
       - sls: sift.config.user.bash-rc
       - sls: sift.config.user.folders
       - sls: sift.config.user.pdfs
-      - sls: sift.config.user.rekall
       - sls: sift.config.user.ssh
       - sls: sift.config.user.symlinks
       - sls: sift.config.user.terminal

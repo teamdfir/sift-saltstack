@@ -1,8 +1,8 @@
 include:
-  - ..packages.python-pip
+  - sift.packages.python3-pip
 
-python-dateutil:
+sift-python-package-python-dateutil:
   pip.installed:
     - name: python-dateutil >= 2.4.2
     - require:
-      - pkg: python-pip
+      - sls: sift.packages.python3-pip

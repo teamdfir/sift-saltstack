@@ -1,9 +1,9 @@
 include:
-  - ..packages.python-pip
+  - sift.packages.python3-pip
 
-wheel:
+sift-python-package-wheel:
   pip.installed:
     - name: wheel
     - upgrade: True
     - require:
-      - pkg: python-pip
+      - sls: sift.packages.python3-pip

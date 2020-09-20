@@ -1,14 +1,15 @@
-{%- set commit="46ba76a73fcf71640f2a6e9db02afaaac3e178b9" -%}
+{%- set commit="6c847937c5a836e2ce2fe2b915f213c345a3c389" -%}
+
 include:
   - sift.packages.git
-  - sift.packages.python-pip
+  - sift.packages.python2-pip
+  - sift.packages.libregf
 
 appcompatprocessor:
   pip.installed:
     - name: git+https://github.com/mbevilacqua/appcompatprocessor.git@{{ commit }}
-    {% if grains['oscodename'] == "bionic" -%}
-    - pip_bin: /usr/bin/pip
-    {% endif -%}
+    - bin_env: /usr/bin/pip2
     - require:
       - sls: sift.packages.git
-      - sls: sift.packages.python-pip
+      - sls: sift.packages.python2-pip
+      - sls: sift.packages.libregf

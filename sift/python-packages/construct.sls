@@ -1,7 +1,8 @@
 include:
-  - ..packages.python-pip
+  - sift.packages.python3-pip
 
-construct:
+sift-python-package-construct:
   pip.installed:
+    - name: construct
     - require:
-      - pkg: python-pip
+      - sls: sift.packages.python3-pip

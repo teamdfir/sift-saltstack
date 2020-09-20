@@ -1,2 +1,0 @@
-ipython:
-  pkg.installed

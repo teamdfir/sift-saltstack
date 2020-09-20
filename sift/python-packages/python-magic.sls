@@ -1,7 +1,8 @@
 include:
-  - ..packages.python-pip
+  - sift.packages.python3-pip
 
-python-magic:
+sift-python-package-python-magic:
   pip.installed:
+    - name: python-magic
     - require:
-      - pkg: python-pip
+      - sls: sift.packages.python3-pip

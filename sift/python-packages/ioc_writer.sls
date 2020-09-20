@@ -1,10 +1,11 @@
 include:
-  - ..packages.python-pip
-  - .lxml
+  - sift.packages.python3-pip
+  - sift.python-packages.lxml
 
-ioc_writer:
+sift-python-package-ioc-writer:
   pip.installed:
+    - name: ioc_writer
     - require:
-      - pkg: python-pip
-      - pip: lxml
+      - sls: sift.packages.python3-pip
+      - sls: sift.python-packages.lxml
       

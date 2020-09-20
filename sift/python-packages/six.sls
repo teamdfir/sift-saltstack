@@ -1,7 +1,8 @@
 include:
-  - ..packages.python-pip
+  - sift.packages.python3-pip
 
-six:
+sift-python-package-six:
   pip.installed:
+    - name: six
     - require:
-      - pkg: python-pip
+      - sls: sift.packages.python3-pip

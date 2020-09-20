@@ -1,2 +1,0 @@
-python-tk:
-  pkg.installed

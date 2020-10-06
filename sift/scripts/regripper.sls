@@ -1,6 +1,10 @@
-# source=https://github.com/keydet89/RegRipper2.8
-# license=mit
-# license_source=https://github.com/keydet89/RegRipper2.8/blob/master/license.md
+# Name: regripper
+# Website: https://github.com/keydet89/RegRipper3.0
+# Description: Registry parsing toolsuite
+# Category: 
+# Author: Harlan Carvey
+# License: MIT License (https://github.com/keydet89/RegRipper3.0/blob/master/license.md)
+# Notes: rip.pl
 
 include:
   - sift.packages.git
@@ -28,11 +32,51 @@ sift-scripts-regripper-directory:
 sift-scripts-regripper-binary:
   file.managed:
     - name: /usr/share/regripper/rip.pl
-    - source: salt://sift/files/regripper/rip.pl
+    - source: /usr/local/src/regripper/rip.pl
     - mode: 755
     - require:
       - git: sift-scripts-regripper-git
       - pkg: libparse-win32registry-perl
+
+sift-scripts-regripper-perl-header:
+  file.replace:
+    - name: /usr/share/regripper/rip.pl
+    - pattern: '#! c:\\perl\\bin\\perl.exe'
+    - repl: '#!/usr/bin/perl'
+    - count: 1
+    - prepend_if_not_found: True
+    - require:
+      - file: sift-scripts-regripper-binary
+
+sift-scripts-regripper-plugins-path:
+  file.replace:
+    - name: /usr/share/regripper/rip.pl
+    - pattern: 'my \$plugindir;'
+    - repl: 'my $plugindir = "/usr/share/regripper/plugins/";'
+    - count: 1
+    - prepend_if_not_found: False
+    - require:
+      - file: sift-scripts-regripper-binary
+
+sift-scripts-regripper-plugins-path-cleanup:
+  file.replace:
+    - name: /usr/share/regripper/rip.pl
+    - pattern: '\(\$\^O eq "MSWin32"\) \? \(\$plugindir = \$str."plugins/"\)'
+    - repl: '#($^O eq "MSWin32") ? ($plugindir = $str."plugins/")'
+    - count: 1
+    - prepend_if_not_found: False
+    - require:
+      - file: sift-scripts-regripper-binary
+
+sift-scripts-regripper-plugins-cleanup-2:
+  file.replace:
+    - name: /usr/share/regripper/rip.pl
+    - pattern: ': \(\$plugindir = File::Spec->catfile\("plugins"\)\);'
+    - repl: '#: ($plugindir = File::Spec->catfile("plugins"));'
+    - count: 1
+    - prepend_if_not_found: False
+    - require:
+      - file: sift-scripts-regripper-binary
 
 sift-scripts-regripper-plugins-symlink:
   file.symlink:

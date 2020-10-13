@@ -2,10 +2,13 @@
 include:
   - sift.packages.git
   - sift.packages.python3-pip
+  - sift.packages.python2-pip
 
 analyzemft:
   pip.installed:
     - name: git+https://github.com/dkovar/analyzeMFT.git@{{ commit }}
+    - bin_env: /usr/bin/python2
+    - upgrade: True
     - require:
       - sls: sift.packages.git
-      - sls: sift.packages.python3-pip
+      - sls: sift.packages.python2-pip

@@ -1,11 +1,10 @@
-# Note: not included in init.sls, only required by python-volatility
-
 include:
   - sift.packages.python3-pip
 
-sift-python-package-haystack:
+sift-python3-packages-virustotal-api:
   pip.installed:
-    - name: haystack
+    - name: virustotal-api
+    - bin_env: /usr/bin/python3
     - upgrade: True
     - require:
       - sls: sift.packages.python3-pip

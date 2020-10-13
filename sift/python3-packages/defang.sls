@@ -3,11 +3,9 @@
 include:
   - sift.packages.python3-pip
 
-sift-python-packages-defang:
+sift-python3-packages-defang:
   pip.installed:
     - name: defang==0.5.2
-    - env_vars:
-        LANG: en_US.UTF-8
-        LC_ALL: en_US.UTF-8
+    - bin_env: /usr/bin/python3
     - require:
       - sls: sift.packages.python3-pip

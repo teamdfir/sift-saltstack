@@ -20,6 +20,6 @@ sift-scripts-shim-cache-parser:
 sift-scripts-shim-cache-parser-shebang:
   file.prepend:
     - name: /usr/local/bin/ShimCacheParser.py
-    - text: '#!/usr/bin/env python'
+    - text: '#!/usr/bin/env python2'
     - watch:
       - file: sift-scripts-shim-cache-parser

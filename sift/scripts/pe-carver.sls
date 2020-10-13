@@ -21,6 +21,6 @@ sift-scripts-pecarve:
 sift-scripts-pecarve-shebang:
   file.prepend:
     - name: /usr/local/bin/pecarve.py
-    - text: '#!/usr/bin/env python'
+    - text: '#!/usr/bin/env python2'
     - watch:
       - file: sift-scripts-pecarve

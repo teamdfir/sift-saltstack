@@ -13,6 +13,6 @@ sift-scripts-sqlparser:
 sift-scripts-sqlparser-shebang:
   file.prepend:
     - name: /usr/local/bin/sqlparser.py
-    - text: '#!/usr/bin/env python'
+    - text: '#!/usr/bin/env python2'
     - watch:
       - file: sift-scripts-sqlparser

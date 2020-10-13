@@ -10,3 +10,12 @@ sift-scripts-jobparser:
     - source: https://raw.githubusercontent.com/gleeda/misc-scripts/{{ commit }}/misc_python/jobparser.py
     - source_hash: {{ hash }}
     - mode: 755
+
+sift-scripts-jobparser-python:
+  file.replace:
+    - name: /usr/local/bin/jobparser.py
+    - pattern: '#!/usr/bin/env python\n'
+    - repl: '#!/usr/bin/env python2\n'
+    - count: 1
+    - watch:
+      - file: sift-scripts-jobparser

@@ -10,3 +10,13 @@ sift-scripts-image-mounter:
     - source: https://raw.githubusercontent.com/kevthehermit/Scripts/{{ commit }}/imageMounter.py
     - source_hash: {{ hash }}
     - mode: 755
+
+sift-scripts-image-mounter-shebang:
+  file.replace:
+    - name: /usr/local/bin/imageMounter.py
+    - pattern: '#!/usr/bin/env python\n'
+    - repl: '#!/usr/bin/env python2\n'
+    - count: 1
+    - prepend_if_not_found: False
+    - watch:
+      - file: sift-scripts-image-mounter

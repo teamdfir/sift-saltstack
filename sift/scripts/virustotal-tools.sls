@@ -1,6 +1,9 @@
 # source=https://blog.didierstevens.com/programs/virustotal-tools/
 # license=unknown
 
+include:
+  - sift.python-packages.poster
+
 sift-scripts-virustotal-search-archive:
   archive.extracted:
     - name: /usr/local/src/virustotal-search-v0.1.4
@@ -30,3 +33,24 @@ sift-scripts-virustotal-submit-script:
     - mode: 755
     - watch:
       - archive: sift-scripts-virustotal-submit-archive
+    - require:
+      - sls: sift.python-packages.poster
+
+sift-scripts-virustotal-search-shebang:
+  file.replace:
+    - name: /usr/local/bin/virustotal-search.py
+    - pattern: '#!/usr/bin/env python\n'
+    - repl: '#!/usr/bin/env python2\n'
+    - count: 1
+    - watch:
+      - file: sift-scripts-virustotal-search-script
+
+sift-scripts-virustotal-submit-shebang:
+  file.replace:
+    - name: /usr/local/bin/virustotal-submit.py
+    - pattern: '#!/usr/bin/env python\n'
+    - repl: '#!/usr/bin/env python2\n'
+    - count: 1
+    - watch:
+      - file: sift-scripts-virustotal-submit-script
+

@@ -5,8 +5,9 @@
 {% set hash = "sha256=be589d4cbe70ecdc3424a6da48d8fc24630d51a6ebf92e5328b36e39423eb038" -%}
 
 include:
-  - sift.packages.python3
+  - sift.packages.python2
   - sift.python-packages.pefile
+  - sift.python-packages.capstone
 
 sift-scripts-packerid:
   file.managed:
@@ -15,14 +16,15 @@ sift-scripts-packerid:
     - source_hash: {{ hash }}
     - mode: 755
     - require:
-      - sls: sift.packages.python3
+      - sls: sift.packages.python2
       - sls: sift.python-packages.pefile
+      - sls: sift.python-packages.capstone
 
 sift-scripts-packerid-shebang:
   file.replace:
     - name: /usr/local/bin/packerid.py
     - pattern: '#!/usr/local/bin/python'
-    - repl: '#!/usr/bin/env python'
+    - repl: '#!/usr/bin/env python2'
     - count: 1
     - watch:
       - file: sift-scripts-packerid

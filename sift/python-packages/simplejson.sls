@@ -2,10 +2,12 @@
 
 include:
   - sift.packages.python3-pip
+  - sift.packages.python2-pip
 
-sift-python-package-simplejson:
+sift-python-packages-simplejson:
   pip.installed:
     - name: simplejson
+    - bin_env: /usr/bin/python2
     - upgrade: True
     - require:
-      - sls: sift.packages.python3-pip
+      - sls: sift.packages.python2-pip

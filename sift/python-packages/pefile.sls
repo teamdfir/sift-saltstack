@@ -1,8 +1,11 @@
 include:
   - sift.packages.python3-pip
+  - sift.packages.python2-pip
 
-sift-python-package-pefile:
+sift-python-packages-pefile:
   pip.installed:
     - name: pefile
+    - bin_env: /usr/bin/python2
+    - upgrade: True
     - require:
-      - sls: sift.packages.python3-pip
+      - sls: sift.packages.python2-pip

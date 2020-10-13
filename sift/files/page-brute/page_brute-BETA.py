@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python2
 #
 #	page_brute.py
 #	by @matonis - secualexploits.blogspot.com - www.mike-matonis.com

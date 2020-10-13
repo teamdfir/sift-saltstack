@@ -15,7 +15,7 @@ sift-scripts-usbdeviceforensics-shebang:
   file.replace:
     - name: /usr/local/bin/usbdeviceforensics.py
     - pattern: '#!/usr/bin/python'
-    - repl: '#!/usr/bin/env python'
+    - repl: '#!/usr/bin/env python2'
     - count: 1
     - watch:
       - file: sift-scripts-usbdeviceforensics

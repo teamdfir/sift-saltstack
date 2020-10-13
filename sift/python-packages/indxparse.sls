@@ -6,24 +6,26 @@ include:
   - sift.packages.g++
   - sift.packages.libfuse-dev
   - sift.packages.pkg-config
-  - sift.packages.python3
   - sift.packages.python3-pip
-  - sift.packages.python3-wxgtk3
+  - sift.packages.python2-pip
+  - sift.packages.python-wxgtk3
 
-sift-python-package-indxparse:
+sift-python-packages-indxparse:
   pip.installed:
     - name: git+https://github.com/williballenthin/INDXParse.git@{{ commit }}
+    - bin_env: /usr/bin/python2
+    - upgrade: True
     - require:
       - sls: sift.packages.git
       - sls: sift.packages.g++
       - sls: sift.packages.pkg-config
-      - sls: sift.packages.python3-pip
+      - sls: sift.packages.python2-pip
       - sls: sift.packages.libfuse-dev
-      - sls: sift.packages.python3-wxgtk3
+      - sls: sift.packages.python-wxgtk3
 
-sift-python-package-indxparse-shebang:
+sift-python-packages-indxparse-shebang:
   file.prepend:
     - name: /usr/local/bin/INDXParse.py
     - text: '#!/usr/bin/env python'
     - watch:
-      - pip: sift-python-package-indxparse
+      - pip: sift-python-packages-indxparse

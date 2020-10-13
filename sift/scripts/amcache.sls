@@ -16,7 +16,7 @@ sift-scripts-amcache-shebang:
   file.replace:
     - name: /usr/local/bin/amcache.py
     - pattern: '#!/usr/bin/python'
-    - repl: '#!/usr/bin/env python'
+    - repl: '#!/usr/bin/env python2'
     - count: 1
     - watch:
       - file: sift-scripts-amcache

@@ -13,6 +13,7 @@ sift-package-python2-pip:
 sift-package-python2-pip-install-script:
   cmd.run:
     - name: curl -o /tmp/get-pip.py https://bootstrap.pypa.io/get-pip.py 
+    - unless: which pip2
     - require:
       - sls: sift.packages.python2
       - sls: sift.packages.curl
@@ -20,6 +21,7 @@ sift-package-python2-pip-install-script:
 sift-package-python2-pip-install:
   cmd.run:
     - name: python2 /tmp/get-pip.py
+    - unless: which pip2
     - require:
       - cmd: sift-package-python2-pip-install-script
 {%- endif %}

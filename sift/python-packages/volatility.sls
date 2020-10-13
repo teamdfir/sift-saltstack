@@ -13,6 +13,7 @@ include:
   - sift.python-packages.lxml
   - sift.python-packages.pefile
   - sift.python-packages.pycoin
+  - sift.python-packages.pycrypto
   - sift.python-packages.pysocks
   - sift.python-packages.requests
   - sift.python-packages.simplejson
@@ -49,6 +50,7 @@ sift-python-volatility-community-plugins:
       - sls: sift.python-packages.lxml
       - sls: sift.python-packages.pefile
       - sls: sift.python-packages.pycoin
+      - sls: sift.python-packages.pycrypto
       - sls: sift.python-packages.pysocks
       - sls: sift.python-packages.requests
       - sls: sift.python-packages.simplejson

@@ -115,6 +115,7 @@ include:
   - sift.packages.netpbm
   - sift.packages.netsed
   - sift.packages.netwox
+  - sift.packages.net-tools
   - sift.packages.nfdump
   - sift.packages.ngrep
   - sift.packages.nikto
@@ -315,6 +316,7 @@ sift-packages:
       - sls: sift.packages.netpbm
       - sls: sift.packages.netsed
       - sls: sift.packages.netwox
+      - sls: sift.packages.net-tools
       - sls: sift.packages.nfdump
       - sls: sift.packages.ngrep
       - sls: sift.packages.nikto

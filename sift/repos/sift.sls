@@ -30,3 +30,6 @@ sift-repo-preferences:
   file.managed:
     - name: /etc/apt/preferences.d/sift
     - source: salt://sift/files/apt/sift.preferences
+    - template: jinja
+    - context:
+        version: {{ version }}

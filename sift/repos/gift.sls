@@ -31,3 +31,6 @@ sift-gift-repo-preferences:
   file.managed:
     - name: /etc/apt/preferences.d/gift
     - source: salt://sift/files/apt/gift.preferences
+    - template: jinja
+    - context:
+        version: {{ version }}

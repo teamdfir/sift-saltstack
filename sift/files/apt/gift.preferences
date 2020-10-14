@@ -1,3 +1,3 @@
 Package: *
-Pin: release o=LP-PPA-gift-stable
+Pin: release o=LP-PPA-gift-{{ version }}
 Pin-Priority: 801

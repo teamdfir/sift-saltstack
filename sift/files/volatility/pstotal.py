@@ -56,21 +56,21 @@ class pstotal(common.AbstractWindowsCommand):
     def render_text(self, outfd, data):
         processes = data[0]
         interest = data[1]
-        outfd.write("Offset (P)     Name          PID    PPID   PDB        Time created             Time exited             Interesting \n" + \
-                    "---------- ---------------- ------ ------ ---------- ------------------------ ------------------------ ----------- \n")
-
-        if interest[processes[eprocess].obj_offset] == 1:
-            interesting = 'TRUE'
-        else:
-            interesting = ' '
-        outfd.write("0x{0:08x} {1:16} {2:6} {3:6} 0x{4:08x} {5:24} {6:24} {7:7}\n".format(
-                processes[eprocess].obj_offset,
-                processes[eprocess].ImageFileName,
-                processes[eprocess].UniqueProcessId,
-                processes[eprocess].InheritedFromUniqueProcessId,
-                processes[eprocess].Pcb.DirectoryTableBase,
-                processes[eprocess].CreateTime or '',
-                processes[eprocess].ExitTime or '', interesting))
+        outfd.write("Offset (P)  Name             PID    PPID   PDB         Time created                 Time exited                  Interesting \n" + \
+                    "----------- ---------------- ------ ------ ----------- ---------------------------- ---------------------------- ----------- \n")
+        for eprocess in processes:
+            if interest[processes[eprocess].obj_offset] == 1:
+                interesting = 'TRUE'
+            else:
+                interesting = ' '
+            outfd.write("0x{0:09x} {1:16} {2:6} {3:6} 0x{4:09x} {5:28} {6:28} {7:7}\n".format(
+                    processes[eprocess].obj_offset,
+                    processes[eprocess].ImageFileName,
+                    processes[eprocess].UniqueProcessId,
+                    processes[eprocess].InheritedFromUniqueProcessId,
+                    processes[eprocess].Pcb.DirectoryTableBase,
+                    processes[eprocess].CreateTime or '',
+                    processes[eprocess].ExitTime or '', interesting))
             
     def render_dot(self, outfd, data):
         objects = set()

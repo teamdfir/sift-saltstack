@@ -11,6 +11,7 @@ include:
   - sift.python-packages.distorm3
   - sift.python-packages.ioc_writer
   - sift.python-packages.lxml
+  - sift.python-packages.openpyxl
   - sift.python-packages.pefile
   - sift.python-packages.pycoin
   - sift.python-packages.pycrypto
@@ -48,6 +49,7 @@ sift-python-volatility-community-plugins:
       - sls: sift.python-packages.distorm3
       - sls: sift.python-packages.ioc_writer
       - sls: sift.python-packages.lxml
+      - sls: sift.python-packages.openpyxl
       - sls: sift.python-packages.pefile
       - sls: sift.python-packages.pycoin
       - sls: sift.python-packages.pycrypto

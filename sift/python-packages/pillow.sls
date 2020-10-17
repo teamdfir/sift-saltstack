@@ -1,5 +1,6 @@
 include:
   - sift.packages.python2-pip
+  - sift.packages.python3-pip
 
 sift-python-packages-pillow:
   pip.installed:

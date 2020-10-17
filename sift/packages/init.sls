@@ -153,6 +153,7 @@ include:
   - sift.packages.python3-dfvfs
   - sift.packages.python3-pip
   - sift.packages.python3-plaso
+  - sift.packages.python3-redis
   - sift.packages.python3-xlsxwriter
   - sift.packages.qemu
   - sift.packages.qemu-utils
@@ -346,6 +347,7 @@ sift-packages:
       - sls: sift.packages.python3-pefile
       - sls: sift.packages.python3-pip
       - sls: sift.packages.python3-plaso
+      - sls: sift.packages.python3-redis
       - sls: sift.packages.python3-pytsk3
       - sls: sift.packages.python3-pyqt5
       - sls: sift.packages.python3-tk

@@ -8,6 +8,7 @@ include:
   - sift.python3-packages.lxml
   - sift.python3-packages.machinae
   - sift.python3-packages.pefile
+  - sift.python3-packages.pillow
   - sift.python3-packages.pyhindsight
   - sift.python3-packages.python-dateutil
   - sift.python3-packages.python-evtx
@@ -34,6 +35,7 @@ sift-python3-packages:
       - sls: sift.python3-packages.lxml
       - sls: sift.python3-packages.machinae
       - sls: sift.python3-packages.pefile
+      - sls: sift.python3-packages.pillow
       - sls: sift.python3-packages.pyhindsight
       - sls: sift.python3-packages.python-dateutil
       - sls: sift.python3-packages.python-evtx

@@ -51,6 +51,7 @@ include:
   - sift.packages.grepcidr
   - sift.packages.gthumb
   - sift.packages.gzrt
+  - sift.packages.hashdeep
   - sift.packages.hexedit
   - sift.packages.htop
   - sift.packages.hydra
@@ -108,7 +109,6 @@ include:
   - sift.packages.libvshadow-tools
   - sift.packages.libxml2-dev
   - sift.packages.libxslt-dev
-  - sift.packages.hashdeep
   - sift.packages.nbd-client
   - sift.packages.nbtscan
   - sift.packages.netcat
@@ -132,34 +132,32 @@ include:
   - sift.packages.pev
   - sift.packages.phonon
   - sift.packages.pkg-config
-  - sift.pacakges.plaso
+  - sift.packages.plaso
   - sift.packages.plaso-data
   - sift.packages.plaso-tools
   - sift.packages.powershell
   - sift.packages.pv
+  - sift.packages.python-flowgrep
+  - sift.packages.python-nids
   - sift.packages.python3
   - sift.packages.python3-dev
-  - sift.packages.python-flowgrep
+  - sift.packages.python3-dfvfs
   - sift.packages.python3-fuse
-  - sift.packages.python-nids
   - sift.packages.python3-pefile
   - sift.packages.python3-pip
+  - sift.packages.python3-plaso
   - sift.packages.python3-pytsk3
   - sift.packages.python3-pyqt5
+  - sift.packages.python3-redis
   - sift.packages.python3-tk
   - sift.packages.python3-virtualenv
-  - sift.packages.python3-yara
-  - sift.packages.python3
-  - sift.packages.python3-dfvfs
-  - sift.packages.python3-pip
-  - sift.packages.python3-plaso
-  - sift.packages.python3-redis
   - sift.packages.python3-xlsxwriter
+  - sift.packages.python3-yara
+  - sift.packages.pst-utils
   - sift.packages.qemu
   - sift.packages.qemu-utils
   - sift.packages.radare2
   - sift.packages.rar
-  - sift.packages.pst-utils
   - sift.packages.rsakeyfind
   - sift.packages.safecopy
   - sift.packages.samba
@@ -336,6 +334,9 @@ sift-packages:
       - sls: sift.packages.pev
       - sls: sift.packages.phonon
       - sls: sift.packages.pkg-config
+      - sls: sift.packages.plaso
+      - sls: sift.packages.plaso-data
+      - sls: sift.packages.plaso-tools
       - sls: sift.packages.powershell
       - sls: sift.packages.pv
       - sls: sift.packages.python-flowgrep
@@ -347,14 +348,14 @@ sift-packages:
       - sls: sift.packages.python3-pefile
       - sls: sift.packages.python3-pip
       - sls: sift.packages.python3-plaso
-      - sls: sift.packages.python3-redis
       - sls: sift.packages.python3-pytsk3
       - sls: sift.packages.python3-pyqt5
+      - sls: sift.packages.python3-redis
       - sls: sift.packages.python3-tk
       - sls: sift.packages.python3-virtualenv
+      - sls: sift.packages.python3-xlsxwriter
       - sls: sift.packages.python3-yara
-      - sls: sift.packages.python3
-      - sls: sift.packages.python3-pip
+      - sls: sift.packages.pst-utils
       - sls: sift.packages.qemu
       - sls: sift.packages.qemu-utils
       - sls: sift.packages.radare2

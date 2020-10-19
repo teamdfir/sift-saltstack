@@ -1,7 +1,7 @@
 include:
   - sift.packages.python3-pip
 
-sift-python-packages-pillow:
+sift-python3-packages-pillow:
   pip.installed:
     - name: pillow
     - bin_env: /usr/bin/python3

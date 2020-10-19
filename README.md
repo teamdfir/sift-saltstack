@@ -1,6 +1,6 @@
 ![Logo](https://digital-forensics.sans.org/images/sift.png)
 
-![Build Status](https://travis-ci.org/sans-dfir/sift-saltstack.svg?branch=master)](https://travis-ci.org/sans-dfir/sift-saltstack)
+![Build Status](https://travis-ci.org/sans-dfir/sift-saltstack.svg?branch=master)(https://travis-ci.org/sans-dfir/sift-saltstack)
 
 # Managing SIFT with Saltstack
 

@@ -13,3 +13,4 @@ sift-python-packages-capstone:
     - upgrade: True
     - require:
       - sls: sift.packages.python2-pip
+      - pkg: sift-python-packages-pkg-remove

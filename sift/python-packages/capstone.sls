@@ -2,6 +2,10 @@ include:
   - sift.packages.python3-pip
   - sift.packages.python2-pip
 
+sift-python-packages-pkg-remove:
+  pkg.removed:
+    - name: python-capstone
+
 sift-python-packages-capstone:
   pip.installed:
     - name: capstone

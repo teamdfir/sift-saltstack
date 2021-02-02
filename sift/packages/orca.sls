@@ -1,0 +1,2 @@
+orca:
+  pkg.installed

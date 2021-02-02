@@ -109,6 +109,7 @@ include:
   - sift.packages.libvshadow-tools
   - sift.packages.libxml2-dev
   - sift.packages.libxslt-dev
+  - sift.packages.magnus
   - sift.packages.nbd-client
   - sift.packages.nbtscan
   - sift.packages.netcat
@@ -120,10 +121,12 @@ include:
   - sift.packages.ngrep
   - sift.packages.nikto
   - sift.packages.okular
+  - sift.packages.onboard
   - sift.packages.open-iscsi
   - sift.packages.openjdk
   - sift.packages.ophcrack
   - sift.packages.ophcrack-cli
+  - sift.packages.orca
   - sift.packages.outguess
   - sift.packages.p0f
   - sift.packages.p7zip-full
@@ -311,6 +314,7 @@ sift-packages:
       - sls: sift.packages.libvshadow-tools
       - sls: sift.packages.libxml2-dev
       - sls: sift.packages.libxslt-dev
+      - sls: sift.packages.magnus
       - sls: sift.packages.nbd-client
       - sls: sift.packages.nbtscan
       - sls: sift.packages.netcat
@@ -322,10 +326,12 @@ sift-packages:
       - sls: sift.packages.ngrep
       - sls: sift.packages.nikto
       - sls: sift.packages.okular
+      - sls: sift.packages.onboard
       - sls: sift.packages.open-iscsi
       - sls: sift.packages.openjdk
       - sls: sift.packages.ophcrack
       - sls: sift.packages.ophcrack-cli
+      - sls: sift.packages.orca
       - sls: sift.packages.outguess
       - sls: sift.packages.p0f
       - sls: sift.packages.p7zip-full

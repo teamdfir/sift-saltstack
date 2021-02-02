@@ -1,0 +1,2 @@
+onboard:
+  pkg.installed

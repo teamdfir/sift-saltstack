@@ -1,14 +1,15 @@
 include:
-  - sift.packages.python3-pip
+  - sift.python3-packages.pip
+  - sift.python3-packages.setuptools-rust
   - sift.python3-packages.keyrings-alt
   
 sift-python3-packages-pyhindsight:
   pip.installed:
     - name: pyhindsight
     - bin_env: /usr/bin/python3
-    - upgrade: True
     - require:
-      - sls: sift.packages.python3-pip
+      - sls: sift.python3-packages.pip
+      - sls: sift.python3-packages.setuptools-rust
       - sls: sift.python3-packages.keyrings-alt
 
 sift-python3-packages-pyhindsight-encoding:

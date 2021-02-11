@@ -1,10 +1,9 @@
 include:
   - sift.python3-packages.pip
 
-sift-python3-packages-pefile:
+sift-python3-packages-setuptools-rust:
   pip.installed:
-    - name: pefile
+    - name: setuptools_rust
     - bin_env: /usr/bin/python3
     - require:
       - sls: sift.python3-packages.pip
-

@@ -1,3 +1,24 @@
+argparse.sls:    - upgrade: True
+bitstring.sls:    - upgrade: True
+colorama.sls:    - upgrade: True
+geoip2.sls:    - upgrade: True
+ioc_writer.sls:    - upgrade: True
+lxml.sls:    - upgrade: True
+pefile.sls:    - upgrade: True
+pillow.sls:    - upgrade: True
+pyhindsight.sls:    - upgrade: True
+python-dateutil.sls:    - upgrade: True
+python-evtx.sls:    - upgrade: True
+python-magic.sls:    - upgrade: True
+python-registry.sls:    - upgrade: True
+setuptools.sls:    - upgrade: True
+six.sls:    - upgrade: True
+stix-validator.sls:    - upgrade: True
+stix.sls:    - upgrade: True
+virustotal-api.sls:    - upgrade: True
+wheel.sls:    - upgrade: True
+yara-python.sls:    - upgrade: True
+
 include:
   - sift.python3-packages.pip
   - sift.python3-packages.argparse
@@ -5,9 +26,7 @@ include:
   - sift.python3-packages.colorama
   - sift.python3-packages.geoip2
   - sift.python3-packages.ioc_writer
-  - sift.python3-packages.keyrings-alt
   - sift.python3-packages.lxml
-  - sift.python3-packages.machinae
   - sift.python3-packages.pefile
   - sift.python3-packages.pillow
   - sift.python3-packages.pyhindsight
@@ -24,9 +43,9 @@ include:
   - sift.python3-packages.wheel
   - sift.python3-packages.yara-python
 
-sift-python3-packages:
-  test.nop:
-    - name: sift-python3-packages
+sift-python3-packages-upgrade:
+  cmd.run:
+    - name: /usr/bin/python3 -m pip install --upgrade argparse bitstring colorama geoip2 ioc_writer lxml pefile pillow pyhindsight python-dateutil python-evtx python-magic python-registry setuptools setuptools_rust six stix-validator stix virustotal-api wheel yara-python pip
     - require:
       - sls: sift.python3-packages.pip
       - sls: sift.python3-packages.argparse
@@ -34,9 +53,7 @@ sift-python3-packages:
       - sls: sift.python3-packages.colorama
       - sls: sift.python3-packages.geoip2
       - sls: sift.python3-packages.ioc_writer
-      - sls: sift.python3-packages.keyrings-alt
       - sls: sift.python3-packages.lxml
-      - sls: sift.python3-packages.machinae
       - sls: sift.python3-packages.pefile
       - sls: sift.python3-packages.pillow
       - sls: sift.python3-packages.pyhindsight
@@ -52,3 +69,4 @@ sift-python3-packages:
       - sls: sift.python3-packages.virustotal-api
       - sls: sift.python3-packages.wheel
       - sls: sift.python3-packages.yara-python
+

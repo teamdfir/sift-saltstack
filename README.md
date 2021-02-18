@@ -8,8 +8,8 @@ Please open issues over at the [SIFT Repository](https://github.com/sans-dfir/si
 
 ## Supported Distributions
 
-* Ubuntu 16.04 (Xenial)
-* Ubuntu 18.04 (Bionic) - In Testing
+* Ubuntu 18.04 (Bionic) (DEPRECATED)
+* Ubuntu 20.04 (Focal)
 
 ## Installation
 
@@ -19,9 +19,24 @@ Use the [sift-cli](https://github.com/sans-dfir/sift-cli) tool.
 
 ### Alternate (Manual)
 
+#### 20.04
+
+**Status:** Stable
+
+There are two primary modes, `desktop` and `server` in step 4 the example shows desktop, simply swap that word out for server if you want to see the server mode.
+
+1. Ubuntu 20.04
+2. Install SaltStack for 20.04 (Focal) (See 20.04 instructions below)
+3. `sudo git clone https://github.com/teamdfir/sift-saltstack.git /srv/salt`
+4. `sudo salt-call --local state.sls sift.desktop pillar='{"sift_version": "dev", "sift_user": "REPLACE_WITH_YOUR_USERNAME"}'`
+
+**Important:** Make sure you replace the `REPLACE_WITH_YOUR_USERNAME` with your actual username that you are running.
+
+**Desktop Note:** If you are installing desktop mode, please make sure you run all the commands from a terminal within the Desktop environment.
+
 #### 18.04
 
-**Status:** Beta
+**Status:** Stable
 
 There are two primary modes, `desktop` and `server` in step 4 the example shows desktop, simply swap that word out for server if you want to see the server mode.
 
@@ -36,15 +51,7 @@ There are two primary modes, `desktop` and `server` in step 4 the example shows 
 
 #### 16.04
 
-It is hightly recommended that you use the [sift-cli](https://github.com/sans-dfir/sift-cli) tool to install, update and upgrade SIFT.
-
-1. Ubuntu 16.04 Machine
-2. Install Saltstack (see below)
-3. Import the PGP Key - gpg --keyserver hkp://pgp.mit.edu:80 --recv-keys 22598A94
-4. Download the latest signed [releases](https://github.com/sans-dfir/sift-saltstack/releases/latest) files
-5. Verify the latest signed release files with GPG
-6. Extract the `.tar.gz` file to `/tmp/salt` (make sure this README.md is in the root of /tmp/salt)
-7. `sudo salt-call -l info --local --file-root=/tmp/salt state.apply sift.vm`
+**No Longer Supported**
 
 ### Customizing the Install
 
@@ -60,6 +67,16 @@ sudo salt-call -l info --local --file-root=/tmp/salt state.apply sift.pkgs
 
 ## Installing Saltstack
 
+### 20.04
+
+1. `wget -O - https://repo.saltstack.com/apt/ubuntu/20.04/amd64/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -`
+2. `echo "deb http://repo.saltstack.com/apt/ubuntu/20.04/amd64/latest focal main" | sudo tee /etc/apt/sources.list.d/saltstack.list`
+3. `sudo apt-get update`
+4. `sudo apt-get install salt-minion`
+5. `sudo service salt-minion stop`
+
+Note: the SIFT install process will disable the minion altogether as we do not need it running as a service
+
 ### 18.04
 
 1. `wget -O - https://repo.saltstack.com/apt/ubuntu/18.04/amd64/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -`
@@ -72,10 +89,4 @@ Note: the SIFT install process will disable the minion altogether as we do not n
 
 ### 16.04
 
-Reference: http://repo.saltstack.com/#ubuntu
-
-1. `wget -O - https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -`
-2. `echo "deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main" | sudo tee /etc/apt/sources.list.d/saltstack.list`
-3. `sudo apt-get update`
-4. `sudo apt-get install salt-minion`
-5. `sudo service salt-minion stop` (Note: the SIFT install process will disable the minion altogether as we do not need it running as a service)
+**No Longer Supported**

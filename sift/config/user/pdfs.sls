@@ -44,18 +44,6 @@ sift-pdf-poster-sift-remnux:
     - require:
       - user: sift-user-{{ user }}
 
-sift-pdf-poster-memory-foreniscs:
-  file.managed:
-    - name: {{ home }}/Desktop/Memory-Forensics-Poster.pdf
-    - source: https://digital-forensics.sans.org/media/Poster_Memory_Forensics.pdf
-    - source_hash: sha256=120191d8f9d9207cf501b047236cbe3d4663d7bb954cfdc96010bb5e4e8f96ab
-    - user: {{ user }}
-    - group: {{ user }}
-    - makedirs: True
-    - show_changes: False
-    - require:
-      - user: sift-user-{{ user }}
-
 sift-pdf-poster-cheatsheet-rekall:
   file.managed:
     - name: {{ home }}/Desktop/Rekall-Cheatsheet.pdf

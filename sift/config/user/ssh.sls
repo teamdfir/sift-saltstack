@@ -19,3 +19,17 @@ sift-config-user-ssh-config-gssapi:
     - append_if_not_found: True
     - require:
       - file: sift-config-user-ssh-config
+
+sift-config-user-ssh-permissions:
+  file.directory:
+    - name: {{ home }}/.ssh
+    - user: {{ user }}
+    - group: {{ user }}
+    - dir_mode: 755
+    - file_mode: 755
+    - recurse:
+      - user
+      - group
+      - mode
+
+  

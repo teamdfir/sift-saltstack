@@ -12,7 +12,7 @@ sift-package-python2-pip:
 {%- elif grains['oscodename'] == "focal" %}
 sift-package-python2-pip-install-script:
   cmd.run:
-    - name: curl -o /tmp/get-pip.py https://bootstrap.pypa.io/2.7/get-pip.py 
+    - name: curl -o /tmp/get-pip.py https://bootstrap.pypa.io/pip/2.7/get-pip.py 
     - unless: which pip2
     - require:
       - sls: sift.packages.python2

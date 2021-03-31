@@ -3,7 +3,7 @@ on:
   pull_request:
 
 jobs:
-  changes_states:
+  changed_states:
     runs-on: ubuntu-latest
     steps:
       - id: files
@@ -17,13 +17,13 @@ jobs:
       matrix: ${{ steps.files.outputs.filtered_files }}
 
   test_states:
-    needs: changed_files
+    needs: changed_states
 
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        state: ${{ fromJson(needs.changed_files.outputs.matrix) }}
+        state: ${{ fromJson(needs.changed_states.outputs.matrix) }}
 
     steps:
       - uses: addnab/docker-run-action@v3

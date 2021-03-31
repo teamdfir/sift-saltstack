@@ -8,5 +8,3 @@
 
 htop:
   pkg.installed
-
-# test 11

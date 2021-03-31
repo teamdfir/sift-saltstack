@@ -12,7 +12,7 @@ jobs:
           format: "json"
       - id: filter
         run: |
-          echo ::set-output filtered_files=json_var::"$(jq -r '[.[] | select(. | contains(".sls"))]' <<< '${{ steps.files.outputs.added_modified }}')"
+          echo ::set-output name=filtered_files::"$(jq -r '[.[] | select(. | contains(".sls"))]' <<< '${{ steps.files.outputs.added_modified }}')"
     outputs:
       matrix: ${{ steps.files.outputs.filtered_files }}
 

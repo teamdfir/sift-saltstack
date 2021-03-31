@@ -30,7 +30,7 @@ jobs:
       image: docker://teamdfir/sift-saltstack-tester:${{ matrix.os }}
 
     steps:
+      - uses: actions/checkout@v2
       - name: test-state
         run: |
-          ls -la
           salt-call -l info --file-root . --local --retcode-passthrough --state-output=mixed state.sls ${{ matrix.state }} pillar="{sift_user: root}"

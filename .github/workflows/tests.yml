@@ -1,3 +1,6 @@
+on:
+  pull_request:
+
 jobs:
   changes_states:
     runs-on: ubuntu-latest
@@ -26,5 +29,5 @@ jobs:
         with:
           image: docker.io/teamdfir/sift-saltstack-tester
           options: -v ${{ github.workspace }}/sift:/srv/salt/sift
-        run: |
-          salt-call -l debug --local --retcode-passthrough --state-output=mixed state.sls ${{ matrix.state }} pillar="{sift_user: root}"
+          run: |
+            salt-call -l debug --local --retcode-passthrough --state-output=mixed state.sls ${{ matrix.state }} pillar="{sift_user: root}"

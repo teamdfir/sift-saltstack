@@ -23,13 +23,15 @@ jobs:
 
     strategy:
       matrix:
+        os: [focal]
         state: ${{ fromJson(needs.changed_states.outputs.matrix) }}
 
+    container:
+      image: docker://teamdfir/sift-saltstack-tester:${{ matrix.os }}
+
     steps:
-      - uses: addnab/docker-run-action@v3
-        with:
-          image: docker://teamdfir/sift-saltstack-tester:focal
-          run: |
-            mkdir -p /srv/salt  
-            ln -s /github/workspace/sift /srv/salt/
-            salt-call -l debug --local --retcode-passthrough --state-output=mixed state.sls ${{ matrix.state }} pillar="{sift_user: root}"
+      - name: test-state
+        run: |
+          mkdir -p /srv/salt  
+          ln -s /github/workspace/sift /srv/salt/
+          salt-call -l debug --local --retcode-passthrough --state-output=mixed state.sls ${{ matrix.state }} pillar="{sift_user: root}"

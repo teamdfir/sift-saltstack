@@ -1,0 +1,44 @@
+name: tests
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  changed_states:
+    runs-on: ubuntu-latest
+    steps:
+      - id: files
+        uses: jitterbit/get-changed-files@v1
+        with:
+          format: "json"
+      - id: filter
+        run: |
+          echo ::set-output name=filtered_files::"$(jq -rMc '[.[] | select(. | contains(".sls")) | sub("/"; "."; "g") | sub(".sls"; ""; "g")]' <<< '${{ steps.files.outputs.added_modified }}')"
+    outputs:
+      matrix: ${{ steps.filter.outputs.filtered_files }}
+
+  test_states:
+    needs: changed_states
+
+    runs-on: ubuntu-latest
+
+    if: ${{ needs.changed_states.outputs.matrix != '[]' }}
+
+    strategy:
+      matrix:
+        os: [focal]
+        state: ${{ fromJson(needs.changed_states.outputs.matrix) }}
+
+    container:
+      image: docker://teamdfir/sift-saltstack-tester:${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: test-state
+        run: |
+          salt-call -l info --file-root . --local --retcode-passthrough --state-output=mixed state.sls ${{ matrix.state }} pillar="{sift_user: root}"

@@ -1,6 +1,3 @@
-on:
-  pull_request:
-
 jobs:
   changes_states:
     runs-on: ubuntu-latest

@@ -1,0 +1,26 @@
+name: weekly-tests
+
+on:
+  schedule:
+    - cron: 0 13 * * 1
+
+jobs:
+  test_states:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        os: [focal]
+        state:
+          - sift.packages.python2
+          - sift.packages.python3
+          - sift.packages.python3-plaso
+
+    container:
+      image: docker://teamdfir/sift-saltstack-tester:${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: test-state
+        run: |
+          salt-call -l info --file-root . --local --retcode-passthrough --state-output=mixed state.sls ${{ matrix.state }} pillar="{sift_user: root}"

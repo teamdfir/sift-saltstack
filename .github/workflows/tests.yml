@@ -14,7 +14,7 @@ jobs:
         run: |
           echo ::set-output name=filtered_files::"$(jq -r '[.[] | select(. | contains(".sls"))]' <<< '${{ steps.files.outputs.added_modified }}')"
     outputs:
-      matrix: ${{ steps.files.outputs.filtered_files }}
+      matrix: ${{ steps.filter.outputs.filtered_files }}
 
   test_states:
     needs: changed_states

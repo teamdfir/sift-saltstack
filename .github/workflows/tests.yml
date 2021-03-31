@@ -28,7 +28,8 @@ jobs:
     steps:
       - uses: addnab/docker-run-action@v3
         with:
-          image: docker.io/teamdfir/sift-saltstack-tester
-          options: -v ${{ github.workspace }}/sift:/srv/salt/sift
+          image: docker://teamdfir/sift-saltstack-tester:focal
           run: |
+            mkdir -p /srv/salt  
+            ln -s /github/workspace/sift /srv/salt/
             salt-call -l debug --local --retcode-passthrough --state-output=mixed state.sls ${{ matrix.state }} pillar="{sift_user: root}"

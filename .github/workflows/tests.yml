@@ -32,10 +32,11 @@ jobs:
     strategy:
       matrix:
         os: [focal]
+        salt: [3001, 3002, 3003]
         state: ${{ fromJson(needs.changed_states.outputs.matrix) }}
 
     container:
-      image: docker://teamdfir/sift-saltstack-tester:${{ matrix.os }}
+      image: docker://teamdfir/sift-saltstack-tester:${{ matrix.os }}-${{ matrix.salt }}
 
     steps:
       - uses: actions/checkout@v2

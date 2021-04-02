@@ -11,13 +11,14 @@ jobs:
     strategy:
       matrix:
         os: [focal]
+        salt: [3001, 3002, 3003]
         state:
           - sift.packages.python2
           - sift.packages.python3
-          - sift.packages.python3-plaso
+          - sift.tests.gift
 
     container:
-      image: docker://teamdfir/sift-saltstack-tester:${{ matrix.os }}
+      image: docker://teamdfir/sift-saltstack-tester:${{ matrix.os }}-${{ matrix.salt }}
 
     steps:
       - uses: actions/checkout@v2

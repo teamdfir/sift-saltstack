@@ -84,7 +84,6 @@ include:
   - sift.packages.libfuse-dev
   - sift.packages.libfvde
   - sift.packages.libfvde-tools
-  - sift.packages.libguestfs-tools
   - sift.packages.liblightgrep
   - sift.packages.libmsiecf
   - sift.packages.libncurses
@@ -289,7 +288,6 @@ sift-packages:
       - sls: sift.packages.libfuse-dev
       - sls: sift.packages.libfvde
       - sls: sift.packages.libfvde-tools
-      - sls: sift.packages.libguestfs-tools
       - sls: sift.packages.liblightgrep
       - sls: sift.packages.libmsiecf
       - sls: sift.packages.libncurses

@@ -17,7 +17,7 @@ set pdfs = [
     "id": "poster-network-forensics",
     "filename": "Network-Forensics-Poster.pdf",
     "source": "https://www.sans.org/security-resources/posters/network-forensics-poster/145/download",
-    "hash": "d4bb66f90642a595639e036fa94ef717d934e3d92629f0be107d31131cc0107d",
+    "hash": "66ba6fb482b9f2c1ad9da5b8c379b1acff14dbd96bf6bf1046f39a4960e56b3c",
   },
   {
     "id": "poster-sift-remnux",

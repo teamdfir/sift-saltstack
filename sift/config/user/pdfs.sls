@@ -5,149 +5,114 @@
   {%- set home = salt['user.info'](user).home -%}
 {%- endif -%}
 
+{%-
+set pdfs = [
+  {
+    "id": "poster-threat-intelligence",
+    "filename": "Poster_Threat-Intelligence-Consumption.pdf",
+    "source": "https://www.sans.org/security-resources/posters/cyber-threat-intelligence-consumption/130/download",
+    "hash": "02f71ad97ece95e9bea61db31fe026b7b6c7e04a2a1f3257b51ace3153e88d59",
+  },
+  {
+    "id": "poster-network-forensics",
+    "filename": "Network-Forensics-Poster.pdf",
+    "source": "https://www.sans.org/security-resources/posters/network-forensics-poster/145/download",
+    "hash": "d4bb66f90642a595639e036fa94ef717d934e3d92629f0be107d31131cc0107d",
+  },
+  {
+    "id": "poster-sift-remnux",
+    "filename": "SIFT-REMnux-Poster.pdf",
+    "source": "https://www.sans.org/security-resources/posters/sift-remnux-poster/125/download",
+    "hash": "5719b21c388d276984b5200f29561e093d02bc4dc2553889c4b8011f984fb0f0"
+  },
+  {
+    "id": "poster-dfir-smartphone",
+    "filename": "DFIR-Smartphone-Forensics-Poster.pdf",
+    "source": "https://www.sans.org/security-resources/posters/dfir-advanced-smartphone-forensics/30/download",
+    "hash": "6b2ba452137e2ef6572781f673817f4f15f3555a4b2f47b16629350f9990c1d3"
+  },
+  {
+    "id": "poster-windows-forensics",
+    "filename": "Windows-Forensics-Poster.pdf",
+    "source": "https://www.sans.org/security-resources/posters/windows-forensic-analysis/170/download",
+    "hash": "a835554f0354cbddf98f333c8c860e43504adf45fadffadd8d4e6468ffcf8d2c"
+  },
+  {
+    "id": "poster-ios-third-pary-apps",
+    "filename": "iOS-3rd-Party-Apps-Poster.pdf",
+    "source": "https://www.sans.org/security-resources/posters/ios-third-party-apps-forensics-reference-guide-poster/300/download",
+    "hash": "2f1b2b67a12d43de29014cce0097f4e58538b0bf9d9c48cedc4516b7b0aea78e"
+  },
+  {
+    "id": "poster-zimmerman-tools",
+    "filename": "Zimmerman-Tools-Poster.pdf",
+    "source": "https://www.sans.org/security-resources/posters/eric-zimmermans-results-seconds-command-line-poster/195/download",
+    "hash": "bc9072d1ef9c1a90c157ebc0b738c1cf2578f2453c255dd87161387f3025c2c7"
+  },
+  {
+    "id": "poster-hunt-evil",
+    "filename": "Hunt-Evil.pdf",
+    "source": "https://www.sans.org/security-resources/posters/hunt-evil/165/download",
+    "hash": "74fea603f50e389667a341c4d77ac6bd511f7b841d836edd640889b963ea0753"
+  },
+  {
+    "id": "cheatsheet-sift",
+    "filename": "SIFT-Cheatsheet.pdf",
+    "source": "https://digital-forensics.sans.org/media/sift_cheat_sheet.pdf",
+    "hash": "8fda96c8f7bc32844b843dd3d95e793316e23b765b440b240681d3bc9724ad5c"
+  },
+  {
+    "id": "cheatsheet-guide-linux-shell-survival",
+    "filename": "Linux-Shell-Survival-Guide.pdf",
+    "source": "https://digital-forensics.sans.org/media/FOR572HANDOUT_LSSG_V2.3_F01_01.pdf",
+    "hash": "51d241034056a3837e072416572824abc316fda287fb003aae010e4a126de3a6"
+  },
+  {
+    "id": "cheatsheet-windows-to-unix",
+    "filename": "Windows-to-Unix-Cheatsheet.pdf",
+    "source": "https://digital-forensics.sans.org/media/windows_to_unix_cheatsheet.pdf",
+    "hash": "97be37ea175c0f53a808c45fcbeacd11889d77a566d2a01d421865bb4c352312"
+  },
+  {
+    "id": "cheatsheet-volatility",
+    "filename": "Volatility-Cheatsheet.pdf",
+    "source": "https://digital-forensics.sans.org/media/volatility-memory-forensics-cheat-sheet.pdf",
+    "hash": "699ea76d1713074fe0d32eaad437f3b2c7e089ae8d00e5d43aa97cc81ed0f44f"
+  },
+  {
+    "id": "cheatsheet-hexfile-regex",
+    "filename": "Hex-File-Regex-Cheatsheet.pdf",
+    "source": "https://digital-forensics.sans.org/media/hex_file_and_regex_cheat_sheet.pdf",
+    "hash": "d1a78b37886f524bc94e3e3aac8ab9816e904a6583f0145fd26c67524e23d032"
+  },
+  {
+    "id": "cheatsheet-sqlite",
+    "filename": "SQLite-Pocket-Reference.pdf",
+    "source": "https://digital-forensics.sans.org/media/SQlite-PocketReference-final.pdf",
+    "hash": "954d62787abe3bad95f59e2d671eac202dea2607ed5cdb757dbbb688b873f679"
+  },
+  {
+    "id": "cheatsheet-jq",
+    "filename": "JQ-Cheatsheet.pdf",
+    "source": "https://digital-forensics.sans.org/media/FOR572HANDOUT_jq_v1.2.pdf",
+    "hash": "1314e54f8f51a3501d69a5f6c08d7eefc231b1629a3824f2fa32c1cc65473b92"
+  },
+]
+-%}
+
 include:
   - sift.config.user.user
 
-sift-pdf-poster-network-forensics:
+{% for pdf in pdfs %}
+sift-pdf-{{ pdf.id }}:
   file.managed:
-    - name: {{ home }}/Desktop/Network-Forensics-Poster.pdf
-    - source: https://digital-forensics.sans.org/media/Poster_Network-Forensics_WEB.pdf
-    - source_hash: sha256=5ae5487f9555ef03d540c9f0939d0a5c29c4c080fd91d3336fc97dee47a2bd86
+    - name: {{ home }}/Desktop/{{ pdf.filename }}
+    - source: {{ pdf.source }}
+    - source_hash: sha256={{ pdf.hash }}
     - user: {{ user }}
     - group: {{ user }}
     - makedirs: True
     - show_changes: False
     - require:
       - user: sift-user-{{ user }}
-
-sift-pdf-poster-dfir-threat-intel:
-  file.managed:
-    - name: {{ home }}/Desktop/DFIR-Threat-Intel-Poster.pdf
-    - source: https://digital-forensics.sans.org/media/Poster_DFIR_Threat-Intel_2017.pdf
-    - source_hash: sha256=e221bc427061602c29a1b1250ee76e3f3adb4aace5ff4f41e1d3918ad6d9abb4
-    - user: {{ user }}
-    - group: {{ user }}
-    - makedirs: True
-    - show_changes: False
-    - require:
-      - user: sift-user-{{ user }}
-
-sift-pdf-poster-sift-remnux:
-  file.managed:
-    - name: {{ home }}/Desktop/SIFT-REMnux-Poster.pdf
-    - source: https://digital-forensics.sans.org/media/Poster_SIFT_REMnux_2016_FINAL.pdf
-    - source_hash: sha256=7c63107152e3a1b63500c3294f3a760a89c1ea504d9100c72d28727321ef63c3
-    - user: {{ user }}
-    - group: {{ user }}
-    - makedirs: True
-    - show_changes: False
-    - require:
-      - user: sift-user-{{ user }}
-
-sift-pdf-poster-cheatsheet-rekall:
-  file.managed:
-    - name: {{ home }}/Desktop/Rekall-Cheatsheet.pdf
-    - source: https://digital-forensics.sans.org/media/rekall-memory-forensics-cheatsheet.pdf
-    - source_hash: sha256=6b30c6f51b73b17b0e719a7a47cf5ba140cfc13afb96f1feb3b77c31345aceb2
-    - user: {{ user }}
-    - group: {{ user }}
-    - makedirs: True
-    - show_changes: False
-    - require:
-      - user: sift-user-{{ user }}
-
-sift-pdf-poster-dfir-smartphone:
-  file.managed:
-    - name: {{ home }}/Desktop/DFIR-Smartphone-Forensics-Poster.pdf
-    - source: https://digital-forensics.sans.org/media/DFIR-Smartphone-Forensics-Poster.pdf
-    - source_hash: sha256=1b2d79a2abb9d2122f77e682a61bc5b85ae2e5f58e846c49424080226e50d393
-    - user: {{ user }}
-    - group: {{ user }}
-    - makedirs: True
-    - show_changes: False
-    - require:
-      - user: sift-user-{{ user }}
-
-sift-pdf-poster-windows-forensics:
-  file.managed:
-    - name: {{ home }}/Desktop/Windows-Forensics-Poster.pdf
-    - source: https://digital-forensics.sans.org/media/Poster_Windows_Forensics_2017_WEB.pdf
-    - source_hash: sha256=4b625889deb5f98fd852b85d99882d794a5fa8a58a0c33e925970c93ff4e739c
-    - user: {{ user }}
-    - group: {{ user }}
-    - makedirs: True
-    - show_changes: False
-    - require:
-      - user: sift-user-{{ user }}
-
-sift-pdf-poster-find-evil:
-  file.managed:
-    - name: {{ home }}/Desktop/Find-Evil.pdf
-    - source: https://digital-forensics.sans.org/media/Poster_2016_Find_Evil.pdf
-    - source_hash: sha256=d38b39637ae5ebf0d40dcd676be1c9410f91ed1c047c59a27c0c488ae570920f
-    - user: {{ user }}
-    - group: {{ user }}
-    - makedirs: True
-    - show_changes: False
-    - require:
-      - user: sift-user-{{ user }}
-
-sift-pdf-cheatsheet-sift:
-  file.managed:
-    - name: {{ home }}/Desktop/SIFT-Cheatsheet.pdf
-    - source: https://digital-forensics.sans.org/media/sift_cheat_sheet.pdf
-    - source_hash: sha256=8fda96c8f7bc32844b843dd3d95e793316e23b765b440b240681d3bc9724ad5c
-    - user: {{ user }}
-    - group: {{ user }}
-    - makedirs: True
-    - show_changes: False
-    - require:
-      - user: sift-user-{{ user }}
-
-sift-pdf-guide-linux-shell-survival:
-  file.managed:
-    - name: {{ home }}/Desktop/Linux-Shell-Survival-Guide.pdf
-    - source: https://digital-forensics.sans.org/media/linux-shell-survival-guide.pdf
-    - source_hash: sha256=15a731e1f55643ccb909c84fe4b8d8d35b0dd5de4cb0588aeca0b38f8a917ace
-    - user: {{ user }}
-    - group: {{ user }}
-    - makedirs: True
-    - show_changes: False
-    - require:
-      - user: sift-user-{{ user }}
-
-sift-pdf-cheatsheet-windows-to-unix:
-  file.managed:
-    - name: {{ home }}/Desktop/Windows-to-Unix-Cheatsheet.pdf
-    - source: https://digital-forensics.sans.org/media/windows_to_unix_cheatsheet.pdf
-    - source_hash: sha256=97be37ea175c0f53a808c45fcbeacd11889d77a566d2a01d421865bb4c352312
-    - user: {{ user }}
-    - group: {{ user }}
-    - makedirs: True
-    - show_changes: False
-    - require:
-      - user: sift-user-{{ user }}
-
-sift-pdf-cheatsheet-volatility:
-  file.managed:
-    - name: {{ home }}/Desktop/Volatility-Cheatsheet.pdf
-    - source: https://digital-forensics.sans.org/media/volatility-memory-forensics-cheat-sheet.pdf
-    - source_hash: sha256=699ea76d1713074fe0d32eaad437f3b2c7e089ae8d00e5d43aa97cc81ed0f44f
-    - user: {{ user }}
-    - group: {{ user }}
-    - makedirs: True
-    - show_changes: False
-    - require:
-      - user: sift-user-{{ user }}
-  
-sift-pdf-cheatsheet-hexfile-regex:
-  file.managed:
-    - name: {{ home }}/Desktop/Hex-File-Regex-Cheatsheet.pdf
-    - source: https://digital-forensics.sans.org/media/hex_file_and_regex_cheat_sheet.pdf
-    - source_hash: sha256=d1a78b37886f524bc94e3e3aac8ab9816e904a6583f0145fd26c67524e23d032
-    - user: {{ user }}
-    - group: {{ user }}
-    - makedirs: True
-    - show_changes: False
-    - require:
-      - user: sift-user-{{ user }}    
+{% endfor %}

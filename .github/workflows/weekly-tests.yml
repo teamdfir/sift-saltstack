@@ -17,6 +17,7 @@ jobs:
           - sift.packages.python2
           - sift.packages.python3
           - sift.tests.gift
+          - sift.config.user.pdfs
 
     container:
       image: docker://teamdfir/sift-saltstack-tester:${{ matrix.os }}-${{ matrix.salt }}

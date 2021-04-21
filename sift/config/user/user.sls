@@ -3,7 +3,7 @@
 {%- if user == "root" -%}
   {%- set home = "/root" -%}
 {%- else -%}
-  {%- set home = "/home/{{ user }}" -%}
+  {%- set home = "/home/" + user -%}
 {%- endif -%}
 {%- if user in all_users -%}
 sift-user-{{ user }}:

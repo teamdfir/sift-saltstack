@@ -16,15 +16,15 @@ sift-config-theme-set-background-directory:
 
 sift-config-theme-set-background-file:
   file.managed:
-    - name: /usr/share/backgrounds/forensics_blue.jpg
-    - source: salt://sift/files/sift/images/forensics_blue.jpg
+    - name: /usr/share/backgrounds/sift.png
+    - source: salt://sift/files/sift/images/sift.png
     - replace: True
     - require:
       - file: sift-config-theme-set-background-directory
 
 sift-config-theme-set-background-file-gsettings:
   cmd.run:
-    - name: gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/forensics_blue.jpg
+    - name: gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/sift.png
     - runas: {{ user }}
     - cwd: {{ home }}
     - shell: /bin/bash

@@ -1,4 +1,4 @@
-{%- set version = salt['pillar.get']('sift_version', 'dev') -%}
+{%- set version = salt['pillar.get']('sift_version', 'stable') -%}
 
 include:
   - sift.packages.software-properties-common

@@ -58,44 +58,26 @@ set pdfs = [
   {
     "id": "cheatsheet-sift",
     "filename": "SIFT-Cheatsheet.pdf",
-    "source": "https://digital-forensics.sans.org/media/sift_cheat_sheet.pdf",
+    "source": "https://www.sans.org/security-resources/posters/sift-cheat-sheet/355/download",
     "hash": "5f437c02cf1fd3f456394af3d8131a5e362cc0356f929d5ba2cd5e909c4e419e"
-  },
-  {
-    "id": "cheatsheet-guide-linux-shell-survival",
-    "filename": "Linux-Shell-Survival-Guide.pdf",
-    "source": "https://digital-forensics.sans.org/media/FOR572HANDOUT_LSSG_V2.3_F01_01.pdf",
-    "hash": "7e573f534ad253f0d04863187e36d9f9d174dbd9bdc4171be0dc35fa121043dc"
   },
   {
     "id": "cheatsheet-windows-to-unix",
     "filename": "Windows-to-Unix-Cheatsheet.pdf",
-    "source": "https://digital-forensics.sans.org/media/windows_to_unix_cheatsheet.pdf",
+    "source": "https://www.sans.org/security-resources/posters/windows-unix-cheat-sheet/370/download",
     "hash": "1f1e7f8f2d1c817be1c192fc6e76359df9b1f15986c4ac40d4595e0907f34d90"
-  },
-  {
-    "id": "cheatsheet-volatility",
-    "filename": "Volatility-Cheatsheet.pdf",
-    "source": "https://digital-forensics.sans.org/media/volatility-memory-forensics-cheat-sheet.pdf",
-    "hash": "659bbf6a89b9c2e29bd4635210cf148945a76193f40bc77f453ccf047422b885"
   },
   {
     "id": "cheatsheet-hexfile-regex",
     "filename": "Hex-File-Regex-Cheatsheet.pdf",
-    "source": "https://digital-forensics.sans.org/media/hex_file_and_regex_cheat_sheet.pdf",
+    "source": "https://www.sans.org/security-resources/posters/hex-regex-forensics-cheat-sheet/345/download",
     "hash": "752eeae0236e15eb25498f2bc2e8a04367e300317e71ee3a77630a5b3f8e28f8"
   },
   {
     "id": "cheatsheet-sqlite",
     "filename": "SQLite-Pocket-Reference.pdf",
-    "source": "https://digital-forensics.sans.org/media/SQlite-PocketReference-final.pdf",
+    "source": "https://www.sans.org/security-resources/posters/sqlite-pocket-reference-guide/380/download",
     "hash": "0578faaba49700d9d7fe3d309366d5a662486adfcf87dc8083d698549c901ceb"
-  },
-  {
-    "id": "cheatsheet-jq",
-    "filename": "JQ-Cheatsheet.pdf",
-    "source": "https://digital-forensics.sans.org/media/FOR572HANDOUT_jq_v1.2.pdf",
-    "hash": "bedd389022b59dae4e268a6169338be96eab08522dd59423d146af5df4875873"
   },
 ]
 -%}

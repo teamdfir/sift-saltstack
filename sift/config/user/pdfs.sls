@@ -88,7 +88,7 @@ set pdfs = [
   {
     "id": "cheatsheet-sqlite",
     "filename": "SQLite-Pocket-Reference.pdf",
-    "source": "https://digital-forensics.sans.org/media/SQlite-PocketReference-final.pdf",
+    "source": "https://www.sans.org/security-resources/posters/sqlite-pocket-reference-guide/380/download",
     "hash": "954d62787abe3bad95f59e2d671eac202dea2607ed5cdb757dbbb688b873f679"
   },
   {

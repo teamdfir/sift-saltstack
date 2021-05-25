@@ -59,25 +59,25 @@ set pdfs = [
     "id": "cheatsheet-sift",
     "filename": "SIFT-Cheatsheet.pdf",
     "source": "https://www.sans.org/security-resources/posters/sift-cheat-sheet/355/download",
-    "hash": "5f437c02cf1fd3f456394af3d8131a5e362cc0356f929d5ba2cd5e909c4e419e"
+    "hash": "8fda96c8f7bc32844b843dd3d95e793316e23b765b440b240681d3bc9724ad5c"
   },
   {
     "id": "cheatsheet-windows-to-unix",
     "filename": "Windows-to-Unix-Cheatsheet.pdf",
     "source": "https://www.sans.org/security-resources/posters/windows-unix-cheat-sheet/370/download",
-    "hash": "1f1e7f8f2d1c817be1c192fc6e76359df9b1f15986c4ac40d4595e0907f34d90"
+    "hash": "97be37ea175c0f53a808c45fcbeacd11889d77a566d2a01d421865bb4c352312"
   },
   {
     "id": "cheatsheet-hexfile-regex",
     "filename": "Hex-File-Regex-Cheatsheet.pdf",
     "source": "https://www.sans.org/security-resources/posters/hex-regex-forensics-cheat-sheet/345/download",
-    "hash": "752eeae0236e15eb25498f2bc2e8a04367e300317e71ee3a77630a5b3f8e28f8"
+    "hash": "d1a78b37886f524bc94e3e3aac8ab9816e904a6583f0145fd26c67524e23d032"
   },
   {
     "id": "cheatsheet-sqlite",
     "filename": "SQLite-Pocket-Reference.pdf",
     "source": "https://www.sans.org/security-resources/posters/sqlite-pocket-reference-guide/380/download",
-    "hash": "0578faaba49700d9d7fe3d309366d5a662486adfcf87dc8083d698549c901ceb"
+    "hash": "954d62787abe3bad95f59e2d671eac202dea2607ed5cdb757dbbb688b873f679"
   },
 ]
 -%}

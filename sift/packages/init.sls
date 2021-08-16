@@ -13,6 +13,7 @@ include:
   - sift.packages.bulk-extractor
   - sift.packages.cabextract
   - sift.packages.ccrypt
+  - sift.packages.chromium-browser
   - sift.packages.cifs-utils
   - sift.packages.clamav
   - sift.packages.cmospwd
@@ -217,6 +218,7 @@ sift-packages:
       - sls: sift.packages.bulk-extractor
       - sls: sift.packages.cabextract
       - sls: sift.packages.ccrypt
+      - sls: sift.packages.chromium-browser
       - sls: sift.packages.cifs-utils
       - sls: sift.packages.clamav
       - sls: sift.packages.cmospwd

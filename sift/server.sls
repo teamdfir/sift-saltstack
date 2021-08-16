@@ -1,21 +1,13 @@
 include:
-  - sift.repos
-  - sift.packages
-  - sift.python-packages
-  - sift.python3-packages
-  - sift.perl-packages
-  - sift.scripts
+  - sift.include-server
 
 sift-server-version-file:
   file.managed:
     - name: /etc/sift-version
-    - source: salt://VERSION
+    - source: 
+      - salt://sift/VERSION # note: this is here for when sift is a submoduled to salt://sift/
+      - salt://VERSION
     - user: root
     - group: root
     - require:
-      - sls: sift.repos
-      - sls: sift.packages
-      - sls: sift.python-packages
-      - sls: sift.python3-packages
-      - sls: sift.perl-packages
-      - sls: sift.scripts
+      - sls: sift.include-server

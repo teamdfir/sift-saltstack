@@ -1,6 +1,5 @@
 include:
-  - sift.server
-  - sift.config
+  - sift.include-desktop
 
 sift-desktop-version-file:
   file.managed:
@@ -9,5 +8,4 @@ sift-desktop-version-file:
     - user: root
     - group: root
     - require:
-      - sls: sift.server
-      - sls: sift.config
+      - sls: sift.include-desktop

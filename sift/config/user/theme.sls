@@ -8,6 +8,8 @@
 
 include:
   - sift.config.user.user
+  - sift.packages.gnome-shell-extensions
+  - sift.packages.gnome-shell-extensions-dashtodock
 
 sift-config-theme-set-background-directory:
   file.directory:
@@ -32,6 +34,8 @@ sift-config-theme-set-background-file-gsettings:
       - DBUS_SESSION_BUS_ADDRESS: "{{ dbus_address }}"
     - require:
       - file: sift-config-theme-set-background-file
+      - sls: sift.packages.gnome-shell-extensions
+      - sls: sift.packages.gnome-shell-extensions-dashtodock
 
 sift-config-theme-manage-autostart:
   file.directory:
@@ -55,6 +59,8 @@ sift-config-theme-gnome-shell-favorites:
     - shell: /bin/bash
     - require:
       - user: sift-user-{{ user }}
+      - sls: sift.packages.gnome-shell-extensions
+      - sls: sift.packages.gnome-shell-extensions-dashtodock
 
 sift-config-theme-gnome-launcher-position:
   cmd.run:
@@ -64,4 +70,6 @@ sift-config-theme-gnome-launcher-position:
     - shell: /bin/bash
     - require:
       - user: sift-user-{{ user }}
+      - sls: sift.packages.gnome-shell-extensions
+      - sls: sift.packages.gnome-shell-extensions-dashtodock
 

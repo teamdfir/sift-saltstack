@@ -6,6 +6,10 @@
 {%- endif -%}
 {%- set dbus = salt['cmd.run']("ps -u " + user + " e | grep -Eo 'dbus-daemon.*address=unix:abstract=/tmp/dbus-[A-Za-z0-9]{10}' | tail -c35", shell="/bin/bash", runas="root", cwd="/root", python_shell=True) -%}
 
+include:
+  - sift.packages.gnome-shell-extensions
+  - sift.packages.gnome-shell-extensions-dashtodock
+
 sift-config-unity-launcher-user:
   cmd.run:
     - name: gsettings set com.canonical.Unity.Launcher launcher-position Bottom
@@ -14,6 +18,9 @@ sift-config-unity-launcher-user:
     - shell: /bin/bash
     - env:
       - DBUS_SESSION_BUS_ADDRESS: "{{ dbus }}"
+    - require:
+      - sls: sift.packages.gnome-shell-extensions
+      - sls: sift.packages.gnome-shell-extensions-dashtodock
 
 sift-config-unity-disable-scopes:
   cmd.run:
@@ -23,6 +30,9 @@ sift-config-unity-disable-scopes:
     - shell: /bin/bash
     - env:
       - DBUS_SESSION_BUS_ADDRESS: "{{ dbus }}"
+    - require:
+      - sls: sift.packages.gnome-shell-extensions
+      - sls: sift.packages.gnome-shell-extensions-dashtodock
 
 sift-config-unity-favorites:
   cmd.run:
@@ -32,6 +42,9 @@ sift-config-unity-favorites:
     - shell: /bin/bash
     - env:
       - DBUS_SESSION_BUS_ADDRESS: "{{ dbus }}"
+    - require:
+      - sls: sift.packages.gnome-shell-extensions
+      - sls: sift.packages.gnome-shell-extensions-dashtodock
 
 sift-config-unity-icon-size:
   cmd.run:
@@ -41,6 +54,9 @@ sift-config-unity-icon-size:
     - shell: /bin/bash
     - env:
       - DBUS_SESSION_BUS_ADDRESS: "{{ dbus }}"
+    - require:
+      - sls: sift.packages.gnome-shell-extensions
+      - sls: sift.packages.gnome-shell-extensions-dashtodock
 
 sift-config-unity-minimize-window:
   cmd.run:
@@ -50,3 +66,6 @@ sift-config-unity-minimize-window:
     - shell: /bin/bash
     - env:
       - DBUS_SESSION_BUS_ADDRESS: "{{ dbus }}"
+    - require:
+      - sls: sift.packages.gnome-shell-extensions
+      - sls: sift.packages.gnome-shell-extensions-dashtodock

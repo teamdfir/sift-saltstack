@@ -8,6 +8,7 @@ include:
   - sift.packages.pkg-config
   - sift.packages.python3-pip
   - sift.packages.python2-pip
+  - sift.packages.python2-dev
   - sift.packages.python-wxgtk3
 
 sift-python-packages-indxparse:
@@ -20,6 +21,7 @@ sift-python-packages-indxparse:
       - sls: sift.packages.g++
       - sls: sift.packages.pkg-config
       - sls: sift.packages.python2-pip
+      - sls: sift.packages.python2-dev
       - sls: sift.packages.libfuse-dev
       - sls: sift.packages.python-wxgtk3
 

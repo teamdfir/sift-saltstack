@@ -8,6 +8,7 @@ include:
   - sift.python-packages.distorm3
   - sift.python-packages.docopt
   - sift.python-packages.geoip2
+  - sift.python-packages.indxparse
   - sift.python-packages.ioc_writer
   - sift.python-packages.lxml
   - sift.python-packages.ntdsxtract
@@ -40,6 +41,7 @@ sift-python-packages:
       - sls: sift.python-packages.distorm3
       - sls: sift.python-packages.docopt
       - sls: sift.python-packages.geoip2
+      - sls: sift.python-packages.indxparse
       - sls: sift.python-packages.ioc_writer
       - sls: sift.python-packages.lxml
       - sls: sift.python-packages.ntdsxtract

@@ -26,6 +26,6 @@ sift-python-packages-indxparse:
 sift-python-packages-indxparse-shebang:
   file.prepend:
     - name: /usr/local/bin/INDXParse.py
-    - text: '#!/usr/bin/env python'
+    - text: '#!/usr/bin/env python2'
     - watch:
       - pip: sift-python-packages-indxparse

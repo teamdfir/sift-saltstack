@@ -1,7 +1,7 @@
 include:
   - sift.repos.ubuntu-universe
 
-sift-package-xmount:
+sift-packages-xmount:
   pkg.latest:
     - name: xmount
     - require:

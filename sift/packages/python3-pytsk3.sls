@@ -1,10 +1,5 @@
-{% set package_name = salt['grains.filter_by']({
-  'bionic': 'python-pytsk3',
-  'focal': 'python3-pytsk3'
-}, grain='oscodename') %}
-
 include:
-  - sift.repos.sift
+  - sift.repos.gift
 
 sift-package-removed-pytsk3:
   pkg.removed:
@@ -12,7 +7,7 @@ sift-package-removed-pytsk3:
 
 sift-package-python-pytsk3:
   pkg.installed:
-    - name: {{ package_name }}
+    - name: python3-pytsk3
     - required:
       - pkg: sift-package-removed-pytsk3
-      - sls: sift.repos.sift
+      - sls: sift.repos.gift

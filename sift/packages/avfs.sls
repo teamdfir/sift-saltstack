@@ -1,0 +1,2 @@
+avfs:
+  pkg.installed

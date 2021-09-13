@@ -6,6 +6,7 @@ include:
   - sift.packages.apache2
   - sift.packages.arp-scan
   - sift.packages.autopsy
+  - sift.packages.avfs
   - sift.packages.bcrypt
   - sift.packages.bless
   - sift.packages.blt
@@ -24,6 +25,7 @@ include:
   - sift.packages.dcfldd
   - sift.packages.dconf-tools
   - sift.packages.default-jre
+  - sift.packages.disktype
   - sift.packages.docker
   - sift.packages.driftnet
   - sift.packages.dsniff
@@ -120,6 +122,7 @@ include:
   - sift.packages.nfdump
   - sift.packages.ngrep
   - sift.packages.nikto
+  - sift.packages.ntfs-3g
   - sift.packages.okular
   - sift.packages.onboard
   - sift.packages.open-iscsi
@@ -211,6 +214,7 @@ sift-packages:
       - sls: sift.packages.apache2
       - sls: sift.packages.arp-scan
       - sls: sift.packages.autopsy
+      - sls: sift.packages.avfs
       - sls: sift.packages.bcrypt
       - sls: sift.packages.bless
       - sls: sift.packages.blt
@@ -229,6 +233,7 @@ sift-packages:
       - sls: sift.packages.dcfldd
       - sls: sift.packages.dconf-tools
       - sls: sift.packages.default-jre
+      - sls: sift.packages.disktype
       - sls: sift.packages.docker
       - sls: sift.packages.driftnet
       - sls: sift.packages.dsniff
@@ -325,6 +330,7 @@ sift-packages:
       - sls: sift.packages.nfdump
       - sls: sift.packages.ngrep
       - sls: sift.packages.nikto
+      - sls: sift.packages.ntfs-3g
       - sls: sift.packages.okular
       - sls: sift.packages.onboard
       - sls: sift.packages.open-iscsi

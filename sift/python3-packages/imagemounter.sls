@@ -1,0 +1,45 @@
+include:
+  - sift.python3-packages.pip
+  - sift.python3-packages.python-magic
+  - sift.packages.afflib-tools
+  - sift.packages.avfs
+  - sift.packages.disktype
+  - sift.packages.libbde-tools
+  - sift.packages.libewf
+  - sift.packages.libewf-dev
+  - sift.packages.libewf-tools
+  - sift.packages.libvshadow-tools
+  - sift.packages.ntfs-3g
+  - sift.packages.python3-pytsk3
+  - sift.packages.qemu-utils
+  - sift.packages.sleuthkit
+  - sift.packages.testdisk
+  - sift.packages.vmfs-tools
+  - sift.packages.xfsprogs
+  - sift.packages.xmount
+  - sift.packages.libguestfs-tools
+
+sift-python3-packages-imagemounter:
+  pip.installed:
+    - name: imagemounter
+    - bin_env: /usr/bin/python3
+    - require:
+      - sls: sift.python3-packages.pip
+      - sls: sift.python3-packages.python-magic
+      - sls: sift.packages.afflib-tools
+      - sls: sift.packages.avfs
+      - sls: sift.packages.disktype
+      - sls: sift.packages.libbde-tools
+      - sls: sift.packages.libewf
+      - sls: sift.packages.libewf-dev
+      - sls: sift.packages.libewf-tools
+      - sls: sift.packages.libvshadow-tools
+      - sls: sift.packages.ntfs-3g
+      - sls: sift.packages.python3-pytsk3
+      - sls: sift.packages.qemu-utils
+      - sls: sift.packages.sleuthkit
+      - sls: sift.packages.testdisk
+      - sls: sift.packages.vmfs-tools
+      - sls: sift.packages.xfsprogs
+      - sls: sift.packages.xmount
+      - sls: sift.packages.libguestfs-tools

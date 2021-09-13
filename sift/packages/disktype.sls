@@ -1,0 +1,2 @@
+disktype:
+  pkg.installed

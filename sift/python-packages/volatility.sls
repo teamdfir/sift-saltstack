@@ -1,5 +1,13 @@
 {%- set remove_plugins = ["malprocfind.py","idxparser.py","chromehistory.py","mimikatz.py","openioc_scan.py","pstotal.py","firefoxhistory.py","autoruns.py","malfinddeep.py","prefetch.py","ssdeepscan.py","uninstallinfo.py","trustrecords.py","usnparser.py","apihooksdeep.py","editbox.py","javarat.py"] -%}
 
+# Name: Volatility Framework
+# Website: https://github.com/volatilityfoundation/volatility
+# Description: Memory forensics tool and framework
+# Category: Perform Memory Forensics
+# Author: https://github.com/volatilityfoundation/volatility/blob/2.6.1/AUTHORS.txt
+# License: GNU General Public License (GPL) v2: https://github.com/volatilityfoundation/volatility/blob/2.6.1/LICENSE.txt
+# Notes: Use vol.py to invoke this version of Volatility. To eliminate conflicts among command-line options for Volatility plugins, the following `yarascan` options have been changed: `-Y` became `-U` and `-C` became `-c`.
+
 include:
   - sift.repos.sift
   - sift.packages.git
@@ -91,3 +99,23 @@ sift-python-volatility-mimikatz-plugin-update:
     - watch:
       - git: sift-python-volatility-community-plugins
       - pip: sift-python-packages-volatility
+
+sift-python-packages-volatility-malfind-yarascan-options1:
+  file.replace:
+    - name: /usr/local/lib/python2.7/dist-packages/volatility/plugins/malware/malfind.py
+    - pattern: short_option = 'C'
+    - repl: short_option = 'c'
+    - prepend_if_not_found: False
+    - count: 1
+    - require:
+      - git: sift-python-volatility-community-plugins
+
+sift-python-packages-volatility-malfind-yarascan-options2:
+  file.replace:
+    - name: /usr/local/lib/python2.7/dist-packages/volatility/plugins/malware/malfind.py
+    - pattern: short_option = 'Y'
+    - repl: short_option = 'U'
+    - prepend_if_not_found: False
+    - count: 1
+    - require:
+      - file: sift-python-packages-volatility-malfind-yarascan-options1

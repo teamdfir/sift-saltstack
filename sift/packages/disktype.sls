@@ -1,2 +1,3 @@
-disktype:
-  pkg.installed
+sift-packages-disktype:
+  pkg.installed:
+    - name: disktype

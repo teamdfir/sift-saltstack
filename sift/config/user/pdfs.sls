@@ -47,7 +47,7 @@ set pdfs = [
     "id": "poster-zimmerman-tools",
     "filename": "Zimmerman-Tools-Poster.pdf",
     "source": "https://sansorg.egnyte.com/dd/l96Cpf39jx/",
-    "hash": "bc9072d1ef9c1a90c157ebc0b738c1cf2578f2453c255dd87161387f3025c2c7"
+    "hash": "8cbc02298b743217ffebd5887787d7bad7b4ea30715f9a74715aa31c41f8b7cc"
   },
   {
     "id": "poster-hunt-evil",

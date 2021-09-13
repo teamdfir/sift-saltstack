@@ -1,5 +1,5 @@
 include:
-  - sift.repos.sift
+  - sift.repos.gift
 
 sift-package-removed-pytsk3:
   pkg.removed:
@@ -10,4 +10,4 @@ sift-package-python-pytsk3:
     - name: python3-pytsk3
     - required:
       - pkg: sift-package-removed-pytsk3
-      - sls: sift.repos.sift
+      - sls: sift.repos.gift

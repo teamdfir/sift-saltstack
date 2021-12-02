@@ -190,7 +190,6 @@ include:
   - sift.packages.transmission
   - sift.packages.ugrep
   - sift.packages.unity-control-center
-  - sift.packages.unrar
   - sift.packages.upx-ucl
   - sift.packages.vbindiff
   - sift.packages.vim
@@ -397,7 +396,6 @@ sift-packages:
       - sls: sift.packages.testdisk
       - sls: sift.packages.tofrodos
       - sls: sift.packages.transmission
-      - sls: sift.packages.ugrep
       - sls: sift.packages.unity-control-center
       - sls: sift.packages.unrar
       - sls: sift.packages.upx-ucl

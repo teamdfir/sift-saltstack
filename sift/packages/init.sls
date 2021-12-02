@@ -188,7 +188,6 @@ include:
   - sift.packages.testdisk
   - sift.packages.tofrodos
   - sift.packages.transmission
-  - sift.packages.ugrep
   - sift.packages.unity-control-center
   - sift.packages.upx-ucl
   - sift.packages.vbindiff

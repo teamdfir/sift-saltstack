@@ -10,7 +10,7 @@ set pdfs = [
   {
     "id": "poster-threat-intelligence",
     "filename": "Poster_Threat-Intelligence-Consumption.pdf",
-    "source": "https://sansorg.egnyte.com/dl/ha4z21OsPi/",
+    "source": "https://sansorg.egnyte.com/dd/ha4z21OsPi/",
     "hash": "02f71ad97ece95e9bea61db31fe026b7b6c7e04a2a1f3257b51ace3153e88d59",
   },
   {
@@ -34,7 +34,7 @@ set pdfs = [
   {
     "id": "poster-windows-forensics",
     "filename": "Windows-Forensics-Poster.pdf",
-    "source": "https://sansorg.egnyte.com/dd/roVVbK72lU/",
+    "source": "https://sansorg.egnyte.com/dd/ZnYMsGaUaD/",
     "hash": "a835554f0354cbddf98f333c8c860e43504adf45fadffadd8d4e6468ffcf8d2c"
   },
   {

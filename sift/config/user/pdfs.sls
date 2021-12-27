@@ -10,7 +10,7 @@ set pdfs = [
   {
     "id": "poster-threat-intelligence",
     "filename": "Poster_Threat-Intelligence-Consumption.pdf",
-    "source": "https://sansorg.egnyte.com/dd/ha4z21OsPi/",
+    "source": "https://sansorg.egnyte.com/dd/w34Nq2hVn7/",
     "hash": "02f71ad97ece95e9bea61db31fe026b7b6c7e04a2a1f3257b51ace3153e88d59",
   },
   {

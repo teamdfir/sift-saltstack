@@ -20,6 +20,7 @@ sift-scripts-4n6-git:
     - user: root
     - rev: d1f629ecd1f5d0578d91a5c4a89fe2b10801dc43
     - force_clone: True
+    - force_reset: True
     - require:
       - sls: sift.packages.git
       - sls: sift.packages.python2

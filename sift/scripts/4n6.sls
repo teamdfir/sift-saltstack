@@ -18,7 +18,7 @@ sift-scripts-4n6-git:
     - name: https://github.com/cheeky4n6monkey/4n6-scripts.git
     - target: /usr/local/src/4n6-scripts
     - user: root
-    - rev: master
+    - rev: d1f629ecd1f5d0578d91a5c4a89fe2b10801dc43
     - force_clone: True
     - require:
       - sls: sift.packages.git

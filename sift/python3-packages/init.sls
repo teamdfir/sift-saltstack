@@ -24,6 +24,7 @@ include:
   - sift.python3-packages.virustotal-api
   - sift.python3-packages.wheel
   - sift.python3-packages.yara-python
+  - sift.python3-packages.jinja2
 
 sift-python3-packages:
   test.nop:
@@ -54,3 +55,4 @@ sift-python3-packages:
       - sls: sift.python3-packages.virustotal-api
       - sls: sift.python3-packages.wheel
       - sls: sift.python3-packages.yara-python
+      - sls: sift.python3-packages.jinja2

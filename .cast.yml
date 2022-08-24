@@ -1,0 +1,17 @@
+release:
+  github:
+    owner: teamdfir
+    repo: sift-saltstack
+manifest:
+  version: 2
+  name: sift
+  base_dir: sift
+  modes:
+    - name: server
+      state: sift.server
+      default: true
+  supported_os:
+    - id: ubuntu
+      release: 20.04
+    - id: ubuntu
+      release: 22.04

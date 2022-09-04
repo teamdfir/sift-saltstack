@@ -9,7 +9,6 @@
 # Notes: Use vol.py to invoke this version of Volatility. To eliminate conflicts among command-line options for Volatility plugins, the following `yarascan` options have been changed: `-Y` became `-U` and `-C` became `-c`.
 
 include:
-  - sift.repos.sift
   - sift.packages.git
   - sift.packages.python3-pip
   - sift.packages.python2-pip

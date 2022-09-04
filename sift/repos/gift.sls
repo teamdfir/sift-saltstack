@@ -8,16 +8,16 @@ sift-gift-dev:
   pkgrepo.absent:
     - ppa: gift/dev
     - require_in:
-      - pkgrepo: sift-gift-repo
+      - pkgrepo: gift-repo
 {%- else %}
 sift-gift-stable:
   pkgrepo.absent:
     - ppa: gift/stable
     - require_in:
-      - pkgrepo: sift-gift-repo
+      - pkgrepo: gift-repo
 {%- endif %}
 
-sift-gift-repo:
+gift-repo:
   pkgrepo.managed:
     - name: gift
     - ppa: gift/{{ version }}

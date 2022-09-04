@@ -6,7 +6,6 @@ include:
   - sift.config.salt-minion
   - sift.config.samba
   - sift.config.tools
-  #- .symlinks
 
 sift-config:
   test.nop:

@@ -8,6 +8,9 @@
 
 include:
   - sift.config.user.user
+  {% if grains['oscodename'] == "jammy" %}
+  - sift.packages.dbus-x11
+  {% endif %}
 
 sift-config-theme-set-background-directory:
   file.directory:
@@ -22,6 +25,8 @@ sift-config-theme-set-background-file:
     - require:
       - file: sift-config-theme-set-background-directory
 
+{% if grains['oscodename'] != "jammy" %}
+
 sift-config-theme-set-background-file-gsettings:
   cmd.run:
     - name: gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/sift.png
@@ -32,6 +37,37 @@ sift-config-theme-set-background-file-gsettings:
       - DBUS_SESSION_BUS_ADDRESS: "{{ dbus_address }}"
     - require:
       - file: sift-config-theme-set-background-file
+
+{% else %}
+
+
+sift-config-background-jammy-script:
+  file.managed:
+    - name: {{ home }}/.config/background.sh
+    - contents: |
+        #!/bin/bash
+        export DBUS_SESSION_BUS_ADDRESS=$(dbus-launch | grep DBUS_SESSION_BUS_ADDRESS | cut -d= -f2-)
+        gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/sift.png
+    - makedirs: True
+    - user: {{ user }}
+    - group: {{ user }}
+    - mode: 755
+    - require:
+      - sls: sift.packages.dbus-x11
+
+sift-config-background-jammy:
+  cmd.run:
+    - name: {{ home }}/.config/background.sh
+    - runas: {{ user }}
+    - cwd: {{ home }}
+    - shell: /bin/bash
+    - require:
+      - file: sift-config-background-jammy-script
+      - user: sift-user-{{ user }}
+    - watch:
+      - file: sift-config-background-jammy-script
+
+{% endif %}
 
 sift-config-theme-manage-autostart:
   file.directory:
@@ -64,4 +100,3 @@ sift-config-theme-gnome-launcher-position:
     - shell: /bin/bash
     - require:
       - user: sift-user-{{ user }}
-

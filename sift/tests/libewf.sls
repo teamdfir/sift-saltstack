@@ -1,7 +1,6 @@
 include:
   - sift.repos.sift
   - sift.repos.gift
-  - sift.packages.absent.plaso
   - sift.packages.autopsy
   - sift.packages.libewf
   - sift.packages.python3
@@ -15,7 +14,6 @@ sift-tests-libewf:
   test.nop:
     - name: test-libewf
     - require:
-      - sls: sift.packages.absent.plaso
       - sls: sift.repos.sift
       - sls: sift.repos.gift
       - sls: sift.packages.autopsy

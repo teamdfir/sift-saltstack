@@ -8,9 +8,6 @@ include:
   - sift.config.user.symlinks
   - sift.config.user.terminal
   - sift.config.user.theme
-  {% if grains['oscodename'] == "xenial" -%}
-  - sift.config.user.unity
-  {% endif %}
 
 sift-config-user:
   test.nop:
@@ -25,6 +22,3 @@ sift-config-user:
       - sls: sift.config.user.symlinks
       - sls: sift.config.user.terminal
       - sls: sift.config.user.theme
-      {% if grains['oscodename'] == "xenial" -%}
-      - sls: sift.config.user.unity
-      {% endif %}

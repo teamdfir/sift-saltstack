@@ -1,3 +1,5 @@
+{% if grains['oscodename'] != "jammy" %}
+
 {%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
 {%- set commit = "ca08236b0f70798cb6f89785820c9b82ee0c66ff" -%}
 
@@ -31,3 +33,9 @@ sift-python-packages-indxparse-shebang:
     - text: '#!/usr/bin/env python2'
     - watch:
       - pip: sift-python-packages-indxparse
+
+{% else %}
+python-wxgtk3-not-in-jammy:
+  test.nop
+
+{% endif %}

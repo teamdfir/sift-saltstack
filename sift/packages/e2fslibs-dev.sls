@@ -6,5 +6,14 @@
 # License: GNU General Public License v2
 # Notes:
 
+{% if grains['oscodename'] != "jammy" %}
+
 e2fslibs-dev:
   pkg.installed
+
+{% else %}
+
+e2fslib-dev-not-in-jammy:
+  test.nop
+
+{% endif %}

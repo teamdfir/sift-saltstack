@@ -1,11 +1,12 @@
 include:
+  - sift.python3-packages.python3-keyring
   - sift.python3-packages.pip
   - sift.python3-packages.argparse
   - sift.python3-packages.bitstring
   - sift.python3-packages.colorama
   - sift.python3-packages.geoip2
   - sift.python3-packages.ioc_writer
-  - sift.python3-packages.imagemounter
+###  - sift.python3-packages.imagemounter
   - sift.python3-packages.keyrings-alt
   - sift.python3-packages.lxml
   - sift.python3-packages.machinae
@@ -29,13 +30,14 @@ sift-python3-packages:
   test.nop:
     - name: sift-python3-packages
     - require:
+      - sls: sift.python3-packages.python3-keyring
       - sls: sift.python3-packages.pip
       - sls: sift.python3-packages.argparse
       - sls: sift.python3-packages.bitstring
       - sls: sift.python3-packages.colorama
       - sls: sift.python3-packages.geoip2
       - sls: sift.python3-packages.ioc_writer
-      - sls: sift.python3-packages.imagemounter
+###      - sls: sift.python3-packages.imagemounter
       - sls: sift.python3-packages.keyrings-alt
       - sls: sift.python3-packages.lxml
       - sls: sift.python3-packages.machinae

@@ -31,5 +31,3 @@ sift-config-user-ssh-permissions:
       - user
       - group
       - mode
-
-  

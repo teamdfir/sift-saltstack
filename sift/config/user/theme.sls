@@ -8,9 +8,7 @@
 
 include:
   - sift.config.user.user
-  {% if grains['oscodename'] == "jammy" %}
   - sift.packages.dbus-x11
-  {% endif %}
 
 sift-config-theme-set-background-directory:
   file.directory:
@@ -40,7 +38,6 @@ sift-config-theme-set-background-file-gsettings:
 
 {% else %}
 
-
 sift-config-background-jammy-script:
   file.managed:
     - name: {{ home }}/.config/background.sh
@@ -63,7 +60,6 @@ sift-config-background-jammy:
     - shell: /bin/bash
     - require:
       - file: sift-config-background-jammy-script
-      - user: sift-user-{{ user }}
     - watch:
       - file: sift-config-background-jammy-script
 

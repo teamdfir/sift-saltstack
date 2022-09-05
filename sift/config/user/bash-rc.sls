@@ -6,7 +6,7 @@
 {%- endif -%}
 
 include:
-  - .user
+  - sift.config.user.user
 
 rc-noclobber:
   file.append:

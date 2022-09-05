@@ -6,6 +6,9 @@
 {%- endif -%}
 {%- set dbus_address = salt['cmd.run']("dbus-launch | grep DBUS_SESSION_BUS_ADDRESS | cut -d= -f2-", shell="/bin/bash", runas=user, cwd=home, python_shell=True) -%}
 
+include:
+  - sift.config.user.user
+  - sift.packages.dbus-x11
 
 sift-config-terminal-profiles-file:
   file.managed:
@@ -33,10 +36,6 @@ sift-config-terminal-profiles-install:
 
 {% else %}
 
-include:
-  - sift.packages.dbus-x11
-  - sift.config.user.user
-
 sift-config-terminal-profiles-jammy-script:
   file.managed:
     - name: {{ home }}/.config/terminal.sh
@@ -50,6 +49,7 @@ sift-config-terminal-profiles-jammy-script:
     - mode: 755
     - require:
       - sls: sift.packages.dbus-x11
+      - user: sift-user-{{ user }}
 
 sift-config-terminal-profiles-jammy:
   cmd.run:
@@ -59,8 +59,9 @@ sift-config-terminal-profiles-jammy:
     - cwd: {{ home }}
     - require:
       - file: sift-config-terminal-profiles-jammy-script
-      - sls: sift.config.user.user
+      - user: sift-user-{{ user }}
     - watch:
       - file: sift-config-terminal-profiles-jammy-script
+      - user: sift-user-{{ user }}
 
 {% endif %}

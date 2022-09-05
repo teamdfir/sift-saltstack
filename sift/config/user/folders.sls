@@ -6,7 +6,7 @@
 {%- endif -%}
 
 include:
-  - .user
+  - sift.config.user.user
 
 folders-config-autostart:
   file.directory:

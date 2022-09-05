@@ -6,7 +6,7 @@
 {%- endif -%}
 
 include:
-  - .user
+  - sift.config.user.user
 
 sift-config-user-bash-aliases:
   file.managed:

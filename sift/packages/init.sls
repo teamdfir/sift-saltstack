@@ -169,6 +169,7 @@ include:
   - sift.packages.samba
   - sift.packages.samdump2
   - sift.packages.scalpel
+  - sift.packages.silversearcher-ag
   - sift.packages.sleuthkit
   - sift.packages.socat
   - sift.packages.ssdeep
@@ -377,6 +378,7 @@ sift-packages:
       - sls: sift.packages.samba
       - sls: sift.packages.samdump2
       - sls: sift.packages.scalpel
+      - sls: sift.packages.silversearcher-ag
       - sls: sift.packages.sleuthkit
       - sls: sift.packages.socat
       - sls: sift.packages.ssdeep

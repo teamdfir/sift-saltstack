@@ -4,7 +4,9 @@ include:
 sift-desktop-version-file:
   file.managed:
     - name: /etc/sift-version
-    - source: salt://VERSION
+    - source:
+      - salt://sift/VERSION
+      - salt://VERSION
     - user: root
     - group: root
     - require:

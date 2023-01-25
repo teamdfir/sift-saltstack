@@ -18,7 +18,7 @@ jobs:
           format: "json"
       - id: filter
         run: |
-          echo ::set-output name=filtered_files::"$(jq -rMc '[.[] | select(. | contains(".sls")) | select(. | contains("init") | not) | sub("/"; "."; "g") | sub(".sls"; ""; "g")]' <<< '${{ steps.files.outputs.added_modified }}')"
+          echo "filtered_files=$(jq -rMc '[.[] | select(. | contains(".sls")) | select(. | contains("init") | not) | sub("/"; "."; "g") | sub(".sls"; ""; "g")]' <<< '${{ steps.files.outputs.added_modified }}')" > $GITHUB_OUTPUT
     outputs:
       matrix: ${{ steps.filter.outputs.filtered_files }}
 

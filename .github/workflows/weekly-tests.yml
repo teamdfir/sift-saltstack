@@ -11,16 +11,28 @@ jobs:
 
     strategy:
       matrix:
-        os: [focal]
-        salt: [3004]
+        salt: [3004, 3005]
+        os: [18.04, 20.04]
         state:
           - sift.packages.python2
           - sift.packages.python3
           - sift.tests.gift
           - sift.config.user.pdfs
+        include:
+          - os: 18.04
+            code: bionic
+          - os: 20.04
+            code: focal
+          - os: 22.04
+            code: jammy
+        exclude:
+          - salt: 3004
+            os: 22.04
+          - salt: 3005
+            os: 18.04
 
     container:
-      image: docker://teamdfir/sift-saltstack-tester:${{ matrix.os }}-${{ matrix.salt }}
+      image: docker://ghcr.io/teamdfir/sift-saltstack-tester:${{ matrix.salt }}-${{ matrix.code }}
 
     steps:
       - uses: actions/checkout@v2

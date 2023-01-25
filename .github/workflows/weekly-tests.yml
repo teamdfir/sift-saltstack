@@ -19,10 +19,6 @@ jobs:
           - sift.tests.gift
           - sift.config.user.pdfs
         include:
-          - salt: 3004
-            type: legacy
-          - salt: 3005
-            type: onedir
           - os: 18.04
             code: bionic
           - os: 20.04

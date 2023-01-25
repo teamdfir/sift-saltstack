@@ -35,10 +35,6 @@ jobs:
         os: [18.04, 20.04]
         state: ${{ fromJson(needs.changed_states.outputs.matrix) }}
         include:
-          - salt: 3004
-            type: legacy
-          - salt: 3005
-            type: onedir
           - os: 18.04
             code: bionic
           - os: 20.04

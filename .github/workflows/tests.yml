@@ -32,7 +32,7 @@ jobs:
     strategy:
       matrix:
         os: [focal]
-        salt: [3001, 3002, 3003]
+        salt: [3004, 3005]
         state: ${{ fromJson(needs.changed_states.outputs.matrix) }}
 
     container:

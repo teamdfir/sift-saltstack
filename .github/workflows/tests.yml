@@ -39,8 +39,9 @@ jobs:
             code: bionic
           - os: 20.04
             code: focal
-          - os: 22.04
-            code: jammy
+          #Note: disabled until we support jammy
+          #- os: 22.04
+          #  code: jammy
         exclude:
           - salt: 3004
             os: 22.04

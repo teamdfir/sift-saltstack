@@ -1,5 +1,5 @@
-{%- set version = "1.24.0" -%}
-{%- set hash = "bee6460f96339d5d978bb63d17943f773e1a140242dfa6c941d5e020a302c91b" -%}
+{%- set version = "2.15.1" -%}
+{%- set hash = "bcfd9ea51dee4c19dccdfaeef0e7956ef68bf14f3d175933742061a7271ef0f5" -%}
 
 sift-scripts-docker-compose:
   file.managed:
@@ -7,3 +7,4 @@ sift-scripts-docker-compose:
     - source: https://github.com/docker/compose/releases/download/{{ version }}/docker-compose-{{ grains['kernel'] }}-{{ grains['cpuarch'] }}
     - source_hash: sha256={{ hash }}
     - mode: 755
+    - replace: True

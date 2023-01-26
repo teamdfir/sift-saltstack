@@ -1,6 +1,8 @@
-{%- set base_url = "https://github.com/Powershell/Powershell/releases/download/v" -%}
-{%- set version = "6.0.0-alpha.13" -%}
-{%- set filename = "powershell_6.0.0-alpha.13-1ubuntu1." ~ grains['osrelease'] ~ ".1_amd64.deb" -%}
+{%- set version = "7.3.2" -%}
+{%- set base_url = "https://github.com/Powershell/Powershell/releases/download/v" ~ version -%}
+{%- set filename = "powershell_" ~ version ~ "-1.deb_amd64.deb" -%}
 
-sift-powershell:
-  test.nop
+sift-powershell-focal:
+  pkg.installed:
+    - sources:
+      - powershell: {{ base_url }}/{{ filename }}

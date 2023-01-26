@@ -4,7 +4,7 @@
 sift-scripts-docker-compose:
   file.managed:
     - name: /usr/local/bin/docker-compose
-    - source: https://github.com/docker/compose/releases/download/{{ version }}/docker-compose-{{ grains['kernel'] }}-{{ grains['cpuarch'] }}
+    - source: https://github.com/docker/compose/releases/download/v{{ version }}/docker-compose-{{ grains['kernel'] }}-{{ grains['cpuarch'] }}
     - source_hash: sha256={{ hash }}
     - mode: 755
     - replace: True

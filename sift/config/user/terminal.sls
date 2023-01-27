@@ -30,8 +30,6 @@ sift-config-terminal-profiles-install:
         shell: /bin/bash
         python_shell: True
         runas: {{ user }}
-    - env:
-      - DBUS_SESSION_BUS_ADDRESS: "{{ dbus_address }}"
     - require:
       - file: sift-config-terminal-profiles-file
       - sls: sift.packages.dconf-cli

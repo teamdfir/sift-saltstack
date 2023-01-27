@@ -2,7 +2,7 @@
 
 set -x
 
-DISTRO=${DISTRO:="bionic"}
+DISTRO=${DISTRO:="focal"}
 STATE=$1
 SIFT_VERSION=${2:-stable}
 

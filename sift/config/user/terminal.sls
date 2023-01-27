@@ -9,7 +9,7 @@
 sift-config-terminal-profiles-file:
   file.managed:
     - name: /usr/share/sift/terminal-profiles.txt
-    - source: salt://sift/config/user/files/terminal-profiles_bionic.txt
+    - source: salt://sift/config/user/files/terminal-profiles.txt
     - user: root
     - group: root
     - mode: 0644

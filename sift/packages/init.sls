@@ -291,7 +291,7 @@ sift-packages:
       - sls: sift.packages.libfuse-dev
       - sls: sift.packages.libfvde
       - sls: sift.packages.libfvde-tools
-###      - sls: sift.packages.liblightgrep
+      - sls: sift.packages.liblightgrep
       - sls: sift.packages.libmsiecf
       - sls: sift.packages.libncurses
       - sls: sift.packages.libnet1
@@ -373,7 +373,7 @@ sift-packages:
       - sls: sift.packages.samba
       - sls: sift.packages.samdump2
       - sls: sift.packages.scalpel
-###      - sls: sift.packages.sleuthkit
+      - sls: sift.packages.sleuthkit
       - sls: sift.packages.socat
       - sls: sift.packages.ssdeep
       - sls: sift.packages.ssldump

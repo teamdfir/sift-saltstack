@@ -302,14 +302,14 @@ sift-packages:
       - sls: sift.packages.libplist-utils
       - sls: sift.packages.libregf
       - sls: sift.packages.libregf-dev
-      - sls: sift.packages.libregf-python
+      - sls: sift.packages.libregf-python3
       - sls: sift.packages.libregf-tools
       - sls: sift.packages.libssl-dev
       - sls: sift.packages.libtext-csv-perl
       - sls: sift.packages.libvmdk
       - sls: sift.packages.libvshadow
       - sls: sift.packages.libvshadow-dev
-      - sls: sift.packages.libvshadow-python
+      - sls: sift.packages.libvshadow-python3
       - sls: sift.packages.libvshadow-tools
       - sls: sift.packages.libxml2-dev
       - sls: sift.packages.libxslt-dev

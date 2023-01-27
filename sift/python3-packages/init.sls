@@ -1,6 +1,7 @@
 include:
   - sift.python3-packages.python3-keyring
   - sift.python3-packages.pip
+  - sift.python3-packages.python3-keyring
   - sift.python3-packages.argparse
   - sift.python3-packages.bitstring
   - sift.python3-packages.colorama
@@ -32,6 +33,7 @@ sift-python3-packages:
     - require:
       - sls: sift.python3-packages.python3-keyring
       - sls: sift.python3-packages.pip
+      - sls: sift.python3-packages.python3-keyring
       - sls: sift.python3-packages.argparse
       - sls: sift.python3-packages.bitstring
       - sls: sift.python3-packages.colorama

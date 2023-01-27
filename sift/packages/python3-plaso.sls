@@ -1,7 +1,6 @@
 include:
   - sift.repos.sift
   - sift.repos.gift
-  - sift.packages.absent.plaso
   - sift.packages.python3
   - sift.packages.python3-xlsxwriter
   - sift.packages.python3-dfvfs
@@ -16,7 +15,6 @@ sift-package-python3-plaso:
     - update_holds: True
     - allow_updates: True
     - require:
-      - sls: sift.packages.absent.plaso
       - sls: sift.repos.sift
       - sls: sift.repos.gift
       - sls: sift.packages.python3

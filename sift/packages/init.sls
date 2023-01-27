@@ -7,7 +7,6 @@ include:
   - sift.packages.arp-scan
   - sift.packages.autopsy
   - sift.packages.avfs
-  - sift.packages.bcrypt
   - sift.packages.bless
   - sift.packages.blt
   - sift.packages.build-essential
@@ -23,7 +22,6 @@ include:
   - sift.packages.curl
   - sift.packages.dc3dd
   - sift.packages.dcfldd
-  - sift.packages.dconf-tools
   - sift.packages.default-jre
   - sift.packages.disktype
   - sift.packages.docker
@@ -144,8 +142,8 @@ include:
   - sift.packages.powershell
   - sift.packages.pv
   - sift.packages.python-flowgrep
-  - sift.packages.python-nids
   - sift.packages.python3
+  - sift.packages.python3-debian
   - sift.packages.python3-dev
   - sift.packages.python3-dfvfs
   - sift.packages.python3-fuse
@@ -175,7 +173,6 @@ include:
   - sift.packages.ssldump
   - sift.packages.sslsniff
   - sift.packages.stunnel4
-  - sift.packages.system-config-samba
   - sift.packages.tcl
   - sift.packages.tcpflow
   - sift.packages.tcpick
@@ -201,7 +198,6 @@ include:
   - sift.packages.xdot
   - sift.packages.xfsprogs
   - sift.packages.xmount
-  - sift.packages.xpdf
   - sift.packages.zenity
 
 sift-packages:
@@ -215,7 +211,6 @@ sift-packages:
       - sls: sift.packages.arp-scan
       - sls: sift.packages.autopsy
       - sls: sift.packages.avfs
-      - sls: sift.packages.bcrypt
       - sls: sift.packages.bless
       - sls: sift.packages.blt
       - sls: sift.packages.build-essential
@@ -231,7 +226,6 @@ sift-packages:
       - sls: sift.packages.curl
       - sls: sift.packages.dc3dd
       - sls: sift.packages.dcfldd
-      - sls: sift.packages.dconf-tools
       - sls: sift.packages.default-jre
       - sls: sift.packages.disktype
       - sls: sift.packages.docker
@@ -352,8 +346,8 @@ sift-packages:
       - sls: sift.packages.powershell
       - sls: sift.packages.pv
       - sls: sift.packages.python-flowgrep
-      - sls: sift.packages.python-nids
       - sls: sift.packages.python3
+      - sls: sift.packages.python3-debian
       - sls: sift.packages.python3-dev
       - sls: sift.packages.python3-dfvfs
       - sls: sift.packages.python3-fuse
@@ -383,7 +377,6 @@ sift-packages:
       - sls: sift.packages.ssldump
       - sls: sift.packages.sslsniff
       - sls: sift.packages.stunnel4
-      - sls: sift.packages.system-config-samba
       - sls: sift.packages.tcl
       - sls: sift.packages.tcpflow
       - sls: sift.packages.tcpick
@@ -409,5 +402,4 @@ sift-packages:
       - sls: sift.packages.xdot
       - sls: sift.packages.xfsprogs
       - sls: sift.packages.xmount
-      - sls: sift.packages.xpdf
       - sls: sift.packages.zenity

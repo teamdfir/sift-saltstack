@@ -1,2 +1,2 @@
-netcat:
+dconf-cli:
   pkg.installed

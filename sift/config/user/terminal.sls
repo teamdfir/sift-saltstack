@@ -4,12 +4,15 @@
 {%- else -%}
   {%- set home = salt['user.info'](user).home -%}
 {%- endif -%}
-{%- set dbus_address = salt['cmd.run']("dbus-launch | grep DBUS_SESSION_BUS_ADDRESS | cut -d= -f2-", shell="/bin/bash", runas=user, cwd=home, python_shell=True) -%}
+
+include:
+  - sift.packages.dconf-cli
+  - sift.packages.dbus-x11
 
 sift-config-terminal-profiles-file:
   file.managed:
     - name: /usr/share/sift/terminal-profiles.txt
-    - source: salt://sift/config/user/files/terminal-profiles_bionic.txt
+    - source: salt://sift/config/user/files/terminal-profiles.txt
     - user: root
     - group: root
     - mode: 0644
@@ -21,9 +24,16 @@ sift-config-terminal-profiles-install:
     - runas: {{ user }}
     - cwd: {{ home }}
     - shell: /bin/bash
-    - env:
-      - DBUS_SESSION_BUS_ADDRESS: "{{ dbus_address }}"
+    - onlyif:
+      - fun: cmd.run
+        cmd: export DBUS_SESSION_BUS_ADDRESS=$(dbus-launch | grep DBUS_SESSION_BUS_ADDRESS | cut -d= -f2-)
+        shell: /bin/bash
+        python_shell: True
+        runas: {{ user }}
     - require:
       - file: sift-config-terminal-profiles-file
+      - sls: sift.packages.dconf-cli
+      - sls: sift.packages.dbus-x11
     - watch:
       - file: sift-config-terminal-profiles-file
+

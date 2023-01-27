@@ -1,6 +1,5 @@
 include:
   - sift.repos.gift
-  - sift.packages.absent.plaso
   - sift.packages.autopsy
   - sift.packages.libbde
   - sift.packages.libbde-tools
@@ -30,7 +29,6 @@ sift-tests-gift:
     - name: test-gift
     - require:
         - sls: sift.repos.gift
-        - sls: sift.packages.absent.plaso
         - sls: sift.packages.autopsy
         - sls: sift.packages.libbde
         - sls: sift.packages.libbde-tools

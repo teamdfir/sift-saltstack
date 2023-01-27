@@ -32,11 +32,9 @@ jobs:
     strategy:
       matrix:
         salt: [3004, 3005]
-        os: [18.04, 20.04]
+        os: [20.04]
         state: ${{ fromJson(needs.changed_states.outputs.matrix) }}
         include:
-          - os: 18.04
-            code: bionic
           - os: 20.04
             code: focal
           #Note: disabled until we support jammy
@@ -45,8 +43,6 @@ jobs:
         exclude:
           - salt: 3004
             os: 22.04
-          - salt: 3005
-            os: 18.04
 
     container:
       image: docker://ghcr.io/teamdfir/sift-saltstack-tester:${{ matrix.salt }}-${{ matrix.code }}

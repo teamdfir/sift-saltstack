@@ -4,8 +4,8 @@ include:
   - sift.packages.autopsy
   - sift.packages.libewf
   - sift.packages.python3
-  - sift.packages.python-xlsxwriter
-  - sift.packages.python-dfvfs
+  - sift.packages.python3-xlsxwriter
+  - sift.packages.python3-dfvfs
   - sift.packages.python3-plaso
   - sift.packages.sleuthkit
   - sift.packages.xmount
@@ -19,8 +19,8 @@ sift-tests-libewf:
       - sls: sift.packages.autopsy
       - sls: sift.packages.libewf
       - sls: sift.packages.python3
-      - sls: sift.packages.python-xlsxwriter
-      - sls: sift.packages.python-dfvfs
+      - sls: sift.packages.python3-xlsxwriter
+      - sls: sift.packages.python3-dfvfs
       - sls: sift.packages.python3-plaso
       - sls: sift.packages.sleuthkit
       - sls: sift.packages.xmount

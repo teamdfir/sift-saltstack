@@ -6,6 +6,9 @@
 {%- endif -%}
 {%- set dbus_address = salt['cmd.run']("dbus-launch | grep DBUS_SESSION_BUS_ADDRESS | cut -d= -f2-", shell="/bin/bash", runas=user, cwd=home, python_shell=True) -%}
 
+include:
+  - sift.packages.dconf-cli
+
 sift-config-terminal-profiles-file:
   file.managed:
     - name: /usr/share/sift/terminal-profiles.txt
@@ -25,5 +28,7 @@ sift-config-terminal-profiles-install:
       - DBUS_SESSION_BUS_ADDRESS: "{{ dbus_address }}"
     - require:
       - file: sift-config-terminal-profiles-file
+      - sls: sift.packages.dconf-cli
     - watch:
       - file: sift-config-terminal-profiles-file
+

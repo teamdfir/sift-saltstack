@@ -1,0 +1,2 @@
+dconf-cli:
+  pkg.installed

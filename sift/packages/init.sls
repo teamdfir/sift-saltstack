@@ -85,7 +85,7 @@ include:
   - sift.packages.libfuse-dev
   - sift.packages.libfvde
   - sift.packages.libfvde-tools
-###  - sift.packages.liblightgrep
+  - sift.packages.liblightgrep
   - sift.packages.libmsiecf
   - sift.packages.libncurses
   - sift.packages.libnet1
@@ -166,7 +166,7 @@ include:
   - sift.packages.samba
   - sift.packages.samdump2
   - sift.packages.scalpel
-###  - sift.packages.sleuthkit
+  - sift.packages.sleuthkit
   - sift.packages.socat
   - sift.packages.ssdeep
   - sift.packages.ssldump

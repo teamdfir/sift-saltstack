@@ -26,3 +26,4 @@ manifest:
   saltstack:
     pillars:
       sift_user_template: "{{ .User }}"
+      sift_version_template: '{{ default "stable" .PPAVersion }}'

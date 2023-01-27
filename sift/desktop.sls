@@ -2,7 +2,7 @@ include:
   - sift.include-desktop
 
 sift-desktop-version-file:
-  test.noop:
+  test.nop:
     - name: install-complete
     - require:
       - sls: sift.include-server

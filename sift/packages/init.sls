@@ -96,14 +96,14 @@ include:
   - sift.packages.libplist-utils
   - sift.packages.libregf
   - sift.packages.libregf-dev
-  - sift.packages.libregf-python
+  - sift.packages.libregf-python3
   - sift.packages.libregf-tools
   - sift.packages.libssl-dev
   - sift.packages.libtext-csv-perl
   - sift.packages.libvmdk
   - sift.packages.libvshadow
   - sift.packages.libvshadow-dev
-  - sift.packages.libvshadow-python
+  - sift.packages.libvshadow-python3
   - sift.packages.libvshadow-tools
   - sift.packages.libxml2-dev
   - sift.packages.libxslt-dev

@@ -143,7 +143,6 @@ include:
   - sift.packages.pv
   - sift.packages.python-flowgrep
   - sift.packages.python3
-  - sift.packages.python3-debian
   - sift.packages.python3-dev
   - sift.packages.python3-dfvfs
   - sift.packages.python3-fuse
@@ -200,6 +199,7 @@ include:
   - sift.packages.xfsprogs
 ###  - sift.packages.xmount
   - sift.packages.zenity
+  - sift.packages.python3-debian
 
 sift-packages:
   test.nop:
@@ -349,7 +349,6 @@ sift-packages:
       - sls: sift.packages.pv
       - sls: sift.packages.python-flowgrep
       - sls: sift.packages.python3
-      - sls: sift.packages.python3-debian
       - sls: sift.packages.python3-dev
       - sls: sift.packages.python3-dfvfs
       - sls: sift.packages.python3-fuse
@@ -406,3 +405,4 @@ sift-packages:
       - sls: sift.packages.xfsprogs
 ###      - sls: sift.packages.xmount
       - sls: sift.packages.zenity
+      - sls: sift.packages.python3-debian

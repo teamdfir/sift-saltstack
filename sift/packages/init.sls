@@ -27,7 +27,7 @@ include:
   - sift.packages.docker
   - sift.packages.driftnet
   - sift.packages.dsniff
-###  - sift.packages.e2fslibs-dev
+  - sift.packages.e2fsprogs
   - sift.packages.ent
   - sift.packages.epic5
   - sift.packages.etherape
@@ -80,6 +80,7 @@ include:
   - sift.packages.libewf-dev
 ###  - sift.packages.libewf-python
   - sift.packages.libewf-tools
+  - sift.packages.libext2fs2
   - sift.packages.libffi-dev
   - sift.packages.libfsapfs-tools
   - sift.packages.libfuse-dev
@@ -142,7 +143,6 @@ include:
   - sift.packages.pv
   - sift.packages.python-flowgrep
   - sift.packages.python3
-  - sift.packages.python3-debian
   - sift.packages.python3-dev
   - sift.packages.python3-dfvfs
   - sift.packages.python3-fuse
@@ -233,7 +233,7 @@ sift-packages:
       - sls: sift.packages.docker
       - sls: sift.packages.driftnet
       - sls: sift.packages.dsniff
-###      - sls: sift.packages.e2fslibs-dev
+      - sls: sift.packages.e2fsprogs
       - sls: sift.packages.ent
       - sls: sift.packages.epic5
       - sls: sift.packages.etherape
@@ -286,6 +286,7 @@ sift-packages:
       - sls: sift.packages.libewf-dev
 ###      - sls: sift.packages.libewf-python
       - sls: sift.packages.libewf-tools
+      - sls: sift.packages.libext2fs2
       - sls: sift.packages.libffi-dev
       - sls: sift.packages.libfsapfs-tools
       - sls: sift.packages.libfuse-dev
@@ -348,7 +349,6 @@ sift-packages:
       - sls: sift.packages.pv
       - sls: sift.packages.python-flowgrep
       - sls: sift.packages.python3
-      - sls: sift.packages.python3-debian
       - sls: sift.packages.python3-dev
       - sls: sift.packages.python3-dfvfs
       - sls: sift.packages.python3-fuse

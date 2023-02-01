@@ -32,8 +32,8 @@ include:
   - sift.packages.epic5
   - sift.packages.etherape
   - sift.packages.ettercap-graphical
+  - sift.packages.exfat-extras
   - sift.packages.exfat-fuse
-###  - sift.packages.exfat-utils
   - sift.packages.exif
   - sift.packages.extundelete
   - sift.packages.fdupes
@@ -78,7 +78,7 @@ include:
   - sift.packages.libevtx-tools
   - sift.packages.libewf
   - sift.packages.libewf-dev
-###  - sift.packages.libewf-python
+  - sift.packages.libewf-python3
   - sift.packages.libewf-tools
   - sift.packages.libext2fs2
   - sift.packages.libffi-dev
@@ -197,7 +197,7 @@ include:
   - sift.packages.wireshark
   - sift.packages.xdot
   - sift.packages.xfsprogs
-###  - sift.packages.xmount
+  - sift.packages.xmount
   - sift.packages.zenity
   - sift.packages.python3-debian
 
@@ -238,8 +238,8 @@ sift-packages:
       - sls: sift.packages.epic5
       - sls: sift.packages.etherape
       - sls: sift.packages.ettercap-graphical
+      - sls: sift.packages.exfat-extras
       - sls: sift.packages.exfat-fuse
-###      - sls: sift.packages.exfat-utils
       - sls: sift.packages.exif
       - sls: sift.packages.extundelete
       - sls: sift.packages.fdupes
@@ -284,7 +284,7 @@ sift-packages:
       - sls: sift.packages.libevtx-tools
       - sls: sift.packages.libewf
       - sls: sift.packages.libewf-dev
-###      - sls: sift.packages.libewf-python
+      - sls: sift.packages.libewf-python3
       - sls: sift.packages.libewf-tools
       - sls: sift.packages.libext2fs2
       - sls: sift.packages.libffi-dev
@@ -403,6 +403,6 @@ sift-packages:
       - sls: sift.packages.wireshark
       - sls: sift.packages.xdot
       - sls: sift.packages.xfsprogs
-###      - sls: sift.packages.xmount
+      - sls: sift.packages.xmount
       - sls: sift.packages.zenity
       - sls: sift.packages.python3-debian

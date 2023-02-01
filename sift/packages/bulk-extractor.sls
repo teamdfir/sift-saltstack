@@ -7,11 +7,11 @@
 # Notes: 
 
 include:
-  - sift.repos.gift
+  - sift.repos.sift
   - sift.repos.openjdk
 
-bulk-extractor:
+sift-package-bulk-extractor:
   pkg.installed:
     - require:
-      - pkgrepo: gift-repo
+      - pkgrepo: sift-repo
       - pkgrepo: openjdk-repo

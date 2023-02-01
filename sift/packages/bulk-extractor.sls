@@ -12,6 +12,7 @@ include:
 
 sift-package-bulk-extractor:
   pkg.installed:
+    - name: bulk-extractor
     - require:
       - pkgrepo: sift-repo
       - pkgrepo: openjdk-repo

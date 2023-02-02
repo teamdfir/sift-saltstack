@@ -24,11 +24,8 @@ jobs:
 
   test_states:
     needs: changed_states
-
     runs-on: ubuntu-latest
-
     if: ${{ needs.changed_states.outputs.matrix != '[]' }}
-
     strategy:
       matrix:
         salt: [3004, 3005]
@@ -39,10 +36,11 @@ jobs:
             code: focal
           - os: 22.04
             code: jammy
-
+        exclude:
+          - os: 22.04
+            salt: 3004
     container:
       image: docker://ghcr.io/teamdfir/sift-saltstack-tester:${{ matrix.salt }}-${{ matrix.code }}
-
     steps:
       - uses: actions/checkout@v2
       - name: test-state

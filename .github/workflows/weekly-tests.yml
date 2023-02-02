@@ -8,11 +8,10 @@ on:
 jobs:
   test_states:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         salt: [3004, 3005]
-        os: [20.04]
+        os: [20.04, 22.04]
         state:
           - sift.packages.python2
           - sift.packages.python3
@@ -26,10 +25,8 @@ jobs:
         exclude:
           - salt: 3004
             os: 22.04
-
     container:
       image: docker://ghcr.io/teamdfir/sift-saltstack-tester:${{ matrix.salt }}-${{ matrix.code }}
-
     steps:
       - uses: actions/checkout@v2
       - name: test-state

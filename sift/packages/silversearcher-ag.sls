@@ -7,4 +7,5 @@
 # Notes: Command is 'ag'
 
 sift-pacakge-silversearcher-ag:
-  pkg.installed
+  pkg.installed:
+    - name: silversearcher-ag

@@ -1,8 +1,8 @@
 include:
   - sift.repos.gift
 
-libewf-python:
+sift-package-libregf-python3:
   pkg.installed:
-    - name: libewf-python
+    - name: libregf-python3
     - require:
       - sls: sift.repos.gift

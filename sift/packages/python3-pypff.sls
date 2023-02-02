@@ -1,2 +1,2 @@
-libpff1:
+python3-pypff:
   pkg.installed

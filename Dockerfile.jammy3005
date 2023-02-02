@@ -1,0 +1,15 @@
+FROM ubuntu:22.04
+
+RUN \
+  export DEBIAN_FRONTEND=noninteractive && \
+  export "LANG=en_US.UTF-8" && \
+  apt-get update && \
+  apt-get install -y wget gnupg && \
+  wget -O /usr/share/keyrings/salt-archive-keyring.gpg https://repo.saltproject.io/salt/py3/ubuntu/22.04/amd64/latest/salt-archive-keyring.gpg && \
+  echo "deb [signed-by=/usr/share/keyrings/salt-archive-keyring.gpg arch=amd64] https://repo.saltproject.io/salt/py3/ubuntu/22.04/amd64/3005 jammy main" | tee /etc/apt/sources.list.d/saltstack.list && \
+  apt-get update && \
+  apt-get install -y salt-common && \
+  apt-get upgrade -y && \
+  mkdir -p /etc/salt && \
+  echo "file_client: local" > /etc/salt/minion && \
+  unset DEBIAN_FRONTEND

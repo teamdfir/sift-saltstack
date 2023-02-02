@@ -1,2 +1,2 @@
-libpff1:
+libext2fs2:
   pkg.installed

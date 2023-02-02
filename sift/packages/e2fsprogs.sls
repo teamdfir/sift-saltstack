@@ -1,2 +1,2 @@
-libpff1:
+e2fsprogs:
   pkg.installed

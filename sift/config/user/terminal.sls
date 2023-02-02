@@ -4,10 +4,12 @@
 {%- else -%}
   {%- set home = salt['user.info'](user).home -%}
 {%- endif -%}
+{% set userid = (salt['user.info'](user))['uid'] %}
 
 include:
-  - sift.packages.dconf-cli
+  - sift.config.user.user
   - sift.packages.dbus-x11
+  - sift.packages.dconf-cli
 
 sift-config-terminal-profiles-file:
   file.managed:
@@ -20,20 +22,15 @@ sift-config-terminal-profiles-file:
 
 sift-config-terminal-profiles-install:
   cmd.run:
-    - name: dconf load /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ < /usr/share/sift/terminal-profiles.txt
+    - name: dconf load /org/gnome/terminal/legacy/profiles:/ < /usr/share/sift/terminal-profiles.txt
     - runas: {{ user }}
     - cwd: {{ home }}
     - shell: /bin/bash
-    - onlyif:
-      - fun: cmd.run
-        cmd: export DBUS_SESSION_BUS_ADDRESS=$(dbus-launch | grep DBUS_SESSION_BUS_ADDRESS | cut -d= -f2-)
-        shell: /bin/bash
-        python_shell: True
-        runas: {{ user }}
+    - env:
+      - DBUS_SESSION_BUS_ADDRESS: 'unix:path=/run/user/{{ userid }}/bus'
     - require:
       - file: sift-config-terminal-profiles-file
       - sls: sift.packages.dconf-cli
       - sls: sift.packages.dbus-x11
     - watch:
       - file: sift-config-terminal-profiles-file
-

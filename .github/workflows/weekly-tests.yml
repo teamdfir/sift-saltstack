@@ -28,7 +28,7 @@ jobs:
     container:
       image: docker://ghcr.io/teamdfir/sift-saltstack-tester:${{ matrix.salt }}-${{ matrix.code }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: test-state
         run: |
           salt-call -l info --file-root . --local --retcode-passthrough --state-output=mixed state.sls ${{ matrix.state }} pillar="{sift_user: root}"

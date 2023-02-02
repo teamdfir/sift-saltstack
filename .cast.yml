@@ -5,7 +5,6 @@ release:
 manifest:
   version: 2
   name: sift
-  base_dir: sift
   modes:
     - name: server
       state: sift.server

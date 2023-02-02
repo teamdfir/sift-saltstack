@@ -24,6 +24,7 @@ include:
   - sift.packages.dcfldd
   - sift.packages.default-jre
   - sift.packages.disktype
+  - sift.packages.dislocker
   - sift.packages.docker
   - sift.packages.driftnet
   - sift.packages.dsniff
@@ -231,6 +232,7 @@ sift-packages:
       - sls: sift.packages.dcfldd
       - sls: sift.packages.default-jre
       - sls: sift.packages.disktype
+      - sls: sift.packages.dislocker
       - sls: sift.packages.docker
       - sls: sift.packages.driftnet
       - sls: sift.packages.dsniff

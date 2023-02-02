@@ -6,6 +6,6 @@
 # License: GNU GPL v2 (https://github.com/Aorimn/dislocker/blob/master/LICENSE.txt)
 # Notes: dislocker, dislocker-bek, dislocker-file, dislocker-find, dislocker-fuse, dislocker-metadata
 
-sift-packages-dislocker:
+sift-package-dislocker:
   pkg.installed:
     - name: dislocker

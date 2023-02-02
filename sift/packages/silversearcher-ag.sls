@@ -6,5 +6,5 @@
 # License: Apache License 2.0 (https://github.com/ggreer/the_silver_searcher/blob/master/LICENSE)
 # Notes: Command is 'ag'
 
-silversearcher-ag:
+sift-pacakge-silversearcher-ag:
   pkg.installed

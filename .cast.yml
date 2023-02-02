@@ -9,9 +9,9 @@ manifest:
   modes:
     - name: server
       state: sift.server
-      default: true
     - name: desktop
       state: sift.desktop
+      default: true
     - name: packages-only
       state: sift.server
       deprecated: true

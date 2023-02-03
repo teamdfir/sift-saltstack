@@ -1,4 +1,4 @@
-![Logo](https://images.contentstack.io/v3/assets/blt36c2e63521272fdc/blt3e371eacc79a3ca4/60a5393fe2db156d00f0b8ab/400x460_DFIR_SIFT.jpg)
+<img align="right" src="https://images.contentstack.io/v3/assets/blt36c2e63521272fdc/blt3e371eacc79a3ca4/60a5393fe2db156d00f0b8ab/400x460_DFIR_SIFT.jpg"/>
 
 # Managing SIFT with Saltstack
 
@@ -9,7 +9,7 @@ Please open issues over at the [SIFT Repository](https://github.com/sans-dfir/si
 ## Supported Distributions
 
 * Ubuntu 20.04 (Focal) (deprecated)
-* Ubuntu 22.04
+* Ubuntu 22.04 (Jammy)
 
 ## Installation
 

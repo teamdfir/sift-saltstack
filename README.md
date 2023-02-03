@@ -2,7 +2,7 @@
 
 # SIFT
 
-Built with [SaltStack](https://saltproject.io)
+Built with [SaltStack](https://saltproject.io) installed with [Cast](https://github.com/ekristen/cast)
 
 ## Issues
 

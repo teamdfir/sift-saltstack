@@ -15,7 +15,7 @@ Please open issues over at the [SIFT Repository](https://github.com/sans-dfir/si
 
 ## Installation
 
-Use [cast](https://github.com/ekristen/case), it has replaced the [sift-cli](https://github.com/sans-dfir/sift-cli) tool.
+Use [cast](https://github.com/ekristen/cast), it has replaced the [sift-cli](https://github.com/sans-dfir/sift-cli) tool.
 
 You must install cast on your system, then it's as simple as run the following command ...
 

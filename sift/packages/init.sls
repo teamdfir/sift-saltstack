@@ -171,6 +171,7 @@ include:
   - sift.packages.silversearcher-ag
   - sift.packages.sleuthkit
   - sift.packages.socat
+  - sift.packages.sqlitebrowser
   - sift.packages.ssdeep
   - sift.packages.ssldump
   - sift.packages.sslsniff
@@ -379,6 +380,7 @@ sift-packages:
       - sls: sift.packages.silversearcher-ag
       - sls: sift.packages.sleuthkit
       - sls: sift.packages.socat
+      - sls: sift.packages.sqlitebrowser
       - sls: sift.packages.ssdeep
       - sls: sift.packages.ssldump
       - sls: sift.packages.sslsniff

@@ -7,7 +7,7 @@
 # Version: 2.13.5
 # Notes:
 
-{% set hash = 'ffae07131d099096a5cc3f3eda5701deb7059f90eeb927a22d1b24d599e51fd0' %}
+{% set hash = '8e2146b409a3c840524cca52f221437d1c31d90242dbd772ed835d6b870952ac' %}
 
 aws-cli-download:
   file.managed:

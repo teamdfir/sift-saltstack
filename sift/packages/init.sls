@@ -202,6 +202,7 @@ include:
   - sift.packages.xmount
   - sift.packages.zenity
   - sift.packages.python3-debian
+  - sift.packages.aws-cli
 
 sift-packages:
   test.nop:
@@ -410,3 +411,4 @@ sift-packages:
       - sls: sift.packages.xmount
       - sls: sift.packages.zenity
       - sls: sift.packages.python3-debian
+      - sls: sift.packages.aws-cli

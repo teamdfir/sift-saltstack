@@ -1,2 +1,3 @@
-qemu-utils:
-  pkg.installed
+sift-package-qemu-utils:
+  pkg.installed:
+    - name: qemu-utils

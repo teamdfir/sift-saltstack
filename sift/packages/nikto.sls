@@ -1,7 +1,7 @@
 include:
   - sift.repos.ubuntu-multiverse
 
-sift-nikto:
+sift-package-nikto:
   pkg.installed:
     - name: nikto
     - require:

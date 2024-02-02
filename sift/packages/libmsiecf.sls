@@ -1,7 +1,7 @@
 include:
   - sift.repos.gift
 
-libmsiecf:
+sift-package-libmsiecf:
   pkg.installed:
     - name: libmsiecf
     - require:

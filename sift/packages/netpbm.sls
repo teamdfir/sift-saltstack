@@ -1,2 +1,3 @@
-netpbm:
-  pkg.installed
+sift-package-netpbm:
+  pkg.installed:
+    - name: netpbm

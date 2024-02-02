@@ -6,5 +6,6 @@
 # License: GNU General Public License v2
 # Notes:
 
-extundelete:
-  pkg.installed
+sift-package-extundelete:
+  pkg.installed:
+    - name: extundelete

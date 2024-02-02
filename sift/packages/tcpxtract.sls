@@ -1,2 +1,3 @@
-tcpxtract:
-  pkg.installed
+sift-package-tcpxtract:
+  pkg.installed:
+    - name: tcpxtract

@@ -2,7 +2,7 @@ include:
   - sift.repos.gift
   - sift.packages.python3-plaso
 
-plaso-tools:
+sift-package-plaso-tools:
   pkg.latest:
     - name: plaso-tools
     - require:

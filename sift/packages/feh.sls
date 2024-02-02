@@ -6,5 +6,6 @@
 # License: Free, custom license: https://git.finalrewind.org/feh/plain/COPYING
 # Notes: 
 
-feh:
-  pkg.installed
+sift-package-feh:
+  pkg.installed:
+    - name: feh

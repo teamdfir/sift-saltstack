@@ -1,2 +1,3 @@
-tcpstat:
-  pkg.installed
+sift-package-tcpstat:
+  pkg.installed:
+    - name: tcpstat

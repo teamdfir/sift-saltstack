@@ -6,5 +6,6 @@
 # License: GNU General Public License v2 (https://github.com/relan/exfat/blob/master/COPYING)
 # Notes:
 
-exfat-utils:
-  pkg.installed
+sift-package-exfat-utils:
+  pkg.installed:
+    - name: exfat-utils

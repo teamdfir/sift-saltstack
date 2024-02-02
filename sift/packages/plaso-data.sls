@@ -1,7 +1,7 @@
 include:
   - sift.repos.gift
 
-plaso-data:
+sift-package-plaso-data:
   pkg.latest:
     - name: plaso-data
     - require:

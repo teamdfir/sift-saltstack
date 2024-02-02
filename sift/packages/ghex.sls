@@ -6,5 +6,6 @@
 # License: GNU General Public License (https://wiki.gnome.org/Apps/Ghex)
 # Notes: ghex
 
-ghex:
-  pkg.installed
+sift-package-ghex:
+  pkg.installed:
+    - name: ghex

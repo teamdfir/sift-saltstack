@@ -1,7 +1,7 @@
 include:
   - sift.repos.gift
 
-libewf:
+sift-package-libewf:
   pkg.installed:
     - name: libewf
     - require:

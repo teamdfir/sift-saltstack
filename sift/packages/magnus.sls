@@ -6,5 +6,6 @@
 # License: MIT License (https://github.com/stuartlangridge/magnus/blob/master/LICENSE)
 # Notes: magnus
 
-magnus:
-  pkg.installed
+sift-package-magnus:
+  pkg.installed:
+    - name: magnus

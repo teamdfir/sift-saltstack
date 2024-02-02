@@ -6,5 +6,6 @@
 # License: GNU General Public License v2
 # Notes: 
 
-gcc:
-  pkg.installed
+sift-package-gcc:
+  pkg.installed:
+    - name: gcc

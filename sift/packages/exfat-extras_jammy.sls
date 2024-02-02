@@ -6,5 +6,6 @@
 # License: GNU General Public License v2 (https://github.com/relan/exfat/blob/master/COPYING)
 # Notes:
 
-exfatprogs:
-  pkg.installed
+sift-package-exfatprogs:
+  pkg.installed:
+    - name: exfatprogs

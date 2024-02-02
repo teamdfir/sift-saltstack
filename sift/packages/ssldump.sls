@@ -1,2 +1,3 @@
-ssldump:
-  pkg.installed
+sift-package-ssldump:
+  pkg.installed:
+    - name: ssldump

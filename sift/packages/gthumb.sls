@@ -6,5 +6,6 @@
 # License: GNU General Public License v3 (https://wiki.gnome.org/Apps/Gthumb)
 # Notes: 
 
-gthumb:
-  pkg.installed
+sift-package-gthumb:
+  pkg.installed:
+    - name: gthumb

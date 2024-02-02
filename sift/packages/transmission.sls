@@ -1,2 +1,3 @@
-transmission:
-  pkg.installed
+sift-package-transmission:
+  pkg.installed:
+    - name: transmission

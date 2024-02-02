@@ -1,2 +1,3 @@
-okular:
-  pkg.installed
+sift-package-okular:
+  pkg.installed:
+    - name: okular

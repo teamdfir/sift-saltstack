@@ -6,5 +6,6 @@
 # License: GNU General Public License v2 and Apache 2 (https://sleuthkit.org/autopsy/licenses.php)
 # Notes: 
 
-autopsy:
-  pkg.installed
+sift-package-autopsy:
+  pkg.installed:
+    - name: autopsy

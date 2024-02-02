@@ -6,5 +6,6 @@
 # License: Free, Public Domain
 # Notes:
 
-ent:
-  pkg.installed
+sift-package-ent:
+  pkg.installed:
+    - name: ent

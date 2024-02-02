@@ -1,2 +1,3 @@
-pev:
-  pkg.installed
+sift-package-pev:
+  pkg.installed:
+    - name: pev

@@ -1,2 +1,3 @@
-xdot:
-  pkg.installed
+sift-package-xdot:
+  pkg.installed:
+    - name: xdot

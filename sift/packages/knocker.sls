@@ -1,7 +1,8 @@
 {% if grains['oscodename'] != "jammy" %}
 
-knocker:
-  pkg.installed
+sift-package-knocker:
+  pkg.installed:
+    - name: knocker
 
 {% else %}
 

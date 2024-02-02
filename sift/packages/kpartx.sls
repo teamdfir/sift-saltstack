@@ -1,2 +1,3 @@
-kpartx:
-  pkg.installed
+sift-package-kpartx:
+  pkg.installed:
+    - name: kpartx

@@ -1,7 +1,7 @@
 include:
   - sift.repos.gift
 
-libevt-tools:
+sift-package-libevt-tools:
   pkg.installed:
     - name: libevt-tools
     - require:

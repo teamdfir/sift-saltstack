@@ -1,2 +1,3 @@
-git:
-  pkg.installed
+sift-package-git:
+  pkg.installed:
+    - name: git

@@ -6,5 +6,6 @@
 # License: GNU General Public License v2 (https://github.com/vanhauser-thc/thc-hydra/blob/master/hydra-gtk/COPYING)
 # Notes: 
 
-hydra-gtk:
-  pkg.installed
+sift-package-hydra-gtk:
+  pkg.installed:
+    - name: hydra-gtk

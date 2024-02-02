@@ -6,5 +6,6 @@
 # License: GNU Lesser General Public License v2.1 (https://github.com/libexif/exif/blob/master/COPYING)
 # Notes:
 
-exif:
-  pkg.installed
+sift-package-exif:
+  pkg.installed:
+    - name: exif

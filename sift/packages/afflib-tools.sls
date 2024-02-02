@@ -6,5 +6,6 @@
 # License: https://github.com/sshock/AFFLIBv3/blob/master/COPYING
 # Notes: 
 
-afflib-tools:
-  pkg.installed
+sift-package-afflib-tools:
+  pkg.installed:
+    - name: afflib-tools

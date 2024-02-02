@@ -1,2 +1,3 @@
-nfdump:
-  pkg.installed
+sift-package-nfdump:
+  pkg.installed:
+    - name: nfdump

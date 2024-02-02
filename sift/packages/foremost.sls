@@ -6,5 +6,6 @@
 # License: Public Domain
 # Notes: 
 
-foremost:
-  pkg.installed
+sift-package-foremost:
+  pkg.installed:
+    - name: foremost

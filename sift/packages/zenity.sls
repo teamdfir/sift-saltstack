@@ -1,2 +1,3 @@
-zenity:
-  pkg.installed
+sift-package-zenity:
+  pkg.installed:
+    - name: zenity

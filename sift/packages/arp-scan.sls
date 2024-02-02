@@ -6,5 +6,6 @@
 # License: GNU General Public License v3.0 (https://github.com/royhills/arp-scan/blob/master/COPYING)
 # Notes: arp-scan
 
-arp-scan:
-  pkg.installed
+sift-package-arp-scan:
+  pkg.installed:
+    - name: arp-scan

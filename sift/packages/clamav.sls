@@ -6,5 +6,6 @@
 # License: GNU General Public License (GPL): https://www.clamav.net/about
 # Notes: clamscan, freshclam
 
-clamav:
-  pkg.installed
+sift-package-clamav:
+  pkg.installed:
+    - name: clamav

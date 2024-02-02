@@ -1,2 +1,3 @@
-outguess:
-  pkg.installed
+sift-package-outguess:
+  pkg.installed:
+    - name: outguess

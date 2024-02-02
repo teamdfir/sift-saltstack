@@ -6,5 +6,6 @@
 # License: GNU General Public License 
 # Notes: gzrecover
 
-gzrt:
-  pkg.installed
+sift-package-gzrt:
+  pkg.installed:
+    - name: gzrt

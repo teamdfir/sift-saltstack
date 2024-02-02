@@ -1,7 +1,7 @@
 include:
   - sift.repos.openjdk
 
-openjdk: 
+sift-package-openjdk-8-jdk: 
   pkg.installed:
     - name: openjdk-8-jdk
     - require:

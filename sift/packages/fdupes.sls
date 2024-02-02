@@ -6,5 +6,6 @@
 # License: Copyright (c) 1999-2019 Adrian Lopez (https://github.com/adrianlopezroche/fdupes/blob/master/README)
 # Notes: fdupes
 
-fdupes:
-  pkg.installed
+sift-package-fdupes:
+  pkg.installed:
+    - name: fdupes

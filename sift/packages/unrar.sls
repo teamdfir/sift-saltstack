@@ -1,7 +1,7 @@
 include:
   - sift.repos.ubuntu-multiverse
 
-sift-unrar:
+sift-package-unrar:
   pkg.installed:
     - name: unrar
     - require:

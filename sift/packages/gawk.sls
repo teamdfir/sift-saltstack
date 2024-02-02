@@ -6,5 +6,6 @@
 # License: GNU General Public License v3
 # Notes: gawk
 
-gawk:
-  pkg.installed
+sift-package-gawk:
+  pkg.installed:
+    - name: gawk

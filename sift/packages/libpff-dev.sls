@@ -1,2 +1,3 @@
-libpff-dev:
-  pkg.installed
+sift-package-libpff-dev:
+  pkg.installed:
+    - name: libpff-dev

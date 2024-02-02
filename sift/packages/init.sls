@@ -142,7 +142,6 @@ include:
   - sift.packages.plaso-tools
   - sift.packages.powershell
   - sift.packages.pv
-  - sift.packages.python-flowgrep
   - sift.packages.python3
   - sift.packages.python3-dev
   - sift.packages.python3-dfvfs
@@ -351,7 +350,6 @@ sift-packages:
       - sls: sift.packages.plaso-tools
       - sls: sift.packages.powershell
       - sls: sift.packages.pv
-      - sls: sift.packages.python-flowgrep
       - sls: sift.packages.python3
       - sls: sift.packages.python3-dev
       - sls: sift.packages.python3-dfvfs

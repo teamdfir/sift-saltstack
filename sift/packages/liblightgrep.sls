@@ -1,7 +1,7 @@
 include:
   - sift.repos.sift
 
-liblightgrep:
+sift-package-liblightgrep:
   pkg.installed:
     - name: liblightgrep
     - require:

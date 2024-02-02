@@ -13,7 +13,7 @@ sift-powershell-source:
     - source_hash: sha256={{ hash }}
     - makedirs: True
 
-sift-powershell:
+sift-package-powershell:
   pkg.installed:
     - sources:
       - powershell: /var/cache/sift/archives/{{ filename }}

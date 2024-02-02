@@ -6,5 +6,6 @@
 # License: GNU General Public License v2 (https://github.com/deiv/driftnet/blob/master/COPYING)
 # Notes: 
 
-driftnet:
-  pkg.installed
+sift-package-driftnet:
+  pkg.installed:
+    - name: driftnet

@@ -1,2 +1,3 @@
-vim:
-  pkg.installed
+sift-package-vim:
+  pkg.installed:
+    - name: vim

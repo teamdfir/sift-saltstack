@@ -6,5 +6,6 @@
 # License: GNU General Publice License v2 (https://github.com/Ettercap/ettercap/blob/master/LICENSE)
 # Notes: ettercap
 
-ettercap-graphical:
-  pkg.installed
+sift-package-ettercap-graphical:
+  pkg.installed:
+    - name: ettercap-graphical

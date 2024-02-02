@@ -1,2 +1,3 @@
-rsakeyfind:
-  pkg.installed
+sift-package-rsakeyfind:
+  pkg.installed:
+    - name: rsakeyfind

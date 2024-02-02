@@ -1,2 +1,3 @@
-libafflib-dev:
-  pkg.installed
+sift-package-libafflib-dev:
+  pkg.installed:
+    - name: libafflib-dev

@@ -6,5 +6,6 @@
 # License: GNU General Public License v3 (GPL v3)
 # Notes:
 
-dc3dd:
-  pkg.installed
+sift-package-dc3dd:
+  pkg.installed:
+    - name: dc3dd

@@ -10,7 +10,7 @@ sift-package-radare2-download:
     - source_hash: sha256={{ hash }}
     - makedirs: True
 
-sift-radare2:
+sift-package-radare2:
   pkg.installed:
     - sources:
       - radare2: /var/cache/sift/archives/{{ filename }}

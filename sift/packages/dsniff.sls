@@ -6,5 +6,6 @@
 # License: Free, unknown license
 # Notes:
 
-dsniff:
-  pkg.installed
+sift-package-dsniff:
+  pkg.installed:
+    - name: dsniff

@@ -1,7 +1,7 @@
 include:
   - sift.repos.gift
 
-libevtx-tools:
+sift-package-libevtx-tools:
   pkg.installed:
     - name: libevtx-tools
     - require:

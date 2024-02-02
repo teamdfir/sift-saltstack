@@ -8,8 +8,9 @@
 
 {% if grains['oscodename'] != "jammy" %}
 
-flasm:
-  pkg.installed
+sift-package-flasm:
+  pkg.installed:
+    - name: flasm
 
 {% else %}
 

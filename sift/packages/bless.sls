@@ -6,5 +6,6 @@
 # License: GNU General Public License v2.0 (https://github.com/afrantzis/bless/blob/master/COPYING)
 # Notes: bless
 
-bless:
-  pkg.installed
+sift-package-bless:
+  pkg.installed:
+    - name: bless

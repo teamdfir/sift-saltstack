@@ -1,2 +1,3 @@
-winbind:
-  pkg.installed
+sift-package-winbind:
+  pkg.installed:
+    - name: winbind

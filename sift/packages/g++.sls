@@ -6,5 +6,6 @@
 # License: GNU General Public License v2
 # Notes: g++
 
-g++:
-  pkg.installed
+sift-package-g++:
+  pkg.installed:
+    - name: g++

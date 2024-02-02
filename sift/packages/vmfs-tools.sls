@@ -1,2 +1,3 @@
-vmfs-tools:
-  pkg.installed
+sift-package-vmfs-tools:
+  pkg.installed:
+    - name: vmfs-tools

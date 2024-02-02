@@ -3,7 +3,7 @@ include:
   - sift.packages.libcommons-lang3-java
   - sift.packages.libbcprov-java
 
-sift-packages-pdftk-java:
+sift-package-pdftk-java:
   pkg.installed:
     - sources: 
         - pdftk-java: http://mirrors.edge.kernel.org/ubuntu/pool/universe/p/pdftk-java/pdftk-java_3.2.2-1_all.deb

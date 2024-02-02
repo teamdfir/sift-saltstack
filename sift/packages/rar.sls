@@ -1,7 +1,7 @@
 include:
   - sift.repos.ubuntu-multiverse
 
-sift-rar:
+sift-package-rar:
   pkg.installed:
     - name: rar
     - require:

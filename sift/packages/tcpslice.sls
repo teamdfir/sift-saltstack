@@ -1,2 +1,3 @@
-tcpslice:
-  pkg.installed
+sift-package-tcpslice:
+  pkg.installed:
+    - name: tcpslice

@@ -6,5 +6,6 @@
 # License: GNU General Public License v2 (https://github.com/pixel/hexedit/blob/master/COPYING)
 # Notes: hexedit
 
-hexedit:
-  pkg.installed
+sift-package-hexedit:
+  pkg.installed:
+    - name: hexedit

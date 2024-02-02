@@ -1,2 +1,3 @@
-netcat:
-  pkg.installed
+sift-package-netcat:
+  pkg.installed:
+    - name: netcat

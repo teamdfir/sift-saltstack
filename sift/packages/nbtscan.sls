@@ -1,2 +1,3 @@
-nbtscan:
-  pkg.installed
+sift-package-nbtscan:
+  pkg.installed:
+    - name: nbtscan

@@ -6,5 +6,6 @@
 # License: GNU Affero General Public License (https://github.com/vanhauser-thc/thc-hydra/blob/master/LICENSE) 
 # Notes: hydra
 
-hydra:
-  pkg.installed
+sift-package-hydra:
+  pkg.installed:
+    - name: hydra

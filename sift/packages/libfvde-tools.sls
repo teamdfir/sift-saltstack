@@ -1,7 +1,7 @@
 include:
   - sift.repos.gift
 
-libfvde-tools:
+sift-package-libfvde-tools:
   pkg.installed:
     - name: libfvde-tools
     - require:

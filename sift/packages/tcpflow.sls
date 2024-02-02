@@ -1,2 +1,3 @@
-tcpflow:
-  pkg.installed
+sift-package-tcpflow:
+  pkg.installed:
+    - name: tcpflow

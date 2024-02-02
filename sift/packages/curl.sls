@@ -6,5 +6,6 @@
 # License: Free, custom license: https://curl.haxx.se/docs/copyright.html
 # Notes: curl
 
-curl:
-  pkg.installed
+sift-package-curl:
+  pkg.installed:
+    - name: curl

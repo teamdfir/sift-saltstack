@@ -6,5 +6,6 @@
 # License: GNU General Public License (https://etherape.sourceforge.io/introduction.html#license)
 # Notes: etherape
 
-etherape:
-  pkg.installed
+sift-package-etherape:
+  pkg.installed:
+    - name: etherape

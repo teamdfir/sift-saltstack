@@ -6,5 +6,6 @@
 # License: Free, custom license: http://www.epicsol.org/copyright
 # Notes: epic5
 
-epic5:
-  pkg.installed
+sift-package-epic5:
+  pkg.installed:
+    - name: epic5

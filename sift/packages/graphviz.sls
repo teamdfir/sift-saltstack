@@ -6,5 +6,6 @@
 # License: Common Public License Version 1.0 (https://graphviz.org/license/)
 # Notes: 
 
-graphviz:
-  pkg.installed
+sift-package-graphviz:
+  pkg.installed:
+    - name: graphviz

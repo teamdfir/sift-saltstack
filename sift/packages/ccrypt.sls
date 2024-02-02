@@ -6,5 +6,6 @@
 # License: GNU General Public License v2 or later (http://ccrypt.sourceforge.net/#license)
 # Notes: ccrypt
 
-ccrypt:
-  pkg.installed
+sift-package-ccrypt:
+  pkg.installed:
+    - name: ccrypt

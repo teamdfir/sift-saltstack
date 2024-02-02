@@ -6,5 +6,6 @@
 # License: GNU General Public License (GPL)
 # Notes: 
 
-cabextract:
-  pkg.installed
+sift-package-cabextract:
+  pkg.installed:
+    - name: cabextract

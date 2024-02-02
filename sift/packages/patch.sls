@@ -1,3 +1,3 @@
-sift-patch:
+sift-package-patch:
   pkg.installed:
     - name: patch

@@ -1,2 +1,3 @@
-sslsniff:
-  pkg.installed
+sift-package-sslsniff:
+  pkg.installed:
+    - name: sslsniff

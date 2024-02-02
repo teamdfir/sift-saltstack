@@ -6,5 +6,6 @@
 # License: GNU General Public License (GPL): https://www.sourceware.org/gdb/download/onlinedocs/gdb.html#Summary
 # Notes: 
 
-gdb:
-  pkg.installed
+sift-package-gdb:
+  pkg.installed:
+    - name: gdb

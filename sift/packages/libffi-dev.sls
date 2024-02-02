@@ -1,7 +1,7 @@
 include:
   - sift.repos.gift
 
-libffi-dev:
+sift-package-libffi-dev:
   pkg.installed:
     - name: libffi-dev
     - require:

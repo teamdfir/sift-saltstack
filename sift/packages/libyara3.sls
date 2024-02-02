@@ -1,2 +1,3 @@
-libyara3:
-  pkg.installed
+sift-package-libyara3:
+  pkg.installed:
+    - name: libyara3

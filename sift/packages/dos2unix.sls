@@ -6,6 +6,6 @@
 # License: FreeBSD style license: https://waterlan.home.xs4all.nl/dos2unix/COPYING.txt
 # Notes: dos2unix, mac2unix, unix2dos, unix2mac
 
-dos2unix:
+sift-package-dos2unix:
   pkg.installed:
     - name: dos2unix

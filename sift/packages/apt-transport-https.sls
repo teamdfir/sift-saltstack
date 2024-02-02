@@ -1,2 +1,3 @@
-apt-transport-https:
-  pkg.installed
+sift-package-apt-transport-https:
+  pkg.installed:
+    - name: apt-transport-https

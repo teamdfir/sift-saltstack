@@ -1,2 +1,3 @@
-tcpreplay:
-  pkg.installed
+sift-package-tcpreplay:
+  pkg.installed:
+    - name: tcpreplay

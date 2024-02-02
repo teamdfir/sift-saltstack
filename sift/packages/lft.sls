@@ -1,2 +1,3 @@
-lft:
-  pkg.installed
+sift-package-lft:
+  pkg.installed:
+    - name: lft

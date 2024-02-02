@@ -1,2 +1,3 @@
-tofrodos:
-  pkg.installed
+sift-package-tofrodos:
+  pkg.installed:
+    - name: tofrodos

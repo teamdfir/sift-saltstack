@@ -1,2 +1,3 @@
-samba:
-  pkg.installed
+sift-package-samba:
+  pkg.installed:
+    - name: samba

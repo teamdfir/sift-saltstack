@@ -1,2 +1,3 @@
-pkg-config:
-  pkg.installed
+sift-package-pkg-config:
+  pkg.installed:
+    - name: pkg-config

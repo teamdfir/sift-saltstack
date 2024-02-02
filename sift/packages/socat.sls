@@ -1,2 +1,3 @@
-socat:
-  pkg.installed
+sift-package-socat:
+  pkg.installed:
+    - name: socat

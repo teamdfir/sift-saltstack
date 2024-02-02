@@ -1,4 +1,4 @@
 # provides: readpst
-pst-utils:
+sift-package-pst-utils:
   pkg.installed:
     - name: pst-utils

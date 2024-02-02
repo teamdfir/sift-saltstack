@@ -6,5 +6,6 @@
 # License: BSD License (https://github.com/westes/flex/blob/master/COPYING)
 # Notes: flex
 
-flex:
-  pkg.installed
+sift-package-flex:
+  pkg.installed:
+    - name: flex

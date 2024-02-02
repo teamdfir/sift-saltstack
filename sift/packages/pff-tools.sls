@@ -1,2 +1,3 @@
-pff-tools:
-  pkg.installed
+sift-package-pff-tools:
+  pkg.installed:
+    - name: pff-tools

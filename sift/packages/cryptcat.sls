@@ -6,5 +6,6 @@
 # License: GNU General Public License v2.0
 # Notes: 
 
-cryptcat:
-  pkg.installed
+sift-package-cryptcat:
+  pkg.installed:
+    - name: cryptcat

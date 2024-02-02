@@ -6,5 +6,6 @@
 # License: https://www.aircrack-ng.org/license.html
 # Notes: aircrack
 
-aircrack-ng:
-  pkg.installed
+sift-package-aircrack-ng:
+  pkg.installed:
+    - name: aircrack-ng

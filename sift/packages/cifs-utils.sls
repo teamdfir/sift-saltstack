@@ -6,5 +6,6 @@
 # License: Creative Commons License CC BY 4.0 and GNU General Public License v3.0 (https://wiki.samba.org/index.php/License and https://github.com/samba-team/samba/blob/master/COPYING)
 # Notes: 
 
-cifs-utils:
-  pkg.installed
+sift-package-cifs-utils:
+  pkg.installed:
+    - name: cifs-utils

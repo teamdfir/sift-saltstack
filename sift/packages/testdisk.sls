@@ -1,2 +1,3 @@
-testdisk:
-  pkg.installed
+sift-package-testdisk:
+  pkg.installed:
+    - name: testdisk

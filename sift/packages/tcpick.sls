@@ -1,2 +1,3 @@
-tcpick:
-  pkg.installed
+sift-package-tcpick:
+  pkg.installed:
+    - name: tcpick

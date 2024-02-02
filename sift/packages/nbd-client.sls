@@ -1,2 +1,3 @@
-nbd-client:
-  pkg.installed
+sift-package-nbd-client:
+  pkg.installed:
+    - name: nbd-client

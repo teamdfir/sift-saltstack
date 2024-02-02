@@ -1,2 +1,3 @@
-tcptrack:
-  pkg.installed
+sift-package-tcptrack:
+  pkg.installed:
+    - name: tcptrack

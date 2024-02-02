@@ -6,5 +6,6 @@
 # License: GNU General Public License v2
 # Notes: 
 
-cmospwd:
-  pkg.installed
+sift-package-cmospwd:
+  pkg.installed:
+    - name: cmospwd

@@ -6,5 +6,6 @@
 # License: GNU General Public License v2 and up
 # Notes: 
 
-gddrescue:
-  pkg.installed
+sift-package-gddrescue:
+  pkg.installed:
+    - name: gddrescue

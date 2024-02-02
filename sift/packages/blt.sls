@@ -6,5 +6,6 @@
 # License: BSD
 # Notes: 
 
-blt:
-  pkg.installed
+sift-package-blt:
+  pkg.installed:
+    - name: blt

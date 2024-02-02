@@ -6,5 +6,6 @@
 # License: GNU General Public License v2 (GPL v2 https://sourceforge.net/projects/dcfldd/)
 # Notes:
 
-dcfldd:
-  pkg.installed
+sift-package-dcfldd:
+  pkg.installed:
+    - name: dcfldd

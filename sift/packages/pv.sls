@@ -1,2 +1,3 @@
-pv:
-  pkg.installed
+sift-package-pv:
+  pkg.installed:
+    - name: pv

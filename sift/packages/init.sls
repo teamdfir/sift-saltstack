@@ -144,7 +144,6 @@ include:
   - sift.packages.python3
   - sift.packages.python3-dev
   - sift.packages.python3-dfvfs
-  - sift.packages.python3-evtx
   - sift.packages.python3-fuse
   - sift.packages.python3-pefile
   - sift.packages.python3-pip
@@ -351,7 +350,6 @@ sift-packages:
       - sls: sift.packages.python3
       - sls: sift.packages.python3-dev
       - sls: sift.packages.python3-dfvfs
-      - sls: sift.packages.python3-evtx
       - sls: sift.packages.python3-fuse
       - sls: sift.packages.python3-pefile
       - sls: sift.packages.python3-pip

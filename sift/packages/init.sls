@@ -137,8 +137,6 @@ include:
   - sift.packages.pff-tools
   - sift.packages.phonon
   - sift.packages.pkg-config
-  - sift.packages.plaso
-  - sift.packages.plaso-data
   - sift.packages.plaso-tools
   - sift.packages.powershell
   - sift.packages.pv
@@ -146,10 +144,10 @@ include:
   - sift.packages.python3
   - sift.packages.python3-dev
   - sift.packages.python3-dfvfs
+  - sift.packages.python3-evtx
   - sift.packages.python3-fuse
   - sift.packages.python3-pefile
   - sift.packages.python3-pip
-  - sift.packages.python3-plaso
   - sift.packages.python3-pypff
   - sift.packages.python3-pytsk3
   - sift.packages.python3-pyqt5
@@ -346,8 +344,6 @@ sift-packages:
       - sls: sift.packages.pff-tools
       - sls: sift.packages.phonon
       - sls: sift.packages.pkg-config
-      - sls: sift.packages.plaso
-      - sls: sift.packages.plaso-data
       - sls: sift.packages.plaso-tools
       - sls: sift.packages.powershell
       - sls: sift.packages.pv
@@ -355,10 +351,10 @@ sift-packages:
       - sls: sift.packages.python3
       - sls: sift.packages.python3-dev
       - sls: sift.packages.python3-dfvfs
+      - sls: sift.packages.python3-evtx
       - sls: sift.packages.python3-fuse
       - sls: sift.packages.python3-pefile
       - sls: sift.packages.python3-pip
-      - sls: sift.packages.python3-plaso
       - sls: sift.packages.python3-pypff
       - sls: sift.packages.python3-pytsk3
       - sls: sift.packages.python3-pyqt5

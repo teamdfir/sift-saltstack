@@ -15,7 +15,7 @@ include:
   - sift.python3-packages.pillow
   - sift.python3-packages.pyhindsight
   - sift.python3-packages.python-dateutil
-#  - sift.python3-packages.python-evtx
+  - sift.python3-packages.python-evtx
   - sift.python3-packages.python-magic
   - sift.python3-packages.python-registry
   - sift.python3-packages.setuptools
@@ -47,7 +47,7 @@ sift-python3-packages:
       - sls: sift.python3-packages.pillow
       - sls: sift.python3-packages.pyhindsight
       - sls: sift.python3-packages.python-dateutil
-#      - sls: sift.python3-packages.python-evtx
+      - sls: sift.python3-packages.python-evtx
       - sls: sift.python3-packages.python-magic
       - sls: sift.python3-packages.python-registry
       - sls: sift.python3-packages.setuptools

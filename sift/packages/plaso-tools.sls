@@ -4,7 +4,7 @@
 # Category: 
 # Author: Joachim Metz
 # License: Apache License 2.0 (https://github.com/log2timeline/plaso/blob/main/LICENSE)
-# Notes: psteal, psort, log2timeline
+# Notes: psteal.py, psort.py, log2timeline.py
 
 include:
   - sift.repos.gift

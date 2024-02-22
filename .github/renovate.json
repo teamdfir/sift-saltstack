@@ -8,7 +8,7 @@
         ".*.sls$"
       ],
       "matchStrings": [
-        "# renovate:\\sdatasource=(?<datasource>.*?)\\sdepName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?version\\s=\\s\"(?<currentValue>.*)\"\\s-.*?\\s.*?hash\\s=\\s\"(?<currentDigest>.*?)\""
+        "# renovate:\\sdatasource=(?<datasource>.*?)\\sdepName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s#}\\s.*?version\\s=\\s\"(?<currentValue>.*)\"\\s-.*?\\s.*?hash\\s=\\s\"(?<currentDigest>.*?)\""
       ],
       "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
     }

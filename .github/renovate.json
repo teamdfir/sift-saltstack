@@ -5,7 +5,7 @@
   "regexManagers": [
     {
       "fileMatch": [
-        "sift/**/*.sls"
+        ".*.sls$"
       ],
       "matchStrings": [
         "# renovate:\\sdatasource=(?<datasource>.*?)\\sdepName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?version\\s=\\s\"(?<currentValue>.*)\"\\s-.*?\\s.*?hash\\s=\\s\"(?<currentDigest>.*?)\""

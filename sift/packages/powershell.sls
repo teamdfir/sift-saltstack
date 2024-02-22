@@ -1,7 +1,7 @@
 {%- set base_url = "https://github.com/Powershell/Powershell/releases/download/v" -%}
-{%- set version = "7.2.6" -%}
-{%- set filename = "powershell_7.2.6-1.deb_amd64.deb" -%}
-{%- set hash = "A0D810FE381B77E4BFB99CC67F713F6D483545E94BDEB4150524C085CF20E2DA" -%}
+{%- set version = "7.4.1" -%}
+{%- set filename = "powershell_7.4.1-1.deb_amd64.deb" -%}
+{%- set hash = "625B7EE0B71147421723CB6022A41B5D8FC0D6E19DF25B1240008EE491BF6997" -%}
 
 include:
   - sift.packages.libicu

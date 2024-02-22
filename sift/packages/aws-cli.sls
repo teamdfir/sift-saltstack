@@ -4,10 +4,10 @@
 # Category: 
 # Author: Amazon
 # License: Apache License v2.0 (https://github.com/aws/aws-cli/blob/develop/LICENSE.txt)
-# Version: 2.13.11
+# Version: 2.15.21
 # Notes:
 
-{% set hash = '8e2146b409a3c840524cca52f221437d1c31d90242dbd772ed835d6b870952ac' %}
+{% set hash = '529e0e5887bf8c1710791c76a3a76d680193a1fa464718563bdc33a12960f4c4' %}
 
 aws-cli-download:
   file.managed:

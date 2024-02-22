@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "config:recommended"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "*.sls"
+      ],
+      "matchStrings": [
+        "# renovate:\\sdatasource=(?<datasource>.*?)\\sdepName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?version\\s=\\s\"(?<currentValue>.*)\"\\s-.*?\\s.*?hash\\s=\\s\"(?<currentDigest>.*?)\""
+      ],
+      "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
+    }
+  ]
+}

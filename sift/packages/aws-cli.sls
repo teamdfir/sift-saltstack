@@ -22,6 +22,7 @@ aws-cli-extract:
     - source: /tmp/awscli-exe-linux-x86_64.zip
     - enforce_toplevel: False
     - overwrite: True
+    - trim_output: True
     - require:
       - file: aws-cli-download
 

@@ -6,6 +6,7 @@ include:
   - sift.packages.apache2
   - sift.packages.arp-scan
   - sift.packages.autopsy
+  - sift.packages.aws-cli
   - sift.packages.avfs
   - sift.packages.bless
   - sift.packages.blt
@@ -211,6 +212,7 @@ sift-packages:
       - sls: sift.packages.apache2
       - sls: sift.packages.arp-scan
       - sls: sift.packages.autopsy
+      - sls: sift.packages.aws-cli
       - sls: sift.packages.avfs
       - sls: sift.packages.bless
       - sls: sift.packages.blt

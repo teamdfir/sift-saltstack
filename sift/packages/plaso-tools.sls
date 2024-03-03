@@ -9,8 +9,16 @@
 include:
   - sift.repos.gift
 
+sift-packages-plaso-reinstall:
+  pkg.removed:
+    - names:
+      - plaso-data
+      - plaso-tools
+      - plaso
+
 sift-package-plaso-tools:
   pkg.latest:
     - name: plaso-tools
     - require:
       - sls: sift.repos.gift
+      - pkg: sift-packages-plaso-reinstall

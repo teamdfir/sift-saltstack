@@ -7,4 +7,4 @@
 # Notes: bless
 
 bless:
-  pkg.installed
+  pkg.install

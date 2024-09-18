@@ -1,0 +1,7 @@
+pefile>=2023.2.7
+yara-python>=3.8.0
+capstone>=3.0.5
+pycryptodome
+leechcorepyc>=2.4.0; sys_platform != 'darwin'
+gcsfs>=2023.1.0
+s3fs>=2023.1.0

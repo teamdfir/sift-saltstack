@@ -1,6 +1,6 @@
 {# renovate: datasource=github-release-attachments depName=radareorg/radare2 #}
-{%- set version = "5.7.6" -%}
-{%- set hash = "90b76ac2617895f48d33486ae9c9ea08333f5daf5298a76f5172b2648a071d0f" -%}
+{%- set version = "5.9.6" -%}
+{%- set hash = "596c2b2e5cd95f38827f5e29d93547f7535e49c5bba0d5bd845b36f7e2488974" -%}
 {%- set filename = "radare2_" ~ version ~ "_amd64.deb" -%}
 {%- set base_url = "https://github.com/radareorg/radare2/releases/download/" -%}
 

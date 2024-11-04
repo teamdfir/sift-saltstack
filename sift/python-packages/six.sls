@@ -1,5 +1,4 @@
 include:
-  - sift.packages.python3-pip
   - sift.packages.python2-pip
 
 sift-python-packages-six:

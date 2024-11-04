@@ -1,7 +1,6 @@
 # Note: not included in init.sls, only required by python-volatility
 
 include:
-  - sift.packages.python3-pip
   - sift.packages.python2-pip
 
 sift-python-packages-yara-python:

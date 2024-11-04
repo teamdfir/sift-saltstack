@@ -8,7 +8,6 @@ include:
   - sift.packages.g++
   - sift.packages.libfuse-dev
   - sift.packages.pkg-config
-  - sift.packages.python3-pip
   - sift.packages.python2-pip
   - sift.packages.python2-dev
   - sift.packages.python-wxgtk3

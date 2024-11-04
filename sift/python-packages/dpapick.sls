@@ -2,7 +2,6 @@
 
 include:
   - sift.packages.libssl-dev
-  - sift.packages.python3-pip
   - sift.packages.python2-pip
   - sift.python-packages.m2crypto
 

@@ -1,6 +1,6 @@
 include:
-  - sift.packages.python3-pip
   - sift.packages.python2-pip
+  - sift.python-packages.setuptools
 
 sift-python-packages-geoip2:
   pip.installed:
@@ -9,3 +9,4 @@ sift-python-packages-geoip2:
     - upgrade: True
     - require:
       - sls: sift.packages.python2-pip
+      - sls: sift.python-packages.setuptools

@@ -2,7 +2,6 @@
 
 include:
   - sift.packages.git
-  - sift.packages.python3-pip
   - sift.packages.python2-pip
 
 shellbags:

@@ -1,6 +1,5 @@
 include:
   - sift.packages.python2-pip
-  - sift.packages.python3-pip
 
 openpyxl==2.1.2:
   pip.installed:

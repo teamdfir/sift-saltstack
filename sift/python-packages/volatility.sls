@@ -10,7 +10,6 @@
 
 include:
   - sift.packages.git
-  - sift.packages.python3-pip
   - sift.packages.python2-pip
   - sift.python-packages.colorama
   - sift.python-packages.construct

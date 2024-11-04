@@ -1,7 +1,7 @@
 include:
-  - sift.packages.python3-pip
   - sift.packages.python2-pip
   - sift.python-packages.lxml
+  - sift.python-packages.setuptools
 
 sift-python-packages-ioc-writer:
   pip.installed:
@@ -11,4 +11,5 @@ sift-python-packages-ioc-writer:
     - require:
       - sls: sift.packages.python2-pip
       - sls: sift.python-packages.lxml
+      - sls: sift.python-packages.setuptools
       

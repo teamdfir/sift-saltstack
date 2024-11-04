@@ -1,6 +1,6 @@
 include:
-  - sift.packages.python3-pip
   - sift.packages.python2-pip
+  - sift.python-packages.setuptools
 
 sift-python-packages-colorama:
   pip.installed:
@@ -9,3 +9,4 @@ sift-python-packages-colorama:
     - upgrade: True
     - require:
       - sls: sift.packages.python2-pip
+      - sls: sift.python-packages.setuptools

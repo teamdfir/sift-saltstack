@@ -1,7 +1,6 @@
 # This package is only required for volatility, so it is not included in the init.sls
 
 include:
-  - sift.packages.python3-pip
   - sift.packages.python2-pip
 
 sift-python-packages-pycrypto:

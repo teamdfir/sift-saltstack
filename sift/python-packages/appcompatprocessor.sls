@@ -6,6 +6,7 @@ include:
   - sift.packages.python2-pip
   - sift.packages.libregf
   - sift.packages.python2-dev
+  - sift.python-packages.setuptools
 
 appcompatprocessor:
   pip.installed:
@@ -17,3 +18,4 @@ appcompatprocessor:
       - sls: sift.packages.python2-pip
       - sls: sift.packages.libregf
       - sls: sift.packages.python2-dev
+      - sls: sift.python-packages.setuptools

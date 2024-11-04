@@ -23,7 +23,7 @@ jobs:
           - os: 22.04
             code: jammy
     container:
-      image: docker://ghcr.io/teamdfir/sift-saltstack-tester:${{ matrix.salt }}-${{ matrix.code }}
+      image: docker://ghcr.io/ekristen/cast-tools/saltstack-tester:${{ matrix.salt }}-${{ matrix.code }}
     steps:
       - uses: actions/checkout@v4
       - name: test-state

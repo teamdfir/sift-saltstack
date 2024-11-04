@@ -1,8 +1,8 @@
-{%- set commit="64c71d7c8905a119b7abdf9813e6ef5f11d3ccf1" -%}
+{%- set commit="b1d0e6a0aa58d42000bfdb8e6588513bd62eaeab" -%}
 include:
   - sift.packages.git
-  - sift.packages.python3-pip
   - sift.packages.python2-pip
+  - sift.python-packages.setuptools
 
 analyzemft:
   pip.installed:
@@ -12,3 +12,4 @@ analyzemft:
     - require:
       - sls: sift.packages.git
       - sls: sift.packages.python2-pip
+      - sls: sift.python-packages.setuptools

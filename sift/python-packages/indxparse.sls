@@ -11,6 +11,7 @@ include:
   - sift.packages.python2-pip
   - sift.packages.python2-dev
   - sift.packages.python-wxgtk3
+  - sift.python-packages.setuptools
 
 sift-python-packages-indxparse:
   pip.installed:
@@ -25,6 +26,7 @@ sift-python-packages-indxparse:
       - sls: sift.packages.python2-dev
       - sls: sift.packages.libfuse-dev
       - sls: sift.packages.python-wxgtk3
+      - sls: sift.python-packages.setuptools
 
 sift-python-packages-indxparse-shebang:
   file.prepend:

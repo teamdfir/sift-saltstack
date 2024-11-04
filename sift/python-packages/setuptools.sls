@@ -3,7 +3,7 @@ include:
 
 sift-python-packages-setuptools:
   pip.installed:
-    - name: setuptools
+    - name: 'setuptools<66.0.0'
     - bin_env: /usr/bin/python2
     - upgrade: True
     - require:

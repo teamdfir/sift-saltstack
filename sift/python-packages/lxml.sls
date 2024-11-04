@@ -2,6 +2,7 @@ include:
   - sift.packages.python2-pip
   - sift.packages.libxml2-dev
   - sift.packages.libxslt-dev
+  - sift.python-packages.setuptools
 
 sift-python-packages-lxml:
   pip.installed:
@@ -11,3 +12,4 @@ sift-python-packages-lxml:
       - sls: sift.packages.python2-pip
       - sls: sift.packages.libxml2-dev
       - sls: sift.packages.libxslt-dev
+      - sls: sift.python-packages.setuptools

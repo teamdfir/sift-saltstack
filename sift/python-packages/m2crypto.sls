@@ -3,6 +3,7 @@ include:
   - sift.packages.swig
   - sift.packages.python2-dev
   - sift.packages.libssl-dev
+  - sift.python-packages.setuptools
 
 sift-python-packages-m2crypto:
   pip.installed:
@@ -14,3 +15,4 @@ sift-python-packages-m2crypto:
       - sls: sift.packages.swig
       - sls: sift.packages.python2-dev
       - sls: sift.packages.libssl-dev
+      - sls: sift.python-packages.setuptools

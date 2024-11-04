@@ -8,7 +8,6 @@ shellbags:
   pip.installed:
     - name: git+https://github.com/williballenthin/shellbags.git@fee76eb
     - bin_env: /usr/bin/python2
-    - upgrade: True
     - require:
       - sls: sift.packages.git
       - sls: sift.packages.python2-pip

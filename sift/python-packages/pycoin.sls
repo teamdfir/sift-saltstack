@@ -7,6 +7,5 @@ sift-python-packages-pycoin:
   pip.installed:
     - name: pycoin
     - bin_env: /usr/bin/python2
-    - upgrade: True
     - require:
       - sls: sift.packages.python2-pip

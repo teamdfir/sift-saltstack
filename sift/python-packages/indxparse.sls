@@ -1,4 +1,4 @@
-{% if grains['oscodename'] != "jammy" %}
+{% if grains['oscodename'] == "focal" %}
 
 {%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
 {%- set commit = "ca08236b0f70798cb6f89785820c9b82ee0c66ff" -%}
@@ -17,7 +17,6 @@ sift-python-packages-indxparse:
   pip.installed:
     - name: git+https://github.com/williballenthin/INDXParse.git@{{ commit }}
     - bin_env: /usr/bin/python2
-    - upgrade: True
     - require:
       - sls: sift.packages.git
       - sls: sift.packages.g++

@@ -6,7 +6,6 @@ sift-python-packages-bitstring:
   pip.installed:
     - name: bitstring
     - bin_env: /usr/bin/python2
-    - upgrade: True
     - require:
       - sls: sift.packages.python2-pip
       - sls: sift.python-packages.setuptools

@@ -11,6 +11,7 @@
 include:
   - sift.packages.git
   - sift.packages.python2-pip
+  - sift.packages.build-essential
   - sift.python-packages.colorama
   - sift.python-packages.construct
   - sift.python-packages.dpapick
@@ -31,7 +32,6 @@ sift-python-packages-volatility:
   pip.installed:
     - name: git+https://github.com/volatilityfoundation/volatility.git@master
     - bin_env: /usr/bin/python2
-    - upgrade: True
     - require:
       - sls: sift.packages.git
       - sls: sift.packages.python2-pip

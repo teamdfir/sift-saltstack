@@ -5,16 +5,17 @@ include:
   - sift.packages.python2-pip
   - sift.packages.libregf
   - sift.packages.python2-dev
+  - sift.packages.build-essential
   - sift.python-packages.setuptools
 
 appcompatprocessor:
   pip.installed:
     - name: git+https://github.com/mbevilacqua/appcompatprocessor.git@{{ commit }}
     - bin_env: /usr/bin/python2
-    - upgrade: True
     - require:
       - sls: sift.packages.git
       - sls: sift.packages.python2-pip
       - sls: sift.packages.libregf
       - sls: sift.packages.python2-dev
+      - sls: sift.packages.build-essential
       - sls: sift.python-packages.setuptools

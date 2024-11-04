@@ -2,6 +2,8 @@
 
 # SIFT
 
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/teamdfir/sift-saltstack/total)
+
 Built with [SaltStack](https://saltproject.io) installed with [Cast](https://github.com/ekristen/cast)
 
 ## Issues

@@ -1,6 +1,7 @@
 include:
   - sift.packages.python2-pip
   - sift.packages.python2-dev
+  - sift.packages.build-essential
   - sift.python-packages.setuptools
 
 sift-python-packages-distorm3:
@@ -10,4 +11,5 @@ sift-python-packages-distorm3:
     - require:
       - sls: sift.packages.python2-pip
       - sls: sift.packages.python2-dev
+      - sls: sift.packages.build-essential
       - sls: sift.python-packages.setuptools

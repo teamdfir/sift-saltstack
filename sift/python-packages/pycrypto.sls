@@ -2,12 +2,15 @@
 
 include:
   - sift.packages.python2-pip
+  - sift.python-packages.setuptools
+  - sift.packages.build-essential
 
 sift-python-packages-pycrypto:
   pip.installed:
     - name: pycrypto
     - bin_env: /usr/bin/python2
-    - upgrade: True
     - require:
       - sls: sift.packages.python2-pip
+      - sls: sift.python-packages.setuptools
+      - sls: sift.packages.build-essential
 

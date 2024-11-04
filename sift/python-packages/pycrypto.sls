@@ -2,6 +2,7 @@
 
 include:
   - sift.packages.python2-pip
+  - sift.packages.python2-dev
   - sift.python-packages.setuptools
   - sift.packages.build-essential
 
@@ -11,6 +12,7 @@ sift-python-packages-pycrypto:
     - bin_env: /usr/bin/python2
     - require:
       - sls: sift.packages.python2-pip
+      - sls: sift.packages.python2-dev
       - sls: sift.python-packages.setuptools
       - sls: sift.packages.build-essential
 

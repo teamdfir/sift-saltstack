@@ -40,7 +40,7 @@ jobs:
           - os: 22.04
             salt: 3004
     container:
-      image: docker://ghcr.io/ekristen/cast-tools/saltstack-tester:${{ matrix.salt }}-${{ matrix.code }}
+      image: docker://ghcr.io/ekristen/cast-tools/saltstack-tester:${{ matrix.code }}-${{ matrix.salt }}
     steps:
       - uses: actions/checkout@v4
       - name: test-state

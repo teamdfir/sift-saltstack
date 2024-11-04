@@ -1,5 +1,5 @@
 {# renovate: datasource=github-release-attachments depName=Powershell/Powershell #}
-{%- set version = "7.4.1" -%}
+{%- set version = "7.4.6" -%}
 {%- set hash = "625B7EE0B71147421723CB6022A41B5D8FC0D6E19DF25B1240008EE491BF6997" -%}
 {%- set filename = "powershell_" ~ version ~ "-1.deb_amd64.deb" -%}
 {%- set base_url = "https://github.com/Powershell/Powershell/releases/download/v" -%}

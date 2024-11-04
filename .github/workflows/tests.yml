@@ -28,7 +28,7 @@ jobs:
     if: ${{ needs.changed_states.outputs.matrix != '[]' }}
     strategy:
       matrix:
-        salt: [3004, 3005]
+        salt: [3006]
         os: [20.04, 22.04]
         state: ${{ fromJson(needs.changed_states.outputs.matrix) }}
         include:
@@ -40,7 +40,7 @@ jobs:
           - os: 22.04
             salt: 3004
     container:
-      image: docker://ghcr.io/teamdfir/sift-saltstack-tester:${{ matrix.salt }}-${{ matrix.code }}
+      image: docker://ghcr.io/ekristen/cast-tools/saltstack-tester:${{ matrix.salt }}-${{ matrix.code }}
     steps:
       - uses: actions/checkout@v4
       - name: test-state

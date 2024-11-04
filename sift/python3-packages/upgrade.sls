@@ -1,26 +1,5 @@
-argparse.sls:    - upgrade: True
-bitstring.sls:    - upgrade: True
-colorama.sls:    - upgrade: True
-geoip2.sls:    - upgrade: True
-ioc_writer.sls:    - upgrade: True
-lxml.sls:    - upgrade: True
-pefile.sls:    - upgrade: True
-pillow.sls:    - upgrade: True
-pyhindsight.sls:    - upgrade: True
-python-dateutil.sls:    - upgrade: True
-python-evtx.sls:    - upgrade: True
-python-magic.sls:    - upgrade: True
-python-registry.sls:    - upgrade: True
-setuptools.sls:    - upgrade: True
-six.sls:    - upgrade: True
-stix-validator.sls:    - upgrade: True
-stix.sls:    - upgrade: True
-virustotal-api.sls:    - upgrade: True
-wheel.sls:    - upgrade: True
-yara-python.sls:    - upgrade: True
-
 include:
-  - sift.python3-packages.pip
+  - sift.python3-packages.core
   - sift.python3-packages.argparse
   - sift.python3-packages.bitstring
   - sift.python3-packages.colorama
@@ -47,7 +26,7 @@ sift-python3-packages-upgrade:
   cmd.run:
     - name: /usr/bin/python3 -m pip install --upgrade argparse bitstring colorama geoip2 ioc_writer lxml pefile pillow pyhindsight python-dateutil python-evtx python-magic python-registry setuptools setuptools_rust six stix-validator stix virustotal-api wheel yara-python pip
     - require:
-      - sls: sift.python3-packages.pip
+      - sls: sift.python3-packages.core
       - sls: sift.python3-packages.argparse
       - sls: sift.python3-packages.bitstring
       - sls: sift.python3-packages.colorama

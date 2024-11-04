@@ -7,7 +7,7 @@
 # Notes: evtx_dates.py, evtx_dump.py, evtx_dump_chunk_slack.py, evtx_dump_json.py, evtx_info.py
 
 include:
-  - sift.python3-packages.pip
+  - sift.python3-packages.core
   - sift.packages.git
 
 sift-python3-packages-python-evtx:
@@ -15,5 +15,5 @@ sift-python3-packages-python-evtx:
     - name: git+https://github.com/williballenthin/python-evtx.git
     - bin_env: /usr/bin/python3
     - require:
-      - sls: sift.python3-packages.pip
+      - sls: sift.python3-packages.core
       - sls: sift.packages.git

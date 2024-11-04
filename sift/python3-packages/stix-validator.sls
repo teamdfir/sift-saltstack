@@ -1,5 +1,5 @@
 include:
-  - sift.python3-packages.pip
+  - sift.python3-packages.core
   - sift.python3-packages.stix
 
 sift-python3-packages-stix-validator:
@@ -7,5 +7,5 @@ sift-python3-packages-stix-validator:
     - name: stix-validator
     - bin_env: /usr/bin/python3
     - require:
-      - sls: sift.python3-packages.pip
+      - sls: sift.python3-packages.core
       - sls: sift.python3-packages.stix

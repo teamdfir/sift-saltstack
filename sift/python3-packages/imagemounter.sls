@@ -1,5 +1,5 @@
 include:
-  - sift.python3-packages.pip
+  - sift.python3-packages.core
   - sift.python3-packages.python-magic
   - sift.packages.afflib-tools
   - sift.packages.avfs
@@ -24,7 +24,7 @@ sift-python3-packages-imagemounter:
     - name: imagemounter
     - bin_env: /usr/bin/python3
     - require:
-      - sls: sift.python3-packages.pip
+      - sls: sift.python3-packages.core
       - sls: sift.python3-packages.python-magic
       - sls: sift.packages.afflib-tools
       - sls: sift.packages.avfs

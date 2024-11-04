@@ -7,7 +7,7 @@ include:
 
 sift-python3-packages-defang:
   pip.installed:
-    - name: defang==0.5.2
+    - name: defang
     - bin_env: /usr/bin/python3
     - require:
       - sls: sift.python3-packages.pip

@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 __description__ = 'Tool to test a PDF file'
 __author__ = 'Didier Stevens'
-__version__ = '0.2.1'
-__date__ = '2014/10/18'
+__version__ = '0.2.9'
+__date__ = '2024/10/26'
 
 """
 
@@ -45,6 +45,19 @@ History:
   2014/09/30: added CSV header
   2014/10/16: V0.2.1: added output when plugin & file not pdf
   2014/10/18: some fixes for Python 3
+  2015/08/12: V0.2.2: added option pluginoptions
+  2015/08/13: added plugin Instructions method
+  2016/04/12: added option literal
+  2017/10/29: added pdfid.ini support
+  2017/11/05: V0.2.3: added option -n
+  2018/01/03: V0.2.4: bugfix entropy calculation for PDFs without streams; sample 28cb208d976466b295ee879d2d233c8a https://twitter.com/DubinRan/status/947783629123416069
+  2018/01/15: bugfix ConfigParser privately reported
+  2018/01/29: bugfix oPDFEOF.cntCharsAfterLastEOF when no %%EOF
+  2018/07/05: V0.2.5 introduced cExpandFilenameArguments; renamed option literal to literalfilenames
+  2019/09/30: V0.2.6 color bugfix, thanks to Leo
+  2019/11/05: V0.2.7 fixed plugin path when compiled with pyinstaller
+  2020/11/21: V0.2.8 added data argument to PDFiD function
+  2024/10/26: V0.2.9 added pyzipper support
 
 Todo:
   - update XML example (entropy, EOF)
@@ -61,15 +74,25 @@ import operator
 import os.path
 import sys
 import json
-import zipfile
 import collections
 import glob
+import fnmatch
+if sys.version_info[0] >= 3:
+    import urllib.request as urllib23
+else:
+    import urllib2 as urllib23
+if sys.version_info[0] >= 3:
+    import configparser as ConfigParser
+else:
+    import ConfigParser
+if sys.version_info[0] >= 3:
+    from io import BytesIO as DataIO
+else:
+    from cStringIO import StringIO as DataIO
 try:
-    import urllib2
-    urllib23 = urllib2
-except:
-    import urllib.request
-    urllib23 = urllib.request
+    import pyzipper as zipfile
+except ImportError:
+    import zipfile
 
 #Convert 2 Bytes If Python 3
 def C2BIP3(string):
@@ -78,10 +101,18 @@ def C2BIP3(string):
     else:
         return string
 
+def CreateZipFileObject(arg1, arg2):
+    if 'AESZipFile' in dir(zipfile):
+        return zipfile.AESZipFile(arg1, arg2)
+    else:
+        return zipfile.ZipFile(arg1, arg2)
+
 class cBinaryFile:
-    def __init__(self, file):
+    def __init__(self, file, data=None):
         self.file = file
-        if file == '':
+        if data != None:
+            self.infile = DataIO(data)
+        elif file == '':
             self.infile = sys.stdin
         elif file.lower().startswith('http://') or file.lower().startswith('https://'):
             try:
@@ -95,7 +126,7 @@ class cBinaryFile:
                 sys.exit()
         elif file.lower().endswith('.zip'):
             try:
-                self.zipfile = zipfile.ZipFile(file, 'r')
+                self.zipfile = CreateZipFileObject(file, 'r')
                 self.infile = self.zipfile.open(self.zipfile.infolist()[0], 'r', C2BIP3('infected'))
             except:
                 print('Error opening file %s' % file)
@@ -230,11 +261,14 @@ class cEntropy:
             self.streamBucket[byte] -= 1
 
     def calc(self):
-        self.nonStreamBucket = map(operator.sub, self.allBucket, self.streamBucket)
+        self.nonStreamBucket = list(map(operator.sub, self.allBucket, self.streamBucket))
         allCount = sum(self.allBucket)
         streamCount = sum(self.streamBucket)
         nonStreamCount = sum(self.nonStreamBucket)
-        return (allCount, sum(map(lambda x: fEntropy(x, allCount), self.allBucket)), streamCount, sum(map(lambda x: fEntropy(x, streamCount), self.streamBucket)), nonStreamCount, sum(map(lambda x: fEntropy(x, nonStreamCount), self.nonStreamBucket)))
+        if streamCount == 0:
+            return (allCount, sum(map(lambda x: fEntropy(x, allCount), self.allBucket)), streamCount, None, nonStreamCount, sum(map(lambda x: fEntropy(x, nonStreamCount), self.nonStreamBucket)))
+        else:
+            return (allCount, sum(map(lambda x: fEntropy(x, allCount), self.allBucket)), streamCount, sum(map(lambda x: fEntropy(x, streamCount), self.streamBucket)), nonStreamCount, sum(map(lambda x: fEntropy(x, nonStreamCount), self.nonStreamBucket)))
 
 class cPDFEOF:
     def __init__(self):
@@ -338,7 +372,7 @@ class cCVE_2009_3459:
         self.count = 0
 
     def Check(self, lastName, word):
-        if (lastName == '/Colors' and word.isdigit() and int(word) > 2^24): # decided to alert when the number of colors is expressed with more than 3 bytes
+        if (lastName == '/Colors' and word.isdigit() and int(word) > 2**24): # decided to alert when the number of colors is expressed with more than 3 bytes
             self.count += 1
 
 def XMLAddAttribute(xmlDoc, name, value=None):
@@ -346,8 +380,26 @@ def XMLAddAttribute(xmlDoc, name, value=None):
     xmlDoc.documentElement.setAttributeNode(att)
     if value != None:
         att.nodeValue = value
+    return att
 
-def PDFiD(file, allNames=False, extraData=False, disarm=False, force=False):
+def GetScriptPath():
+    if getattr(sys, 'frozen', False):
+        return os.path.dirname(sys.executable)
+    else:
+        return os.path.dirname(sys.argv[0])
+
+def ParseINIFile():
+    oConfigParser = ConfigParser.ConfigParser(allow_no_value=True)
+    oConfigParser.optionxform = str
+    oConfigParser.read(os.path.join(GetScriptPath(), 'pdfid.ini'))
+    keywords = []
+    if oConfigParser.has_section('keywords'):
+        for key, value in oConfigParser.items('keywords'):
+            if not key in keywords:
+                keywords.append(key)
+    return keywords
+
+def PDFiD(file, allNames=False, extraData=False, disarm=False, force=False, data=None):
     """Example of XML output:
     <PDFiD ErrorOccured="False" ErrorMessage="" Filename="test.pdf" Header="%PDF-1.1" IsPDF="True" Version="0.0.4" Entropy="4.28">
             <Keywords>
@@ -377,7 +429,7 @@ def PDFiD(file, allNames=False, extraData=False, disarm=False, force=False):
     hexcode = False
     lastName = ''
     insideStream = False
-    keywords = ('obj',
+    keywords = ['obj',
                 'endobj',
                 'stream',
                 'endstream',
@@ -397,9 +449,12 @@ def PDFiD(file, allNames=False, extraData=False, disarm=False, force=False):
                 '/Launch',
                 '/EmbeddedFile',
                 '/XFA',
-               )
+               ]
     words = {}
     dates = []
+    for extrakeyword in ParseINIFile():
+        if not extrakeyword in keywords:
+            keywords.append(extrakeyword)
     for keyword in keywords:
         words[keyword] = [0, 0]
     slash = ''
@@ -416,7 +471,7 @@ def PDFiD(file, allNames=False, extraData=False, disarm=False, force=False):
     try:
         attIsPDF = xmlDoc.createAttribute('IsPDF')
         xmlDoc.documentElement.setAttributeNode(attIsPDF)
-        oBinaryFile = cBinaryFile(file)
+        oBinaryFile = cBinaryFile(file, data)
         if extraData:
             oPDFDate = cPDFDate()
             oEntropy = cEntropy()
@@ -532,7 +587,10 @@ def PDFiD(file, allNames=False, extraData=False, disarm=False, force=False):
         (countAll, entropyAll , countStream, entropyStream, countNonStream, entropyNonStream) = oEntropy.calc()
         attEntropyAll.nodeValue = '%f' % entropyAll
         attCountAll.nodeValue = '%d' % countAll
-        attEntropyStream.nodeValue = '%f' % entropyStream
+        if entropyStream == None:
+            attEntropyStream.nodeValue = 'N/A     '
+        else:
+            attEntropyStream.nodeValue = '%f' % entropyStream
         attCountStream.nodeValue = '%d' % countStream
         attEntropyNonStream.nodeValue = '%f' % entropyNonStream
         attCountNonStream.nodeValue = '%d' % countNonStream
@@ -549,7 +607,10 @@ def PDFiD(file, allNames=False, extraData=False, disarm=False, force=False):
     xmlDoc.documentElement.setAttributeNode(attCountCharsAfterLastEOF)
     if oPDFEOF != None:
         attCountEOF.nodeValue = '%d' % oPDFEOF.cntEOFs
-        attCountCharsAfterLastEOF.nodeValue = '%d' % oPDFEOF.cntCharsAfterLastEOF
+        if oPDFEOF.cntEOFs > 0:
+            attCountCharsAfterLastEOF.nodeValue = '%d' % oPDFEOF.cntCharsAfterLastEOF
+        else:
+            attCountCharsAfterLastEOF.nodeValue = ''
     else:
         attCountEOF.nodeValue = ''
         attCountCharsAfterLastEOF.nodeValue = ''
@@ -608,7 +669,7 @@ def PDFiD(file, allNames=False, extraData=False, disarm=False, force=False):
         eleDate.setAttributeNode(att)
     return xmlDoc
 
-def PDFiD2String(xmlDoc, force):
+def PDFiD2String(xmlDoc, nozero, force):
     result = 'PDFiD %s %s\n' % (xmlDoc.documentElement.getAttribute('Version'), xmlDoc.documentElement.getAttribute('Filename'))
     if xmlDoc.documentElement.getAttribute('ErrorOccured') == 'True':
         return result + '***Error occured***\n%s\n' % xmlDoc.documentElement.getAttribute('ErrorMessage')
@@ -616,10 +677,11 @@ def PDFiD2String(xmlDoc, force):
         return result + ' Not a PDF document\n'
     result += ' PDF Header: %s\n' % xmlDoc.documentElement.getAttribute('Header')
     for node in xmlDoc.documentElement.getElementsByTagName('Keywords')[0].childNodes:
-        result += ' %-16s %7d' % (node.getAttribute('Name'), int(node.getAttribute('Count')))
-        if int(node.getAttribute('HexcodeCount')) > 0:
-            result += '(%d)' % int(node.getAttribute('HexcodeCount'))
-        result += '\n'
+        if not nozero or nozero and int(node.getAttribute('Count')) > 0:
+            result += ' %-16s %7d' % (node.getAttribute('Name'), int(node.getAttribute('Count')))
+            if int(node.getAttribute('HexcodeCount')) > 0:
+                result += '(%d)' % int(node.getAttribute('HexcodeCount'))
+            result += '\n'
     if xmlDoc.documentElement.getAttribute('CountEOF') != '':
         result += ' %-16s %7d\n' % ('%%EOF', int(xmlDoc.documentElement.getAttribute('CountEOF')))
     if xmlDoc.documentElement.getAttribute('CountCharsAfterLastEOF') != '':
@@ -703,7 +765,7 @@ def MakeCSVLine(fields, separator=';', quote='"'):
 def ProcessFile(filename, options, plugins):
     xmlDoc = PDFiD(filename, options.all, options.extra, options.disarm, options.force)
     if plugins == [] and options.select == '':
-        Print(PDFiD2String(xmlDoc, options.force), options)
+        Print(PDFiD2String(xmlDoc, options.nozero, options.force), options)
         return
 
     oPDFiD = cPDFiD(xmlDoc, options.force)
@@ -721,12 +783,12 @@ def ProcessFile(filename, options, plugins):
                 if options.csv:
                     Print(filename, options)
                 else:
-                    Print(PDFiD2String(xmlDoc, options.force), options)
+                    Print(PDFiD2String(xmlDoc, options.nozero, options.force), options)
     else:
         for cPlugin in plugins:
             if not cPlugin.onlyValidPDF or not oPDFiD.errorOccured and oPDFiD.isPDF:
                 try:
-                    oPlugin = cPlugin(oPDFiD)
+                    oPlugin = cPlugin(oPDFiD, options.pluginoptions)
                 except Exception as e:
                     Print('Error instantiating plugin: %s' % cPlugin.name, options)
                     if options.verbose:
@@ -746,8 +808,12 @@ def ProcessFile(filename, options, plugins):
                         Print(MakeCSVLine((('%s', filename), ('%s', cPlugin.name), ('%.02f', score))), options)
                 else:
                     if score >= options.minimumscore:
-                        Print(PDFiD2String(xmlDoc, options.force), options)
-                        Print('%s score: %.02f' % (cPlugin.name, score), options)
+                        Print(PDFiD2String(xmlDoc, options.nozero, options.force), options)
+                        Print('%s score:        %.02f' % (cPlugin.name, score), options)
+                        try:
+                            Print('%s instructions: %s' % (cPlugin.name, oPlugin.Instructions(score)), options)
+                        except AttributeError:
+                            pass
             else:
                 if options.csv:
                     if oPDFiD.errorOccured:
@@ -755,7 +821,7 @@ def ProcessFile(filename, options, plugins):
                     if not oPDFiD.isPDF:
                         Print(MakeCSVLine((('%s', filename), ('%s', cPlugin.name), ('%s', 'Not a PDF document'))), options)
                 else:
-                    Print(PDFiD2String(xmlDoc, options.force), options)
+                    Print(PDFiD2String(xmlDoc, options.nozero, options.force), options)
 
 
 def Scan(directory, options, plugins):
@@ -842,8 +908,93 @@ def AddPlugin(cClass):
 
     plugins.append(cClass)
 
-def ExpandFilenameArguments(filenames):
-    return list(collections.OrderedDict.fromkeys(sum(map(glob.glob, sum(map(ProcessAt, filenames), [])), [])))
+class cExpandFilenameArguments():
+    def __init__(self, filenames, literalfilenames=False, recursedir=False, checkfilenames=False, expressionprefix=None):
+        self.containsUnixShellStyleWildcards = False
+        self.warning = False
+        self.message = ''
+        self.filenameexpressions = []
+        self.expressionprefix = expressionprefix
+        self.literalfilenames = literalfilenames
+
+        expression = ''
+        if len(filenames) == 0:
+            self.filenameexpressions = [['', '']]
+        elif literalfilenames:
+            self.filenameexpressions = [[filename, ''] for filename in filenames]
+        elif recursedir:
+            for dirwildcard in filenames:
+                if expressionprefix != None and dirwildcard.startswith(expressionprefix):
+                    expression = dirwildcard[len(expressionprefix):]
+                else:
+                    if dirwildcard.startswith('@'):
+                        for filename in ProcessAt(dirwildcard):
+                            self.filenameexpressions.append([filename, expression])
+                    elif os.path.isfile(dirwildcard):
+                        self.filenameexpressions.append([dirwildcard, expression])
+                    else:
+                        if os.path.isdir(dirwildcard):
+                            dirname = dirwildcard
+                            basename = '*'
+                        else:
+                            dirname, basename = os.path.split(dirwildcard)
+                            if dirname == '':
+                                dirname = '.'
+                        for path, dirs, files in os.walk(dirname):
+                            for filename in fnmatch.filter(files, basename):
+                                self.filenameexpressions.append([os.path.join(path, filename), expression])
+        else:
+            for filename in list(collections.OrderedDict.fromkeys(sum(map(self.Glob, sum(map(ProcessAt, filenames), [])), []))):
+                if expressionprefix != None and filename.startswith(expressionprefix):
+                    expression = filename[len(expressionprefix):]
+                else:
+                    self.filenameexpressions.append([filename, expression])
+            self.warning = self.containsUnixShellStyleWildcards and len(self.filenameexpressions) == 0
+            if self.warning:
+                self.message = "Your filename argument(s) contain Unix shell-style wildcards, but no files were matched.\nCheck your wildcard patterns or use option literalfilenames if you don't want wildcard pattern matching."
+                return
+        if self.filenameexpressions == [] and expression != '':
+            self.filenameexpressions = [['', expression]]
+        if checkfilenames:
+            self.CheckIfFilesAreValid()
+
+    def Glob(self, filename):
+        if not ('?' in filename or '*' in filename or ('[' in filename and ']' in filename)):
+            return [filename]
+        self.containsUnixShellStyleWildcards = True
+        return glob.glob(filename)
+
+    def CheckIfFilesAreValid(self):
+        valid = []
+        doesnotexist = []
+        isnotafile = []
+        for filename, expression in self.filenameexpressions:
+            hashfile = False
+            try:
+                hashfile = FilenameCheckHash(filename, self.literalfilenames)[0] == FCH_DATA
+            except:
+                pass
+            if filename == '' or hashfile:
+                valid.append([filename, expression])
+            elif not os.path.exists(filename):
+                doesnotexist.append(filename)
+            elif not os.path.isfile(filename):
+                isnotafile.append(filename)
+            else:
+                valid.append([filename, expression])
+        self.filenameexpressions = valid
+        if len(doesnotexist) > 0:
+            self.warning = True
+            self.message += 'The following files do not exist and will be skipped: ' + ' '.join(doesnotexist) + '\n'
+        if len(isnotafile) > 0:
+            self.warning = True
+            self.message += 'The following files are not regular files and will be skipped: ' + ' '.join(isnotafile) + '\n'
+
+    def Filenames(self):
+        if self.expressionprefix == None:
+            return [filename for filename, expression in self.filenameexpressions]
+        else:
+            return self.filenameexpressions
 
 class cPluginParent():
     onlyValidPDF = True
@@ -851,7 +1002,7 @@ class cPluginParent():
 def LoadPlugins(plugins, verbose):
     if plugins == '':
         return
-    scriptPath = os.path.dirname(sys.argv[0])
+    scriptPath = GetScriptPath()
     for plugin in sum(map(ProcessAt, plugins.split(',')), []):
         try:
             if not plugin.lower().endswith('.py'):
@@ -907,7 +1058,11 @@ https://DidierStevens.com'''
     oParser.add_option('-m', '--minimumscore', type=float, default=0.0, help='minimum score for plugin results output')
     oParser.add_option('-v', '--verbose', action='store_true', default=False, help='verbose (will also raise catched exceptions)')
     oParser.add_option('-S', '--select', type=str, default='', help='selection expression')
+    oParser.add_option('-n', '--nozero', action='store_true', default=False, help='supress output for counts equal to zero')
     oParser.add_option('-o', '--output', type=str, default='', help='output to log file')
+    oParser.add_option('--pluginoptions', type=str, default='', help='options for the plugin')
+    oParser.add_option('-l', '--literalfilenames', action='store_true', default=False, help='take filenames literally, no wildcard matching')
+    oParser.add_option('--recursedir', action='store_true', default=False, help='Recurse directories (wildcards and here files (@...) allowed)')
     (options, args) = oParser.parse_args()
 
     if len(args) == 0:
@@ -920,7 +1075,10 @@ https://DidierStevens.com'''
         filenames = ['']
     else:
         try:
-            filenames = ExpandFilenameArguments(args)
+            oExpandFilenameArguments = cExpandFilenameArguments(args, options.literalfilenames, options.recursedir, False)
+            filenames = oExpandFilenameArguments.Filenames()
+            if oExpandFilenameArguments.warning:
+                print(oExpandFilenameArguments.message)
         except Exception as e:
             print(e)
             return

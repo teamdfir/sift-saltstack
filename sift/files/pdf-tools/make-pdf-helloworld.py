@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 #20080518
 #20080519
 
@@ -8,11 +8,11 @@ import zlib
 import sys
 
 if len(sys.argv) != 2:
-    print "Usage: make-pdf-helloworld pdf-file"
-    print "  "
-    print "  Source code put in the public domain by Didier Stevens, no Copyright"
-    print "  Use at your own risk"
-    print "  https://DidierStevens.com"
+    print("Usage: make-pdf-helloworld pdf-file")
+    print("  ")
+    print("  Source code put in the public domain by Didier Stevens, no Copyright")
+    print("  Use at your own risk")
+    print("  https://DidierStevens.com")
 
 else:
     pdffile = sys.argv[1]
@@ -24,10 +24,10 @@ else:
     oPDF.template1()
 
     #oPDF.stream(5, 0, "BT /F1 24 Tf 100 700 Td (Hello World) Tj ET")
-    oPDF.stream(5, 0, """BT /F1 12 Tf 100 700 Td 15 TL 
-(Hello World) Tj 
-(Second Line) ' 
-(Third Line) ' 
+    oPDF.stream(5, 0, """BT /F1 12 Tf 100 700 Td 15 TL
+(Hello World) Tj
+(Second Line) '
+(Third Line) '
 ET
 100 712 100 -100 re S""")
 

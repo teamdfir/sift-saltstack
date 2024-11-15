@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        salt: [3004, 3005]
+        salt: [3006, 3007]
         os: [20.04, 22.04]
         state:
           - sift.packages.python2
@@ -22,11 +22,8 @@ jobs:
             code: focal
           - os: 22.04
             code: jammy
-        exclude:
-          - salt: 3004
-            os: 22.04
     container:
-      image: docker://ghcr.io/teamdfir/sift-saltstack-tester:${{ matrix.salt }}-${{ matrix.code }}
+      image: docker://ghcr.io/ekristen/cast-tools/saltstack-tester:${{ matrix.code }}-${{ matrix.salt }}
     steps:
       - uses: actions/checkout@v4
       - name: test-state

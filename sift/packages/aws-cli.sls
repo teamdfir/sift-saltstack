@@ -4,22 +4,23 @@
 # Category: 
 # Author: Amazon
 # License: Apache License v2.0 (https://github.com/aws/aws-cli/blob/develop/LICENSE.txt)
-# Version: 2.15.21
+# Version: 2.15.24
 # Notes:
 
-{% set hash = '77c6c3d1ac23638b07a02587ed6b1d4adc84c561c9ecc7df1ff3778e43a4b49b' %}
+{% set hash = 'c939005170508b19f53730ead3e15b959ec2d9d078a44668e43275864d73ef2f' %}
+{% set version = '2.15.24' %}
 
 aws-cli-download:
   file.managed:
-    - name: /tmp/awscli-exe-linux-x86_64.zip
-    - source: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+    - name: /tmp/awscli-exe-linux-x86_64-{{ version }}.zip
+    - source: https://awscli.amazonaws.com/awscli-exe-linux-x86_64-{{ version }}.zip
     - source_hash: sha256={{ hash }}
     - makedirs: True
 
 aws-cli-extract:
   archive.extracted:
     - name: /tmp/
-    - source: /tmp/awscli-exe-linux-x86_64.zip
+    - source: /tmp/awscli-exe-linux-x86_64-{{ version }}.zip
     - enforce_toplevel: False
     - overwrite: True
     - trim_output: True
@@ -37,7 +38,7 @@ aws-cli-install:
 aws-cli-cleanup:
   file.absent:
     - names:
-      - /tmp/awscli-exe-linux-x86_64.zip
+      - /tmp/awscli-exe-linux-x86_64-{{ version }}.zip
       - /tmp/aws/
     - require:
       - cmd: aws-cli-install

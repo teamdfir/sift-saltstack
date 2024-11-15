@@ -11,16 +11,15 @@ include:
   - sift.packages.libevtx-tools
   - sift.packages.libewf
   - sift.packages.libewf-dev
-  - sift.packages.libewf-python
+  - sift.packages.libewf-python3
   - sift.packages.libewf-tools
   - sift.packages.libfvde
   - sift.packages.libfvde-tools
   - sift.packages.libvmdk
   - sift.packages.libvshadow
   - sift.packages.libvshadow-dev
-  - sift.packages.libvshadow-python
+  - sift.packages.libvshadow-python3
   - sift.packages.libvshadow-tools
-  - sift.packages.plaso-data
   - sift.packages.plaso-tools
   - sift.packages.python3-plaso
 
@@ -40,15 +39,14 @@ sift-tests-gift:
         - sls: sift.packages.libevtx-tools
         - sls: sift.packages.libewf
         - sls: sift.packages.libewf-dev
-        - sls: sift.packages.libewf-python
+        - sls: sift.packages.libewf-python3
         - sls: sift.packages.libewf-tools
         - sls: sift.packages.libfvde
         - sls: sift.packages.libfvde-tools
         - sls: sift.packages.libvmdk
         - sls: sift.packages.libvshadow
         - sls: sift.packages.libvshadow-dev
-        - sls: sift.packages.libvshadow-python
+        - sls: sift.packages.libvshadow-python3
         - sls: sift.packages.libvshadow-tools
-        - sls: sift.packages.plaso-data
         - sls: sift.packages.plaso-tools
         - sls: sift.packages.python3-plaso

@@ -1,13 +1,13 @@
 include:
   - sift.packages.dbus-x11
   - sift.packages.aeskeyfind
-  - sift.packages.afflib-tools
+#  - sift.packages.afflib-tools
   - sift.packages.aircrack-ng
   - sift.packages.apache2
   - sift.packages.arp-scan
   - sift.packages.autopsy
   - sift.packages.aws-cli
-  - sift.packages.avfs
+#  - sift.packages.avfs
   - sift.packages.bless
   - sift.packages.blt
   - sift.packages.build-essential
@@ -24,7 +24,7 @@ include:
   - sift.packages.dc3dd
   - sift.packages.dcfldd
   - sift.packages.default-jre
-  - sift.packages.disktype
+#  - sift.packages.disktype
   - sift.packages.dislocker
   - sift.packages.docker
   - sift.packages.driftnet
@@ -69,7 +69,7 @@ include:
   - sift.packages.libafflib
   - sift.packages.libbcprov-java
   - sift.packages.libbde
-  - sift.packages.libbde-tools
+#  - sift.packages.libbde-tools
   - sift.packages.libcommons-lang3-java
   - sift.packages.libdatetime-perl
   - sift.packages.libesedb
@@ -78,10 +78,10 @@ include:
   - sift.packages.libevt-tools
   - sift.packages.libevtx
   - sift.packages.libevtx-tools
-  - sift.packages.libewf
-  - sift.packages.libewf-dev
+#  - sift.packages.libewf
+#  - sift.packages.libewf-dev
   - sift.packages.libewf-python3
-  - sift.packages.libewf-tools
+#  - sift.packages.libewf-tools
   - sift.packages.libext2fs2
   - sift.packages.libffi-dev
   - sift.packages.libfsapfs-tools
@@ -107,7 +107,7 @@ include:
   - sift.packages.libvshadow
   - sift.packages.libvshadow-dev
   - sift.packages.libvshadow-python3
-  - sift.packages.libvshadow-tools
+#  - sift.packages.libvshadow-tools
   - sift.packages.libxml2-dev
   - sift.packages.libxslt-dev
   - sift.packages.magnus
@@ -121,7 +121,7 @@ include:
   - sift.packages.nfdump
   - sift.packages.ngrep
   - sift.packages.nikto
-  - sift.packages.ntfs-3g
+#  - sift.packages.ntfs-3g
   - sift.packages.okular
   - sift.packages.onboard
   - sift.packages.open-iscsi
@@ -146,10 +146,10 @@ include:
   - sift.packages.python3-dev
   - sift.packages.python3-dfvfs
   - sift.packages.python3-fuse
-  - sift.packages.python3-pefile
+#  - sift.packages.python3-pefile
   - sift.packages.python3-pip
   - sift.packages.python3-pypff
-  - sift.packages.python3-pytsk3
+#  - sift.packages.python3-pytsk3
   - sift.packages.python3-pyqt5
   - sift.packages.python3-redis
   - sift.packages.python3-tk
@@ -158,7 +158,7 @@ include:
   - sift.packages.python3-yara
   - sift.packages.pst-utils
   - sift.packages.qemu
-  - sift.packages.qemu-utils
+#  - sift.packages.qemu-utils
   - sift.packages.radare2
   - sift.packages.rar
   - sift.packages.rsakeyfind
@@ -167,7 +167,7 @@ include:
   - sift.packages.samdump2
   - sift.packages.scalpel
   - sift.packages.silversearcher-ag
-  - sift.packages.sleuthkit
+#  - sift.packages.sleuthkit
   - sift.packages.socat
   - sift.packages.ssdeep
   - sift.packages.ssldump
@@ -182,7 +182,7 @@ include:
   - sift.packages.tcptrace
   - sift.packages.tcptrack
   - sift.packages.tcpxtract
-  - sift.packages.testdisk
+#  - sift.packages.testdisk
   - sift.packages.tofrodos
   - sift.packages.transmission
   - sift.packages.unrar
@@ -191,13 +191,13 @@ include:
   - sift.packages.vbindiff
   - sift.packages.vim
   - sift.packages.virtuoso-minimal
-  - sift.packages.vmfs-tools
+#  - sift.packages.vmfs-tools
   - sift.packages.winbind
   - sift.packages.wine
   - sift.packages.wireshark
   - sift.packages.xdot
-  - sift.packages.xfsprogs
-  - sift.packages.xmount
+#  - sift.packages.xfsprogs
+#  - sift.packages.xmount
   - sift.packages.zenity
   - sift.packages.python3-debian
 
@@ -207,13 +207,13 @@ sift-packages:
     - require:
       - sls: sift.packages.dbus-x11
       - sls: sift.packages.aeskeyfind
-      - sls: sift.packages.afflib-tools
+#      - sls: sift.packages.afflib-tools
       - sls: sift.packages.aircrack-ng
       - sls: sift.packages.apache2
       - sls: sift.packages.arp-scan
       - sls: sift.packages.autopsy
       - sls: sift.packages.aws-cli
-      - sls: sift.packages.avfs
+#      - sls: sift.packages.avfs
       - sls: sift.packages.bless
       - sls: sift.packages.blt
       - sls: sift.packages.build-essential
@@ -230,7 +230,7 @@ sift-packages:
       - sls: sift.packages.dc3dd
       - sls: sift.packages.dcfldd
       - sls: sift.packages.default-jre
-      - sls: sift.packages.disktype
+#      - sls: sift.packages.disktype
       - sls: sift.packages.dislocker
       - sls: sift.packages.docker
       - sls: sift.packages.driftnet
@@ -275,7 +275,7 @@ sift-packages:
       - sls: sift.packages.libafflib
       - sls: sift.packages.libbcprov-java
       - sls: sift.packages.libbde
-      - sls: sift.packages.libbde-tools
+#      - sls: sift.packages.libbde-tools
       - sls: sift.packages.libcommons-lang3-java
       - sls: sift.packages.libdatetime-perl
       - sls: sift.packages.libesedb
@@ -284,10 +284,10 @@ sift-packages:
       - sls: sift.packages.libevt-tools
       - sls: sift.packages.libevtx
       - sls: sift.packages.libevtx-tools
-      - sls: sift.packages.libewf
-      - sls: sift.packages.libewf-dev
+#      - sls: sift.packages.libewf
+#      - sls: sift.packages.libewf-dev
       - sls: sift.packages.libewf-python3
-      - sls: sift.packages.libewf-tools
+#      - sls: sift.packages.libewf-tools
       - sls: sift.packages.libext2fs2
       - sls: sift.packages.libffi-dev
       - sls: sift.packages.libfsapfs-tools
@@ -313,7 +313,7 @@ sift-packages:
       - sls: sift.packages.libvshadow
       - sls: sift.packages.libvshadow-dev
       - sls: sift.packages.libvshadow-python3
-      - sls: sift.packages.libvshadow-tools
+#      - sls: sift.packages.libvshadow-tools
       - sls: sift.packages.libxml2-dev
       - sls: sift.packages.libxslt-dev
       - sls: sift.packages.magnus
@@ -327,7 +327,7 @@ sift-packages:
       - sls: sift.packages.nfdump
       - sls: sift.packages.ngrep
       - sls: sift.packages.nikto
-      - sls: sift.packages.ntfs-3g
+#      - sls: sift.packages.ntfs-3g
       - sls: sift.packages.okular
       - sls: sift.packages.onboard
       - sls: sift.packages.open-iscsi
@@ -352,10 +352,10 @@ sift-packages:
       - sls: sift.packages.python3-dev
       - sls: sift.packages.python3-dfvfs
       - sls: sift.packages.python3-fuse
-      - sls: sift.packages.python3-pefile
+#      - sls: sift.packages.python3-pefile
       - sls: sift.packages.python3-pip
       - sls: sift.packages.python3-pypff
-      - sls: sift.packages.python3-pytsk3
+#      - sls: sift.packages.python3-pytsk3
       - sls: sift.packages.python3-pyqt5
       - sls: sift.packages.python3-redis
       - sls: sift.packages.python3-tk
@@ -364,7 +364,7 @@ sift-packages:
       - sls: sift.packages.python3-yara
       - sls: sift.packages.pst-utils
       - sls: sift.packages.qemu
-      - sls: sift.packages.qemu-utils
+#      - sls: sift.packages.qemu-utils
       - sls: sift.packages.radare2
       - sls: sift.packages.rar
       - sls: sift.packages.rsakeyfind
@@ -373,7 +373,7 @@ sift-packages:
       - sls: sift.packages.samdump2
       - sls: sift.packages.scalpel
       - sls: sift.packages.silversearcher-ag
-      - sls: sift.packages.sleuthkit
+#      - sls: sift.packages.sleuthkit
       - sls: sift.packages.socat
       - sls: sift.packages.ssdeep
       - sls: sift.packages.ssldump
@@ -388,7 +388,7 @@ sift-packages:
       - sls: sift.packages.tcptrace
       - sls: sift.packages.tcptrack
       - sls: sift.packages.tcpxtract
-      - sls: sift.packages.testdisk
+#      - sls: sift.packages.testdisk
       - sls: sift.packages.tofrodos
       - sls: sift.packages.transmission
       - sls: sift.packages.unity-control-center
@@ -397,12 +397,12 @@ sift-packages:
       - sls: sift.packages.vbindiff
       - sls: sift.packages.vim
       - sls: sift.packages.virtuoso-minimal
-      - sls: sift.packages.vmfs-tools
+#      - sls: sift.packages.vmfs-tools
       - sls: sift.packages.winbind
       - sls: sift.packages.wine
       - sls: sift.packages.wireshark
       - sls: sift.packages.xdot
-      - sls: sift.packages.xfsprogs
-      - sls: sift.packages.xmount
+#      - sls: sift.packages.xfsprogs
+#      - sls: sift.packages.xmount
       - sls: sift.packages.zenity
       - sls: sift.packages.python3-debian

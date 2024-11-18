@@ -4,7 +4,7 @@ scripts-sift-resources-{{ folder }}:
     - name: /usr/share/sift/{{ folder }}
     - user: root
     - group: root
-    - makedirs: true
+    - makedirs: True
     - require_in:
       - file: sift-resources
 {% endfor -%}

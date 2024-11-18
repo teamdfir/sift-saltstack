@@ -1,55 +1,52 @@
+{% if grains['oscodename'] != 'focal' %}
+
+{% set files = ['hindsight.py','hindsight_gui.py'] %}
 include:
-  - sift.python3-packages.core
-  - sift.python3-packages.setuptools-rust
-  - sift.python3-packages.keyrings-alt
-  
-sift-python3-packages-pyhindsight:
+  - sift.packages.python3-virtualenv
+
+sift-python3-package-pyhindsight-venv:
+  virtualenv.managed:
+    - name: /opt/pyhindsight
+    - venv_bin: /usr/bin/virtualenv
+    - pip_pkgs:
+      - pip>=24.1.3
+      - setuptools>=70.0.0
+      - wheel>=0.38.4
+      - setuptools_rust
+      - keyrings.alt
+      - git+https://github.com/cclgroupltd/ccl_chromium_reader.git
+    - require:
+      - sls: sift.packages.python3-virtualenv
+
+sift-python3-package-pyhindsight:
   pip.installed:
     - name: pyhindsight
-    - bin_env: /usr/bin/python3
+    - bin_env: /opt/pyhindsight/bin/python3
+    - upgrade: True
     - require:
-      - sls: sift.python3-packages.core
-      - sls: sift.python3-packages.setuptools-rust
-      - sls: sift.python3-packages.keyrings-alt
+      - virtualenv: sift-python3-package-pyhindsight-venv
 
-sift-python3-packages-pyhindsight-encoding:
-  file.replace:
-    - name: /usr/local/bin/hindsight.py
-    - pattern: '\r'
-    - repl: ''
+{% for file in files %}
+sift-python3-package-pyhindsight-symlink-{{ file }}:
+  file.symlink:
+    - name: /usr/local/bin/{{ file }}
+    - target: /opt/pyhindsight/bin/{{ file }}
+    - makedirs: False
     - require:
-      - pip: sift-python3-packages-pyhindsight
+      - pip: sift-python3-package-pyhindsight
 
-sift-python3-packages-pyhindsight-chmod:
+sift-python3-package-pyhindsight-chmod-{{ file }}:
   file.managed:
-    - name: /usr/local/bin/hindsight.py
+    - name: /opt/pyhindsight/bin/{{ file }}
     - mode: 755
-    - watch:
-      - file: sift-python3-packages-pyhindsight-encoding
-
-sift-python3-packages-pyhindsight-gui-encoding:
-  file.replace:
-    - name: /usr/local/bin/hindsight_gui.py
-    - pattern: '\r'
-    - repl: ''
     - require:
-      - pip: sift-python3-packages-pyhindsight
+      - file: sift-python3-package-pyhindsight-symlink-{{ file }}
 
-sift-python3-packages-pyhindsight-gui-prepend:
-  file.replace:
-    - name: /usr/local/bin/hindsight_gui.py
-    - pattern: '#!/usr/bin/env python3'
-    - repl: '#!/usr/bin/env python3'
-    - prepend_if_not_found: True
-    - count: 1
-    - require:
-      - pip: sift-python3-packages-pyhindsight
+{% endfor %}
 
-sift-python3-packages-pyhindsight-gui-chmod:
-  file.managed:
-    - name: /usr/local/bin/hindsight_gui.py
-    - mode: 755
-    - watch:
-      - file: sift-python3-packages-pyhindsight-gui-prepend
+{% else %}
 
+pyhindsight requirements no longer support Python 3.8 - not installing:
+  test.nop
 
+{% endif %}

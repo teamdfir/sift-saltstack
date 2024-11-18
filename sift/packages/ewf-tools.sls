@@ -1,0 +1,2 @@
+ewf-tools:
+  pkg.installed

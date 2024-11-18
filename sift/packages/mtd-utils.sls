@@ -1,0 +1,2 @@
+mtd-utils:
+  pkg.installed

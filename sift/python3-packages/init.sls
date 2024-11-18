@@ -1,66 +1,54 @@
 include:
-  - sift.python3-packages.pip
   - sift.python3-packages.python3-keyring
   - sift.python3-packages.analyzemft
-  - sift.python3-packages.argparse
-  - sift.python3-packages.bitstring
-  - sift.python3-packages.colorama
-  - sift.python3-packages.geoip2
-  - sift.python3-packages.ioc_writer
+  - sift.python3-packages.defang
+  - sift.python3-packages.ioc-writer
   - sift.python3-packages.imagemounter
-  - sift.python3-packages.keyrings-alt
-  - sift.python3-packages.lxml
   - sift.python3-packages.machinae
-  - sift.python3-packages.pefile
-  - sift.python3-packages.pillow
+  - sift.python3-packages.packerid
   - sift.python3-packages.pyhindsight
-  - sift.python3-packages.python-dateutil
   - sift.python3-packages.python-evtx
-  - sift.python3-packages.python-magic
-  - sift.python3-packages.python-registry
-  - sift.python3-packages.setuptools-rust
-  - sift.python3-packages.six
   - sift.python3-packages.stix-validator
-  - sift.python3-packages.stix
-  - sift.python3-packages.virustotal-api
-  - sift.python3-packages.yara-python
   - sift.python3-packages.indxparse
   - sift.python3-packages.pe-carver
+  - sift.python3-packages.pe-scanner
+  - sift.python3-packages.page-brute
+  - sift.python3-packages.sqlite-carver
   - sift.python3-packages.usbdeviceforensics
   - sift.python3-packages.usnparser
   - sift.python3-packages.windowsprefetch
+  - sift.python3-packages.4n6
+  - sift.python3-packages.pdf-tools
+  - sift.python3-packages.volatility3
+  - sift.python3-packages.mac-apt
+  - sift.python3-packages.java-idx-parser
+  - sift.python3-packages.job-parser
 
 sift-python3-packages:
   test.nop:
     - name: sift-python3-packages
     - require:
-      - sls: sift.python3-packages.pip
       - sls: sift.python3-packages.python3-keyring
       - sls: sift.python3-packages.analyzemft
-      - sls: sift.python3-packages.argparse
-      - sls: sift.python3-packages.bitstring
-      - sls: sift.python3-packages.colorama
-      - sls: sift.python3-packages.geoip2
-      - sls: sift.python3-packages.ioc_writer
+      - sls: sift.python3-packages.defang
+      - sls: sift.python3-packages.ioc-writer
       - sls: sift.python3-packages.imagemounter
-      - sls: sift.python3-packages.keyrings-alt
-      - sls: sift.python3-packages.lxml
       - sls: sift.python3-packages.machinae
-      - sls: sift.python3-packages.pefile
-      - sls: sift.python3-packages.pillow
+      - sls: sift.python3-packages.packerid
       - sls: sift.python3-packages.pyhindsight
-      - sls: sift.python3-packages.python-dateutil
       - sls: sift.python3-packages.python-evtx
-      - sls: sift.python3-packages.python-magic
-      - sls: sift.python3-packages.python-registry
-      - sls: sift.python3-packages.setuptools-rust
-      - sls: sift.python3-packages.six
       - sls: sift.python3-packages.stix-validator
-      - sls: sift.python3-packages.stix
-      - sls: sift.python3-packages.virustotal-api
-      - sls: sift.python3-packages.yara-python
       - sls: sift.python3-packages.indxparse
       - sls: sift.python3-packages.pe-carver
+      - sls: sift.python3-packages.pe-scanner
+      - sls: sift.python3-packages.page-brute
+      - sls: sift.python3-packages.sqlite-carver
       - sls: sift.python3-packages.usbdeviceforensics
       - sls: sift.python3-packages.usnparser
       - sls: sift.python3-packages.windowsprefetch
+      - sls: sift.python3-packages.4n6
+      - sls: sift.python3-packages.pdf-tools
+      - sls: sift.python3-packages.volatility3
+      - sls: sift.python3-packages.mac-apt
+      - sls: sift.python3-packages.java-idx-parser
+      - sls: sift.python3-packages.job-parser

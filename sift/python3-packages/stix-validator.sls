@@ -1,11 +1,31 @@
 include:
-  - sift.python3-packages.core
-  - sift.python3-packages.stix
+  - sift.packages.python3-virtualenv
 
-sift-python3-packages-stix-validator:
+sift-python3-package-stix-validator-venv:
+  virtualenv.managed:
+    - name: /opt/stix-validator
+    - venv_bin: /usr/bin/virtualenv
+    - pip_pkgs:
+      - pip>=24.1.3
+      - setuptools>=70.0.0
+      - wheel>=0.38.4
+      - lxml
+      - stix
+    - require:
+      - sls: sift.packages.python3-virtualenv
+
+sift-python3-package-stix-validator:
   pip.installed:
     - name: stix-validator
-    - bin_env: /usr/bin/python3
+    - bin_env: /opt/stix-validator/bin/python3
+    - upgrade: True
     - require:
-      - sls: sift.python3-packages.core
-      - sls: sift.python3-packages.stix
+      - virtualenv: sift-python3-package-stix-validator-venv
+
+sift-python3-package-stix-validator-symlink:
+  file.symlink:
+    - name: /usr/local/bin/stix-validator
+    - target: /opt/stix-validator/bin/stix-validator
+    - makedirs: False
+    - require:
+      - pip: sift-python3-package-stix-validator

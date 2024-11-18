@@ -1,0 +1,2 @@
+squashfs-tools:
+  pkg.installed

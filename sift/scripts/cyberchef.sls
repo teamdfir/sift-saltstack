@@ -2,8 +2,8 @@
 # license=apache2
 # license_source=https://github.com/gchq/CyberChef/blob/master/LICENSE
 
-{% set version = "9.55.0" -%}
-{% set hash = "DA55ADC790D011F6BF3740E7E704D340351F7E1C8EBD8E7D9DD24AA46562307C" -%}
+{% set version = "10.19.4" -%}
+{% set hash = "3788b29ffb54f5784968fcf998286f0f75670be8a92e40eb683743ebaab97510" -%}
 include:
   - sift.packages.apache2
 

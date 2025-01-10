@@ -22,9 +22,9 @@ manifest:
       replacement: desktop
   supported_os:
     - id: ubuntu
-      release: 20.04
-    - id: ubuntu
       release: 22.04
+    - id: ubuntu
+      release: 24.04
   saltstack:
     pillars:
       sift_user_template: "{{ .User }}"

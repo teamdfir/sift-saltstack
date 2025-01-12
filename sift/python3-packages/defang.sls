@@ -1,5 +1,11 @@
-# WEBSITE: https://github.com/HurricaneLabs/machinae
-# LICENSE: MIT
+# Name: defang
+# Website: https://bitbucket.org/johannestaas/defang/src/master/
+# Description: Defangs and refangs malicious URLs
+# Category: 
+# Author: Johan Nestaas
+# License: GNU General Public License v2+ (https://bitbucket.org/johannestaas/defang/src/master/LICENSE)
+# Notes: 
+
 include:
   - sift.packages.python3-virtualenv
 

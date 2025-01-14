@@ -1,3 +1,11 @@
+# Name: 4n6-scripts
+# Website: https://github.com/digitalsleuth/4n6-scripts
+# Description: A collection of forensics scripts by Cheeky4N6Monkey, updated for Python 3
+# Category: 
+# Author: Cheeky4N6Monkey / Corey Forman (digitalsleuth)
+# License: GNU General Public License v3+ (https://github.com/digitalsleuth/4n6-scripts/blob/master/README.md)
+# Notes: 
+
 {% set files = [('Android', ['fbmsg-extractor.py','imgcache-parse-mod.py','imgcache-parse.py','print_apk_perms.py','wwf-chat-parser.py']),
                  ('Ford', ['sync3-unisearch.py','sync3-unisearch2kml.py']),
                  ('Google_Takeout_Records', ['gRecordsActivity_ijson_date.py']),
@@ -8,16 +16,9 @@
                  ('utilities', ['chunkymonkey.py','dextract.def','dextract.py','google-ei-time.py','msoffice-pic-extractor.py','parse_garmin56LM.py','plist2db.py','s2-cellid2latlong.py','s2-latlong2cellid.py','sqlite-base64-decode.py','sqlite-blob-dumper.py','sqlite-parser.pl','squirrelgripper-README.txt','squirrelgripper.pl','timediff32.pl'])
                 ] %}
 
-{% set noshebang = ['sqlite-base64-decode.py','sqlite-blob-dumper.py','wp8-sha256-pin-finder.py'] %}
-{% set fixshebangpy2 = ['fbmsg-extractor.py','imgcache-parse-mod.py','imgcache-parse.py','print_apk_perms.py','wwf-chat-parser.py','WP8_AppPerms.py','wp8-1-callhistory.py','wp8-1-contacts.py','wp8-1-mms-filesort.py','wp8-1-mms.py','wp8-1-sms.py','wp8-callhistory.py','wp8-contacts.py','wp8-fb-msg.py','wp8-sms.py','chunkymonkey.py','dextract.py','google-ei-time.py','msoffice-pic-extractor.py','s2-cellid2latlong.py','s2-latlong2cellid.py'] %}
-{% set fixshebangpy3 = ['sync3-unisearch.py','sync3-unisearch2kml.py','gLocationHistoryActivity.py','gRecordsActivity_ijson_date.py','java-hashcode.py','samsung_gallery3d_filesysmon_parser_v11.py','samsung_gallery3d_log_parser_v10.py','samsung_gallery3d_log_parser_v11.py','samsung_gallery3d_trash_parser_v10.py'] %}
-
 include:
-  - sift.python3-packages.ijson
-  - sift.python-packages.s2sphere
+  - sift.packages.python3-virtualenv
   - sift.packages.git
-  - sift.packages.python2
-  - sift.packages.python3
   - sift.perl-packages.exiftool
   - sift.perl-packages.cgi
   - sift.perl-packages.xpath
@@ -26,87 +27,77 @@ include:
   - sift.perl-packages.dbi
   - sift.perl-packages.datecalc
 
-sift-scripts-4n6-git:
+sift-python3-package-4n6-scripts-venv:
+  virtualenv.managed:
+    - name: /opt/4n6-scripts
+    - venv_bin: /usr/bin/virtualenv
+    - pip_pkgs:
+      - pip>=24.1.3
+      - setuptools>=70.0.0
+      - wheel>=0.38.4
+      - ijson
+      - s2sphere
+    - require:
+      - sls: sift.packages.python3-virtualenv
+
+sift-python3-package-4n6-scripts-git:
   git.latest:
-    - name: https://github.com/cheeky4n6monkey/4n6-scripts.git
+    - name: https://github.com/digitalsleuth/4n6-scripts.git
     - target: /usr/local/src/4n6-scripts
     - user: root
-    - rev: f57a5301b317a9842c0d43853595161843086923
+    - rev: master
     - force_clone: True
     - force_reset: True
     - require:
       - sls: sift.packages.git
-      - sls: sift.packages.python2
-      - sls: sift.packages.python3
 
 {% for folder, file_list in files %}
-{%  for file in file_list %}
-sift-scripts-4n6-{{ file }}:
+{% for file in file_list %}
+{% if file.split('.')[1] == "py" %}
+
+sift-python3-package-4n6-scripts-copy-{{ file }}:
+  file.copy:
+    - name: /opt/4n6-scripts/bin/{{ file }}
+    - source: /usr/local/src/4n6-scripts/{{ folder }}/{{ file }}
+    - force: True
+    - mode: 755
+    - require:
+      - git: sift-python3-package-4n6-scripts-git
+
+sift-python3-package-4n6-scripts-shebang-{{ file }}:
+  file.replace:
+    - name: /opt/4n6-scripts/bin/{{ file }}
+    - pattern: '#! /usr/bin/env python3'
+    - repl: '#!/opt/4n6-scripts/bin/python3'
+    - count: 1
+    - require:
+      - file: sift-python3-package-4n6-scripts-copy-{{ file }}
+
+sift-python3-package-4n6-scripts-symlink-{{ file }}:
+  file.symlink:
+    - name: /usr/local/bin/{{ file }}
+    - target: /opt/4n6-scripts/bin/{{ file }}
+    - makedirs: False
+    - require:
+      - file: sift-python3-package-4n6-scripts-shebang-{{ file }}
+
+sift-python3-package-4n6-scripts-remove-{{ file }}-bak:
+  file.absent:
+    - name: /opt/4n6-scripts/bin/{{ file }}.bak
+    - require:
+      - file: sift-python3-package-4n6-scripts-symlink-{{ file }}
+
+{% else %}
+
+sift-python3-package-4n6-scripts-copy-{{ file }}:
   file.copy:
     - name: /usr/local/bin/{{ file }}
     - source: /usr/local/src/4n6-scripts/{{ folder }}/{{ file }}
     - force: True
     - mode: 755
-    - watch:
-      - git: sift-scripts-4n6-git
+    - require:
+      - git: sift-python3-package-4n6-scripts-git
+
+{% endif %}
 {% endfor %}
 {% endfor %}
-
-sift-scripts-4n6-gLocationHistoryActivity:
-  file.copy:
-    - name: /usr/local/bin/gLocationHistoryActivity.py
-    - source: '/usr/local/src/4n6-scripts/Google_Takeout_Location_History/# gLocationHistoryActivity.py'
-    - force: True
-    - mode: 755
-    - watch:
-      - git: sift-scripts-4n6-git
-
-{% for file in fixshebangpy2 %}
-sift-scripts-4n6-python2-{{ file }}:
-  file.replace:
-    - name: /usr/local/bin/{{ file }}
-    - pattern: '#! /usr/bin/env python\n'
-    - repl: '#! /usr/bin/env python2\n'
-    - count: 1
-    - watch:
-      - git: sift-scripts-4n6-git
-{% endfor %}
-
-{% for file in fixshebangpy3 %}
-sift-scripts-4n6-python3-{{ file }}:
-  file.replace:
-    - name: /usr/local/bin/{{ file }}
-    - pattern: '#! /usr/bin/env python\n'
-    - repl: '#! /usr/bin/env python3\n'
-    - count: 1
-    - watch:
-      - git: sift-scripts-4n6-git
-{% endfor %}
-
-{% for file in fixshebangpy3 %}
-sift-scripts-4n6-python3-CRLF{{ file }}:
-  file.replace:
-    - name: /usr/local/bin/{{ file }}
-    - pattern: '#! /usr/bin/env python\r'
-    - repl: '#! /usr/bin/env python3\n'
-    - count: 1
-    - watch:
-      - git: sift-scripts-4n6-git
-{% endfor %}
-
-{%- for file in noshebang %}
-sift-scripts-4n6-add-shebang-{{ file }}:
-  file.prepend:
-    - name: /usr/local/bin/{{ file }}
-    - text: '#!/usr/bin/env python2'
-    - watch:
-      - git: sift-scripts-4n6-git
-{% endfor %}
-
-sift-scripts-4n6-plistdb2py-shebang:
-  file.prepend:
-    - name: /usr/local/bin/plist2db.py
-    - text: '#!/usr/bin/env python3'
-    - watch:
-      - git: sift-scripts-4n6-git
-

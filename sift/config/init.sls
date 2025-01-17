@@ -3,7 +3,6 @@ include:
   - sift.config.user
   - sift.config.timezone
   - sift.config.folders
-  - sift.config.salt-minion
   - sift.config.samba
   - sift.config.tools
 
@@ -15,7 +14,6 @@ sift-config:
       - sls: sift.config.user
       - sls: sift.config.timezone
       - sls: sift.config.folders
-      - sls: sift.config.salt-minion
       - sls: sift.config.samba
       - sls: sift.config.tools
       

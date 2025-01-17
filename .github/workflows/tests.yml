@@ -4,9 +4,12 @@ on:
   push:
     branches:
       - master
+      - main
+      - next
   pull_request:
     branches:
       - master
+      - main
       - next
 
 jobs:
@@ -29,18 +32,18 @@ jobs:
     if: ${{ needs.changed_states.outputs.matrix != '[]' }}
     strategy:
       matrix:
-        salt: [3006, 3007]
-        os: [20.04, 22.04]
+        salt: [3007, 3006]
+        os: [22.04, 24.04]
         state: ${{ fromJson(needs.changed_states.outputs.matrix) }}
         include:
-          - os: 20.04
-            code: focal
+          - os: 24.04
+            code: noble
           - os: 22.04
             code: jammy
     container:
-      image: docker://ghcr.io/ekristen/cast-tools/saltstack-tester:${{ matrix.code }}-${{ matrix.salt }}
+      image: docker://ghcr.io/ekristen/cast-tools/saltstack-tester:${{ matrix.os }}-${{ matrix.salt }}
     steps:
       - uses: actions/checkout@v4
       - name: test-state
         run: |
-          salt-call -l info --file-root . --local --retcode-passthrough --state-output=mixed state.sls ${{ matrix.state }} pillar="{sift_user: root}"
+          salt-call --local -l info --file-root . --retcode-passthrough --state-output=mixed state.sls ${{ matrix.state }} pillar="{sift_user: root}"

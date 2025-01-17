@@ -1,4 +1,5 @@
 include:
+  - sift.python3-packages.analyzemft
   - sift.python3-packages.python3-keyring
   - sift.python3-packages.pip
   - sift.python3-packages.python3-keyring
@@ -31,6 +32,7 @@ sift-python3-packages:
   test.nop:
     - name: sift-python3-packages
     - require:
+      - sls: sift.python3-packages.analyzemft
       - sls: sift.python3-packages.python3-keyring
       - sls: sift.python3-packages.pip
       - sls: sift.python3-packages.python3-keyring

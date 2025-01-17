@@ -1,8 +1,10 @@
-include:
-  - sift.packages.exfat-extras_{{ grains['oscodename'] }}
+# Name: exfat-utils
+# Website: https://github.com/relan/exfat
+# Description: Free exFAT File System Implementation
+# Category:
+# Author: Relan
+# License: GNU General Public License v2 (https://github.com/relan/exfat/blob/master/COPYING)
+# Notes:
 
-sift-package-exfat-extras-distro:
-  test.nop:
-    - name: sift-package-exfat-extras-distro
-    - require:
-      - sls: sift.packages.exfat-extras_{{ grains['oscodename'] }}
+exfatprogs:
+  pkg.installed

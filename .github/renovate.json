@@ -2,8 +2,9 @@
   "extends": [
     "config:best-practices"
   ],
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": "regex",
       "fileMatch": [
         ".*.sls$"
       ],

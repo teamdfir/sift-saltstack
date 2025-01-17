@@ -15,7 +15,7 @@ include:
   - sift.packages.ewf-tools
   - sift.packages.libvshadow-tools
   - sift.packages.ntfs-3g
-  - sift.packages.python3-pytsk3
+  - sift.packages.python3-tsk
   - sift.packages.qemu-utils
   - sift.packages.sleuthkit
   - sift.packages.testdisk
@@ -49,7 +49,7 @@ sift-python3-package-imagemounter-venv:
       - sls: sift.packages.ewf-tools
       - sls: sift.packages.libvshadow-tools
       - sls: sift.packages.ntfs-3g
-      - sls: sift.packages.python3-pytsk3
+      - sls: sift.packages.python3-tsk
       - sls: sift.packages.qemu-utils
       - sls: sift.packages.sleuthkit
       - sls: sift.packages.testdisk

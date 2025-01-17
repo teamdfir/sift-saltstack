@@ -148,7 +148,7 @@ include:
   - sift.packages.python3-pefile
   - sift.packages.python3-pip
   - sift.packages.python3-pypff
-  - sift.packages.python3-pytsk3
+  - sift.packages.python3-tsk
   - sift.packages.python3-pyqt5
   - sift.packages.python3-redis
   - sift.packages.python3-tk
@@ -353,7 +353,7 @@ sift-packages:
       - sls: sift.packages.python3-pefile
       - sls: sift.packages.python3-pip
       - sls: sift.packages.python3-pypff
-      - sls: sift.packages.python3-pytsk3
+      - sls: sift.packages.python3-tsk
       - sls: sift.packages.python3-pyqt5
       - sls: sift.packages.python3-redis
       - sls: sift.packages.python3-tk

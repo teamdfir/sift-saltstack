@@ -1,8 +1,3 @@
-include:
-  - sift.repos.gift
-
-sift-package-libvshadow-tools:
+sift-package-libvshadow-utils:
   pkg.installed:
-    - name: libvshadow-tools
-    - require:
-      - sls: sift.repos.gift
+    - name: libvshadow-utils

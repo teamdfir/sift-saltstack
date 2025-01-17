@@ -1,7 +1,7 @@
 include:
   - sift.repos.gift
 
-libewf-python:
+sift-package-libewf-python3:
   pkg.installed:
     - name: libewf-python3
     - require:

@@ -11,10 +11,7 @@ include:
   - sift.packages.afflib-tools
   - sift.packages.avfs
   - sift.packages.disktype
-  - sift.packages.libbde-tools
-  - sift.packages.libewf
-  - sift.packages.libewf-dev
-  - sift.packages.libewf-tools
+  - sift.packages.libbde-utils
   - sift.packages.ewf-tools
   - sift.packages.libvshadow-tools
   - sift.packages.ntfs-3g
@@ -48,10 +45,7 @@ sift-python3-package-imagemounter-venv:
       - sls: sift.packages.afflib-tools
       - sls: sift.packages.avfs
       - sls: sift.packages.disktype
-      - sls: sift.packages.libbde-tools
-      - sls: sift.packages.libewf
-      - sls: sift.packages.libewf-dev
-      - sls: sift.packages.libewf-tools
+      - sls: sift.packages.libbde-utils
       - sls: sift.packages.ewf-tools
       - sls: sift.packages.libvshadow-tools
       - sls: sift.packages.ntfs-3g

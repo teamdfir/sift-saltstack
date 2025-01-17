@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: files
-        uses: jitterbit/get-changed-files@v1
+        uses: jitterbit/get-changed-files@b17fbb00bdc0c0f63fcf166580804b4d2cdc2a42 # v1
         with:
           format: "json"
       - id: filter
@@ -40,7 +40,7 @@ jobs:
     container:
       image: docker://ghcr.io/ekristen/cast-tools/saltstack-tester:${{ matrix.code }}-${{ matrix.salt }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - name: test-state
         run: |
           salt-call -l info --file-root . --local --retcode-passthrough --state-output=mixed state.sls ${{ matrix.state }} pillar="{sift_user: root}"

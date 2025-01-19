@@ -1,2 +1,0 @@
-pff-tools:
-  pkg.installed

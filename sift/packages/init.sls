@@ -40,7 +40,6 @@ include:
   - sift.packages.extundelete
   - sift.packages.fdupes
   - sift.packages.feh
-  - sift.packages.flasm
   - sift.packages.flex
   - sift.packages.foremost
   - sift.packages.g++
@@ -246,7 +245,6 @@ sift-packages:
       - sls: sift.packages.extundelete
       - sls: sift.packages.fdupes
       - sls: sift.packages.feh
-      - sls: sift.packages.flasm
       - sls: sift.packages.flex
       - sls: sift.packages.foremost
       - sls: sift.packages.g++

@@ -1,21 +1,47 @@
-# source=https://github.com/gleeda/misc-scripts
-# license=gplv2
+# Name: jobparser
+# Website: https://github.com/gleeda/misc-scripts
+# Description: Python 3 script to parse job files created by the 'at' command
+# Category:
+# Author: Gleeda (Jamie Levy)
+# License: GNU General Public Licsense v2 (https://github.com/gleeda/misc-scripts/blob/03a0d9126359c6b4b0b508062d3422bea9b69036/misc_python/jobparser.py#L10)
+# Notes: Modified for python3, file stored locally at github.com/teamdfir/sift-saltstack
 
-{% set commit = "03a0d9126359c6b4b0b508062d3422bea9b69036" -%}
-{% set hash = "sha256=a6869e7f0f2f360681ff67a67b65c627b0084ebec25d7a9bb44abe8a1cdfb467" -%}
+include:
+  - sift.packages.python3-virtualenv
 
-sift-scripts-jobparser:
+sift-python3-package-job-parser-venv:
+  virtualenv.managed:
+    - name: /opt/job-parser
+    - venv_bin: /usr/bin/virtualenv
+    - pip_pkgs:
+      - pip>=24.1.3
+      - setuptools>=70.0.0
+      - wheel>=0.38.4
+    - require:
+      - sls: sift.packages.python3-virtualenv
+
+sift-python3-package-job-parser-copy:
   file.managed:
-    - name: /usr/local/bin/jobparser.py
-    - source: https://raw.githubusercontent.com/gleeda/misc-scripts/{{ commit }}/misc_python/jobparser.py
-    - source_hash: {{ hash }}
+    - name: /opt/job-parser/bin/jobparser.py
+    - source: salt://sift/files/jobparser/jobparser.py
+    - replace: True
     - mode: 755
+    - require:
+      - virtualenv: sift-python3-package-job-parser-venv
 
-sift-scripts-jobparser-python:
+sift-python3-package-job-parser-shebang:
   file.replace:
-    - name: /usr/local/bin/jobparser.py
-    - pattern: '#!/usr/bin/env python\n'
-    - repl: '#!/usr/bin/env python2\n'
+    - name: /opt/job-parser/bin/jobparser.py
+    - pattern: '#!/usr/bin/env python3'
+    - repl: '#!/opt/job-parser/bin/python3'
     - count: 1
     - watch:
-      - file: sift-scripts-jobparser
+      - file: sift-python3-package-job-parser-copy
+
+sift-python3-package-job-parser-symlink:
+  file.symlink:
+    - name: /usr/local/bin/jobparser.py
+    - target: /opt/job-parser/bin/jobparser.py
+    - makedirs: False
+    - require:
+      - file: sift-python3-package-job-parser-shebang

@@ -4,7 +4,7 @@
 # Category:
 # Author: Willi Ballenthin
 # License: Apache License 2.0 (https://github.com/williballenthin/INDXParse/blob/master/LICENSE)
-# Notes:
+# Notes: INDXParse.py, MFTINDX.py, MFTView.py, SDS_get_index.py, extract_mft_record_slack.py, get_file_info.py, list_mft.py, fuse-mft.py, tree_mft.py
 
 {% if grains['oscodename'] == 'jammy' %}
   {% set py_ver = '3.10' %}

@@ -7,15 +7,11 @@
 # Notes:
 
 {% if grains['oscodename'] == 'jammy' %}
-
-sift-package-libafflib0v5:
-  pkg.installed:
-    - name: libafflib0v5
-
+  {% set package = 'libafflib0v5' %}
 {% elif grains['oscodename'] == 'noble' %}
-
-sift-package-libafflib0t64:
-  pkg.installed:
-    - name: libafflib0t64
-
+  {% set package = 'libafflib0t64' %}
 {% endif %}
+
+sift-package-libafflib:
+  pkg.installed:
+    - name: {{ package }}

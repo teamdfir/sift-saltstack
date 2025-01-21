@@ -61,7 +61,6 @@ include:
   - sift.packages.ipython3
   - sift.packages.jq
   - sift.packages.kdiff3
-  - sift.packages.knocker
   - sift.packages.kpartx
   - sift.packages.lft
   - sift.packages.libafflib-dev
@@ -266,7 +265,6 @@ sift-packages:
       - sls: sift.packages.ipython3
       - sls: sift.packages.jq
       - sls: sift.packages.kdiff3
-      - sls: sift.packages.knocker
       - sls: sift.packages.kpartx
       - sls: sift.packages.lft
       - sls: sift.packages.libafflib-dev

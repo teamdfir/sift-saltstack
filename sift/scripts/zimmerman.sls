@@ -15,7 +15,7 @@ include:
 download-{{ tool }}:
   file.managed:
     - name: /tmp/{{ tool }}.zip
-    - source: https://download.ericzimmermanstools.com/net6/{{ tool }}.zip
+    - source: https://download.ericzimmermanstools.com/net9/{{ tool }}.zip
     - skip_verify: True
     - makedirs: True
 

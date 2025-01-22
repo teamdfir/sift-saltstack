@@ -1,3 +1,8 @@
-sift-package-dotnet8:
+include:
+  - sift.repos.dotnet-backports
+
+sift-package-dotnet9:
   pkg.installed:
-    - name: dotnet-sdk-8.0
+    - name: dotnet-sdk-9.0
+    - require:
+      - sls: sift.repos.dotnet-backports

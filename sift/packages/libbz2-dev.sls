@@ -1,2 +1,3 @@
-libbz2-dev:
-  pkg.installed
+sift-package-libbz2-dev:
+  pkg.installed:
+    - name: libbz2-dev

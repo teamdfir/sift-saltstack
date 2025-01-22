@@ -15,7 +15,6 @@ include:
   - sift.scripts.parseusn
   - sift.scripts.pdf-tools
   - sift.scripts.pe-carver
-  - sift.scripts.pescanner
   - sift.scripts.regripper
   - sift.scripts.screen-scale
   - sift.scripts.shim-cache-parser
@@ -48,7 +47,6 @@ sift-scripts:
       - sls: sift.scripts.parseusn
       - sls: sift.scripts.pdf-tools
       - sls: sift.scripts.pe-carver
-      - sls: sift.scripts.pescanner
       - sls: sift.scripts.regripper
       - sls: sift.scripts.screen-scale
       - sls: sift.scripts.shim-cache-parser

@@ -7,15 +7,12 @@
 # Notes: 
 
 {% if grains['oscodename'] == 'jammy' %}
+  {% set package = 'libpff1' %}
+{% elif grains['oscodename'] == 'noble' %}
+  {% set package = 'libpff1t64' %}
+{% endif %}
 
 sift-package-libpff1:
   pkg.installed:
-    - name: libpff1
+    - name: {{ package }}
 
-{% elif grains['oscodename'] == 'noble' %}
-
-sift-package-libpff1t64:
-  pkg.installed:
-    - name: libpff1t64
-
-{% endif %}

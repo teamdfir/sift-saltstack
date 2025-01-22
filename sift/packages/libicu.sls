@@ -1,13 +1,8 @@
-{% if grains['oscodename'] == 'focal' %}
-sift-package-libicu66:
-  pkg.installed:
-    - name: libicu66
-{% elif grains['oscodename'] == 'jammy' %}
-sift-package-libicu70:
-  pkg.installed:
-    - name: libicu70
+{% if grains['oscodename'] == 'jammy' %}
+  {% set package = 'libicu70' %}
 {% elif grains['oscodename'] == 'noble' %}
-sift-package-libicu74:
-  pkg.installed:
-    - name: libicu74  
+  {% set package = 'libicu74' %}
 {% endif %}
+sift-package-libicu:
+  pkg.installed:
+    - name: {{ package }}

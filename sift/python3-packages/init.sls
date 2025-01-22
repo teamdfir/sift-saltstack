@@ -7,7 +7,7 @@ include:
   - sift.python3-packages.bitstring
   - sift.python3-packages.colorama
   - sift.python3-packages.geoip2
-  - sift.python3-packages.ioc_writer
+  - sift.python3-packages.ioc-writer
 ###  - sift.python3-packages.imagemounter
   - sift.python3-packages.keyrings-alt
   - sift.python3-packages.lxml
@@ -40,7 +40,7 @@ sift-python3-packages:
       - sls: sift.python3-packages.bitstring
       - sls: sift.python3-packages.colorama
       - sls: sift.python3-packages.geoip2
-      - sls: sift.python3-packages.ioc_writer
+      - sls: sift.python3-packages.ioc-writer
 ###      - sls: sift.python3-packages.imagemounter
       - sls: sift.python3-packages.keyrings-alt
       - sls: sift.python3-packages.lxml

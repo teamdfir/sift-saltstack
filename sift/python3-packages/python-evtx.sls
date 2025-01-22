@@ -32,6 +32,7 @@ sift-python3-package-python-evtx:
     - upgrade: True
     - require:
       - virtualenv: sift-python3-package-python-evtx-venv
+      - sls: sift.packages.git
 
 sift-python3-package-python-evtx-import-fix:
   file.replace:

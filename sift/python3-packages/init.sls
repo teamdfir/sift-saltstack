@@ -23,6 +23,7 @@ include:
   - sift.python3-packages.setuptools
   - sift.python3-packages.setuptools-rust
   - sift.python3-packages.six
+  - sift.python3-packages.sqlite-carver
   - sift.python3-packages.stix-validator
   - sift.python3-packages.stix
   - sift.python3-packages.virustotal-api
@@ -57,6 +58,7 @@ sift-python3-packages:
       - sls: sift.python3-packages.setuptools
       - sls: sift.python3-packages.setuptools-rust
       - sls: sift.python3-packages.six
+      - sls: sift.python3-packages.sqlite-carver
       - sls: sift.python3-packages.stix-validator
       - sls: sift.python3-packages.stix
       - sls: sift.python3-packages.virustotal-api

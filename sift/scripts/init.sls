@@ -22,7 +22,6 @@ include:
   - sift.scripts.sift
   - sift.scripts.sorter
   - sift.scripts.sqlite_miner
-  - sift.scripts.sqlparser
   - sift.scripts.usbdeviceforensics
   - sift.scripts.virustotal-tools
   - sift.scripts.vshot
@@ -55,7 +54,6 @@ sift-scripts:
       - sls: sift.scripts.sift
       - sls: sift.scripts.sorter
       - sls: sift.scripts.sqlite_miner
-      - sls: sift.scripts.sqlparser
       - sls: sift.scripts.usbdeviceforensics
       - sls: sift.scripts.virustotal-tools
       - sls: sift.scripts.vshot

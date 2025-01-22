@@ -7,15 +7,12 @@
 # Notes:
 
 {% if grains['oscodename'] == 'jammy' %}
+  {% set package = 'libext2fs2' %}
+{% elif grains['oscodename'] == 'noble' %}
+  {% set package = 'libext2fs2t64' %}
+{% endif %}
 
 sift-package-libext2fs2:
   pkg.installed:
-    - name: libext2fs2
+    - name: {{ package }}
 
-{% elif grains['oscodename'] == 'noble' %}
-
-sift-package-libext2fs2t64:
-  pkg.installed:
-    - name: libext2fs2t64
-
-{% endif %}

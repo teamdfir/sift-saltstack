@@ -1,22 +1,21 @@
-{%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
-{%- set all_users = salt['user.list_users']() -%}
-{%- if user == "root" -%}
-  {%- set home = "/root" -%}
-{%- else -%}
-  {%- set home = "/home/" + user -%}
-{%- endif -%}
+# Name: Zimmerman Tools
+# Website: https://ericzimmerman.github.io/#!index.md
+# Description: A collection of Windows binaries to parse Windows artifacts, running with .NET
+# Category: 
+# Author: Eric Zimmerman
+# License: MIT License
+# Notes: amcacheparser, appcompatcacheparser, bstrings, evtxecmd, iisgeolocate, jlecmd, lecmd, mftecmd, rbcmd, recentfilecacheparser, recmd, rla, sbecmd, sqlecmd, wxtcmd
 
 {% set tools = ['AmcacheParser','AppCompatCacheParser','bstrings','EvtxECmd','iisGeolocate','JLECmd','LECmd','MFTECmd','RBCmd','RecentFileCacheParser','RECmd','rla','SBECmd','SQLECmd','WxTCmd'] %}
 
 include:
   - sift.packages.dotnet
-  - sift.config.user.user
 
 {% for tool in tools %}
 download-{{ tool }}:
   file.managed:
     - name: /tmp/{{ tool }}.zip
-    - source: https://f001.backblazeb2.com/file/EricZimmermanTools/net6/{{ tool }}.zip
+    - source: https://download.ericzimmermanstools.com/net6/{{ tool }}.zip
     - skip_verify: True
     - makedirs: True
 
@@ -42,4 +41,10 @@ extract-{{ tool }}:
         {% endif %}
     - mode: 755
     - replace: True
+
+remove-{{ tool }}-zip:
+  file.absent:
+    - name: /tmp/{{ tool }}.zip
+    - require:
+      - file: {{ tool }}-wrapper
 {% endfor %}

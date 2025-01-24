@@ -25,6 +25,7 @@ include:
   - sift.python3-packages.six
   - sift.python3-packages.stix-validator
   - sift.python3-packages.stix
+  - sift.python3-packages.usbdeviceforensics
   - sift.python3-packages.virustotal-api
   - sift.python3-packages.wheel
   - sift.python3-packages.yara-python
@@ -59,6 +60,7 @@ sift-python3-packages:
       - sls: sift.python3-packages.six
       - sls: sift.python3-packages.stix-validator
       - sls: sift.python3-packages.stix
+      - sls: sift.python3-packages.usbdeviceforensics
       - sls: sift.python3-packages.virustotal-api
       - sls: sift.python3-packages.wheel
       - sls: sift.python3-packages.yara-python

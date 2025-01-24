@@ -12,7 +12,6 @@ include:
   - sift.scripts.keydet-tools
   - sift.scripts.packerid
   - sift.scripts.page-brute
-  - sift.scripts.parseusn
   - sift.scripts.pdf-tools
   - sift.scripts.pe-carver
   - sift.scripts.pescanner
@@ -23,6 +22,7 @@ include:
   - sift.scripts.sorter
   - sift.scripts.sqlite_miner
   - sift.scripts.usbdeviceforensics
+  - sift.scripts.sqlparser
   - sift.scripts.virustotal-tools
   - sift.scripts.vshot
   - sift.scripts.zimmerman
@@ -44,7 +44,6 @@ sift-scripts:
       - sls: sift.scripts.keydet-tools
       - sls: sift.scripts.packerid
       - sls: sift.scripts.page-brute
-      - sls: sift.scripts.parseusn
       - sls: sift.scripts.pdf-tools
       - sls: sift.scripts.pe-carver
       - sls: sift.scripts.pescanner
@@ -55,6 +54,7 @@ sift-scripts:
       - sls: sift.scripts.sorter
       - sls: sift.scripts.sqlite_miner
       - sls: sift.scripts.usbdeviceforensics
+      - sls: sift.scripts.sqlparser
       - sls: sift.scripts.virustotal-tools
       - sls: sift.scripts.vshot
       - sls: sift.scripts.zimmerman

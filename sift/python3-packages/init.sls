@@ -7,6 +7,7 @@ include:
   - sift.python3-packages.bitstring
   - sift.python3-packages.colorama
   - sift.python3-packages.geoip2
+  - sift.python3-packages.hindsight
   - sift.python3-packages.ioc-writer
 ###  - sift.python3-packages.imagemounter
   - sift.python3-packages.keyrings-alt
@@ -15,7 +16,6 @@ include:
   - sift.python3-packages.machinae
   - sift.python3-packages.pefile
   - sift.python3-packages.pillow
-  - sift.python3-packages.pyhindsight
   - sift.python3-packages.python-dateutil
   - sift.python3-packages.python-evtx
   - sift.python3-packages.python-magic
@@ -43,6 +43,7 @@ sift-python3-packages:
       - sls: sift.python3-packages.bitstring
       - sls: sift.python3-packages.colorama
       - sls: sift.python3-packages.geoip2
+      - sls: sift.python3-packages.hindsight
       - sls: sift.python3-packages.ioc-writer
 ###      - sls: sift.python3-packages.imagemounter
       - sls: sift.python3-packages.keyrings-alt
@@ -51,7 +52,6 @@ sift-python3-packages:
       - sls: sift.python3-packages.machinae
       - sls: sift.python3-packages.pefile
       - sls: sift.python3-packages.pillow
-      - sls: sift.python3-packages.pyhindsight
       - sls: sift.python3-packages.python-dateutil
       - sls: sift.python3-packages.python-evtx
       - sls: sift.python3-packages.python-magic

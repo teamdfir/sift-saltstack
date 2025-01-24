@@ -12,17 +12,17 @@ include:
   - sift.scripts.keydet-tools
   - sift.scripts.packerid
   - sift.scripts.page-brute
-  - sift.scripts.parseusn
   - sift.scripts.pdf-tools
   - sift.scripts.pescanner
+  - sift.scripts.pe-carver
   - sift.scripts.regripper
   - sift.scripts.screen-scale
   - sift.scripts.shim-cache-parser
   - sift.scripts.sift
   - sift.scripts.sorter
   - sift.scripts.sqlite_miner
-  - sift.scripts.sqlparser
   - sift.scripts.usbdeviceforensics
+  - sift.scripts.sqlparser
   - sift.scripts.virustotal-tools
   - sift.scripts.vshot
   - sift.scripts.zimmerman
@@ -44,17 +44,17 @@ sift-scripts:
       - sls: sift.scripts.keydet-tools
       - sls: sift.scripts.packerid
       - sls: sift.scripts.page-brute
-      - sls: sift.scripts.parseusn
       - sls: sift.scripts.pdf-tools
       - sls: sift.scripts.pescanner
+      - sls: sift.scripts.pe-carver
       - sls: sift.scripts.regripper
       - sls: sift.scripts.screen-scale
       - sls: sift.scripts.shim-cache-parser
       - sls: sift.scripts.sift
       - sls: sift.scripts.sorter
       - sls: sift.scripts.sqlite_miner
-      - sls: sift.scripts.sqlparser
       - sls: sift.scripts.usbdeviceforensics
+      - sls: sift.scripts.sqlparser
       - sls: sift.scripts.virustotal-tools
       - sls: sift.scripts.vshot
       - sls: sift.scripts.zimmerman

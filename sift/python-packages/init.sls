@@ -22,7 +22,6 @@ include:
   - sift.python-packages.six
   - sift.python-packages.unicodecsv
   - sift.python-packages.usnparser
-  - sift.python-packages.volatility
   - sift.python-packages.wheel
   - sift.python-packages.windowsprefetch
 
@@ -53,6 +52,5 @@ sift-python-packages:
       - sls: sift.python-packages.six
       - sls: sift.python-packages.unicodecsv
       - sls: sift.python-packages.usnparser
-      - sls: sift.python-packages.volatility
       - sls: sift.python-packages.wheel
       - sls: sift.python-packages.windowsprefetch

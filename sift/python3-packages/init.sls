@@ -19,7 +19,6 @@ include:
   - sift.python3-packages.python-dateutil
   - sift.python3-packages.python-evtx
   - sift.python3-packages.python-magic
-  - sift.python3-packages.python-registry
   - sift.python3-packages.setuptools
   - sift.python3-packages.setuptools-rust
   - sift.python3-packages.six
@@ -54,7 +53,6 @@ sift-python3-packages:
       - sls: sift.python3-packages.python-dateutil
       - sls: sift.python3-packages.python-evtx
       - sls: sift.python3-packages.python-magic
-      - sls: sift.python3-packages.python-registry
       - sls: sift.python3-packages.setuptools
       - sls: sift.python3-packages.setuptools-rust
       - sls: sift.python3-packages.six

@@ -13,6 +13,7 @@ include:
   - sift.scripts.packerid
   - sift.scripts.page-brute
   - sift.scripts.pdf-tools
+  - sift.scripts.pescanner
   - sift.scripts.pe-carver
   - sift.scripts.regripper
   - sift.scripts.screen-scale
@@ -44,6 +45,7 @@ sift-scripts:
       - sls: sift.scripts.packerid
       - sls: sift.scripts.page-brute
       - sls: sift.scripts.pdf-tools
+      - sls: sift.scripts.pescanner
       - sls: sift.scripts.pe-carver
       - sls: sift.scripts.regripper
       - sls: sift.scripts.screen-scale

@@ -15,6 +15,7 @@ include:
   - sift.python3-packages.mac-apt
   - sift.python3-packages.machinae
   - sift.python3-packages.pefile
+  - sift.python3-packages.pe-carver
   - sift.python3-packages.pe-scanner
   - sift.python3-packages.pillow
   - sift.python3-packages.python-dateutil
@@ -52,6 +53,7 @@ sift-python3-packages:
       - sls: sift.python3-packages.mac-apt
       - sls: sift.python3-packages.machinae
       - sls: sift.python3-packages.pefile
+      - sls: sift.python3-packages.pe-carver
       - sls: sift.python3-packages.pe-scanner
       - sls: sift.python3-packages.pillow
       - sls: sift.python3-packages.python-dateutil

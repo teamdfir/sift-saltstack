@@ -1,4 +1,4 @@
-{%- set version = "2.23.2" -%}
+{%- set version = "2.32.4" -%}
 
 sift-scripts-docker-compose:
   file.managed:

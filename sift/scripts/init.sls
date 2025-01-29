@@ -4,7 +4,6 @@ include:
   - sift.scripts.amcache
   - sift.scripts.cyberchef
   - sift.scripts.densityscout
-  - sift.scripts.dumbpig
   - sift.scripts.dump-mft-entry
   - sift.scripts.image-mounter
   - sift.scripts.java-idx-parser
@@ -35,7 +34,6 @@ sift-scripts:
       - sls: sift.scripts.amcache
       - sls: sift.scripts.cyberchef
       - sls: sift.scripts.densityscout
-      - sls: sift.scripts.dumbpig
       - sls: sift.scripts.dump-mft-entry
       - sls: sift.scripts.image-mounter
       - sls: sift.scripts.java-idx-parser

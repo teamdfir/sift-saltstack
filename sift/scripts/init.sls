@@ -20,7 +20,6 @@ include:
   - sift.scripts.shim-cache-parser
   - sift.scripts.sift
   - sift.scripts.sorter
-  - sift.scripts.sqlite_miner
   - sift.scripts.usbdeviceforensics
   - sift.scripts.sqlparser
   - sift.scripts.virustotal-tools
@@ -52,7 +51,6 @@ sift-scripts:
       - sls: sift.scripts.shim-cache-parser
       - sls: sift.scripts.sift
       - sls: sift.scripts.sorter
-      - sls: sift.scripts.sqlite_miner
       - sls: sift.scripts.usbdeviceforensics
       - sls: sift.scripts.sqlparser
       - sls: sift.scripts.virustotal-tools

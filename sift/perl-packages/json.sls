@@ -1,7 +1,7 @@
 include:
   - sift.packages.perl
 
-json:
+sift-perl-package-libjson-perl:
   pkg.installed:
     - name: libjson-perl
     - require:

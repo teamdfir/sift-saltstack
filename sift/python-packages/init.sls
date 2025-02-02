@@ -8,7 +8,6 @@ include:
   - sift.python-packages.docopt
   - sift.python-packages.geoip2
   - sift.python-packages.indxparse
-  - sift.python-packages.ioc_writer
   - sift.python-packages.lxml
   - sift.python-packages.ntdsxtract
   - sift.python-packages.pefile
@@ -22,10 +21,8 @@ include:
   - sift.python-packages.shellbags
   - sift.python-packages.six
   - sift.python-packages.unicodecsv
-  - sift.python-packages.usnparser
   - sift.python-packages.volatility
   - sift.python-packages.wheel
-  - sift.python-packages.windowsprefetch
 
 sift-python-packages:
   test.nop:
@@ -40,7 +37,6 @@ sift-python-packages:
       - sls: sift.python-packages.docopt
       - sls: sift.python-packages.geoip2
       - sls: sift.python-packages.indxparse
-      - sls: sift.python-packages.ioc_writer
       - sls: sift.python-packages.lxml
       - sls: sift.python-packages.ntdsxtract
       - sls: sift.python-packages.pefile
@@ -54,7 +50,5 @@ sift-python-packages:
       - sls: sift.python-packages.shellbags
       - sls: sift.python-packages.six
       - sls: sift.python-packages.unicodecsv
-      - sls: sift.python-packages.usnparser
       - sls: sift.python-packages.volatility
       - sls: sift.python-packages.wheel
-      - sls: sift.python-packages.windowsprefetch

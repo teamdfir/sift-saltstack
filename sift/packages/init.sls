@@ -40,7 +40,6 @@ include:
   - sift.packages.extundelete
   - sift.packages.fdupes
   - sift.packages.feh
-  - sift.packages.flasm
   - sift.packages.flex
   - sift.packages.foremost
   - sift.packages.g++
@@ -62,7 +61,6 @@ include:
   - sift.packages.ipython3
   - sift.packages.jq
   - sift.packages.kdiff3
-  - sift.packages.knocker
   - sift.packages.kpartx
   - sift.packages.lft
   - sift.packages.libafflib-dev
@@ -246,7 +244,6 @@ sift-packages:
       - sls: sift.packages.extundelete
       - sls: sift.packages.fdupes
       - sls: sift.packages.feh
-      - sls: sift.packages.flasm
       - sls: sift.packages.flex
       - sls: sift.packages.foremost
       - sls: sift.packages.g++
@@ -268,7 +265,6 @@ sift-packages:
       - sls: sift.packages.ipython3
       - sls: sift.packages.jq
       - sls: sift.packages.kdiff3
-      - sls: sift.packages.knocker
       - sls: sift.packages.kpartx
       - sls: sift.packages.lft
       - sls: sift.packages.libafflib-dev

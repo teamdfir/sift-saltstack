@@ -12,6 +12,7 @@ include:
   - sift.python3-packages.keyrings-alt
   - sift.python3-packages.lxml
   - sift.python3-packages.machinae
+  - sift.python3-packages.page-brute
   - sift.python3-packages.pefile
   - sift.python3-packages.pillow
   - sift.python3-packages.pyhindsight
@@ -45,6 +46,7 @@ sift-python3-packages:
       - sls: sift.python3-packages.keyrings-alt
       - sls: sift.python3-packages.lxml
       - sls: sift.python3-packages.machinae
+      - sls: sift.python3-packages.page-brute
       - sls: sift.python3-packages.pefile
       - sls: sift.python3-packages.pillow
       - sls: sift.python3-packages.pyhindsight

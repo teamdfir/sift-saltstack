@@ -7,7 +7,6 @@ include:
   - sift.scripts.dumbpig
   - sift.scripts.dump-mft-entry
   - sift.scripts.image-mounter
-  - sift.scripts.java-idx-parser
   - sift.scripts.jobparser
   - sift.scripts.keydet-tools
   - sift.scripts.packerid
@@ -40,7 +39,6 @@ sift-scripts:
       - sls: sift.scripts.dumbpig
       - sls: sift.scripts.dump-mft-entry
       - sls: sift.scripts.image-mounter
-      - sls: sift.scripts.java-idx-parser
       - sls: sift.scripts.jobparser
       - sls: sift.scripts.keydet-tools
       - sls: sift.scripts.packerid

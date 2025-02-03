@@ -1,7 +1,7 @@
 include:
   - sift.packages.perl
 
-cgi:
+sift-perl-package-libcgi-pm-perl:
   pkg.installed:
     - name: libcgi-pm-perl
     - require:

@@ -71,8 +71,8 @@ sift-scripts-regripper-plugins-path-cleanup:
 sift-scripts-regripper-plugins-cleanup-2:
   file.replace:
     - name: /usr/share/regripper/rip.pl
-    - pattern: ': \(\$plugindir = File::Spec->catfile\("plugins"\)\);'
-    - repl: '#: ($plugindir = File::Spec->catfile("plugins"));'
+    - pattern: ': \(\$plugindir = File::Spec->catfile\(\$str, "plugins"\)\);'
+    - repl: '#: ($plugindir = File::Spec->catfile($str, "plugins"));'
     - count: 1
     - prepend_if_not_found: False
     - require:

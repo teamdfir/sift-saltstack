@@ -10,7 +10,7 @@ include:
   - sift.scripts.jobparser
   - sift.scripts.keydet-tools
   - sift.scripts.packerid
-  - sift.scripts.page-brute
+  - sift.scripts.parseusn
   - sift.scripts.pdf-tools
   - sift.scripts.pescanner
   - sift.scripts.pe-carver
@@ -40,7 +40,7 @@ sift-scripts:
       - sls: sift.scripts.jobparser
       - sls: sift.scripts.keydet-tools
       - sls: sift.scripts.packerid
-      - sls: sift.scripts.page-brute
+      - sls: sift.scripts.parseusn
       - sls: sift.scripts.pdf-tools
       - sls: sift.scripts.pescanner
       - sls: sift.scripts.pe-carver

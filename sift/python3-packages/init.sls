@@ -14,6 +14,7 @@ include:
   - sift.python3-packages.lxml
   - sift.python3-packages.mac-apt
   - sift.python3-packages.machinae
+  - sift.python3-packages.page-brute
   - sift.python3-packages.pefile
   - sift.python3-packages.pe-carver
   - sift.python3-packages.pe-scanner
@@ -52,6 +53,7 @@ sift-python3-packages:
       - sls: sift.python3-packages.lxml
       - sls: sift.python3-packages.mac-apt
       - sls: sift.python3-packages.machinae
+      - sls: sift.python3-packages.page-brute
       - sls: sift.python3-packages.pefile
       - sls: sift.python3-packages.pe-carver
       - sls: sift.python3-packages.pe-scanner

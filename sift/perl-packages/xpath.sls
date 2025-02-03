@@ -1,7 +1,7 @@
 include:
   - sift.packages.perl
 
-xpath:
+sift-perl-package-libxml-xpath-perl:
   pkg.installed:
     - name: libxml-xpath-perl
     - require:

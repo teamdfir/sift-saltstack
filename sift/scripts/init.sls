@@ -4,6 +4,7 @@ include:
   - sift.scripts.cyberchef
   - sift.scripts.densityscout
   - sift.scripts.dump-mft-entry
+  - sift.scripts.exiftool
   - sift.scripts.image-mounter
   - sift.scripts.java-idx-parser
   - sift.scripts.jobparser
@@ -33,6 +34,7 @@ sift-scripts:
       - sls: sift.scripts.cyberchef
       - sls: sift.scripts.densityscout
       - sls: sift.scripts.dump-mft-entry
+      - sls: sift.scripts.exiftool
       - sls: sift.scripts.image-mounter
       - sls: sift.scripts.java-idx-parser
       - sls: sift.scripts.jobparser

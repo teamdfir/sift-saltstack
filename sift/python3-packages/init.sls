@@ -10,6 +10,7 @@ include:
   - sift.python3-packages.hindsight
   - sift.python3-packages.ioc-writer
 ###  - sift.python3-packages.imagemounter
+  - sift.python3-packages.java-idx-parser
   - sift.python3-packages.keyrings-alt
   - sift.python3-packages.lxml
   - sift.python3-packages.mac-apt
@@ -49,6 +50,7 @@ sift-python3-packages:
       - sls: sift.python3-packages.hindsight
       - sls: sift.python3-packages.ioc-writer
 ###      - sls: sift.python3-packages.imagemounter
+      - sls: sift.python3-packages.java-idx-parser
       - sls: sift.python3-packages.keyrings-alt
       - sls: sift.python3-packages.lxml
       - sls: sift.python3-packages.mac-apt

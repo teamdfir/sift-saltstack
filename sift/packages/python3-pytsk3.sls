@@ -1,8 +1,8 @@
 include:
   - sift.repos.gift
 
-sift-package-libvshadow-tools:
+sift-package-python3-pytsk3:
   pkg.installed:
-    - name: libvshadow-tools
+    - name: python3-pytsk3
     - require:
       - sls: sift.repos.gift

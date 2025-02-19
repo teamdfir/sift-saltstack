@@ -5,6 +5,7 @@ include:
   - sift.packages.aircrack-ng
   - sift.packages.apache2
   - sift.packages.arp-scan
+  - sift.packages.at
   - sift.packages.autopsy
   - sift.packages.aws-cli
   - sift.packages.avfs
@@ -207,6 +208,7 @@ sift-packages:
       - sls: sift.packages.aircrack-ng
       - sls: sift.packages.apache2
       - sls: sift.packages.arp-scan
+      - sls: sift.packages.at
       - sls: sift.packages.autopsy
       - sls: sift.packages.aws-cli
       - sls: sift.packages.avfs

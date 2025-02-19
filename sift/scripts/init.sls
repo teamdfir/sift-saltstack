@@ -5,8 +5,6 @@ include:
   - sift.scripts.densityscout
   - sift.scripts.dump-mft-entry
   - sift.scripts.exiftool
-  - sift.scripts.image-mounter
-  - sift.scripts.jobparser
   - sift.scripts.keydet-tools
   - sift.scripts.packerid
   - sift.scripts.parseusn
@@ -15,13 +13,10 @@ include:
   - sift.scripts.pe-carver
   - sift.scripts.regripper
   - sift.scripts.screen-scale
-  - sift.scripts.shim-cache-parser
   - sift.scripts.sift
   - sift.scripts.sorter
   - sift.scripts.usbdeviceforensics
   - sift.scripts.sqlparser
-  - sift.scripts.virustotal-tools
-  - sift.scripts.vshot
   - sift.scripts.zimmerman
 
 sift-scripts:
@@ -34,8 +29,6 @@ sift-scripts:
       - sls: sift.scripts.densityscout
       - sls: sift.scripts.dump-mft-entry
       - sls: sift.scripts.exiftool
-      - sls: sift.scripts.image-mounter
-      - sls: sift.scripts.jobparser
       - sls: sift.scripts.keydet-tools
       - sls: sift.scripts.packerid
       - sls: sift.scripts.parseusn
@@ -44,11 +37,8 @@ sift-scripts:
       - sls: sift.scripts.pe-carver
       - sls: sift.scripts.regripper
       - sls: sift.scripts.screen-scale
-      - sls: sift.scripts.shim-cache-parser
       - sls: sift.scripts.sift
       - sls: sift.scripts.sorter
       - sls: sift.scripts.usbdeviceforensics
       - sls: sift.scripts.sqlparser
-      - sls: sift.scripts.virustotal-tools
-      - sls: sift.scripts.vshot
       - sls: sift.scripts.zimmerman

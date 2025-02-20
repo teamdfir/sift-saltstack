@@ -1,3 +1,8 @@
-sift-package-libewf2:
+include:
+  - sift.repos.gift
+
+sift-package-libewf:
   pkg.installed:
-    - name: libewf2
+    - name: libewf
+    - require:
+      - sls: sift.repos.gift

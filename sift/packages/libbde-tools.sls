@@ -1,8 +1,8 @@
 include:
   - sift.repos.gift
 
-sift-package-libvshadow-tools:
+sift-package-libbde-tools:
   pkg.installed:
-    - name: libvshadow-tools
+    - name: libbde-tools
     - require:
       - sls: sift.repos.gift

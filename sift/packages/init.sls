@@ -5,6 +5,7 @@ include:
   - sift.packages.aircrack-ng
   - sift.packages.apache2
   - sift.packages.arp-scan
+  - sift.packages.at
   - sift.packages.autopsy
   - sift.packages.aws-cli
   - sift.packages.avfs
@@ -67,7 +68,6 @@ include:
   - sift.packages.libafflib
   - sift.packages.libbcprov-java
   - sift.packages.libbde
-  - sift.packages.libbde-utils
   - sift.packages.libcommons-lang3-java
   - sift.packages.libdatetime-perl
   - sift.packages.libesedb
@@ -147,7 +147,6 @@ include:
   - sift.packages.python3-pefile
   - sift.packages.python3-pip
   - sift.packages.python3-pypff
-  - sift.packages.python3-tsk
   - sift.packages.python3-pyqt5
   - sift.packages.python3-redis
   - sift.packages.python3-setuptools
@@ -212,6 +211,7 @@ sift-packages:
       - sls: sift.packages.aircrack-ng
       - sls: sift.packages.apache2
       - sls: sift.packages.arp-scan
+      - sls: sift.packages.at
       - sls: sift.packages.autopsy
       - sls: sift.packages.aws-cli
       - sls: sift.packages.avfs
@@ -274,7 +274,6 @@ sift-packages:
       - sls: sift.packages.libafflib
       - sls: sift.packages.libbcprov-java
       - sls: sift.packages.libbde
-      - sls: sift.packages.libbde-utils
       - sls: sift.packages.libcommons-lang3-java
       - sls: sift.packages.libdatetime-perl
       - sls: sift.packages.libesedb
@@ -354,7 +353,6 @@ sift-packages:
       - sls: sift.packages.python3-pefile
       - sls: sift.packages.python3-pip
       - sls: sift.packages.python3-pypff
-      - sls: sift.packages.python3-tsk
       - sls: sift.packages.python3-pyqt5
       - sls: sift.packages.python3-redis
       - sls: sift.packages.python3-setuptools

@@ -11,23 +11,25 @@ include:
   - sift.packages.afflib-tools
   - sift.packages.avfs
   - sift.packages.disktype
-  - sift.packages.libbde-utils
-  - sift.packages.ewf-tools
+  - sift.packages.file
+  - sift.packages.libbde
+  - sift.packages.libbde-tools
+  - sift.packages.libewf-tools
   - sift.packages.libvshadow-tools
+  - sift.packages.lvm2
+  - sift.packages.mdadm
   - sift.packages.ntfs-3g
-  - sift.packages.python3-tsk
   - sift.packages.qemu-utils
   - sift.packages.sleuthkit
   - sift.packages.testdisk
   - sift.packages.vmfs-tools
   - sift.packages.xfsprogs
-  - sift.packages.xmount
-  - sift.packages.libguestfs-tools
   - sift.packages.mtd-utils
   - sift.packages.squashfs-tools
   - sift.packages.git
   - sift.packages.build-essential
   - sift.packages.python3-dev
+  - sift.packages.python3-pytsk3
 
 sift-python3-package-imagemounter-venv:
   virtualenv.managed:
@@ -45,22 +47,24 @@ sift-python3-package-imagemounter-venv:
       - sls: sift.packages.afflib-tools
       - sls: sift.packages.avfs
       - sls: sift.packages.disktype
-      - sls: sift.packages.libbde-utils
-      - sls: sift.packages.ewf-tools
+      - sls: sift.packages.file
+      - sls: sift.packages.libbde
+      - sls: sift.packages.libbde-tools
+      - sls: sift.packages.libewf-tools
       - sls: sift.packages.libvshadow-tools
+      - sls: sift.packages.lvm2
+      - sls: sift.packages.mdadm
       - sls: sift.packages.ntfs-3g
-      - sls: sift.packages.python3-tsk
       - sls: sift.packages.qemu-utils
       - sls: sift.packages.sleuthkit
       - sls: sift.packages.testdisk
       - sls: sift.packages.vmfs-tools
       - sls: sift.packages.xfsprogs
-      - sls: sift.packages.xmount
-      - sls: sift.packages.libguestfs-tools
       - sls: sift.packages.mtd-utils
       - sls: sift.packages.squashfs-tools
       - sls: sift.packages.git
       - sls: sift.packages.python3-dev
+      - sls: sift.packages.python3-pytsk3
 
 sift-python3-package-imagemounter:
   pip.installed:

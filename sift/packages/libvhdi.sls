@@ -1,8 +1,8 @@
 include:
   - sift.repos.gift
 
-sift-package-libvshadow-tools:
+sift-package-libvhdi:
   pkg.installed:
-    - name: libvshadow-tools
+    - name: libvhdi
     - require:
       - sls: sift.repos.gift

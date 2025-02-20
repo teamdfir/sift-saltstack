@@ -5,6 +5,7 @@ include:
   - sift.packages.aircrack-ng
   - sift.packages.apache2
   - sift.packages.arp-scan
+  - sift.packages.at
   - sift.packages.autopsy
   - sift.packages.aws-cli
   - sift.packages.avfs
@@ -67,7 +68,6 @@ include:
   - sift.packages.libafflib
   - sift.packages.libbcprov-java
   - sift.packages.libbde
-  - sift.packages.libbde-tools
   - sift.packages.libcommons-lang3-java
   - sift.packages.libdatetime-perl
   - sift.packages.libesedb
@@ -76,7 +76,7 @@ include:
   - sift.packages.libevt-tools
   - sift.packages.libevtx
   - sift.packages.libevtx-tools
-  - sift.packages.libewf
+  - sift.packages.libewf2
   - sift.packages.libewf-dev
   - sift.packages.libewf-python3
   - sift.packages.libewf-tools
@@ -147,7 +147,6 @@ include:
   - sift.packages.python3-pefile
   - sift.packages.python3-pip
   - sift.packages.python3-pypff
-  - sift.packages.python3-pytsk3
   - sift.packages.python3-pyqt5
   - sift.packages.python3-redis
   - sift.packages.python3-tk
@@ -209,6 +208,7 @@ sift-packages:
       - sls: sift.packages.aircrack-ng
       - sls: sift.packages.apache2
       - sls: sift.packages.arp-scan
+      - sls: sift.packages.at
       - sls: sift.packages.autopsy
       - sls: sift.packages.aws-cli
       - sls: sift.packages.avfs
@@ -271,7 +271,6 @@ sift-packages:
       - sls: sift.packages.libafflib
       - sls: sift.packages.libbcprov-java
       - sls: sift.packages.libbde
-      - sls: sift.packages.libbde-tools
       - sls: sift.packages.libcommons-lang3-java
       - sls: sift.packages.libdatetime-perl
       - sls: sift.packages.libesedb
@@ -280,7 +279,7 @@ sift-packages:
       - sls: sift.packages.libevt-tools
       - sls: sift.packages.libevtx
       - sls: sift.packages.libevtx-tools
-      - sls: sift.packages.libewf
+      - sls: sift.packages.libewf2
       - sls: sift.packages.libewf-dev
       - sls: sift.packages.libewf-python3
       - sls: sift.packages.libewf-tools
@@ -351,7 +350,6 @@ sift-packages:
       - sls: sift.packages.python3-pefile
       - sls: sift.packages.python3-pip
       - sls: sift.packages.python3-pypff
-      - sls: sift.packages.python3-pytsk3
       - sls: sift.packages.python3-pyqt5
       - sls: sift.packages.python3-redis
       - sls: sift.packages.python3-tk

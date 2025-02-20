@@ -1,3 +1,3 @@
-sift-packages-avfs:
+sift-package-avfs:
   pkg.installed:
     - name: avfs

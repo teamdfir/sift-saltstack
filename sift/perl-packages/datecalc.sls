@@ -1,7 +1,7 @@
 include:
   - sift.packages.perl
 
-datecalc:
+sift-perl-package-libdate-calc-perl:
   pkg.installed:
     - name: libdate-calc-perl
     - require:

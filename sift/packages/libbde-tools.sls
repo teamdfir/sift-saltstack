@@ -1,7 +1,7 @@
 include:
   - sift.repos.gift
 
-libbde-tools:
+sift-package-libbde-tools:
   pkg.installed:
     - name: libbde-tools
     - require:

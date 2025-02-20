@@ -1,7 +1,7 @@
 include:
   - sift.packages.perl
 
-exiftool:
+sift-perl-package-libimage-exiftool-perl:
   pkg.installed:
     - name: libimage-exiftool-perl
     - require:

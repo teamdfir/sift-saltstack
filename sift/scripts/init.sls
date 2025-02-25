@@ -16,7 +16,6 @@ include:
   - sift.scripts.sift
   - sift.scripts.sorter
   - sift.scripts.usbdeviceforensics
-  - sift.scripts.sqlparser
   - sift.scripts.zimmerman
 
 sift-scripts:
@@ -40,5 +39,4 @@ sift-scripts:
       - sls: sift.scripts.sift
       - sls: sift.scripts.sorter
       - sls: sift.scripts.usbdeviceforensics
-      - sls: sift.scripts.sqlparser
       - sls: sift.scripts.zimmerman

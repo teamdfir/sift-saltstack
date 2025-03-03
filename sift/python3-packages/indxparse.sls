@@ -34,6 +34,7 @@ sift-python3-package-indxparse-venv:
       - setuptools>=70.0.0
       - wheel>=0.38.4
       - importlib_metadata>=8.0.0
+      - packaging>=22.0.0
       - fusepy
     - require:
       - sls: sift.packages.python3-virtualenv

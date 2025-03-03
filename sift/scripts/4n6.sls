@@ -35,6 +35,7 @@ sift-python3-package-4n6-scripts-venv:
       - pip>=24.1.3
       - setuptools>=70.0.0
       - wheel>=0.38.4
+      - packaging>=22.0.0
       - ijson
       - s2sphere
     - require:

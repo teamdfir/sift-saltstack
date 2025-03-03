@@ -149,8 +149,11 @@ include:
   - sift.packages.python3-pypff
   - sift.packages.python3-pyqt5
   - sift.packages.python3-redis
+  - sift.packages.python3-setuptools
+  - sift.packages.python3-setuptools-rust
   - sift.packages.python3-tk
   - sift.packages.python3-virtualenv
+  - sift.packages.python3-wheel
   - sift.packages.python3-xlsxwriter
   - sift.packages.python3-yara
   - sift.packages.pst-utils
@@ -352,8 +355,11 @@ sift-packages:
       - sls: sift.packages.python3-pypff
       - sls: sift.packages.python3-pyqt5
       - sls: sift.packages.python3-redis
+      - sls: sift.packages.python3-setuptools
+      - sls: sift.packages.python3-setuptools-rust
       - sls: sift.packages.python3-tk
       - sls: sift.packages.python3-virtualenv
+      - sls: sift.packages.python3-wheel
       - sls: sift.packages.python3-xlsxwriter
       - sls: sift.packages.python3-yara
       - sls: sift.packages.pst-utils

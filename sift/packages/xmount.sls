@@ -10,7 +10,19 @@ sift-package-xmount:
       - sls: sift.repos.ubuntu-universe
 
 {% else %}
-sift-package-xmount-noble:
+
+{% if grains['osarch'] == "amd64" %}
+
+sift-package-xmount:
   pkg.latest:
     - name: xmount
+
+{% else %}
+
+sift-package-xmount:
+  test.nop:
+    - name: not-supported-on-arm64
+
+{% endif %}
+
 {% endif %}

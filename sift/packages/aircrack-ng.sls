@@ -6,5 +6,16 @@
 # License: https://www.aircrack-ng.org/license.html
 # Notes: aircrack
 
+{%- if grains["osarch"] == "amd64" -%}
+
 aircrack-ng:
   pkg.installed
+
+{%- else %}
+
+aircrack-ng:
+  test.nop:
+    - name: "not-supported-on-arm"
+
+{% endif %}
+

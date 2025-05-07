@@ -5,8 +5,8 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        ".*.sls$"
+      "managerFilePatterns": [
+        "/.*.sls$/"
       ],
       "matchStrings": [
         "# renovate:\\sdatasource=(?<datasource>.*?)\\sdepName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s#}\\s.*?version\\s=\\s\"(?<currentValue>.*)\"\\s-.*?\\s.*?hash\\s=\\s\"(?<currentDigest>.*?)\""

@@ -12,7 +12,6 @@
 {%- set base_url = "https://github.com/Powershell/Powershell/releases/download/v" -%}
 {%- set filename = "powershell_" ~ version ~ "-1.deb_" ~ arch ~ ".deb" -%}
 
-{%- if grains["osarch"] == "amd64" -%}
 include:
   - sift.packages.libicu
 
@@ -22,6 +21,9 @@ sift-package-powershell-source:
     - source: "{{ base_url }}{{ version }}/{{ filename }}"
     - source_hash: sha256={{ hash }}
     - makedirs: True
+    - onlyif:
+      - fun: match.grain
+        tgt: 'osarch:amd64'
 
 sift-package-powershell:
   pkg.installed:
@@ -31,8 +33,6 @@ sift-package-powershell:
       - file: sift-package-powershell-source
     - require:
       - sls: sift.packages.libicu
-
-{%- else -%}
-sift-package-powershell:
-  test.nop
-{%- endif -%}
+    - onlyif:
+      - fun: match.grain
+        tgt: 'osarch:amd64'

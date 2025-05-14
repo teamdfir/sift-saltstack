@@ -32,3 +32,4 @@ Cast is the successor to the SIFT CLI. It is designed to be a distro agnostic in
 Cast is a single binary written in golang instead of node.js that is cross platform compatible, this means eventually it can install distributions on Windows or ARM64 systems as well.
 
 Finally, Cast leverages a the single binary method of install on linux for SaltStack, this means no left over salt subsystem on the host.
+

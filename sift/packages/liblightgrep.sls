@@ -1,4 +1,5 @@
-{% if grains['osarch'] == "amd64" %}
+# Name: liblightgrep
+# Warning: Only Supported on amd64 architecture
 
 include:
   - sift.repos.sift
@@ -8,10 +9,6 @@ liblightgrep:
     - name: liblightgrep
     - require:
       - sls: sift.repos.sift
-
-{% else %}
-
-not-supported-liblightgrep:
-  test.nop
-
-{% endif %}
+    - onlyif:
+      - fun: match.grain
+        tgt: 'osarch:amd64'

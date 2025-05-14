@@ -6,16 +6,10 @@
 # License: Free, unknown license
 # Notes: aeskeyfind
 
-{% if grains["osarch"] == "amd64" %}
-
-aeskeyfind:
-  pkg.installed
-
-{% else %}
-
 sift-package-aeskeyfind:
-  test.nop:
-    - name: "aeskeyfind-not-supported-on-arm64"
-
-{%- endif -%}
+  pkg.installed:
+    - name: aeskeyfind
+    - onlyif:
+      - fun: match.grain
+        tgt: 'osarch:amd64'
 

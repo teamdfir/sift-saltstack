@@ -1,16 +1,8 @@
-{% if grains['oscodename'] == "focal" %}
 include:
-  - sift.repos.microsoft
+  - sift.repos.dotnet-backports
 
-dotnet6-install:
+sift-package-dotnet9:
   pkg.installed:
-    - name: dotnet-sdk-6.0
+    - name: dotnet-sdk-9.0
     - require:
-      - sls: sift.repos.microsoft
-
-{% elif grains['oscodename'] == "jammy" %}
-sift-package-dotnet6:
-  pkg.installed:
-    - name: dotnet-sdk-6.0
-
-{% endif %}
+      - sls: sift.repos.dotnet-backports

@@ -1,12 +1,5 @@
 include:
-  - sift.python-packages.volatility
   - sift.scripts.regripper
-
-/usr/bin/vol.py:
-  file.symlink:
-    - target: /usr/bin/vol
-    - require:
-      - sls: sift.python-packages.volatility
 
 /usr/bin/mactime:
   file.symlink:

@@ -12,7 +12,7 @@ sift-docker-key:
 sift-docker-repo:
   pkgrepo.managed:
     - humanname: Docker
-    - name: deb [arch=amd64 signed-by=/usr/share/keyrings/DOCKER-PGP-KEY.asc] https://download.docker.com/linux/ubuntu {{ grains['lsb_distrib_codename'] }} stable
+    - name: deb [signed-by=/usr/share/keyrings/DOCKER-PGP-KEY.asc] https://download.docker.com/linux/ubuntu {{ grains['lsb_distrib_codename'] }} stable
     - dist: {{ grains['lsb_distrib_codename'] }}
     - file: /etc/apt/sources.list.d/docker.list
     - refresh: True

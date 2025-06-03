@@ -2,7 +2,7 @@ include:
   - sift.packages.perl
   - sift.packages.build-essential
 
-sift-perl-packages-quicktable:
+sift-perl-package-quicktable:
   cmd.run:
     - name: cpanm --no-man-pages install HTML::QuickTable 
     - env:

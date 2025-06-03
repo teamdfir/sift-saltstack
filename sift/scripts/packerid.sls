@@ -1,30 +1,52 @@
-# source=https://github.com/sooshie/packerid
-# license=Unknown
+# Name: packerid
+# Website: https://github.com/sooshie/packerid
+# Description: Script to identify packed files
+# Category: 
+# Author: Jim Clausing
+# License: Unknown
+# Notes: packerid
 
-{% set commit = "7b2ee6ef57db903bf356fd342c8ca998abdb68cd" -%}
-{% set hash = "sha256=be589d4cbe70ecdc3424a6da48d8fc24630d51a6ebf92e5328b36e39423eb038" -%}
+{% set commit = "bc54e6d5204ebe83db8d87125d677035d9f456a7" -%}
+{% set hash = "sha256=417830ccbf357e8e2b7d9cf47ee4a63a481151fc8cdf03c40b5538aecf96d15d" -%}
 
 include:
-  - sift.packages.python2
-  - sift.python-packages.pefile
-  - sift.python-packages.capstone
+  - sift.packages.python3-virtualenv
 
-sift-scripts-packerid:
+sift-python3-package-packerid-venv:
+  virtualenv.managed:
+    - name: /opt/packerid
+    - venv_bin: /usr/bin/virtualenv
+    - pip_pkgs:
+      - pip>=24.1.3
+      - setuptools>=70.0.0
+      - wheel>=0.38.4
+      - pefile
+      - capstone
+    - require:
+      - sls: sift.packages.python3-virtualenv
+
+sift-python3-package-packerid:
   file.managed:
-    - name: /usr/local/bin/packerid.py
+    - name: /opt/packerid/bin/packerid.py
     - source: https://raw.githubusercontent.com/sooshie/packerid/{{ commit }}/packerid.py
     - source_hash: {{ hash }}
     - mode: 755
     - require:
-      - sls: sift.packages.python2
-      - sls: sift.python-packages.pefile
-      - sls: sift.python-packages.capstone
+      - virtualenv: sift-python3-package-packerid-venv
 
-sift-scripts-packerid-shebang:
+sift-python3-package-packerid-shebang:
   file.replace:
-    - name: /usr/local/bin/packerid.py
+    - name: /opt/packerid/bin/packerid.py
     - pattern: '#!/usr/local/bin/python'
-    - repl: '#!/usr/bin/env python2'
+    - repl: '#!/opt/packerid/bin/python3'
     - count: 1
     - watch:
-      - file: sift-scripts-packerid
+      - file: sift-python3-package-packerid
+
+sift-python3-package-packerid-symlink:
+  file.symlink:
+    - name: /usr/local/bin/packerid.py
+    - target: /opt/packerid/bin/packerid.py
+    - makedirs: False
+    - require:
+      - file: sift-python3-package-packerid

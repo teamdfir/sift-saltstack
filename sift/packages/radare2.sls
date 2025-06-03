@@ -1,8 +1,13 @@
 {# renovate: datasource=github-release-attachments depName=radareorg/radare2 #}
 {%- set version = "5.9.6" -%}
+{%- set base_url = "https://github.com/radareorg/radare2/releases/download/" -%}
+{%- if grains["osarch"] == "aarch64" or grains["osarch"] == "arm64" -%}
+{%- set hash = "c5b958a6ea59003431fd9f2117d71722f557db87b58e75dda17e072b1f9f50d3" -%}
+{%- set filename = "radare2_" ~ version ~ "_arm64.deb" -%}
+{%- else -%}
 {%- set hash = "596c2b2e5cd95f38827f5e29d93547f7535e49c5bba0d5bd845b36f7e2488974" -%}
 {%- set filename = "radare2_" ~ version ~ "_amd64.deb" -%}
-{%- set base_url = "https://github.com/radareorg/radare2/releases/download/" -%}
+{%- endif -%}
 
 sift-package-radare2-download:
   file.managed:

@@ -1,7 +1,7 @@
 include:
   - sift.packages.perl
 
-dbi:
+sift-perl-package-libdbi-perl:
   pkg.installed:
     - name: libdbi-perl
     - require:

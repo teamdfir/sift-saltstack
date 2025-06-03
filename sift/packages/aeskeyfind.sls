@@ -6,5 +6,10 @@
 # License: Free, unknown license
 # Notes: aeskeyfind
 
-aeskeyfind:
-  pkg.installed
+sift-package-aeskeyfind:
+  pkg.installed:
+    - name: aeskeyfind
+    - onlyif:
+      - fun: match.grain
+        tgt: 'osarch:amd64'
+

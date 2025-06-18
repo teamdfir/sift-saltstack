@@ -27,7 +27,7 @@ sift-python3-package-python-evtx-venv:
 
 sift-python3-package-python-evtx:
   pip.installed:
-    - name: git+https://github.com/williballenthin/python-evtx.git
+    - name: git+https://github.com/williballenthin/python-evtx.git@953520633f99c450253e8d7142d18e7fce03b684
     - bin_env: /opt/python-evtx/bin/python3
     - upgrade: True
     - require:

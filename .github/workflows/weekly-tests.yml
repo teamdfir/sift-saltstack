@@ -13,7 +13,6 @@ jobs:
         salt: [3006, 3007]
         os: [20.04, 22.04]
         state:
-          - sift.packages.python2
           - sift.packages.python3
           - sift.tests.gift
           - sift.config.user.pdfs

@@ -76,7 +76,7 @@ include:
   - sift.packages.libevt-tools
   - sift.packages.libevtx
   - sift.packages.libevtx-tools
-  - sift.packages.libewf2
+  - sift.packages.libewf
   - sift.packages.libewf-dev
   - sift.packages.libewf-python3
   - sift.packages.libewf-tools
@@ -282,7 +282,7 @@ sift-packages:
       - sls: sift.packages.libevt-tools
       - sls: sift.packages.libevtx
       - sls: sift.packages.libevtx-tools
-      - sls: sift.packages.libewf2
+      - sls: sift.packages.libewf
       - sls: sift.packages.libewf-dev
       - sls: sift.packages.libewf-python3
       - sls: sift.packages.libewf-tools

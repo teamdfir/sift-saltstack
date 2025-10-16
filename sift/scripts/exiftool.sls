@@ -6,8 +6,8 @@
 # License: Free
 # Notes: exiftool
 
-{% set exiftool_version = '13.38' -%}
-{% set exiftool_sha256  = '0256672ab507662fe42d1ae851ae1b55930a3c8eb69e9d6883c33559e90f5f01' -%}
+{% set exiftool_version = '13.39' -%}
+{% set exiftool_sha256  = '11fbd0657ae43896c4057bad780830b3fe98006d1ab084fa5d43c4b1eee192cd' -%}
 
 include:
   - sift.packages.build-essential

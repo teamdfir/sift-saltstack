@@ -14,6 +14,7 @@ include:
   - sift.python3-packages.python-evtx
   - sift.python3-packages.sqlite-carver
   - sift.python3-packages.stix-validator
+  - sift.python3-packages.ufade
   - sift.python3-packages.usbdeviceforensics
   - sift.python3-packages.usnparser
 
@@ -36,5 +37,6 @@ sift-python3-packages:
       - sls: sift.python3-packages.python-evtx
       - sls: sift.python3-packages.sqlite-carver
       - sls: sift.python3-packages.stix-validator
+      - sls: sift.python3-packages.ufade
       - sls: sift.python3-packages.usbdeviceforensics
       - sls: sift.python3-packages.usnparser

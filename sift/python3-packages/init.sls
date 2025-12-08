@@ -8,6 +8,7 @@ include:
   - sift.python3-packages.java-idx-parser
   - sift.python3-packages.mac-apt
   - sift.python3-packages.machinae
+  - sift.python3-packages.mvt
   - sift.python3-packages.page-brute
   - sift.python3-packages.pe-carver
   - sift.python3-packages.pe-scanner
@@ -31,6 +32,7 @@ sift-python3-packages:
       - sls: sift.python3-packages.java-idx-parser
       - sls: sift.python3-packages.mac-apt
       - sls: sift.python3-packages.machinae
+      - sls: sift.python3-packages.mvt
       - sls: sift.python3-packages.page-brute
       - sls: sift.python3-packages.pe-carver
       - sls: sift.python3-packages.pe-scanner

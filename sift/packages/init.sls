@@ -18,6 +18,7 @@ include:
   - sift.packages.chromium-browser
   - sift.packages.cifs-utils
   - sift.packages.clamav
+  - sift.packages.claude-code
   - sift.packages.cmospwd
   - sift.packages.cryptcat
   - sift.packages.cryptsetup

@@ -6,8 +6,16 @@
 # License: Free
 # Notes: exiftool
 
-{% set exiftool_version = '13.41' -%}
-{% set exiftool_sha256  = 'aa3a963a8375e37322958b20d262f8d88c706bea219747a4de28d59a160a4e54' -%}
+{% set version_query = salt['http.query']('https://exiftool.org/ver.txt', backend='requests', verify_ssl=True) %}
+{% set exiftool_version = version_query.get('body').strip() %}
+{% set hash_query = salt['http.query']('https://exiftool.org/checksums.txt', backend='requests', verify_ssl=True) %}
+{% set hash_content = hash_query.get('body').splitlines() %}
+{% set ns = namespace(exiftool_sha256='') %}
+{% for line in hash_content %}
+{% if 'SHA2-256(Image-ExifTool-' ~ exiftool_version ~ '.tar.gz)' in line %}
+{% set ns.exiftool_sha256 = line.split()[-1].strip() %}
+{% endif %}
+{% endfor %}
 
 include:
   - sift.packages.build-essential
@@ -16,14 +24,14 @@ sift-exiftool-source:
   file.managed:
     - name: /var/cache/sift/archives/Image-ExifTool-{{ exiftool_version }}.tar.gz
     - source: https://exiftool.org/Image-ExifTool-{{ exiftool_version }}.tar.gz
-    - source_hash: sha256={{ exiftool_sha256 }}
+    - source_hash: sha256={{ ns.exiftool_sha256 }}
     - makedirs: True
 
 sift-exiftool-extracted:
   archive.extracted:
     - name: /usr/local/src/exiftool-{{ exiftool_version }}
     - source: /var/cache/sift/archives/Image-ExifTool-{{ exiftool_version }}.tar.gz
-    - source_hash: sha256={{ exiftool_sha256 }}
+    - source_hash: sha256={{ ns.exiftool_sha256 }}
     - watch:
       - file: sift-exiftool-source
 

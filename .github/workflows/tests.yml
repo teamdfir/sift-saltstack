@@ -43,7 +43,7 @@ jobs:
     container:
       image: docker://ghcr.io/ekristen/cast-tools/saltstack-tester:${{ matrix.os }}-${{ matrix.salt }}
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
       - name: test-state
         run: |
           salt-call --local -l info --file-root . --retcode-passthrough --state-output=mixed state.sls ${{ matrix.state }} pillar="{sift_user: root}"

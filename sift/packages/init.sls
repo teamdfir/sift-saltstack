@@ -3,6 +3,7 @@ include:
   - sift.packages.aeskeyfind
   - sift.packages.afflib-tools
   - sift.packages.aircrack-ng
+  - sift.packages.android-sdk-platform-tools
   - sift.packages.apache2
   - sift.packages.arp-scan
   - sift.packages.at
@@ -209,6 +210,7 @@ sift-packages:
       - sls: sift.packages.aeskeyfind
       - sls: sift.packages.afflib-tools
       - sls: sift.packages.aircrack-ng
+      - sls: sift.packages.android-sdk-platform-tools
       - sls: sift.packages.apache2
       - sls: sift.packages.arp-scan
       - sls: sift.packages.at

@@ -1,7 +1,5 @@
 {%- set version = salt['pillar.get']('sift_version', 'stable') -%}
-
-include:
-  - sift.packages.software-properties-common
+{%- set codename = grains['lsb_distrib_codename'] -%}
 
 {%- if version == "stable" %}
 sift-gift-dev:
@@ -17,15 +15,43 @@ sift-gift-stable:
       - pkgrepo: gift-repo
 {%- endif %}
 
+# Clean up legacy PPA format (both versions)
+sift-gift-legacy-ppa-absent:
+  pkgrepo.absent:
+    - ppa: gift/{{ version }}
+    - require_in:
+      - pkgrepo: gift-repo
+
+# Clean up DEB822 format (.sources files)
+sift-gift-deb822-stable-absent:
+  file.absent:
+    - name: /etc/apt/sources.list.d/gift-ubuntu-stable-{{ codename }}.sources
+    - require_in:
+      - pkgrepo: gift-repo
+
+sift-gift-deb822-dev-absent:
+  file.absent:
+    - name: /etc/apt/sources.list.d/gift-ubuntu-dev-{{ codename }}.sources
+    - require_in:
+      - pkgrepo: gift-repo
+
+sift-gift-key:
+  file.managed:
+    - name: /usr/share/keyrings/GIFT-GPG-KEY.asc
+    - source: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3ED1EAECE81894B171D7DA5B5E80511B10C598B8
+    - skip_verify: True
+    - makedirs: True
+
 gift-repo:
   pkgrepo.managed:
-    - name: gift
-    - ppa: gift/{{ version }}
-    - keyid: 3ED1EAECE81894B171D7DA5B5E80511B10C598B8
-    - keyserver: hkp://p80.pool.sks-keyservers.net:80
-    - refresh: true
+    - humanname: GIFT PPA ({{ version }})
+    - name: deb [signed-by=/usr/share/keyrings/GIFT-GPG-KEY.asc] https://ppa.launchpadcontent.net/gift/{{ version }}/ubuntu {{ codename }} main
+    - dist: {{ codename }}
+    - file: /etc/apt/sources.list.d/gift-ubuntu-{{ version }}-{{ codename }}.list
+    - refresh: True
+    - clean_file: True
     - require:
-      - sls: sift.packages.software-properties-common
+      - file: sift-gift-key
 
 sift-gift-repo-preferences:
   file.managed:

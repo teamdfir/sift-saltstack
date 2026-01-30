@@ -1,7 +1,5 @@
 {%- set version = salt['pillar.get']('sift_version', 'stable') -%}
-
-include:
-  - sift.packages.software-properties-common
+{%- set codename = grains['lsb_distrib_codename'] -%}
 
 {%- if version == "stable" %}
 sift-dev:
@@ -17,14 +15,43 @@ sift-stable:
       - pkgrepo: sift-repo
 {%- endif %}
 
+# Clean up legacy PPA format (both versions)
+sift-legacy-ppa-absent:
+  pkgrepo.absent:
+    - ppa: sift/{{ version }}
+    - require_in:
+      - pkgrepo: sift-repo
+
+# Clean up DEB822 format (.sources files)
+sift-deb822-stable-absent:
+  file.absent:
+    - name: /etc/apt/sources.list.d/sift-ubuntu-stable-{{ codename }}.sources
+    - require_in:
+      - pkgrepo: sift-repo
+
+sift-deb822-dev-absent:
+  file.absent:
+    - name: /etc/apt/sources.list.d/sift-ubuntu-dev-{{ codename }}.sources
+    - require_in:
+      - pkgrepo: sift-repo
+
+sift-repo-key:
+  file.managed:
+    - name: /usr/share/keyrings/SIFT-GPG-KEY.asc
+    - source: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x93465001dc4c8a3fcbbcfe263a43288ee0ab26fb
+    - skip_verify: True
+    - makedirs: True
+
 sift-repo:
   pkgrepo.managed:
-    - ppa: sift/{{ version }}
-    - keyid: 3E04D0A9A043FAFD66F5E774B2A668DD0744BEC3
-    - keyserver: hkp://p80.pool.sks-keyservers.net:80
-    - refresh: true
+    - humanname: SIFT PPA ({{ version }})
+    - name: deb [signed-by=/usr/share/keyrings/SIFT-GPG-KEY.asc] https://ppa.launchpadcontent.net/sift/{{ version }}/ubuntu {{ codename }} main
+    - dist: {{ codename }}
+    - file: /etc/apt/sources.list.d/sift-{{ version }}-{{ codename }}.list
+    - refresh: True
+    - clean_file: True
     - require:
-      - sls: sift.packages.software-properties-common
+      - file: sift-repo-key
 
 sift-repo-preferences:
   file.managed:

@@ -1,3 +1,6 @@
+include:
+  - sift.packages.software-properties-common
+
 sift-docker-key:
   file.managed:
     - name: /usr/share/keyrings/DOCKER-PGP-KEY.asc
@@ -8,6 +11,8 @@ sift-docker-key:
 sift-remove-docker-ppa:
   pkgrepo.absent:
     - ppa: docker/stable
+    - require:
+      - sls: sift.packages.software-properties-common
 
 sift-remove-docker-list:
   file.absent:

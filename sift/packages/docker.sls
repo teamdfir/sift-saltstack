@@ -13,5 +13,5 @@ sift-package-docker:
   pkg.installed:
     - name: docker-ce
     - require:
-      - pkgrepo: sift-docker-repo
+      - file: sift-docker-repo
       - sls: sift.repos.docker

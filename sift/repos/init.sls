@@ -6,6 +6,7 @@ include:
   - sift.repos.ubuntu-multiverse
   - sift.repos.ubuntu-universe
   - sift.repos.dotnet-backports
+  - sift.repos.microsoft
   - sift.repos.refresh
 
 sift-repos:
@@ -19,4 +20,5 @@ sift-repos:
       - sls: sift.repos.ubuntu-multiverse
       - sls: sift.repos.ubuntu-universe
       - sls: sift.repos.dotnet-backports
+      - sls: sift.repos.microsoft
       - sls: sift.repos.refresh

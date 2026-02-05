@@ -17,6 +17,7 @@ include:
   - sift.packages.libgirepository
   - sift.packages.pkg-config
   - sift.packages.python3-dev
+  - sift.packages.libssl-dev
 
 sift-python3-package-ufade-virtualenv:
   virtualenv.managed:
@@ -54,6 +55,7 @@ sift-python3-package-ufade-virtualenv:
       - sls: sift.packages.libgirepository
       - sls: sift.packages.pkg-config
       - sls: sift.packages.python3-dev
+      - sls: sift.packages.libssl-dev
 
 sift-python3-package-ufade-git:
   git.latest:

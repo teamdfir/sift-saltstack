@@ -1,6 +1,5 @@
 include:
   - sift.packages.software-properties-common
-  - sift.packages.apt-transport-https
 
 sift-docker-key:
   file.managed:
@@ -9,13 +8,36 @@ sift-docker-key:
     - skip_verify: True
     - makedirs: True
 
-sift-docker-repo:
-  pkgrepo.managed:
-    - humanname: Docker
-    - name: deb [signed-by=/usr/share/keyrings/DOCKER-PGP-KEY.asc] https://download.docker.com/linux/ubuntu {{ grains['lsb_distrib_codename'] }} stable
-    - dist: {{ grains['lsb_distrib_codename'] }}
-    - file: /etc/apt/sources.list.d/docker.list
-    - refresh: True
+sift-remove-docker-ppa:
+  pkgrepo.absent:
+    - ppa: docker/stable
     - require:
       - sls: sift.packages.software-properties-common
-      - sls: sift.packages.apt-transport-https
+
+sift-remove-docker-list:
+  file.absent:
+    - name: /etc/apt/sources.list.d/docker.list
+    - require:
+      - pkgrepo: sift-remove-docker-ppa
+
+sift-remove-docker-sources:
+  file.absent:
+    - name: /etc/apt/sources.list.d/docker.sources
+    - require:
+      - pkgrepo: sift-remove-docker-ppa
+
+sift-docker-repo:
+  file.managed:
+    - name: /etc/apt/sources.list.d/docker.sources
+    - contents: |
+        Types: deb
+        URIs: https://download.docker.com/linux/ubuntu
+        Suites: {{ grains['lsb_distrib_codename'] }}
+        Components: stable
+        Signed-By: /usr/share/keyrings/DOCKER-PGP-KEY.asc
+        Architectures: amd64
+    - require:
+      - file: sift-docker-key
+      - pkgrepo: sift-remove-docker-ppa
+      - file: sift-remove-docker-list
+      - file: sift-remove-docker-sources

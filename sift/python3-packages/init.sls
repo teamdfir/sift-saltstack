@@ -18,6 +18,7 @@ include:
   - sift.python3-packages.ufade
   - sift.python3-packages.usbdeviceforensics
   - sift.python3-packages.usnparser
+  - sift.python3-packages.volatility3
 
 sift-python3-packages:
   test.nop:
@@ -42,3 +43,4 @@ sift-python3-packages:
       - sls: sift.python3-packages.ufade
       - sls: sift.python3-packages.usbdeviceforensics
       - sls: sift.python3-packages.usnparser
+      - sls: sift.python3-packages.volatility3

@@ -6,12 +6,11 @@ sift-ubuntu-ports-repo:
 
         Types: deb
         URIs: http://ports.ubuntu.com/ubuntu-ports/
-        Suites: noble
+        Suites: {{ grains['lsb_distrib_codename'] }} {{ grains['lsb_distrib_codename'] }}-updates {{ grains['lsb_distrib_codename'] }}-security {{ grains['lsb_distrib_codename'] }}-backports
         Components: main universe restricted multiverse
         Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
         Architectures: arm64
-    - unless: 
-      - grep -q "URIs: http://ports.ubuntu.com/ubuntu-ports/" /etc/apt/sources.list.d/ubuntu.sources
+    - unless: grep -q "ubuntu-ports" /etc/apt/sources.list.d/ubuntu.sources
 {% else %}
 sift-universe-repo:
   file.replace:

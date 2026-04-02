@@ -35,7 +35,7 @@ sift-docker-repo:
         Suites: {{ grains['lsb_distrib_codename'] }}
         Components: stable
         Signed-By: /usr/share/keyrings/DOCKER-PGP-KEY.asc
-        Architectures: amd64
+        Architectures: {{ grains['osarch'] | replace('aarch64', 'arm64') }}
     - require:
       - file: sift-docker-key
       - pkgrepo: sift-remove-docker-ppa

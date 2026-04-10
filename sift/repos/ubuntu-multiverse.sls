@@ -55,6 +55,5 @@ sift-security-repo:
         Components: main universe restricted multiverse
         Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
     - unless:
-      - grep -q "{{ codename }}-security" /etc/apt/sources.list.d/ubuntu.sources
-
+      - grep -q "ubuntu-ports" /etc/apt/sources.list.d/ubuntu.sources
 {% endif %}

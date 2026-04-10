@@ -11,21 +11,22 @@ sift-ubuntu-ports-repo-universe:
         Components: main universe restricted multiverse
         Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
         Architectures: arm64
+    - makedirs: True
     - unless:
       - grep -q "ubuntu-ports" /etc/apt/sources.list.d/ubuntu.sources
 {% else %}
-{% if not salt['file.file_exists']('/etc/apt/sources.list.d/ubuntu.sources') %}
 sift-ubuntu-repo-universe:
-  file.managed:
+  file.append:
     - name: /etc/apt/sources.list.d/ubuntu.sources
-    - contents: |
+    - text: |
         Types: deb
-        URIs: http://ca.archive.ubuntu.com/ubuntu/
+        URIs: http://archive.ubuntu.com/ubuntu/
         Suites: {{ codename }} {{ codename }}-updates {{ codename }}-backports
         Components: main restricted universe multiverse
         Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
-    - mode: 644
-{% endif %}
+    - makedirs: True
+    - unless:
+      - grep -q "archive.ubuntu.com" /etc/apt/sources.list.d/ubuntu.sources
 
 sift-universe-repo:
   file.replace:
@@ -34,5 +35,10 @@ sift-universe-repo:
     - repl: '\1\2 universe'
     - flags:
         - MULTILINE
-{%- endif %}
+{% if codename == "jammy" %}
+sift-remove-sources-list:
+  file.absent:
+    - name: /etc/apt/sources.list
+{% endif %}
+{% endif %}
 

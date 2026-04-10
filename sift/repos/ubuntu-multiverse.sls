@@ -23,18 +23,18 @@ sift-ubuntu-ports-repo-multiverse:
       - grep -q "{{ codename }}-security" /etc/apt/sources.list.d/ubuntu.sources
 
 {% else %}
-{% if not salt['file.file_exists']('/etc/apt/sources.list.d/ubuntu.sources') %}
 sift-ubuntu-repo-multiverse:
-  file.managed:
+  file.append:
     - name: /etc/apt/sources.list.d/ubuntu.sources
-    - contents: |
+    - text: |
         Types: deb
-        URIs: http://ca.archive.ubuntu.com/ubuntu/
+        URIs: http://archive.ubuntu.com/ubuntu/
         Suites: {{ codename }} {{ codename }}-updates {{ codename }}-backports
         Components: main restricted universe multiverse
         Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
-    - mode: 644
-{% endif %}
+    - makedirs: True
+    - unless:
+      - grep -q "archive.ubuntu.com" /etc/apt/sources.list.d/ubuntu.sources
 
 sift-multiverse-repo:
   file.replace:
@@ -56,4 +56,11 @@ sift-security-repo:
         Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
     - unless:
       - grep -q "ubuntu-ports" /etc/apt/sources.list.d/ubuntu.sources
+      - grep -q "security.ubuntu.com" /etc/apt/sources.list.d/ubuntu.sources
+
+{% if codename == "jammy" %}
+sift-remove-sources-list-multiverse:
+  file.absent:
+    - name: /etc/apt/sources.list
+{% endif %}
 {% endif %}

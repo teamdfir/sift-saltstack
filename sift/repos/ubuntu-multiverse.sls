@@ -59,8 +59,12 @@ sift-security-repo:
       - grep -q "security.ubuntu.com" /etc/apt/sources.list.d/ubuntu.sources
 
 {% if codename == "jammy" %}
+
 sift-remove-sources-list-multiverse:
   file.absent:
     - name: /etc/apt/sources.list
+    - require:
+      - file: sift-multiverse-repo
+
 {% endif %}
 {% endif %}

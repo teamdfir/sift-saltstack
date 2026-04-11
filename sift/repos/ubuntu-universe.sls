@@ -35,10 +35,15 @@ sift-universe-repo:
     - repl: '\1\2 universe'
     - flags:
         - MULTILINE
+
 {% if codename == "jammy" %}
+
 sift-remove-sources-list:
   file.absent:
     - name: /etc/apt/sources.list
+    - require:
+      - file: sift-universe-repo
+
 {% endif %}
 {% endif %}
 

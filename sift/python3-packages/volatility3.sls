@@ -19,6 +19,13 @@ sift-python3-package-volatility3-venv:
       - pip>=24.1.3
       - setuptools>=70.0.0
       - wheel>=0.38.4
+      - yara-python>=4.5.1,<5
+      - pycryptodome>=3.21.0,<4
+      - capstone>=5.0.3,<6
+      - leechcorepyc>=2.19.2,<3
+      - pillow>=10.0.0,<11.0.0
+      - pefile>=2024.8.26
+      - yara-x
     - require:
       - sls: sift.packages.python3-virtualenv
 

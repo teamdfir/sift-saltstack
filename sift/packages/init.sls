@@ -110,6 +110,7 @@ include:
   - sift.packages.libxml2-dev
   - sift.packages.libxslt-dev
   - sift.packages.magnus
+  - sift.packages.memprocfs
   - sift.packages.nbd-client
   - sift.packages.nbtscan
   - sift.packages.netcat

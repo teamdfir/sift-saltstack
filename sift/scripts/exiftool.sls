@@ -23,7 +23,7 @@ include:
 sift-exiftool-source:
   file.managed:
     - name: /var/cache/sift/archives/Image-ExifTool-{{ exiftool_version }}.tar.gz
-    - source: https://exiftool.org/Image-ExifTool-{{ exiftool_version }}.tar.gz
+    - source: https://sourceforge.net/projects/exiftool/files/Image-ExifTool-{{ exiftool_version }}.tar.gz
     - source_hash: sha256={{ ns.exiftool_sha256 }}
     - makedirs: True
 
@@ -48,6 +48,3 @@ sift-exiftool-install:
     - cwd: /usr/local/src/exiftool-{{ exiftool_version }}/Image-ExifTool-{{ exiftool_version }}/
     - include:
       - cmd: sift-exiftool-makefile
-
-
-  

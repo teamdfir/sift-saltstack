@@ -2,19 +2,19 @@
 # Website: https://github.com/ufrisk/MemProcFS
 # Description: Memory Process File System
 # Author: Ulf Frisk
-# License: GNU General Public License v3.0
-# Version: 5.17.5
-# Release Date: 20260415
+# License: GNU Affero General Public License v3.0
+# Version: 5.18.4
+# Release Date: 20260812
 
-{%- set version = '5.17.5' -%}
-{%- set release_date = '20260415' -%}
+{%- set version = '5.18.4' -%}
+{%- set release_date = '20260812' -%}
 {%- set arch = "x64" -%}
-{%- set hash = 'd614745dcdd2bd2039f459f964de84c175dc022ce95adc1190ac0f9ab673fa7d' -%}
+{%- set hash = '44bd35aa7f7692c7261213035cc7838247c2afab9776f7aa2628b1408b25af5d' -%}
 
 {# Logic to switch to ARM64/AARCH64 if detected #}
 {%- if grains["osarch"] == "aarch64" or grains["osarch"] == "arm64" -%}
   {%- set arch = "aarch64" -%}
-  {%- set hash = '307183bab25337afb307857b6d8e8f11ed4846818343725743ec257bcf6992d0' -%}
+  {%- set hash = '666714671c817f9ebd5e70cfc5cdf8f61f6e9919c94ea2faf1526119aec0e93d' -%}
 {%- endif %}
 
 memprocfs-deps:

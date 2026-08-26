@@ -1,13 +1,8 @@
-{%- if grains["oscodename"] == "noble" -%}
-sift-rar:
-  test.nop
-{%- else -%}
 include:
   - sift.repos.ubuntu-multiverse
 
-sift-rar:
+sift-package-rar:
   pkg.installed:
     - name: rar
     - require:
       - sls: sift.repos.ubuntu-multiverse
-{%- endif -%}

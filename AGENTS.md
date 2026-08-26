@@ -36,7 +36,7 @@ sift/
   include-desktop.sls      desktop = server + config
   include-server.sls       server  = repos + python3-packages + packages + scripts
   repos/                   apt repos and PPAs (gift, sift, docker, microsoft, ubuntu-*)
-  packages/                ~240 files, one apt package or .deb per file
+  packages/                ~230 files, one apt package or .deb per file
   python3-packages/        tools installed into per-tool virtualenvs under /opt
   perl-packages/           CPAN modules via cpanm
   scripts/                 tools installed from tarballs/zips/git, plus wrappers
@@ -124,8 +124,8 @@ only machine-readable record of what SIFT provides.
 
 ### State ID naming
 
-Two conventions coexist in `packages/`: bare `<pkgname>:` (128 files, the older style)
-and `sift-package-<pkgname>:` (91 files, the newer style). **Use the `sift-` prefix for
+Two conventions coexist in `packages/`: bare `<pkgname>:` (~135 files, the older style)
+and `sift-package-<pkgname>:` (~95 files, the newer style). **Use the `sift-` prefix for
 new files.** Do not mass-rename existing IDs — other states reference them by ID in
 requisites, and renaming silently breaks those requisites.
 
@@ -297,12 +297,46 @@ sift-python3-package-volatility3-symlink-vol:
 
 Pin git installs to a commit SHA (`git+https://…@<sha>`), not a branch.
 
+### Which repo owns what
+
+Two PPAs are authoritative, and everything else falls in line behind them:
+
+| Repo | Pin | Authoritative for |
+| ---- | --- | ----------------- |
+| `sift` | 899 | `sleuthkit`/`libtsk19`, `bulk-extractor`, `liblightgrep`, `xmount` |
+| `gift` | 801 | the libyal family (`libewf`, `libbde`, `libesedb`, `libevtx`, `libregf`, `libvshadow`, …) and the plaso/dfvfs stack |
+
+The pins live in `files/apt/sift.preferences` and `files/apt/gift.preferences`, both
+`Package: *`. Where the two overlap — `bulk-extractor` is in both — sift wins on priority.
+Ubuntu's own versions sit at 500 and lose to both.
+
+They are a matched pair, not rivals: sift's sleuthkit declares `Depends: libewf`, which
+only gift provides. Ubuntu's equivalent is named `libewf2`, does not `Provides: libewf`,
+and gift's `libewf` `Conflicts`/`Replaces` it — so pulling `libewf2` or `ewf-tools` onto a
+built image removes sleuthkit. Don't reach for an Ubuntu or upstream-built version of
+anything either PPA owns; take it from the owning repo.
+
 ### Repos use DEB822
 
 New apt sources are written as DEB822 `.sources` files with an explicit `Signed-By`
 keyring path, and the corresponding legacy `.list` file is removed with `file.absent`.
-See `repos/microsoft.sls` for the full shape. PPAs still use `pkgrepo.managed` with
-`ppa:` and a `keyid`.
+See `repos/microsoft.sls` for the full shape.
+
+**Prefer DEB822 for PPAs too.** `pkgrepo.managed` with `ppa:` shells out to
+`add-apt-repository`, which on jammy **silently writes a zero-byte `.list` file when
+`/etc/apt/sources.list` is absent** — it still prints `Adding deb entry to ...` and exits
+0. `repos/ubuntu-universe.sls` deletes that file on jammy, so any run reaching it before
+the PPA leaves every package there failing with `Unable to locate package`.
+`repos/init.sls` declares `gift` before `ubuntu-universe`, so only isolated state runs
+break. `repos/sift.sls`, `repos/openjdk.sls` and `repos/dotnet-backports.sls` still carry
+this latently.
+
+`repos/gift.sls` is the worked example: vendored key in `sift/files/apt/`, DEB822 source
+with `Signed-By`, `file.absent` for the legacy `.list` and `trusted.gpg.d` artefacts, and
+a `pkg.refresh_db` `module.run` on `onchanges` — that last part is required, because
+`file.managed` does not mark the apt cache stale the way `pkgrepo.managed` did (same fix
+as `repos/docker.sls`). Vendor PPA keys rather than fetching them: they do not rotate, and
+it avoids another `skip_verify: True`.
 
 ### Static files
 

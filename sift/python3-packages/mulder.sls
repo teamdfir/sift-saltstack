@@ -45,8 +45,14 @@
 # pinned install, wrappers -- is what gets CI coverage. Verify the asset step by hand on
 # a real target.
 #
-# The venv carries its own volatility3 (a mulder-dfir dependency). It is independent of
-# SIFT's /opt/volatility3 and does not shadow `vol` on $PATH.
+# The venv carries its own volatility3 (a mulder-dfir dependency), independent of SIFT's
+# /opt/volatility3.
+#
+# libewf comes from gift, which is authoritative for libyal here (see AGENTS.md). Upstream
+# builds libewf-experimental 20240506 into /usr/local; doing that on a SIFT image would
+# shadow gift's libewf for sleuthkit, plaso and dfvfs, so this takes gift's libewf-tools
+# for ewfmount instead -- only a fallback anyway, since TSK icat reads E01 directly. gift
+# ships no libewf on jammy/arm64, hence the guard below; ewfmount is simply absent there.
 #
 # Docs: https://github.com/calebevans/mulder/blob/main/docs/usage-guide.md
 
@@ -56,6 +62,8 @@
 {%- set asset_root = "/opt/mulder-assets" -%}
 {%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
 {%- set user_info = salt['user.info'](user) -%}
+{%- set arm64 = grains['osarch'] in ['aarch64', 'arm64'] -%}
+{%- set gift_libewf = not (arm64 and grains['oscodename'] == 'jammy') -%}
 
 include:
   - sift.packages.python3-virtualenv
@@ -66,6 +74,11 @@ include:
   - sift.packages.sleuthkit
   - sift.packages.p7zip-full
   - sift.packages.binutils
+{%- if gift_libewf %}
+  # ewfmount for the E01 fallback in extractors/disk.py -- gift's build, NOT upstream's
+  # source install into /usr/local. See the note above.
+  - sift.packages.libewf-tools
+{%- endif %}
   # weasyprint (the pdf extra) dlopens these at run time; pip installs fine without them
   - sift.packages.libpango
   - sift.packages.libharfbuzz
@@ -95,6 +108,9 @@ sift-python3-package-mulder:
       - sls: sift.packages.sleuthkit
       - sls: sift.packages.p7zip-full
       - sls: sift.packages.binutils
+{%- if gift_libewf %}
+      - sls: sift.packages.libewf-tools
+{%- endif %}
       - sls: sift.packages.libpango
       - sls: sift.packages.libharfbuzz
       - sls: sift.packages.claude-code

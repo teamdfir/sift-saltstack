@@ -4,4 +4,4 @@ include:
 libfvde:
   pkg.installed:
     - require:
-      - pkgrepo: gift-repo
+      - sls: sift.repos.gift

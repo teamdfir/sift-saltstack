@@ -51,7 +51,7 @@
 # Docs: https://github.com/calebevans/mulder/blob/main/docs/usage-guide.md
 
 {# renovate: datasource=pypi depName=mulder-dfir #}
-{%- set version = "1.4.0" -%}
+{%- set version = "1.4.1" -%}
 {%- set spec = "mulder-dfir[forensics,pdf,stix]" -%}
 {%- set asset_root = "/opt/mulder-assets" -%}
 {%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}

@@ -7,7 +7,7 @@
 # Notes: docker-compose
 
 {# renovate: datasource=github-release-attachments depName=docker/compose #}
-{%- set version = "2.32.4" -%}
+{%- set version = "5.5.1" -%}
 {%- set asset = "docker-compose-" ~ grains['kernel']|lower ~ "-" ~ grains['cpuarch'] -%}
 {%- set base_url = "https://github.com/docker/compose/releases/download/v" -%}
 

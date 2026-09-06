@@ -1,5 +1,5 @@
 {# renovate: datasource=github-release-attachments depName=radareorg/radare2 #}
-{%- set version = "5.9.6" -%}
+{%- set version = "6.2.2" -%}
 {%- set base_url = "https://github.com/radareorg/radare2/releases/download/" -%}
 {%- if grains["osarch"] == "aarch64" or grains["osarch"] == "arm64" -%}
 {%- set hash = "c5b958a6ea59003431fd9f2117d71722f557db87b58e75dda17e072b1f9f50d3" -%}

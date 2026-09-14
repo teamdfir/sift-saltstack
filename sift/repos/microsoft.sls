@@ -1,7 +1,13 @@
+{%- if grains['oscodename'] == 'resolute' -%}
+  {%- set key_name = 'microsoft-2025.asc' -%}
+{%- else -%}
+  {%- set key_name = 'microsoft.asc' -%}
+{%- endif -%}
+
 sift-microsoft-key:
   file.managed:
     - name: /usr/share/keyrings/MICROSOFT.asc
-    - source: https://packages.microsoft.com/keys/microsoft.asc
+    - source: https://packages.microsoft.com/keys/{{ key_name }}
     - skip_verify: True
     - makedirs: True
 

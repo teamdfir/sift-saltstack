@@ -8,7 +8,7 @@
 
 {% if grains['oscodename'] == 'jammy' %}
   {% set package = 'libafflib0v5' %}
-{% elif grains['oscodename'] == 'noble' %}
+{% elif grains['oscodename'] == 'noble' or grains['oscodename'] == 'resolute' %}
   {% set package = 'libafflib0t64' %}
 {% endif %}
 

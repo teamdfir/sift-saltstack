@@ -8,11 +8,11 @@
 
 include:
   - sift.repos.sift
-  - sift.repos.openjdk
+  - sift.repos.adoptium
 
 sift-package-bulk-extractor:
   pkg.installed:
     - name: bulk-extractor
     - require:
       - pkgrepo: sift-repo
-      - pkgrepo: openjdk-repo
+      - sls: sift.repos.adoptium

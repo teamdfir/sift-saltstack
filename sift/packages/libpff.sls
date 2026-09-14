@@ -8,7 +8,7 @@
 
 {% if grains['oscodename'] == 'jammy' %}
   {% set package = 'libpff1' %}
-{% elif grains['oscodename'] == 'noble' %}
+{% elif grains['oscodename'] == 'noble' or grains['oscodename'] == 'resolute' %}
   {% set package = 'libpff1t64' %}
 {% endif %}
 

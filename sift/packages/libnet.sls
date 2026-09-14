@@ -1,9 +1,9 @@
 {% if grains['oscodename'] == 'resolute' %}
-  {% set package = '7zip' %}
+  {% set package = 'libnet9' %}
 {% else %}
-  {% set package = 'p7zip-full' %}
+  {% set package = 'libnet1' %}
 {% endif %}
 
-sift-package-p7zip-full:
+sift-package-libnet:
   pkg.installed:
     - name: {{ package }}

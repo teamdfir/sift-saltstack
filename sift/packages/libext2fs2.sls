@@ -8,7 +8,7 @@
 
 {% if grains['oscodename'] == 'jammy' %}
   {% set package = 'libext2fs2' %}
-{% elif grains['oscodename'] == 'noble' %}
+{% elif grains['oscodename'] == 'noble' or grains['oscodename'] == 'resolute' %}
   {% set package = 'libext2fs2t64' %}
 {% endif %}
 

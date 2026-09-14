@@ -12,7 +12,7 @@ include:
 
 sift-python3-package-mulder:
   cmd.run:
-    - name: pipx install "mulder-dfir[forensics]"
+    - name: pipx install "mulder-dfir[forensics]" --force
     - runas: {{ user }}
     - require:
       - sls: sift.packages.pipx

@@ -41,3 +41,13 @@ sift-docker-repo:
       - pkgrepo: sift-remove-docker-ppa
       - file: sift-remove-docker-list
       - file: sift-remove-docker-sources
+
+# pkgrepo.managed used to tell Salt the apt cache was stale; writing the DEB822 file with
+# file.managed does not, so docker-ce resolved against a stale index and failed with
+# "no installation candidate" whenever this repo was not part of a full run that happened
+# to include sift.repos.refresh.
+sift-docker-repo-refresh:
+  module.run:
+    - name: pkg.refresh_db
+    - onchanges:
+      - file: sift-docker-repo

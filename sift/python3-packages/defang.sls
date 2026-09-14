@@ -4,7 +4,7 @@
 # Category: 
 # Author: Johan Nestaas
 # License: GNU General Public License v2+ (https://bitbucket.org/johannestaas/defang/src/master/LICENSE)
-# Notes: 
+# Notes: defang
 
 include:
   - sift.packages.python3-virtualenv

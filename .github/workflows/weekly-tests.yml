@@ -11,18 +11,14 @@ jobs:
     strategy:
       matrix:
         salt: [3006, 3007]
-        os: [20.04, 22.04]
+        os: [22.04, 24.04]
         state:
           - sift.packages.python3
           - sift.tests.gift
+          - sift.tests.libewf
           - sift.config.user.pdfs
-        include:
-          - os: 20.04
-            code: focal
-          - os: 22.04
-            code: jammy
     container:
-      image: docker://ghcr.io/ekristen/cast-tools/saltstack-tester:${{ matrix.code }}-${{ matrix.salt }}
+      image: docker://ghcr.io/ekristen/cast-tools/saltstack-tester:${{ matrix.os }}-${{ matrix.salt }}
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - name: test-state

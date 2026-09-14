@@ -5,4 +5,4 @@ sift-desktop-version-file:
   test.nop:
     - name: install-complete
     - require:
-      - sls: sift.include-server
+      - sls: sift.include-desktop

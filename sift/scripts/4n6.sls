@@ -25,6 +25,7 @@ include:
   - sift.perl-packages.quicktable
   - sift.perl-packages.json
   - sift.perl-packages.dbi
+  - sift.perl-packages.dbd-sqlite
   - sift.perl-packages.datecalc
 
 sift-python3-package-4n6-scripts-venv:

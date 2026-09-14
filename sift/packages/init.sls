@@ -20,6 +20,7 @@ include:
   - sift.packages.chromium-browser
   - sift.packages.cifs-utils
   - sift.packages.clamav
+  - sift.packages.claude-code
   - sift.packages.cmospwd
   - sift.packages.cryptcat
   - sift.packages.cryptsetup
@@ -139,7 +140,7 @@ include:
   - sift.packages.phonon
   - sift.packages.pkg-config
   - sift.packages.plaso-tools
-  - sift.packages.powershell
+  #- sift.packages.powershell
   - sift.packages.pv
   - sift.packages.python-flowgrep
   - sift.packages.python3
@@ -229,6 +230,7 @@ sift-packages:
       - sls: sift.packages.chromium-browser
       - sls: sift.packages.cifs-utils
       - sls: sift.packages.clamav
+      - sls: sift.packages.claude-code
       - sls: sift.packages.cmospwd
       - sls: sift.packages.cryptcat
       - sls: sift.packages.cryptsetup
@@ -348,7 +350,7 @@ sift-packages:
       - sls: sift.packages.phonon
       - sls: sift.packages.pkg-config
       - sls: sift.packages.plaso-tools
-      - sls: sift.packages.powershell
+      #- sls: sift.packages.powershell
       - sls: sift.packages.pv
       - sls: sift.packages.python-flowgrep
       - sls: sift.packages.python3

@@ -5,6 +5,6 @@ include:
 sift-desktop-include:
   test.nop:
     - name: sift-desktop-include
-    - requires:
+    - require:
       - sls: sift.server
       - sls: sift.config

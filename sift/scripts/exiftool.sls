@@ -40,7 +40,8 @@ sift-exiftool-makefile:
   cmd.run:
     - name: perl Makefile.PL
     - cwd: /usr/local/src/exiftool/Image-ExifTool-{{ exiftool_version }}/
-    - include:
+    - require:
+      - archive: sift-exiftool-extracted
       - sls: sift.packages.build-essential
       - sls: sift.packages.perl
 

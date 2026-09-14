@@ -3,6 +3,7 @@ include:
   - sift.scripts.amcache
   - sift.scripts.cyberchef
   - sift.scripts.densityscout
+  - sift.scripts.docker-compose
   - sift.scripts.dump-mft-entry
   - sift.scripts.exiftool
   - sift.scripts.keydet-tools
@@ -22,6 +23,7 @@ sift-scripts:
       - sls: sift.scripts.amcache
       - sls: sift.scripts.cyberchef
       - sls: sift.scripts.densityscout
+      - sls: sift.scripts.docker-compose
       - sls: sift.scripts.dump-mft-entry
       - sls: sift.scripts.exiftool
       - sls: sift.scripts.keydet-tools

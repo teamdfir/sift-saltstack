@@ -21,7 +21,7 @@ sift-repo:
   pkgrepo.managed:
     - ppa: sift/{{ version }}
     - keyid: 3E04D0A9A043FAFD66F5E774B2A668DD0744BEC3
-    - keyserver: hkp://p80.pool.sks-keyservers.net:80
+    - keyserver: keyserver.ubuntu.com
     - refresh: true
     - require:
       - sls: sift.packages.software-properties-common

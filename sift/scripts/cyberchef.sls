@@ -2,6 +2,7 @@
 # license=apache2
 # license_source=https://github.com/gchq/CyberChef/blob/master/LICENSE
 
+{# renovate: datasource=github-release-attachments depName=gchq/CyberChef #}
 {% set version = "9.55.0" -%}
 {% set hash = "DA55ADC790D011F6BF3740E7E704D340351F7E1C8EBD8E7D9DD24AA46562307C" -%}
 include:

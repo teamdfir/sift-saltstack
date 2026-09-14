@@ -10,8 +10,11 @@ Please open issues over at the [SIFT Repository](https://github.com/sans-dfir/si
 
 ## Supported Distributions
 
-* Ubuntu 20.04 (Focal) (deprecated)
 * Ubuntu 22.04 (Jammy)
+* Ubuntu 24.04 (Noble)
+
+Both `amd64` and `arm64` are supported, though a handful of packages are
+`amd64`-only and are skipped on `arm64`.
 
 ## Installation
 

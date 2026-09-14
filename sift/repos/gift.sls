@@ -22,7 +22,7 @@ gift-repo:
     - name: gift
     - ppa: gift/{{ version }}
     - keyid: 3ED1EAECE81894B171D7DA5B5E80511B10C598B8
-    - keyserver: hkp://p80.pool.sks-keyservers.net:80
+    - keyserver: keyserver.ubuntu.com
     - refresh: true
     - require:
       - sls: sift.packages.software-properties-common

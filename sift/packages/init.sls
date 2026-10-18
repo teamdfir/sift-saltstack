@@ -139,7 +139,7 @@ include:
   - sift.packages.phonon
   - sift.packages.pkg-config
   - sift.packages.plaso-tools
-  #- sift.packages.powershell
+  - sift.packages.powershell
   - sift.packages.pv
   - sift.packages.python-flowgrep
   - sift.packages.python3
@@ -348,7 +348,7 @@ sift-packages:
       - sls: sift.packages.phonon
       - sls: sift.packages.pkg-config
       - sls: sift.packages.plaso-tools
-      #- sls: sift.packages.powershell
+      - sls: sift.packages.powershell
       - sls: sift.packages.pv
       - sls: sift.packages.python-flowgrep
       - sls: sift.packages.python3

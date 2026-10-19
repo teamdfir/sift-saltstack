@@ -10,6 +10,7 @@ include:
   - sift.packages.autopsy
   - sift.packages.aws-cli
   - sift.packages.avfs
+  - sift.packages.binutils
   - sift.packages.bless
   - sift.packages.blt
   - sift.packages.build-essential
@@ -219,6 +220,7 @@ sift-packages:
       - sls: sift.packages.autopsy
       - sls: sift.packages.aws-cli
       - sls: sift.packages.avfs
+      - sls: sift.packages.binutils
       - sls: sift.packages.bless
       - sls: sift.packages.blt
       - sls: sift.packages.build-essential

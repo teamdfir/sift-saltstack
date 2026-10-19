@@ -2,6 +2,8 @@
   {% set package = 'libicu70' %}
 {% elif grains['oscodename'] == 'noble' %}
   {% set package = 'libicu74' %}
+{% elif grains['oscodename'] == 'resolute' %}
+  {% set package = 'libicu78' %}
 {% endif %}
 sift-package-libicu:
   pkg.installed:

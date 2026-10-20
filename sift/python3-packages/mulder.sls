@@ -31,7 +31,7 @@ sift-python3-package-mulder:
 
 sift-python3-package-mulder-setup:
   cmd.run:
-    - name: mulder setup --yes
+    - name: {{ home }}/.local/bin/mulder setup --yes
     - runas: {{ user }}
     - cwd: {{ home }}/.local/bin
     - require:

@@ -39,8 +39,12 @@ sift-universe-repo:
 {% if codename == "jammy" %}
 
 sift-remove-sources-list:
-  file.absent:
+  file.managed:
     - name: /etc/apt/sources.list
+    - contents: |
+        # Ubuntu sources have moved to /etc/apt/sources.list.d/ubuntu.sources
+        # This file is kept (empty) because add-apt-repository on jammy fails
+        # to write PPA entries when /etc/apt/sources.list does not exist.
     - require:
       - file: sift-universe-repo
 

@@ -1,4 +1,9 @@
 {%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
+{%- if user == "root" -%}
+  {%- set home = "/root" -%}
+{%- else -%}
+  {%- set home = salt['user.info'](user).get('home', '/home/' ~ user) -%}
+{%- endif -%}
 
 include:
   - sift.config.user.user
@@ -28,7 +33,7 @@ sift-python3-package-mulder-setup:
   cmd.run:
     - name: mulder setup --yes
     - runas: {{ user }}
-    - cwd: /home/{{ user }}/.local/bin
+    - cwd: {{ home }}/.local/bin
     - require:
       - cmd: sift-python3-package-mulder
 
@@ -36,7 +41,7 @@ sift-python3-package-mulder-ensurepath:
   cmd.run:
     - name: pipx ensurepath
     - runas: {{ user }}
-    - cwd: /home/{{ user }}/.local/bin
+    - cwd: {{ home }}/.local/bin
     - require:
       - cmd: sift-python3-package-mulder-setup
 

@@ -29,6 +29,8 @@ sift-python3-package-mulder:
       - sls: sift.packages.dotnet
       - user: sift-user-{{ user }}
 
+{#- mulder refuses to run setup as root, see 'mulder setup' output #}
+{%- if user != "root" %}
 sift-python3-package-mulder-setup:
   cmd.run:
     - name: {{ home }}/.local/bin/mulder setup --yes
@@ -36,6 +38,7 @@ sift-python3-package-mulder-setup:
     - cwd: {{ home }}/.local/bin
     - require:
       - cmd: sift-python3-package-mulder
+{%- endif %}
 
 sift-python3-package-mulder-ensurepath:
   cmd.run:
@@ -43,5 +46,9 @@ sift-python3-package-mulder-ensurepath:
     - runas: {{ user }}
     - cwd: {{ home }}/.local/bin
     - require:
+{%- if user != "root" %}
       - cmd: sift-python3-package-mulder-setup
+{%- else %}
+      - cmd: sift-python3-package-mulder
+{%- endif %}
 

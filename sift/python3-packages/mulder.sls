@@ -1,5 +1,12 @@
 {%- set user = salt['pillar.get']('sift_user', 'sansforensics') -%}
 
+{% if user == 'root' %}
+Mulder does not install for the root user - skipping:
+  test.nop
+{% else %}
+
+{%- set home = salt['user.info'](user).home -%}
+
 include:
   - sift.config.user.user
   - sift.packages.git
@@ -26,17 +33,18 @@ sift-python3-package-mulder:
 
 sift-python3-package-mulder-setup:
   cmd.run:
-    - name: mulder setup --yes
+    - name: {{ home }}/.local/bin/mulder setup --yes
     - runas: {{ user }}
-    - cwd: /home/{{ user }}/.local/bin
+    - cwd: {{ home }}/.local/bin
     - require:
       - cmd: sift-python3-package-mulder
 
 sift-python3-package-mulder-ensurepath:
   cmd.run:
-    - name: pipx ensurepath
+    - name: 'cd {{ home }}/.local/bin && pipx ensurepath --force'
     - runas: {{ user }}
-    - cwd: /home/{{ user }}/.local/bin
+    - cwd: {{ home }}/.local/bin
     - require:
       - cmd: sift-python3-package-mulder-setup
 
+{% endif %}

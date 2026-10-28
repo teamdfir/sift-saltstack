@@ -8,7 +8,9 @@
 
 {% set files = ['evtx_dump','evtx_dump_chunk_slack','evtx_dump_json','evtx_eid_record_numbers','evtx_extract_record','evtx_filter_records','evtx_info','evtx_record_structure','evtx_structure','evtx_templates'] %}
 {% set commit = '1a1357accd3a75524794a6d6dcdec03c09e1660d' %}
-{% if grains['oscodename'] == 'noble' %}
+{% if grains['oscodename'] == 'resolute' %}
+  {% set py_ver = '3.14' %}
+{% elif grains['oscodename'] == 'noble' %}
   {% set py_ver = '3.12' %}
 {% elif grains['oscodename'] == 'jammy' %}
   {% set py_ver = '3.10' %}

@@ -11,7 +11,6 @@ include:
   - sift.packages.aws-cli
   - sift.packages.avfs
   - sift.packages.binutils
-  - sift.packages.bless
   - sift.packages.blt
   - sift.packages.build-essential
   - sift.packages.bulk-extractor
@@ -22,7 +21,7 @@ include:
   - sift.packages.clamav
   - sift.packages.claude-code
   - sift.packages.cmospwd
-  - sift.packages.cryptcat
+#  - sift.packages.cryptcat
   - sift.packages.cryptsetup
   - sift.packages.curl
   - sift.packages.dc3dd
@@ -92,7 +91,7 @@ include:
   - sift.packages.liblightgrep
   - sift.packages.libmsiecf
   - sift.packages.libncurses
-  - sift.packages.libnet1
+  - sift.packages.libnet
   - sift.packages.libolecf
   - sift.packages.libparse-win32registry-perl
   - sift.packages.libpff
@@ -126,7 +125,6 @@ include:
   - sift.packages.okular
   - sift.packages.onboard
   - sift.packages.open-iscsi
-  - sift.packages.openjdk
   - sift.packages.ophcrack
   - sift.packages.ophcrack-cli
   - sift.packages.orca
@@ -185,6 +183,7 @@ include:
   - sift.packages.tcptrace
   - sift.packages.tcptrack
   - sift.packages.tcpxtract
+  - sift.packages.temurin-jdk
   - sift.packages.testdisk
   - sift.packages.tofrodos
   - sift.packages.transmission
@@ -221,7 +220,6 @@ sift-packages:
       - sls: sift.packages.aws-cli
       - sls: sift.packages.avfs
       - sls: sift.packages.binutils
-      - sls: sift.packages.bless
       - sls: sift.packages.blt
       - sls: sift.packages.build-essential
       - sls: sift.packages.bulk-extractor
@@ -232,7 +230,7 @@ sift-packages:
       - sls: sift.packages.clamav
       - sls: sift.packages.claude-code
       - sls: sift.packages.cmospwd
-      - sls: sift.packages.cryptcat
+#      - sls: sift.packages.cryptcat
       - sls: sift.packages.cryptsetup
       - sls: sift.packages.curl
       - sls: sift.packages.dc3dd
@@ -302,7 +300,7 @@ sift-packages:
       - sls: sift.packages.liblightgrep
       - sls: sift.packages.libmsiecf
       - sls: sift.packages.libncurses
-      - sls: sift.packages.libnet1
+      - sls: sift.packages.libnet
       - sls: sift.packages.libolecf
       - sls: sift.packages.libparse-win32registry-perl
       - sls: sift.packages.libpff
@@ -336,7 +334,6 @@ sift-packages:
       - sls: sift.packages.okular
       - sls: sift.packages.onboard
       - sls: sift.packages.open-iscsi
-      - sls: sift.packages.openjdk
       - sls: sift.packages.ophcrack
       - sls: sift.packages.ophcrack-cli
       - sls: sift.packages.orca
@@ -395,6 +392,7 @@ sift-packages:
       - sls: sift.packages.tcptrace
       - sls: sift.packages.tcptrack
       - sls: sift.packages.tcpxtract
+      - sls: sift.packages.temurin-jdk
       - sls: sift.packages.testdisk
       - sls: sift.packages.tofrodos
       - sls: sift.packages.transmission

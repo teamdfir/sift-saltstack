@@ -6,5 +6,14 @@
 # License: GNU General Public License v2 (https://github.com/vanhauser-thc/thc-hydra/blob/master/hydra-gtk/COPYING)
 # Notes: 
 
+{% if grains['oscodename'] == 'resolute' %}
+
+hydra-gtk-not-available-in-resolute:
+  test.nop
+
+{% else %}
+
 hydra-gtk:
   pkg.installed
+
+{% endif %}

@@ -10,6 +10,8 @@
   {% set py_ver = '3.10' %}
 {% elif grains['oscodename'] == 'noble' %}
   {% set py_ver = '3.12' %}
+{% elif grains['oscodename'] == 'resolute' %}
+  {% set py_ver = '3.14' %}
 {% endif %}
 {%- set commit = "038e8ec836cf23600124db74b40757b7184c08c5" -%}
 {% set files = ['INDXParse.py','MFTINDX.py','MFTView.py','SDS_get_index.py','extract_mft_record_slack.py','get_file_info.py','list_mft.py','fuse-mft.py','tree_mft.py'] %}

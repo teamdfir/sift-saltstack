@@ -4,6 +4,6 @@
   {% set package = 'p7zip-full' %}
 {% endif %}
 
-sift-package-p7zip-full:
+sift-package-{{ package }}:
   pkg.installed:
     - name: {{ package }}

@@ -10,7 +10,7 @@ include:
   - sift.packages.autopsy
   - sift.packages.aws-cli
   - sift.packages.avfs
-#  - sift.packages.bless
+  - sift.packages.binutils
   - sift.packages.blt
   - sift.packages.build-essential
   - sift.packages.bulk-extractor
@@ -138,7 +138,7 @@ include:
   - sift.packages.phonon
   - sift.packages.pkg-config
   - sift.packages.plaso-tools
-  #- sift.packages.powershell
+  - sift.packages.powershell
   - sift.packages.pv
   - sift.packages.python-flowgrep
   - sift.packages.python3
@@ -219,7 +219,7 @@ sift-packages:
       - sls: sift.packages.autopsy
       - sls: sift.packages.aws-cli
       - sls: sift.packages.avfs
-#      - sls: sift.packages.bless
+      - sls: sift.packages.binutils
       - sls: sift.packages.blt
       - sls: sift.packages.build-essential
       - sls: sift.packages.bulk-extractor
@@ -347,7 +347,7 @@ sift-packages:
       - sls: sift.packages.phonon
       - sls: sift.packages.pkg-config
       - sls: sift.packages.plaso-tools
-      #- sls: sift.packages.powershell
+      - sls: sift.packages.powershell
       - sls: sift.packages.pv
       - sls: sift.packages.python-flowgrep
       - sls: sift.packages.python3

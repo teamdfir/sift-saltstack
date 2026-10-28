@@ -33,9 +33,15 @@ sift-microsoft-repo:
         Suites: {{ grains['lsb_distrib_codename'] }}
         Components: main
         Signed-By: /usr/share/keyrings/MICROSOFT.asc
-        Architectures: amd64
+        Architectures: amd64 arm64
     - require:
       - file: sift-microsoft-key
       - pkgrepo: sift-microsoft-repo-cleanup
       - file: sift-microsoft-list-absent
       - file: sift-microsoft-sources-absent
+
+sift-microsoft-repo-refresh:
+  module.run:
+    - name: pkg.refresh_db
+    - onchanges:
+      - file: sift-microsoft-repo

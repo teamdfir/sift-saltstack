@@ -20,6 +20,7 @@ include:
   - sift.packages.cifs-utils
   - sift.packages.clamav
   - sift.packages.claude-code
+  - sift.packages.cmake
   - sift.packages.cmospwd
 #  - sift.packages.cryptcat
   - sift.packages.cryptsetup
@@ -147,6 +148,7 @@ include:
   - sift.packages.python3-fuse
   - sift.packages.python3-pefile
   - sift.packages.python3-pip
+  - sift.packages.python3-pyfuse3
   - sift.packages.python3-pypff
   - sift.packages.python3-pyqt5
   - sift.packages.python3-redis
@@ -229,6 +231,7 @@ sift-packages:
       - sls: sift.packages.cifs-utils
       - sls: sift.packages.clamav
       - sls: sift.packages.claude-code
+      - sls: sift.packages.cmake
       - sls: sift.packages.cmospwd
 #      - sls: sift.packages.cryptcat
       - sls: sift.packages.cryptsetup
@@ -356,6 +359,7 @@ sift-packages:
       - sls: sift.packages.python3-fuse
       - sls: sift.packages.python3-pefile
       - sls: sift.packages.python3-pip
+      - sls: sift.packages.python3-pyfuse3
       - sls: sift.packages.python3-pypff
       - sls: sift.packages.python3-pyqt5
       - sls: sift.packages.python3-redis

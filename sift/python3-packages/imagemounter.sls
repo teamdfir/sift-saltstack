@@ -6,6 +6,11 @@
 # License: MIT License (https://github.com/ralphje/imagemounter/blob/master/LICENSE)
 # Notes: imount
 
+{% if grains['oscodename'] == 'resolute' %}
+imagemounter requirements are not available on Ubuntu Resolute:
+  test.nop
+{% else %}
+
 include:
   - sift.packages.python3-virtualenv
   - sift.packages.afflib-tools
@@ -81,3 +86,5 @@ sift-python3-package-imagemounter-symlink:
     - makedirs: False
     - require:
       - pip: sift-python3-package-imagemounter
+
+{% endif %}

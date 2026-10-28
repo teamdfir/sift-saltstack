@@ -1,6 +1,7 @@
 {% if grains['oscodename'] == 'resolute' %}
-tcptrace is not available on Ubuntu Resolute:
-  test.nop
+sift-package-tcptrace:
+  test.nop:
+    - name: tcptrace is not available on ubuntu resolute
 {% else %}
 
 sift-package-tcptrace:

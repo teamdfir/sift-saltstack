@@ -1,6 +1,7 @@
 {% if grains['oscodename'] == 'resolute' %}
-pev is not available on Ubuntu Resolute:
-  test.nop
+sift-package-pev:
+  test.nop:
+    - name: pev is not available on ubuntu resolute
 {% else %}
 
 sift-package-pev:

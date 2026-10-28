@@ -1,6 +1,7 @@
 {% if grains['oscodename'] == 'resolute' %}
-outguess is not available on Ubuntu Resolute:
-  test.nop
+sift-package-outguess:
+  test.nop:
+    - name: outguess is not available on ubuntu resolute
 {% else %}
 
 sift-package-outguess:

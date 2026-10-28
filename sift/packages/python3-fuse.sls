@@ -1,6 +1,7 @@
 {% if grains['oscodename'] == 'resolute' %}
-python3-fuse is not available in Ubuntu Resolute:
-  test.nop
+sift-package-python3-fuse:
+  test.nop:
+    - name: python3-fuse is not available in ubuntu resolute
 {% else %}
 
 sift-package-python3-fuse:

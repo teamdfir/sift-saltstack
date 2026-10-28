@@ -7,8 +7,9 @@
 # Notes: imount
 
 {% if grains['oscodename'] == 'resolute' %}
-imagemounter requirements are not available on Ubuntu Resolute:
-  test.nop
+sift-python3-package-imagemounter:
+  test.nop:
+    - name: imagemounter requirements are not available on ubuntu resolute
 {% else %}
 
 include:

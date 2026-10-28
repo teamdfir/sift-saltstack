@@ -15,7 +15,7 @@ include:
 download-{{ tool }}:
   file.managed:
     - name: /tmp/{{ tool }}.zip
-    - source: https://download.ericzimmermanstools.com/net9/{{ tool }}.zip
+    - source: https://download.ericzimmermanstools.com/net/{{ tool }}.zip
     - skip_verify: True
     - makedirs: True
 
@@ -33,11 +33,11 @@ extract-{{ tool }}:
     - contents: |
         #!/bin/bash
         {% if tool|lower == "iisgeolocate" or tool|lower == "recmd" or tool|lower == "sqlecmd" %}
-        dotnet /opt/zimmermantools/{{ tool }}/{{ tool }}.dll ${*}
+        exec dotnet /opt/zimmermantools/{{ tool }}/{{ tool }}.dll "$@"
         {% elif tool|lower == "evtxecmd" %}
-        dotnet /opt/zimmermantools/EvtxeCmd/{{ tool }}.dll ${*}
+        exec dotnet /opt/zimmermantools/EvtxeCmd/{{ tool }}.dll "$@"
         {% else %}
-        dotnet /opt/zimmermantools/{{ tool }}.dll ${*}
+        exec dotnet /opt/zimmermantools/{{ tool }}.dll "$@"
         {% endif %}
     - mode: 755
     - replace: True

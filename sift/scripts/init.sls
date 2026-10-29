@@ -1,6 +1,7 @@
 include:
   - sift.scripts.4n6
   - sift.scripts.amcache
+  - sift.scripts.csvdt
   - sift.scripts.cyberchef
   - sift.scripts.densityscout
   - sift.scripts.docker-compose
@@ -21,6 +22,7 @@ sift-scripts:
     - require:
       - sls: sift.scripts.4n6
       - sls: sift.scripts.amcache
+      - sls: sift.scripts.csvdt
       - sls: sift.scripts.cyberchef
       - sls: sift.scripts.densityscout
       - sls: sift.scripts.docker-compose

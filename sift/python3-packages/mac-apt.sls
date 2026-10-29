@@ -14,6 +14,7 @@ include:
   - sift.packages.libbz2-dev
   - sift.packages.zlib1g-dev
   - sift.packages.git
+  - sift.packages.build-essential
 
 sift-python3-package-mac-apt-venv:
   virtualenv.managed:
@@ -29,6 +30,7 @@ sift-python3-package-mac-apt-venv:
       - sls: sift.packages.python3-dev
       - sls: sift.packages.libbz2-dev
       - sls: sift.packages.zlib1g-dev
+      - sls: sift.packages.build-essential
 
 sift-python3-package-mac-apt-git:
   git.latest:

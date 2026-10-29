@@ -25,7 +25,7 @@ sift-adoptium-repo:
         Suites: {{ grains['lsb_distrib_codename'] }}
         Components: main
         Signed-By: /usr/share/keyrings/ADOPTIUM.asc
-        Architectures: amd64
+        Architectures: amd64 arm64
     - require:
       - file: sift-adoptium-key
       - pkgrepo: sift-adoptium-openjdk-repo-cleanup

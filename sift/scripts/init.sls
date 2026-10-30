@@ -5,6 +5,7 @@ include:
   - sift.scripts.densityscout
   - sift.scripts.docker-compose
   - sift.scripts.dump-mft-entry
+  - sift.scripts.evtx-dump
   - sift.scripts.exiftool
   - sift.scripts.keydet-tools
   - sift.scripts.packerid
@@ -25,6 +26,7 @@ sift-scripts:
       - sls: sift.scripts.densityscout
       - sls: sift.scripts.docker-compose
       - sls: sift.scripts.dump-mft-entry
+      - sls: sift.scripts.evtx-dump
       - sls: sift.scripts.exiftool
       - sls: sift.scripts.keydet-tools
       - sls: sift.scripts.packerid

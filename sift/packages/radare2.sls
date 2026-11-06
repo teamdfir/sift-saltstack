@@ -7,7 +7,7 @@
 # Notes: r2, rasm2, rabin2, rahash2, rafind2, r2ai, decai, pdg
 
 {# renovate: datasource=github-release-attachments depName=radareorg/radare2 #}
-{%- set version = "6.2.4" -%}
+{%- set version = "6.2.6" -%}
 {%- set osarch = grains["osarch"] %}
 {%- set base_url = "https://github.com/radareorg/radare2/releases/download/" -%}
 {%- if osarch == "aarch64" or osarch == "arm64" -%}

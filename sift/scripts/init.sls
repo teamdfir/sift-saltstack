@@ -7,6 +7,7 @@ include:
   - sift.scripts.dump-mft-entry
   - sift.scripts.exiftool
   - sift.scripts.keydet-tools
+  - sift.scripts.maldoctrace
   - sift.scripts.packerid
   - sift.scripts.pdf-tools
   - sift.scripts.regripper
@@ -27,6 +28,7 @@ sift-scripts:
       - sls: sift.scripts.dump-mft-entry
       - sls: sift.scripts.exiftool
       - sls: sift.scripts.keydet-tools
+      - sls: sift.scripts.maldoctrace
       - sls: sift.scripts.packerid
       - sls: sift.scripts.pdf-tools
       - sls: sift.scripts.regripper
